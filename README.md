@@ -7,9 +7,10 @@ You can see progress on tasks at http://waffle.io/mattstratton/castanet
 # Castanet
 
 Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton). 
-This Hugo theme features TODO add stuff
+This Hugo theme features 
+**TODO add stuff**
 
-TODO Add screenshot
+**TODO Add screenshot**
 
 
 ## Installation
