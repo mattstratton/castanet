@@ -3,19 +3,13 @@
 
 name = "Castanet"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
+licenselink = "https://github.com/mattstratton/castanet/blob/master/LICENSE.md"
 description = ""
 homepage = "http://siteforthistheme.com/"
 tags = ["", ""]
 features = ["", ""]
-min_version = 0.15
+min_version = 0.16
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Matt Stratton"
+  homepage = "https://www.mattstratton.io"
