@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/mattstratton/castanet.png?label=ready&title=Ready)](https://waffle.io/mattstratton/castanet)
 # Castanet
 
 Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton). 
