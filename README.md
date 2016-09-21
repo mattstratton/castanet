@@ -1,4 +1,9 @@
-[![Stories in Ready](https://badge.waffle.io/mattstratton/castanet.png?label=ready&title=Ready)](https://waffle.io/mattstratton/castanet)
+[![Stories in Ready](https://badge.waffle.io/mattstratton/castanet.svg?label=ready&title=Ready)](http://waffle.io/mattstratton/devopsdays-web) [![Stories in Progress](https://badge.waffle.io/mattstratton/castanetb.svg?label=ready&title=In%20Progress)](http://waffle.io/mattstratton/devopsdays-web)
+
+You can see progress on tasks at http://waffle.io/mattstratton/castanet
+
+[![Throughput Graph](https://graphs.waffle.io/mattstratton/castanet/throughput.svg)](https://waffle.io/devopsdays/devopsdays-web/metrics)
+
 # Castanet
 
 Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton). 
