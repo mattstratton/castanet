@@ -1,7 +1,7 @@
 +++
 Description = ""
 podcast_duration = ""
-tags = []
+episode_image = "/img/episode/default.jpg"
 categories = []
 guests = []
 sponsors = []
