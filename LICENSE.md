@@ -20,10 +20,13 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-This project includes hugo-snippets and which is available under a 'MIT' License.
+This project includes hugo-snippets, which is available under a 'MIT' License.
 For details, see:
 https://github.com/nozzle/hugo-snippets/blob/master/LICENSE
 
 This project includes font-awesome, which is available under a 'MIT' License and a SIL OFL 1.1 License.
 For details, see:
 http://fontawesome.io/license/
+
+This project includes bootstrap3_player, which is available under an 'Apache2' License.
+For details, see: https://github.com/iainhouston/bootstrap3_player/blob/master/LICENSE
