@@ -1,5 +1,47 @@
 {{ partial "header.html" . }}
+<div class="container">
 
-Hello world
+
+<div class="container-fluid">
+  <div class="jumbotron">
+
+		<div class="row">
+        <div class="col-md-12">
+				<h2>
+					Latest Episode
+				</h2>
+				<p>
+          {{ range first 1 .Data.Pages }}
+              {{ if eq .Type "episode"}}
+                <h2>{{ .Title }}</h2>
+                <p>{{ .Description | markdownify}}</p>
+              {{ end }}
+          {{ end }}
+        </p>
+				</p>
+				<p>
+					<a class="btn btn-primary btn-large" href="#">Play Episode</a>
+				</p>
+      </div>
+	</div>
+</div>
+
+  <!-- rest of episodes -->
+	<div class="row">
+		<div class="col-md-12">
+      {{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) }}
+				{{ range $paginator.Pages }}
+            <h3>{{ .Title }}</h3>
+        {{ end }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+      {{ template "_internal/pagination.html" . }}
+		</div>
+  </div>
+	</div>
+</div>
 
 {{ partial "footer.html" }}
+</div><!--/.container-->
