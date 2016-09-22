@@ -29,7 +29,7 @@
   <!-- rest of episodes -->
 	<div class="row">
 		<div class="col-md-12">
-      {{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) }}
+      {{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 }}
 				{{ range $paginator.Pages }}
             <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
             <p>{{ .Description | markdownify}}</p>
