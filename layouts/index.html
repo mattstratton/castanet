@@ -33,6 +33,10 @@
 				{{ range $paginator.Pages }}
             <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
             <p>{{ .Description | markdownify}}</p>
+            <audio controls>
+          	   <source src="{{ .Params.podcast }}" type="audio/mpeg" />
+          	    <a href="{{ .Params.podcast }}">{{ .Title }}</a>
+            </audio>
         {{ end }}
 		</div>
 	</div>
