@@ -28,10 +28,10 @@
 
   <!-- rest of episodes -->
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-8">
       {{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 }}
 				{{ range $paginator.Pages }}
-            <a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+            <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
             <p>{{ .Description | markdownify}}</p>
             <audio controls>
           	   <source src="{{ .Params.podcast }}" type="audio/mpeg" />
@@ -39,6 +39,9 @@
             </audio>
         {{ end }}
 		</div>
+    <div class="col-md-4">
+      {{ partial "sidebar.html" }}
+    </div>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
