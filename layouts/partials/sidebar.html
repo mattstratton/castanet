@@ -1,8 +1,30 @@
 <div class="row">
   <div class="col-md-12">
-      <a href="https://www.google.com"><i class="fa fa-apple fa-5x"></i></a>
-      <a href="https://www.google.com"><i class="fa fa-android fa-5x"></i></a>
-      <a href="https://www.google.com"><i class="fa fa-rss fa-5x"></i></a>
-  </dl>
+    <div class="row">
+      {{ if (isset .Site.Params "itunes_subscribe") }}
+        <div class = "col-md-12 subscribe_buttons subscribe_buttons">
+          <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-apple"></i>&nbsp;Subscribe on iTunes</a>
+        </div>
+      {{ end }}
+      {{ if (isset .Site.Params "android_subscribe") }}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Subscribe on Android</a>
+        </div>
+      {{ end }}
+      {{ if (isset .Site.Params "google_play_subscribe") }}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fa fa-music"></i>&nbsp;Subscribe on Google Play Music</a>
+        </div>
+      {{ end }}
+      {{ if (isset .Site.Params "rss_subscribe" )}}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="{{ .Site.params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;Subscribe via RSS</a>
+        </div>
+      {{ else }}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="/index.xml"><i class="fa fa-rss"></i>&nbsp;Subscribe via RSS</a>
+        </div>
+      {{ end }}
+    </div>
   </div>
 </div>
