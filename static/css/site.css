@@ -18,9 +18,27 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
-html body {
-  background-color: #eeeeee;
-}
 .middle_container {
   background-color: #fff;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.hero_container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.main_container {
+  background-color: #FFF9CC;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.bottom_container {
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+}
+.navbar_footer {
+  border-radius: 0px!important;
+}
+body {
+  padding-top: 70px;
 }

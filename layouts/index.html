@@ -1,48 +1,44 @@
 {{ partial "header.html" . }}
 <div class="container middle_container">
 
+    <div class="row hero_container">
+      <div class="col-md-12">
+      <h2>
+      Latest Episode
+      </h2>
 
-<div class="container-fluid">
-  <div class="jumbotron">
-
-		<div class="row">
-        <div class="col-md-12">
-				<h2>
-					Latest Episode
-				</h2>
-
-          {{ range first 1 .Data.Pages }}
-              {{ if eq .Type "episode"}}
-              <div class = "row homepage_episode_row">
-                <div class = "col-md-12">
-                  <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
-                  <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
-                </div>
-              </div>
-              <div class = "row homepage_episode_row">
-                <div class = "col-md-4">
-                  <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image }}" />
-                </div>
-                <div class = "col-md-8">
-                  <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
-                </div>
-              </div>
-              <div class = "row">
-                <div class = "col-md-12">
-                  <audio controls>
-                     <source src="{{ .Params.podcast }}" type="audio/mpeg" />
-                      <a href="{{ .Params.podcast }}">{{ .Title }}</a>
-                  </audio>
-                </div>
-              </div>
+      {{ range first 1 .Data.Pages }}
+        {{ if eq .Type "episode"}}
+          <div class = "row homepage_episode_row">
+            <div class = "col-md-12">
+              <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+              <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+            </div>
+          </div>
+          <div class = "row homepage_episode_row">
+            <div class = "col-md-4">
+              <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image }}" />
+            </div>
+            <div class = "col-md-8">
+              <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
+            </div>
+          </div>
+          <div class = "row">
+            <div class = "col-md-12">
+              <audio controls>
+                <source src="{{ .Params.podcast }}" type="audio/mpeg" />
+                <a href="{{ .Params.podcast }}">{{ .Title }}</a>
+              </audio>
+            </div>
+          </div>
         {{ end }}
-    {{ end }}
+      {{ end }}
       </div>
-	</div>
-</div>
+    </div>
 
   <!-- rest of episodes -->
-	<div class="row">
+
+	<div class="row main_container">
 		<div class="col-md-8">
       {{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 }}
 				{{ range $paginator.Pages }}
@@ -80,8 +76,5 @@
       {{ template "_internal/pagination.html" . }}
 		</div>
   </div>
-	</div>
-</div>
-
+</div> <!-- end middle_container -->
 {{ partial "footer.html" }}
-</div><!--/.container-->
