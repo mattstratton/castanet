@@ -8,9 +8,11 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li>
-        <a href="/copyright">Copyright 2016 Arrested DevOps</a>
-      </li>
+      {{ if (isset .Site.Params "copyright_notice" ) }}
+        <li>
+          <p class = "footer_copyright">{{ .Site.Params.copyright_notice | markdownify}}</p>
+        </li>
+      {{ end }}
       <li>
         &nbsp;
       </li>
