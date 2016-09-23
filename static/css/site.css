@@ -13,10 +13,15 @@
   padding-bottom: 20px;
 }
 .sidebar_general {
-  background-color: #222222;
-  border-radius: 15px;
+  background-color: #d68123;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin-bottom: 40px;
+}
+.sidebar_headline {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  margin-top: 0px;
 }
 .middle_container {
   background-color: #fff;
@@ -38,6 +43,16 @@
 }
 .navbar_footer {
   border-radius: 0px!important;
+}
+.sidebar_col {
+  padding-top: 40px!important;
+  padding-left: 40px!important;
+  padding-right: 40px!important;
+}
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
 }
 body {
   padding-top: 70px;

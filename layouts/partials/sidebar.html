@@ -1,24 +1,29 @@
 <div class="row">
   <div class="col-md-12 sidebar_general">
+    <div class = "row">
+      <div class = "col-md-12">
+        <h3 class="sidebar_headline text-uppercase">Subscribe</h3>
+      </div>
+    </div>
     <div class="row">
       {{ if (isset .Site.Params "itunes_subscribe") }}
         <div class = "col-md-12 subscribe_buttons subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-apple"></i>&nbsp;Subscribe on iTunes</a>
+          <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-apple"></i>&nbsp;iTunes</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "android_subscribe") }}
         <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Subscribe on Android</a>
+          <a class="btn btn-default" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Android</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "google_play_subscribe") }}
         <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fa fa-music"></i>&nbsp;Subscribe on Google Play Music</a>
+          <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fa fa-music"></i>&nbsp;Google Play Music</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "rss_subscribe" )}}
         <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;Subscribe via RSS</a>
+          <a class="btn btn-default" href="{{ .Site.params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
         </div>
       {{ else }}
         <div class = "col-md-12 subscribe_buttons">
@@ -28,3 +33,38 @@
     </div>
   </div>
 </div>
+<!--
+<div class = "row">
+  <div class = "col-md-12 sidebar_spacer">
+  </div>
+</div> -->
+{{ if (isset .Site.Params "itunes_subscribe") }}
+  <div class="row">
+    <div class="col-md-12 sidebar_general">
+      <div class = "row">
+        <div class = "col-md-12">
+          <h3 class="sidebar_headline text-uppercase">Join Our Mailing List</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Begin MailChimp Signup Form -->
+          <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+          <div id="mc_embed_signup">
+          <form action="{{ .Site.Params.mailchimp_subscribe }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+          	<label for="mce-EMAIL">Subscribe to our mailing list</label>
+          	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5e4cbcac996bb9df25f970a89_154fa76bcc" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              </div>
+          </form>
+          </div>
+
+          <!--End mc_embed_signup-->
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}
