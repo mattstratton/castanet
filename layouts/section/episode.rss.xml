@@ -35,7 +35,7 @@
     </itunes:category>
     {{ range (where .Site.Pages "Type" "episode") }}
     <item>
-      <title>{{ title .Title }} }}</title>
+      <title>{{ title .Title }}</title>
       <itunes:author> {{ .Site.Params.itunes_author }}</itunes:author>
       <itunes:summary>{{ .Description }}</itunes:summary>
       <description>{{ .Description }}</description>
