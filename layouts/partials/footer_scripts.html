@@ -6,7 +6,14 @@
 <script src="/js/jssocials.min.js"></script>
 <script>
     $("#share").jsSocials({
-        shares: ["twitter", "facebook", "linkedin", "pinterest"],
+        shares: ["facebook", "linkedin", "pinterest",
+      {
+        share: "twitter",           // name of share
+        label: "Tweet",             // share button text (optional)
+        {{ if (isset .Site.Params.social "twitter" )}}
+          via: "{{ .Site.Params.social.twitter }}",       // custom twitter sharing param 'via' (optional)
+        {{ end }}
+      }],
         url: "{{ .Params.permalink }}",
         text: "{{ title .Title }}"
     });
