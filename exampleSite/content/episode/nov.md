@@ -1,19 +1,20 @@
 +++
-Description = "8-bit slow-carb mustache selfies distillery. Flexitarian keytar chicharrones, taxidermy occupy air plant listicle pork belly. Meditation whatever pabst kitsch, asymmetrical tbh single-origin coffee quinoa roof party. Cliche la croix distillery actually tousled. Church-key ugh tacos scenester succulents williamsburg chia, gochujang keytar. Poutine tumeric skateboard brooklyn. Mlkshk normcore edison bulb, paleo pour-over activated charcoal cold-pressed tumeric cliche."
-aliases = ["/11"]
+Description = "Leverage long tail virality seed money burn rate funding. Ownership long tail series A financing non-disclosure agreement analytics graphical user interface channels virality A/B testing. User experience virality incubator equity. Infrastructure value proposition business-to-business branding. Influencer stock channels ecosystem vesting period founders user experience client mass market analytics low hanging fruit. Incubator non-disclosure agreement pitch. Social media strategy agile development funding. Business model canvas backing partner network pitch supply chain return on investment seed money direct mailing branding. Buyer investor incubator disruptive first mover advantage traction. Business-to-consumer holy grail innovator virality crowdfunding handshake direct mailing."
+aliases = ["/2"]
 author = "Matt"
 categories = []
-date = "2015-11-22T11:12:50-05:00"
-episode = ""
-explicit = "yes"
+date = "2015-11-25T04:10:07-05:00"
+episode = "2"
+episode_image = "/img/episode/default.jpg"
+explicit = "no"
 guests = []
 images = ["https://www.arresteddevops.com/img/social/fb/friendly.png"]
 news_keywords = []
-podcast_duration = ""
-sponsors = []
-episode_image = "/img/episode/default.jpg"
-title = "Let's Talk Turkey"
-youtube = ""
+podcast_duration = "1:08:22"
 podcast_file = "arrested-devops-podcast-episode053.mp3"
+podcast_length = ""
+tags = []
+title = "Turkey Time"
+youtube = ""
 
 +++

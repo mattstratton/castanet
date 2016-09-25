@@ -1,19 +1,20 @@
 +++
-Description = "8-bit slow-carb mustache selfies distillery. Flexitarian keytar chicharrones, taxidermy occupy air plant listicle pork belly. Meditation whatever pabst kitsch, asymmetrical tbh single-origin coffee quinoa roof party. Cliche la croix distillery actually tousled. Church-key ugh tacos scenester succulents williamsburg chia, gochujang keytar. Poutine tumeric skateboard brooklyn. Mlkshk normcore edison bulb, paleo pour-over activated charcoal cold-pressed tumeric cliche."
-aliases = ["/8"]
+Description = "Learning curve MVP scrum project angel investor success facebook marketing user experience direct mailing. Incubator influencer facebook disruptive interaction design. Disruptive return on investment stealth technology growth hacking focus hypotheses angel investor advisor. Lean startup business model canvas twitter customer iPad social media assets. Focus crowdsource partner network. Termsheet disruptive series A financing MVP ramen analytics investor pivot buyer deployment partner network twitter business-to-consumer. Founders assets innovator customer creative paradigm shift beta niche market startup entrepreneur. Stealth direct mailing business-to-consumer A/B testing venture customer twitter partnership success influencer series A financing ecosystem. Validation startup pitch product management handshake direct mailing social proof low hanging fruit focus growth hacking bootstrapping. Business plan bandwidth beta growth hacking supply chain crowdfunding non-disclosure agreement traction focus business-to-consumer series A financing."
+aliases = ["/1"]
 author = "Matt"
 categories = []
-date = "2015-10-22T11:12:47-05:00"
-episode = ""
-explicit = "yes"
+date = "2015-10-25T04:10:04-05:00"
+episode = "1"
+episode_image = "/img/episode/default.jpg"
+explicit = "no"
 guests = []
 images = ["https://www.arresteddevops.com/img/social/fb/friendly.png"]
 news_keywords = []
-podcast_duration = ""
-sponsors = []
-episode_image = "/img/episode/default.jpg"
+podcast_duration = "1:08:22"
+podcast_file = "arrested-devops-podcast-episode053.mp3"
+podcast_length = ""
+tags = []
 title = "Did We Scare You?"
 youtube = ""
-podcast_file = "arrested-devops-podcast-episode053.mp3"
 
 +++

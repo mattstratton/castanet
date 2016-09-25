@@ -1,19 +1,20 @@
 +++
-Description = "8-bit slow-carb mustache selfies distillery. Flexitarian keytar chicharrones, taxidermy occupy air plant listicle pork belly. Meditation whatever pabst kitsch, asymmetrical tbh single-origin coffee quinoa roof party. Cliche la croix distillery actually tousled. Church-key ugh tacos scenester succulents williamsburg chia, gochujang keytar. Poutine tumeric skateboard brooklyn. Mlkshk normcore edison bulb, paleo pour-over activated charcoal cold-pressed tumeric cliche."
-aliases = ["/1"]
+Description = "Ownership churn rate influencer. Value proposition angel investor metrics learning curve. Social proof assets crowdsource infrastructure rockstar backing ownership supply chain. Growth hacking user experience research & development termsheet series A financing hackathon. Ramen release buyer infrastructure. Scrum project client buzz. Marketing social media bootstrapping technology paradigm shift prototype business model canvas graphical user interface direct mailing long tail stock MVP partnership freemium. Disruptive sales technology supply chain return on investment. Hypotheses lean startup validation funding network effects. Non-disclosure agreement business-to-business innovator research & development alpha focus founders entrepreneur analytics iteration funding return on investment business plan advisor."
+aliases = ["/4"]
 author = "Matt"
 categories = []
-date = "2016-01-22T11:12:14-05:00"
-episode = ""
-explicit = "yes"
+date = "2016-01-25T04:08:15-05:00"
+episode = "4"
+episode_image = "/img/episode/default.jpg"
+explicit = "no"
 guests = []
 images = ["https://www.arresteddevops.com/img/social/fb/friendly.png"]
 news_keywords = []
-podcast_duration = ""
-sponsors = []
-episode_image = "/img/episode/default.jpg"
+podcast_duration = "1:08:22"
+podcast_file = "arrested-devops-podcast-episode053.mp3"
+podcast_length = ""
+tags = []
 title = "Happy New Year"
 youtube = ""
-podcast_file = "arrested-devops-podcast-episode053.mp3"
 
 +++
