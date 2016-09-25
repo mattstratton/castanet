@@ -1,5 +1,13 @@
 # Change Log
 
+## [v.0.1.4](https://github.com/mattstratton/castanet/tree/v.0.1.4) (2016-09-25)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.3...v.0.1.4)
+
+**Implemented enhancements:**
+
+- add sample social image [\#17](https://github.com/mattstratton/castanet/issues/17)
+- Add guest support [\#16](https://github.com/mattstratton/castanet/issues/16)
+
 ## [v.0.1.3](https://github.com/mattstratton/castanet/tree/v.0.1.3) (2016-09-25)
 [Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.2...v.0.1.3)
 
