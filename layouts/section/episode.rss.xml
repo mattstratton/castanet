@@ -39,7 +39,7 @@
       <itunes:author> {{ .Site.Params.itunes_author }}</itunes:author>
       <itunes:summary>{{ .Description }}</itunes:summary>
       <description>{{ .Description }}</description>
-      <enclosure url="{{ .Params.podcast }}" length="{{ .Params.podcast_bytes}}" type="audio/mpeg" />
+      <enclosure url="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" length="{{ .Params.podcast_bytes}}" type="audio/mpeg" />
       <guid>{{ .Params.podcast }}</guid>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
