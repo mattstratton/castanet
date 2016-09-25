@@ -13,8 +13,8 @@
         {{ if (isset .Site.Params.social "twitter" )}}
           via: "{{ .Site.Params.social.twitter }}",       // custom twitter sharing param 'via' (optional)
         {{ end }}
-      }],
         url: "{{ .Params.permalink }}",
         text: "{{ title .Title }}"
+      }],
     });
 </script>
