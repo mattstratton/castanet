@@ -1,7 +1,21 @@
 # Change Log
 
+## [v.0.1.3](https://github.com/mattstratton/castanet/tree/v.0.1.3) (2016-09-25)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.2...v.0.1.3)
+
+**Implemented enhancements:**
+
+- Create template for episodes [\#11](https://github.com/mattstratton/castanet/issues/11)
+- Add "media\_override" to frontmatter option [\#4](https://github.com/mattstratton/castanet/issues/4)
+- Add podcast media prefix to config file [\#3](https://github.com/mattstratton/castanet/issues/3)
+- Create example site [\#1](https://github.com/mattstratton/castanet/issues/1)
+
+**Closed issues:**
+
+- add sharing feature to episode template [\#18](https://github.com/mattstratton/castanet/issues/18)
+
 ## [v.0.1.2](https://github.com/mattstratton/castanet/tree/v.0.1.2) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1.0...v.0.1.2)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.1...v.0.1.2)
 
 **Implemented enhancements:**
 
@@ -11,11 +25,11 @@
 
 - move default image into theme static image directory [\#13](https://github.com/mattstratton/castanet/issues/13)
 
-## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.1...v0.1.0)
-
 ## [v.0.1.1](https://github.com/mattstratton/castanet/tree/v.0.1.1) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1...v.0.1.1)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1.0...v.0.1.1)
+
+## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1...v0.1.0)
 
 ## [v0.1](https://github.com/mattstratton/castanet/tree/v0.1) (2016-09-25)
 **Merged pull requests:**
