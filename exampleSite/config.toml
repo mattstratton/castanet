@@ -1,4 +1,4 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://sample-castanet.netlify.com/"
 languageCode = "en-us"
 title = "HugoCast"
 theme = "castanet"
@@ -35,7 +35,7 @@ theme = "castanet"
     parent = "resources"
 
 [params]
-homepage = "https://hugocast.com" # must not end with a slash
+homepage = "http://sample-castanet.netlify.com" # must not end with a slash
 copyright_notice = "Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"
 itunes_subscribe = "http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"
 android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
