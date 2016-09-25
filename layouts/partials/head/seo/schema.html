@@ -4,7 +4,11 @@
 
 <!-- Output images -->
 {{ with .Params.images }}{{ range first 6 . }}
-	<meta itemprop="image" content="{{ . }}">
+  {{ if (eq (slicestr . 0 4) "http") }}
+	 <meta itemprop="image" content="{{ . }}">
+  {{ else }}
+    <meta itemprop="image" content="{{ $.Site.Params.homepage}}{{ . }}">
+  {{ end }}
 {{ end }}{{ end }}
 
 <!-- Output all taxonomies as schema.org keywords -->
