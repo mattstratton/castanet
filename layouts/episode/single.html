@@ -1,0 +1,57 @@
+{{ partial "header.html" . }}
+<div class="container middle_container">
+  <div class = "row">
+    <div class = "col-md-12">
+      <h1>{{ title .Title }}</h1>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-md-3">
+      <img src = "{{ .Params.episode_image }}" class="img-responsive episode_image" />
+    </div>
+    <div class = "row">
+      <div class = "col-md-8">
+        {{ .Description | markdownify }}
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-12">
+        <audio controls>
+          <source src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" type="audio/mpeg" />
+          <a href="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}}">{{ .Title }}</a>
+        </audio>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-12">
+      <h2>Show Notes</h2>
+      {{ .Content }}
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-12">
+      <div id="share"></div>
+    </div>
+  </div>
+  <div class = "row"> <!-- pager begin -->
+    <div class = "col-md-12">
+      <nav>
+        <ul class="pager">
+          {{ if .PrevInSection }}
+            <li class="previous"><a href="{{.PrevInSection.Permalink}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+          {{ else }}
+            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+          {{ end }}
+          {{ if .NextInSection }}
+            <li class="next"><a href="{{.NextInSection.Permalink}}">Next <span aria-hidden="true">&rarr;</span></a></li>
+          {{ else }}
+            <li class="next disabled"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </div><!-- pager end -->
+</div> <!-- end main container -->
+{{ partial "footer.html" . }}

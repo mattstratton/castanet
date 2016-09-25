@@ -3,3 +3,11 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/bootstrap3_player.js"></script>
+<script src="/js/jssocials.min.js"></script>
+<script>
+    $("#share").jsSocials({
+        shares: ["twitter", "facebook", "linkedin", "pinterest"],
+        url: "{{ .Params.permalink }}",
+        text: "{{ title .Title }}"
+    });
+</script>

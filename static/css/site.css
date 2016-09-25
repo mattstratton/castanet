@@ -185,6 +185,9 @@
   text-align: left;
   padding: 0.5em 0;
 }
+.episode_image {
+  padding-bottom: 20px;
+}
 body {
   padding-top: 70px;
 }
