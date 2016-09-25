@@ -10,8 +10,7 @@ Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily 
 This Hugo theme features
 **TODO add stuff**
 
-**TODO Add screenshot**
-
+![Castanet screenshot](https://github.com/mattstratton/castanet/blob/master/images/screenshot-v01.png)
 
 ## Installation
 
