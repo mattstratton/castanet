@@ -7,31 +7,29 @@
       Latest Episode
       </h2>
 
-      {{ range first 1 .Data.Pages }}
-        {{ if eq .Type "episode"}}
-          <div class = "row homepage_episode_row">
-            <div class = "col-md-12">
-              <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
-              <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
-            </div>
+      {{ range first 1 (where .Data.Pages "Type" "episode") }}
+        <div class = "row homepage_episode_row">
+          <div class = "col-md-12">
+            <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+            <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
           </div>
-          <div class = "row homepage_episode_row">
-            <div class = "col-md-4">
-              <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image }}" />
-            </div>
-            <div class = "col-md-8">
-              <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
-            </div>
+        </div>
+        <div class = "row homepage_episode_row">
+          <div class = "col-md-4">
+            <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image }}" />
           </div>
-          <div class = "row">
-            <div class = "col-md-12">
-              <audio controls>
-                <source src="{{ .Params.podcast }}" type="audio/mpeg" />
-                <a href="{{ .Params.podcast }}">{{ .Title }}</a>
-              </audio>
-            </div>
+          <div class = "col-md-8">
+            <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
           </div>
-        {{ end }}
+        </div>
+        <div class = "row">
+          <div class = "col-md-12">
+            <audio controls>
+              <source src="{{ .Params.podcast }}" type="audio/mpeg" />
+              <a href="{{ .Params.podcast }}">{{ .Title }}</a>
+            </audio>
+          </div>
+        </div>
       {{ end }}
       </div>
     </div>
