@@ -9,8 +9,8 @@
      xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>{{ .Site.Title }}</title>
-    <atom:link href="{{ .Site.Params.homepage }}/episode/index.xml" rel="self" type="application/rss+xml" />
-    <link>{{ .Site.Params.homepage }}</link>
+    <atom:link href="{{ .Site.BaseURL }}/episode/index.xml" rel="self" type="application/rss+xml" />
+    <link>{{ .Site.BaseURL }}</link>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>

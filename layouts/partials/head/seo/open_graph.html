@@ -7,7 +7,7 @@
   {{ if (eq (slicestr . 0 4) "http") }}
 	 <meta property="og:image" content="{{ . }}" file= {{ slicestr . 0 4 }}/>
   {{ else }}
-    <meta property="og:image" content="{{ $.Site.Params.homepage}}{{ . }}" />
+    <meta property="og:image" content="{{ $.Site.BaseURL}}{{ . }}" />
   {{ end }}
 {{ end }}{{ end }}
 

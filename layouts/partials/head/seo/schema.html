@@ -7,7 +7,7 @@
   {{ if (eq (slicestr . 0 4) "http") }}
 	 <meta itemprop="image" content="{{ . }}">
   {{ else }}
-    <meta itemprop="image" content="{{ $.Site.Params.homepage}}{{ . }}">
+    <meta itemprop="image" content="{{ $.Site.BaseURL}}{{ . }}">
   {{ end }}
 {{ end }}{{ end }}
 
