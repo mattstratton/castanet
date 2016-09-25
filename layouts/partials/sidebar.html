@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row"><!-- subscribe begin -->
   <div class="col-md-12 sidebar_general">
     <div class = "row">
       <div class = "col-md-12">
@@ -32,13 +32,9 @@
       {{ end }}
     </div>
   </div>
-</div>
-<!--
-<div class = "row">
-  <div class = "col-md-12 sidebar_spacer">
-  </div>
-</div> -->
-{{ if (isset .Site.Params "itunes_subscribe") }}
+</div><!-- subscribe end -->
+
+{{ if (isset .Site.Params "mailchimp_subscribe") }} <!-- mailchimp begin -->
   <div class="row">
     <div class="col-md-12 sidebar_general">
       <div class = "row">
@@ -49,7 +45,7 @@
       <div class="row">
         <div class="col-md-12">
           <!-- Begin MailChimp Signup Form -->
-          <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+          <!-- <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"> -->
           <div id="mc_embed_signup">
           <form action="{{ .Site.Params.mailchimp_subscribe }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
               <div id="mc_embed_signup_scroll">
@@ -67,4 +63,23 @@
       </div>
     </div>
   </div>
-{{ end }}
+{{ end }}<!-- mailchimp end -->
+
+{{ if (isset .Site.Params "description") }} <!-- about begin -->
+  <div class="row">
+    <div class="col-md-12 sidebar_general">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="sidebar_headline text-uppercase">About {{ .Site.Params.title }}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="sidebar_content">
+            {{ .Site.Params.description | markdownify }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }} <!-- end about -->
