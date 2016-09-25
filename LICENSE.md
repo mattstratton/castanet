@@ -30,3 +30,6 @@ http://fontawesome.io/license/
 
 This project includes bootstrap3_player, which is available under an 'Apache2' License.
 For details, see: https://github.com/iainhouston/bootstrap3_player/blob/master/LICENSE
+
+This project includes jssocials, which is available under a 'MIT' License.
+For details, see https://github.com/tabalinas/jssocials/blob/master/LICENSE
