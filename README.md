@@ -32,7 +32,7 @@ After installing Castanet successfully it requires a just a few more steps to ge
 You will need to add a handful of configuration items to your `config.toml` file. You can take a look at the [example site](http://github.com/mattstratton/castanet/blahblahblah) to see them in action. They are described below:
 
 - `[params]`
-  - `homepage` - the fully qualified domain name of your homepage. This is different than the `BaseURL` setting, as it must be externally available for feed readers, and others. This must NOT end with a slash. Example: `"https://www.mattstratton.com"`
+  - ~`homepage` - the fully qualified domain name of your homepage. This is different than the `BaseURL` setting, as it must be externally available for feed readers, and others. This must NOT end with a slash. Example: `"https://www.mattstratton.com"`~
   - `copyright_notice` - Your copyright information for the footer of the page. Can contain Markdown. Example: `"Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"`
   - `itunes_subscribe` - The URL of your podcast in the iTunes store. Optional. Example: `"http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"`
   - `android_subscribe` - The URL for your podcast for Android users. You can generate this URL at [Subscribe on Android](https://subscribeonandroid.com). Optional. Example: ``"http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"``
@@ -62,7 +62,7 @@ You will need to add a handful of configuration items to your `config.toml` file
     - `pinterest` - Optional. Example: `"nozzleio"`
     - `instagram` - Optional. Example: `"nozzleio"`
     - `youtube` - Name of the YouTube channel. Optional. Example: `"arresteddevops"`
-    - `linkedin` -LinkedIn profile name. Optional. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. Example: `"mattstratton"`
+    - `linkedin` - LinkedIn profile name. Optional. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. Example: `"mattstratton"`
 
   - `[params.authors]` - you can have multiple authors avaialable; just make more of each
     - `[params.authors.USERNAME]` - replace `USERNAME` with an author name. Example: `[params.authors.matt]`
@@ -75,6 +75,10 @@ You will need to add a handful of configuration items to your `config.toml` file
         - `twitter` - Example: `mattstratton`
         - `linkedin` - Example: `"mattstratton"`
 
+#### A note about `BaseURL`
+
+This theme is fairly dependent upon a proper `BaseURL` being set in the `config.toml`. This has to do with how the feed is generated as well as some of the social metadata (these things cannot be relative URL's). I'm fully aware that this can cause issues with some build systems, and I'm trying to work on a good solution for this.
+
 
 #### Permalinks
 
@@ -86,3 +90,42 @@ I recommend the following permalink settings, although the theme will work just 
 	about = "/:filename/"
 	episode = "/:filename/"
 ```
+
+### Guests
+
+If you don't have guests on your episodes, feel free to ignore this section.
+
+#### Guest data files
+
+Every guest on your show needs a corresponding data file in the `data/guests` directory of your site. Generally speaking, you should be able to name these however you like, but I have only tested it with the format `firstinitiallastname.yml`, i.e., for "John Doe" the file would be `jdoe.yml`.
+
+A guest file takes the following structure:
+
+```
+name: jdoe
+full_name: "John Doe"
+thumbnail: "/img/guest/jdoe.jpg"
+bio: "Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas."
+homepage: "http://www.google.com"
+github: "johndoe"
+facebook: "johndoe"
+twitter: "johndoe"
+linkedin: "johndoe"
+```
+
+(See the example site for, well, examples)
+
+- `name` - This MUST match the name you will refer to the guest as in your frontmatter. Ideally it is the same name as the file. Again, I prefer first initial lastname format. Required.
+- `full_name` - The full name of the guest. This is what is displayed on the episode page, etc. Required.
+- `thumbnail` - The image for the guest. This image must be 500 px x 500 px. You can either enter a value relative to your `BaseURL`, or a fully qualified URL. If you want to use the default, set this to `""`. Optional. If left blank, or not existent, a default image will be provided. You can replace this default image by putting a new 500 px x 500 px PNG image at `/static/img/guest/default-guest.png` in your site (not in the theme!)
+- `bio` - The bio of your guest. You can use Markdown in here. If you use quotes, make sure to escape them. Required.
+- `homepage` - Optional.
+- `github` - Guest's GitHub username. Optional.
+- `facebook` - Guest's Facebook username. Example: `matt.stratton`. Do not use the full URL. Optional.
+- `twitter` - Guest's Twitter username, without the `@`. Optional.
+- `linkedin` - LinkedIn profile name. Optional. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. Example: `"mattstratton"`
+
+
+#### Frontmatter
+
+If your episode has guests, populate the `guests[]` array with a comma-separated list of their names. For example, `["jdoe", "msmith", "gbluth"]`. If there is only one guest, no comma is needed.
