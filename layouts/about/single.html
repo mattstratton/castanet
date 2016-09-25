@@ -1,0 +1,62 @@
+{{ partial "header.html" . }}
+<div class="container middle_container">
+  <div class = "row">
+    <div class = "col-md-12">
+      <h1>About {{ .Site.Title }}</h1>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-3">
+      <img src = "/img/hugocast-logo.png" width = "250px"/>
+    </div>
+    <div class = "col-md-6">
+      {{ .Site.Params.description | markdownify }}
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-md-12">
+      {{ .Content}}
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col-md-12">
+      <h2>Hosts</h2>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-12">
+
+    {{ range $p:= $.Site.Params.authors }}
+    <div class="row">
+      <div class="col-md-3">
+        <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail }}" class="img-responsive">
+      </div>
+      <div class= "col-md-6">
+      <h3>{{ $p.name }}</h3>
+      {{ if isset $p "bio" }}
+        <p>{{ $p.bio | markdownify }}</p>
+      {{ end }}
+      {{ if isset $p.social "homepage" }}
+        <a href = "{{ $p.social.homepage}}"><i class="fa fa-home fa-2x"></i></a>
+      {{ end }}
+      {{ if isset $p.social "twitter" }}
+        <a href = "https://twitter.com/{{ $p.social.twitter }}"><i class="fa fa-twitter-square fa-2x"></i></a>
+      {{ end }}
+      {{ if isset $p.social "github"}}
+        <a href = "https://github.com/{{ $p.social.github}}"><i class="fa fa-github-square fa-2x"></i></a>
+      {{ end }}
+      {{ if isset $p.social "linkedin" }}
+        <a href = "{{ $p.social.linkedin}}"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      {{ end }}
+      {{ if isset $p.social "facebook" }}
+        <a href = "{{ $p.social.facebook}}"><i class="fa fa-facebook-square fa-2x"></i></a>
+      {{ end }}
+    </div>
+    </div>
+    {{ end }}
+  </div>
+  </div>
+</div>
+{{ partial "footer.html" . }}
