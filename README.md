@@ -35,7 +35,7 @@ You will need to add a handful of configuration items to your `config.toml` file
 - `disqusShortname` - the shortname for use in Disqus comments. Example: `"arresteddevops"`. Note: The Disqus comments will not appear if you are running on `localhost`.
 
 - `[params]`
-  - ~`homepage` - the fully qualified domain name of your homepage. This is different than the `BaseURL` setting, as it must be externally available for feed readers, and others. This must NOT end with a slash. Example: `"https://www.mattstratton.com"`~
+  - `about_logo` - the logo (250px x 250px) you would like to appear on your About page. Optional. If not set, this will default to your iTunes image.
   - `copyright_notice` - Your copyright information for the footer of the page. Can contain Markdown. Example: `"Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"`
   - `itunes_subscribe` - The URL of your podcast in the iTunes store. Optional. Example: `"http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"`
   - `android_subscribe` - The URL for your podcast for Android users. You can generate this URL at [Subscribe on Android](https://subscribeonandroid.com). Optional. Example: ``"http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"``
