@@ -29,9 +29,10 @@ After installing Castanet successfully it requires a just a few more steps to ge
 
 ### The config file
 
-You will need to add a handful of configuration items to your `config.toml` file. You can take a look at the [example site](http://github.com/mattstratton/castanet/blahblahblah) to see them in action. They are described below:
+You will need to add a handful of configuration items to your `config.toml` file. You can take a look at the [example site](https://github.com/mattstratton/castanet/blob/master/exampleSite/config.toml) to see them in action. They are described below:
 
 - `googleAnalytics` - the Google Analytics tracking ID. We use the async method. Example: `"UA-123-45"`
+- `disqusShortname` - the shortname for use in Disqus comments. Example: `"arresteddevops"`. Note: The Disqus comments will not appear if you are running on `localhost`.
 
 - `[params]`
   - ~`homepage` - the fully qualified domain name of your homepage. This is different than the `BaseURL` setting, as it must be externally available for feed readers, and others. This must NOT end with a slash. Example: `"https://www.mattstratton.com"`~
