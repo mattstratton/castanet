@@ -37,7 +37,15 @@
 {{ end }}
 <meta property="article:publisher" content="https://www.facebook.com/{{ .Site.Params.social.facebook }}" />
 {{if .IsPage}}
-<meta property="article:published_time" content="{{ .PublishDate }}" />
+  {{ if isset .Params "PublishDate" }}
+    {{ if ne .PublishDate "" }}
+      <meta property="article:published_time" content="{{ .PublishDate }}" />
+    {{ else }}
+      <meta property="article:published_time" content="{{ .Date }}" />
+    {{ end }}
+  {{ else }}
+    <meta property="article:published_time" content="{{ .Date }}" />
+  {{ end }}
 {{ end }}
 <meta property="article:modified_time" content="{{ .Date }}" />
 <meta property="article:section" content="{{ .Section }}" />
