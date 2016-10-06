@@ -31,6 +31,8 @@ After installing Castanet successfully it requires a just a few more steps to ge
 
 You will need to add a handful of configuration items to your `config.toml` file. You can take a look at the [example site](http://github.com/mattstratton/castanet/blahblahblah) to see them in action. They are described below:
 
+- `googleAnalytics` - the Google Analytics tracking ID. We use the async method. Example: `"UA-123-45"`
+
 - `[params]`
   - ~`homepage` - the fully qualified domain name of your homepage. This is different than the `BaseURL` setting, as it must be externally available for feed readers, and others. This must NOT end with a slash. Example: `"https://www.mattstratton.com"`~
   - `copyright_notice` - Your copyright information for the footer of the page. Can contain Markdown. Example: `"Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"`

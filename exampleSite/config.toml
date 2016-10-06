@@ -2,6 +2,7 @@ baseurl = "http://sample-castanet.netlify.com/"
 languageCode = "en-us"
 title = "HugoCast"
 theme = "castanet"
+googleAnalytics = "UA-123-45"
 
 [permalinks]
 	# page = "/:filename/"
