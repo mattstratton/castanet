@@ -1,5 +1,20 @@
 # Change Log
 
+## [v.0.2.0](https://github.com/mattstratton/castanet/tree/v.0.2.0) (2016-10-06)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.4...v.0.2.0)
+
+**Implemented enhancements:**
+
+- add google analytics support [\#21](https://github.com/mattstratton/castanet/issues/21)
+- add disqus support [\#20](https://github.com/mattstratton/castanet/issues/20)
+
+**Fixed bugs:**
+
+- fix meta tag for published time [\#31](https://github.com/mattstratton/castanet/issues/31)
+- sharing buttons don't work [\#25](https://github.com/mattstratton/castanet/issues/25)
+- remove reference to hugocast logo [\#24](https://github.com/mattstratton/castanet/issues/24)
+- change to use BaseURL [\#22](https://github.com/mattstratton/castanet/issues/22)
+
 ## [v.0.1.4](https://github.com/mattstratton/castanet/tree/v.0.1.4) (2016-09-25)
 [Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.3...v.0.1.4)
 
