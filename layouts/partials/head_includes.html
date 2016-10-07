@@ -1,6 +1,10 @@
 <!-- Bootstrap -->
-<link href="{{ .Site.BaseURL }}css/site.css" rel="stylesheet">
 <link href="{{ .Site.BaseURL }}css/bootstrap.css" rel="stylesheet">
+{{ if isset $.Site.Params "site_theme"}}
+<link href="{{ .Site.BaseURL }}css/{{ $.Site.Params.site_theme}}.css" rel="stylesheet">
+{{ else }}
+<link href="{{ .Site.BaseURL }}css/orange.css" rel="stylesheet">
+{{ end }}
 <link href="{{ .Site.BaseURL }}font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link href="{{ .Site.BaseURL }}css/bootstrap3_player.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">

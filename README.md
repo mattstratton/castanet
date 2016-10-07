@@ -35,6 +35,7 @@ You will need to add a handful of configuration items to your `config.toml` file
 - `disqusShortname` - the shortname for use in Disqus comments. Example: `"arresteddevops"`. Note: The Disqus comments will not appear if you are running on `localhost`.
 
 - `[params]`
+  - `site_theme` - the color scheme for the overall site. Currently the two options are `orange` and `blue`. Optional. Example: `"blue"`. Defaults to the `orange` theme if not set.
   - `about_logo` - the logo (250px x 250px) you would like to appear on your About page. Optional. If not set, this will default to your iTunes image.
   - `copyright_notice` - Your copyright information for the footer of the page. Can contain Markdown. Example: `"Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"`
   - `itunes_subscribe` - The URL of your podcast in the iTunes store. Optional. Example: `"http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"`
