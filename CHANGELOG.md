@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.2.5](https://github.com/mattstratton/castanet/tree/v0.2.5) (2017-02-11)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.2.4...v0.2.5)
+
+**Closed issues:**
+
+- Missing navbar items when testing included example site [\#36](https://github.com/mattstratton/castanet/issues/36)
+
+**Merged pull requests:**
+
+- Fix missing menu items in navigation bar [\#37](https://github.com/mattstratton/castanet/pull/37) ([thercast](https://github.com/thercast))
+
 ## [v.0.2.1](https://github.com/mattstratton/castanet/tree/v.0.2.1) (2017-02-11)
 [Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.2.0...v.0.2.1)
 
@@ -46,7 +57,7 @@
 - add sharing feature to episode template [\#18](https://github.com/mattstratton/castanet/issues/18)
 
 ## [v.0.1.2](https://github.com/mattstratton/castanet/tree/v.0.1.2) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1.0...v.0.1.2)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.1...v.0.1.2)
 
 **Implemented enhancements:**
 
@@ -56,11 +67,11 @@
 
 - move default image into theme static image directory [\#13](https://github.com/mattstratton/castanet/issues/13)
 
-## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.1...v0.1.0)
-
 ## [v.0.1.1](https://github.com/mattstratton/castanet/tree/v.0.1.1) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1...v.0.1.1)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1.0...v.0.1.1)
+
+## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1...v0.1.0)
 
 ## [v0.1](https://github.com/mattstratton/castanet/tree/v0.1) (2016-09-25)
 **Merged pull requests:**
