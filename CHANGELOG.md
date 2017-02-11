@@ -1,5 +1,13 @@
 # Change Log
 
+## [v.0.2.1](https://github.com/mattstratton/castanet/tree/v.0.2.1) (2017-02-11)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.2.0...v.0.2.1)
+
+**Implemented enhancements:**
+
+- refactor to the block/base layout [\#35](https://github.com/mattstratton/castanet/issues/35)
+- add support for other color schemes [\#27](https://github.com/mattstratton/castanet/issues/27)
+
 ## [v.0.2.0](https://github.com/mattstratton/castanet/tree/v.0.2.0) (2016-10-06)
 [Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.4...v.0.2.0)
 
@@ -38,7 +46,7 @@
 - add sharing feature to episode template [\#18](https://github.com/mattstratton/castanet/issues/18)
 
 ## [v.0.1.2](https://github.com/mattstratton/castanet/tree/v.0.1.2) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.1...v.0.1.2)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1.0...v.0.1.2)
 
 **Implemented enhancements:**
 
@@ -48,11 +56,11 @@
 
 - move default image into theme static image directory [\#13](https://github.com/mattstratton/castanet/issues/13)
 
-## [v.0.1.1](https://github.com/mattstratton/castanet/tree/v.0.1.1) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1.0...v.0.1.1)
-
 ## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1...v0.1.0)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v.0.1.1...v0.1.0)
+
+## [v.0.1.1](https://github.com/mattstratton/castanet/tree/v.0.1.1) (2016-09-25)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.1...v.0.1.1)
 
 ## [v0.1](https://github.com/mattstratton/castanet/tree/v0.1) (2016-09-25)
 **Merged pull requests:**
