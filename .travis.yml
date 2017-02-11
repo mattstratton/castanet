@@ -22,6 +22,7 @@ before_deploy:
 
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: gFPaL1LdTPwp/Mi76ZMgTZ9HVIuvfISvT9ufZMsjc5sK5jUwj4/7F+5ufNRoTicdZQv69ZectndpP/uSKeI9bnQx/g2OqbDH8vRopP7LKs0v9Z6TZ7jiS85ZGOfgMKVQaPIKcBqj9MaqzVAs6pl3A+SaVWP19YwS8XxovFXhh5+qAlc5Dnd+XCf6USto/iNIuVLbmW6hdeYOcMFjuhC3yZlcqxKbb2LJ+kOfsXlBhwkGEWACCwRuGNNuwG0yXByW4PvmCkK7CNDK5GiMNFmWRe2Be321lFU7s4aG5JNabzxkv+jvjXD4sW/50IjMSJVwH0S6h43EszzImZA3k+Aot69WcOQOEsruw0+9TufkDJDaUJg+m1YUz0clxADVaJ09S+msxRp2UKIa/ymF/wpZfXkmZNbgfaDlEyKlF2ddS3YmqZ1kjS4WpokyiGj3/u3wVaQ9O8Z/UhWWzX6QBbl+XurOTqopvnWyg8FSx/UWQgVf8XzE29hLFUXR5nCfzCIlqwShnWSoxR+rFUJDVf3Vxohk9Q3Q1LoXHBYuZQR6e+DYTWwLZo8ikIg/n4a/6LYg9A4dh88cZHtNuI7zWbmK0XQQNwBr6wfZtSalFE/usDsEnE9WgQdMo9CK8BJhHTljU3K0Ddgj+6PN2l8AiST5f+GnlxKq/YDg+eXXBjhz18I=
   file: 'release/castanet-$TRAVIS_TAG.zip'
