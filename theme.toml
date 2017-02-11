@@ -8,7 +8,8 @@ description = ""
 homepage = "http://siteforthistheme.com/"
 tags = ["", ""]
 features = ["", ""]
-min_version = 0.16
+min_version = 0.18
+theme_version = 0.2.1
 
 [author]
   name = "Matt Stratton"
