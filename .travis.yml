@@ -11,8 +11,8 @@ before_script:
 - cd exampleSite
 
 script:
-# - "$TRAVIS_BUILD_DIR/bin/hugo version"
-# - "$TRAVIS_BUILD_DIR/bin/hugo"
+- "$TRAVIS_BUILD_DIR/bin/hugo version"
+- "$TRAVIS_BUILD_DIR/bin/hugo"
 
 
 before_deploy:
