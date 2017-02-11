@@ -4,6 +4,8 @@ title = "HugoCast"
 theme = "castanet"
 googleAnalytics = "UA-123-45"
 disqusShortname = "arresteddevops"
+themesdir = "../.."
+
 
 [permalinks]
 	# page = "/:filename/"
