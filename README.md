@@ -14,10 +14,8 @@ An example site can be found at http://sample-castanet.netlify.com/
 
 ## Installation
 
-Inside the folder of your Hugo site run:
+Download the latest version (zip file, not source code) from the [Releases](https://github.com/mattstratton/castanet/releases) page.
 
-    $ cd themes
-    $ git clone https://github.com/mattstratton/castanet
 
 For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
