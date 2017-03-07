@@ -10,3 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
 <link href="{{ .Site.BaseURL }}css/jssocials.css" rel="stylesheet" type="text/css" />
 <link href="{{ .Site.BaseURL }}css/jssocials-theme-plain.css" rel="stylesheet" type="text/css" />
+<!-- Custom CSS -->
+{{ range .Site.Params.custom_css }}
+    <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+{{ end }}
