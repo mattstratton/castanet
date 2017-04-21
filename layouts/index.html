@@ -35,8 +35,11 @@
 
   <!-- rest of episodes -->
 
+{{ $list := (where .Data.Pages "Type" "episode") }}
+{{ $len := (len $list)}}
 	<div class="row main_container">
 		<div class="col-md-8">
+    {{ if gt $len 1 }}
       {{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 }}
 				{{ range $paginator.Pages }}
           <div class = "row homepage_episode_row">
@@ -63,6 +66,7 @@
           </div>
 
         {{ end }}
+      {{ end }}
 		</div>
     <div class="col-md-4 sidebar_col">
       {{ partial "sidebar.html" . }}
