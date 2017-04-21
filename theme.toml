@@ -5,11 +5,11 @@ name = "Castanet"
 license = "MIT"
 licenselink = "https://github.com/mattstratton/castanet/blob/master/LICENSE.md"
 description = ""
-homepage = "http://siteforthistheme.com/"
+homepage = "https://github.com/mattstratton/castanet"
 tags = ["", ""]
 features = ["", ""]
-min_version = 0.18
-theme_version = 0.2.5
+min_version = 0.19
+theme_version = 0.2.6
 
 [author]
   name = "Matt Stratton"
