@@ -1,4 +1,3 @@
 ln -s /opt/build/repo /opt/build/castanet
 cd exampleSite
-../bin/hugo version
-../bin/hugo --theme=castanet --buildDrafts=false --baseURL=$URL
+hugo_0.19 --theme=castanet --buildDrafts=false --baseURL="$DEPLOY_PRIME_URL"
