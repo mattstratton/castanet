@@ -192,6 +192,11 @@
   padding-bottom: 20px;
 }
 
+.player_row {
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
 body {
     padding-top: 70px;
     background-color: $body-bg;
@@ -250,8 +255,11 @@ a {
   }
 }
 
+
 // audio player
+
 .audiojs {
+
     height: 22px;
     margin-left: auto;
     margin-right: auto;
@@ -280,8 +288,8 @@ a {
 .audiojs .scrubber {
     background: #fff;
     width: 310px;
-    height: 10px;
-    margin: 5px;
+    // height: 10px;
+    // margin: 5px;
 }
 
 .audiojs .progress {
@@ -331,4 +339,54 @@ a {
 .track-details em {
     font-style: normal;
     color: #999;
+}
+
+.audiojs {
+    display: table;
+    width: 100%;
+    height: 34px;
+
+    .play-pause, .scrubber, .time {
+        display: table-cell;
+        float: none;
+        height: auto;
+        vertical-align: middle;
+    }
+
+    .play-pause {
+        padding: 0 6px;
+
+        > p {
+            margin: 0;
+            padding: 0;
+            height: 26px;
+        }
+    }
+
+    .scrubber {
+        width: 99%;
+        margin: 0;
+        padding: 0;
+
+        > div {
+            position: relative;
+            margin: 0;
+
+            &.progress {
+                z-index: 2;
+            }
+
+            &.loaded {
+                margin-top: -14px;
+                z-index: 1;
+            }
+        }
+    }
+
+    .time {
+        line-height: normal;
+        margin: 0;
+        padding: 0 12px;
+        width: auto;
+    }
 }

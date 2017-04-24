@@ -7535,6 +7535,22 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/static\/js\/player-graphics.gif": {
+		"ft": 4194304,
+		"iS": 4499,
+		"oA": 0,
+		"oAP": "\/static\/js\/player-graphics.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/static\/js\/player-graphics@2x.gif": {
+		"ft": 4194304,
+		"iS": 4499,
+		"oA": 0,
+		"oAP": "\/static\/js\/player-graphics@2x.gif",
+		"oF": 0,
+		"opt": 0
+		},
 	"\/static\/orange.less": {
 		"aP": 0,
 		"bl": 0,

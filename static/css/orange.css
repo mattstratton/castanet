@@ -6,7 +6,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-@import url(bootstrap3_player.css);
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -8602,6 +8601,10 @@ img.jssocials-share-logo {
 .episode_image {
   padding-bottom: 20px; }
 
+.player_row {
+  padding-bottom: 15px;
+  padding-top: 15px; }
+
 body {
   padding-top: 70px;
   background-color: #e09543; }
@@ -8665,9 +8668,7 @@ a {
 
 .audiojs .scrubber {
   background: #fff;
-  width: 310px;
-  height: 10px;
-  margin: 5px; }
+  width: 310px; }
 
 .audiojs .progress {
   height: 10px;
@@ -8710,3 +8711,36 @@ a {
 .track-details em {
   font-style: normal;
   color: #999; }
+
+.audiojs {
+  display: table;
+  width: 100%;
+  height: 34px; }
+  .audiojs .play-pause, .audiojs .scrubber, .audiojs .time {
+    display: table-cell;
+    float: none;
+    height: auto;
+    vertical-align: middle; }
+  .audiojs .play-pause {
+    padding: 0 6px; }
+    .audiojs .play-pause > p {
+      margin: 0;
+      padding: 0;
+      height: 26px; }
+  .audiojs .scrubber {
+    width: 99%;
+    margin: 0;
+    padding: 0; }
+    .audiojs .scrubber > div {
+      position: relative;
+      margin: 0; }
+      .audiojs .scrubber > div.progress {
+        z-index: 2; }
+      .audiojs .scrubber > div.loaded {
+        margin-top: -14px;
+        z-index: 1; }
+  .audiojs .time {
+    line-height: normal;
+    margin: 0;
+    padding: 0 12px;
+    width: auto; }

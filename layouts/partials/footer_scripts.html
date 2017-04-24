@@ -13,4 +13,13 @@
       }],
     });
 </script>
+<script>
+audiojs.events.ready(function() {
+  var as = audiojs.createAll({
+    imageLocation: '/img/player-graphics.gif',
+    retinaImageLocation: '/img/player-graphics@2x.gif',
+    swfLocation: '/swf/audiojs.swf'
+   });
+ });
+</script>
 {{ template "_internal/google_analytics_async.html" . }}

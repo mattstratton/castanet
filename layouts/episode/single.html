@@ -8,7 +8,7 @@
 
   <div class = "row">
     <div class = "col-md-3">
-      <img src = "{{ .Params.episode_image }}" class="img-responsive episode_image" />
+      <img src = "{{ .Params.episode_image }}" class="img-fluid episode_image" />
     </div>
     <div class = "row">
       <div class = "col-md-8">
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class = "row">
-      <div class = "col-md-12">
+      <div class = "col-md-12 player_row">
         <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto" />
       </div>
     </div>
@@ -88,16 +88,16 @@
   <div class = "row"> <!-- pager begin -->
     <div class = "col-md-12">
       <nav>
-        <ul class="pager">
+        <ul class="pagination">
           {{ if .PrevInSection }}
-            <li class="previous"><a href="{{.PrevInSection.Permalink}}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+            <li class="page-item"><a href="{{.PrevInSection.Permalink}}" class="page-link"><span aria-hidden="true">&larr;</span> Previous</a></li>
           {{ else }}
-            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Previous</a></li>
+            <li class="page-item disabled"><a href="#" class="page-link"><span aria-hidden="true">&larr;</span> Previous</a></li>
           {{ end }}
           {{ if .NextInSection }}
-            <li class="next"><a href="{{.NextInSection.Permalink}}">Next <span aria-hidden="true">&rarr;</span></a></li>
+            <li class="page-item"><a href="{{.NextInSection.Permalink}}" class="page-link">Next <span aria-hidden="true">&rarr;</span></a></li>
           {{ else }}
-            <li class="next disabled"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+            <li class="page-item disabled"><a href="#" class="page-link">Next <span aria-hidden="true">&rarr;</span></a></li>
           {{ end }}
         </ul>
       </nav>
