@@ -4,9 +4,9 @@
 // @codekit-prepend '../../bower_components/jssocials/dist/jssocials.js'
 // @codekit-prepend '../../bower_components/audiojs/audiojs/audio.js'
 
-audiojs.events.ready(function() { 
+audiojs.events.ready(function() {
   var as = audiojs.createAll({
-    imageLocation: '/images/player-graphics.gif',
+    imageLocation: '/img/player-graphics.gif',
     swfLocation: '/swf/audiojs.swf'
    });
  });
