@@ -35,7 +35,8 @@
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "jssocials": "^1.4.0",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "audiojs": "^1.0.1"
   },
   "resolutions": {
     "bootstrap": "4.0.0-alpha.6"

@@ -6,6 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+@import url(bootstrap3_player.css);
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -8638,3 +8639,74 @@ a {
   color: #636c72;
   background-color: #fff;
   border-color: #ddd; }
+
+.audiojs {
+  height: 22px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  background: #404040;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444));
+  background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%);
+  -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); }
+
+.audiojs .play-pause {
+  width: 20px;
+  height: 20px;
+  padding: 0 8px 0 0; }
+
+.audiojs p {
+  width: 25px;
+  height: 20px;
+  margin: -3px 0 0 -1px; }
+
+.audiojs .scrubber {
+  background: #fff;
+  width: 310px;
+  height: 10px;
+  margin: 5px; }
+
+.audiojs .progress {
+  height: 10px;
+  width: 0;
+  background: #ccc;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));
+  background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%); }
+
+.audiojs .loaded {
+  height: 10px;
+  background: #000;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));
+  background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%); }
+
+.audiojs .time {
+  float: right;
+  height: 25px;
+  line-height: 25px; }
+
+.audiojs .error-message {
+  height: 24px;
+  line-height: 24px; }
+
+.track-details {
+  clear: both;
+  height: 20px;
+  width: 448px;
+  padding: 1px 6px;
+  background: #eee;
+  color: #222;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 20px;
+  -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.15); }
+
+.track-details:before {
+  content: '♬ '; }
+
+.track-details em {
+  font-style: normal;
+  color: #999; }
