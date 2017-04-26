@@ -6,7 +6,10 @@
 }
 .subscribe_buttons {
   > a {
-    color: white
+    color: black;
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   > div {
     padding-top: 2px;
