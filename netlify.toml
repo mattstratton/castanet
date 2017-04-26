@@ -4,7 +4,7 @@
 #  command = "bin/netlify.sh"
 # publish = "exampleSite/public"
    command = "bin/netlify-production.sh"
-   publish = "exampleSite/dist/"
+   publish = "exampleSite/public/"
 
 # Deploy Preview context: All Deploy Previews
 # will inherit these settings.
