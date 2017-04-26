@@ -22,6 +22,7 @@
 }
 .homepage_episode_row {
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 .sidebar_general {
     background-color: $castanet-sidebar-bg;
@@ -44,6 +45,7 @@
 .hero_container {
     padding-left: 0;
     padding-right: 0;
+    padding-top: 20px;
 }
 .main_container {
     background-color: $castanet-main-container-bg;
@@ -247,7 +249,7 @@ a {
     &:focus {
       color: $pagination-active-color;
       background-color: $pagination-active-bg !important;
-      border-color: $pagination-active-border !important; 
+      border-color: $pagination-active-border !important;
     }
   }
 
