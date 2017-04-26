@@ -9,6 +9,8 @@ You can see progress on tasks at http://waffle.io/mattstratton/castanet
 
 [![Throughput Graph](https://graphs.waffle.io/mattstratton/castanet/throughput.svg)](https://waffle.io/devopsdays/devopsdays-web/metrics)
 
+If you would like to receive emails when new versions of this theme are released, [subscribe to the announcement email list](http://eepurl.com/cMAJcL).
+
 # Castanet
 
 Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton).
