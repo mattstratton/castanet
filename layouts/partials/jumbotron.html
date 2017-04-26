@@ -1,0 +1,49 @@
+<div class="container-fluid grid_container">
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col">
+            <p>
+                {{ .Site.Params.description | markdownify }}
+              </p>
+        </div>
+
+        {{ range $p:= $.Site.Params.authors }}
+        <div class="col-lg-2">
+            <img alt="{{ $p.name }}" src="{{ $p.thumbnail }}" class="img-center rounded-circle img-fluid jumbotron-host">
+            <p class="text-center text-capitalize">{{ $p.name }}</p>
+        </div>
+        {{ end }}
+
+    </div>
+
+
+    <div class = "row">
+    {{ if (isset .Site.Params "itunes_subscribe") }}
+      <div class = "col subscribe_buttons col-md-auto">
+        <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-apple"></i>&nbsp;iTunes</a>
+      </div>
+    {{ end }}
+    {{ if (isset .Site.Params "android_subscribe") }}
+      <div class = "col subscribe_buttons col-md-auto">
+        <a class="btn btn-default subscribe_buttons" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Android</a>
+      </div>
+    {{ end }}
+    {{ if (isset .Site.Params "google_play_subscribe") }}
+      <div class = "col subscribe_buttons col-md-auto">
+        <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fa fa-music"></i>&nbsp;Google Play Music</a>
+      </div>
+    {{ end }}
+    {{ if (isset .Site.Params "rss_subscribe" )}}
+      <div class = "col subscribe_buttons col-md-auto">
+        <a class="btn btn-default" href="{{ .Site.params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
+      </div>
+    {{ else }}
+      <div class = "col subscribe_buttons">
+        <a class="btn btn-default" href="/episode/index.xml"><i class="fa fa-rss"></i>&nbsp;Subscribe via RSS</a>
+      </div>
+    {{ end }}
+
+
+</div>
+</div>

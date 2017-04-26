@@ -7174,6 +7174,12 @@
 		"oAP": "\/layouts\/partials\/google-analytics.html",
 		"oF": 0
 		},
+	"\/layouts\/partials\/grid.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/partials\/grid.html",
+		"oF": 0
+		},
 	"\/layouts\/partials\/head.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -7222,10 +7228,22 @@
 		"oAP": "\/layouts\/partials\/header.html",
 		"oF": 0
 		},
+	"\/layouts\/partials\/jumbotron.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/partials\/jumbotron.html",
+		"oF": 0
+		},
 	"\/layouts\/partials\/meta.html": {
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/layouts\/partials\/meta.html",
+		"oF": 0
+		},
+	"\/layouts\/partials\/row.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/partials\/row.html",
 		"oF": 0
 		},
 	"\/layouts\/partials\/sidebar.html": {

@@ -40,6 +40,7 @@ themesdir = "../.."
 
 [params]
 site_theme = "blue"
+site_layout = "grid"
 # about_logo = "/img/hugocast.png"
 copyright_notice = "Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"
 itunes_subscribe = "http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"
