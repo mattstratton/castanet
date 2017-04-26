@@ -298,7 +298,7 @@ a {
 }
 
 .audiojs .progress {
-    height: 10px;
+    height: 100%;
     width: 0;
     background: #ccc;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));
@@ -306,7 +306,7 @@ a {
 }
 
 .audiojs .loaded {
-    height: 10px;
+    height: 50%;
     background: #000;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));
     background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%);
