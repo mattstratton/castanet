@@ -906,7 +906,7 @@
 		"oF": 0
 		},
 	"\/bower_components\/bootstrap\/scss\/_alert.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -915,11 +915,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_alert.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_badge.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -928,11 +928,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_badge.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_breadcrumb.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -941,11 +941,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_breadcrumb.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_button-group.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -954,11 +954,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_button-group.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_buttons.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -967,11 +967,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_buttons.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_card.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -980,11 +980,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_card.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_carousel.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -993,11 +993,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_carousel.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_close.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1006,11 +1006,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_close.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_code.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1019,11 +1019,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_code.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_custom-forms.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1032,11 +1032,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_custom-forms.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_custom.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1045,11 +1045,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_custom.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_dropdown.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1058,11 +1058,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_dropdown.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_forms.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1071,11 +1071,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_forms.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_grid.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1084,11 +1084,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_grid.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_images.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1097,11 +1097,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_images.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_input-group.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1110,11 +1110,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_input-group.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_jumbotron.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1123,11 +1123,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_jumbotron.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_list-group.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1136,11 +1136,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_list-group.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_media.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1149,11 +1149,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_media.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_mixins.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1162,11 +1162,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_mixins.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_modal.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1175,11 +1175,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_modal.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_nav.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1188,11 +1188,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_nav.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_navbar.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1201,11 +1201,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_navbar.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_normalize.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1214,11 +1214,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_normalize.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_pagination.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1227,11 +1227,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_pagination.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_popover.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1240,11 +1240,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_popover.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_print.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1253,11 +1253,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_print.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_progress.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1266,11 +1266,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_progress.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_reboot.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1279,11 +1279,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_reboot.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_responsive-embed.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1292,11 +1292,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_responsive-embed.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_tables.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1305,11 +1305,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_tables.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_tooltip.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1318,11 +1318,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_tooltip.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_transitions.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1331,11 +1331,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_transitions.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_type.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1344,11 +1344,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_type.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_utilities.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1357,11 +1357,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_utilities.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/_variables.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1370,11 +1370,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/_variables.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/bootstrap-grid.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1383,11 +1383,11 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/bootstrap\/scss\/bootstrap-grid.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/bootstrap-reboot.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1396,24 +1396,24 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/bootstrap\/scss\/bootstrap-reboot.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/bootstrap.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/bootstrap\/scss\/bootstrap.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_alert.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1422,11 +1422,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_alert.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_background-variant.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1435,11 +1435,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_background-variant.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_badge.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1448,11 +1448,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_badge.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_border-radius.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1461,11 +1461,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_border-radius.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_breakpoints.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1474,11 +1474,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_breakpoints.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_buttons.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1487,11 +1487,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_buttons.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_cards.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1500,11 +1500,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_cards.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_clearfix.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1513,11 +1513,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_clearfix.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_float.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1526,11 +1526,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_float.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_forms.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1539,11 +1539,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_forms.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_gradients.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1552,11 +1552,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_gradients.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_grid-framework.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1565,11 +1565,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_grid-framework.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_grid.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1578,11 +1578,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_grid.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_hover.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1591,11 +1591,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_hover.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_image.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1604,11 +1604,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_image.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_list-group.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1617,11 +1617,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_list-group.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_lists.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1630,11 +1630,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_lists.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_nav-divider.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1643,11 +1643,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_nav-divider.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_navbar-align.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1656,11 +1656,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_navbar-align.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_pagination.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1669,11 +1669,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_pagination.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_reset-text.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1682,11 +1682,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_reset-text.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_resize.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1695,11 +1695,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_resize.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_screen-reader.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1708,11 +1708,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_screen-reader.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_size.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1721,11 +1721,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_size.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_table-row.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1734,11 +1734,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_table-row.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_text-emphasis.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1747,11 +1747,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_text-emphasis.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_text-hide.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1760,11 +1760,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_text-hide.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_text-truncate.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1773,11 +1773,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_text-truncate.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_transforms.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1786,11 +1786,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_transforms.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/mixins\/_visibility.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1799,11 +1799,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/mixins\/_visibility.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_align.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1812,11 +1812,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_align.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_background.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1825,11 +1825,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_background.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_borders.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1838,11 +1838,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_borders.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_clearfix.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1851,11 +1851,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_clearfix.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_display.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1864,11 +1864,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_display.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_flex.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1877,11 +1877,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_flex.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_float.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1890,11 +1890,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_float.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_position.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1903,11 +1903,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_position.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_screenreaders.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1916,11 +1916,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_screenreaders.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_sizing.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1929,11 +1929,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_sizing.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_spacing.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1942,11 +1942,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_spacing.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_text.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1955,11 +1955,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_text.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/bootstrap\/scss\/utilities\/_visibility.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -1968,7 +1968,7 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/scss\/utilities\/_visibility.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/.bower.json": {
@@ -2079,7 +2079,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/animated.less",
 		"oF": 0,
 		"oS": 0,
@@ -2096,7 +2096,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/bordered-pulled.less",
 		"oF": 0,
 		"oS": 0,
@@ -2113,7 +2113,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/core.less",
 		"oF": 0,
 		"oS": 0,
@@ -2130,7 +2130,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/fixed-width.less",
 		"oF": 0,
 		"oS": 0,
@@ -2164,7 +2164,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/icons.less",
 		"oF": 0,
 		"oS": 0,
@@ -2181,7 +2181,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/larger.less",
 		"oF": 0,
 		"oS": 0,
@@ -2198,7 +2198,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/list.less",
 		"oF": 0,
 		"oS": 0,
@@ -2215,7 +2215,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/mixins.less",
 		"oF": 0,
 		"oS": 0,
@@ -2232,7 +2232,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/path.less",
 		"oF": 0,
 		"oS": 0,
@@ -2249,7 +2249,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/rotated-flipped.less",
 		"oF": 0,
 		"oS": 0,
@@ -2266,7 +2266,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/screen-reader.less",
 		"oF": 0,
 		"oS": 0,
@@ -2283,7 +2283,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/stacked.less",
 		"oF": 0,
 		"oS": 0,
@@ -2300,7 +2300,7 @@
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/less\/variables.less",
 		"oF": 0,
 		"oS": 0,
@@ -2310,7 +2310,7 @@
 		"sU": 0
 		},
 	"\/bower_components\/font-awesome\/scss\/_animated.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2319,11 +2319,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_animated.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_bordered-pulled.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2332,11 +2332,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_bordered-pulled.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_core.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2345,11 +2345,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_core.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_fixed-width.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2358,11 +2358,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_fixed-width.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_icons.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2371,11 +2371,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_icons.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_larger.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2384,11 +2384,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_larger.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_list.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2397,11 +2397,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_list.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_mixins.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2410,11 +2410,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_mixins.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_path.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2423,11 +2423,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_path.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_rotated-flipped.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2436,11 +2436,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_rotated-flipped.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_screen-reader.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2449,11 +2449,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_screen-reader.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_stacked.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2462,11 +2462,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_stacked.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/_variables.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -2475,20 +2475,20 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/font-awesome\/scss\/_variables.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/font-awesome\/scss\/font-awesome.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/font-awesome\/scss\/font-awesome.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/jquery\/.bower.json": {
@@ -3659,7 +3659,7 @@
 		"tS": 0
 		},
 	"\/bower_components\/jssocials\/styles\/_shares.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -3668,11 +3668,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/jssocials\/styles\/_shares.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/jssocials\/styles\/jssocials-theme-classic.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -3681,11 +3681,11 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/jssocials\/styles\/jssocials-theme-classic.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/jssocials\/styles\/jssocials-theme-flat.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -3694,11 +3694,11 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/jssocials\/styles\/jssocials-theme-flat.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/jssocials\/styles\/jssocials-theme-minima.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -3707,33 +3707,33 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/jssocials\/styles\/jssocials-theme-minima.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/jssocials\/styles\/jssocials-theme-plain.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/jssocials\/styles\/jssocials-theme-plain.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/jssocials\/styles\/jssocials.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 2,
 		"oAP": "\/bower_components\/jssocials\/styles\/jssocials.scss",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/.bower.json": {
@@ -4077,7 +4077,7 @@
 		"tS": 0
 		},
 	"\/bower_components\/tether\/docs\/sass\/intro.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4086,7 +4086,7 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tether\/docs\/sass\/intro.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/docs\/welcome\/browser-demo.html": {
@@ -4187,7 +4187,7 @@
 		"tS": 0
 		},
 	"\/bower_components\/tether\/docs\/welcome\/sass\/_inline-block.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4196,11 +4196,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/tether\/docs\/welcome\/sass\/_inline-block.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/docs\/welcome\/sass\/browser-demo.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4209,11 +4209,11 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tether\/docs\/welcome\/sass\/browser-demo.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/docs\/welcome\/sass\/welcome.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4222,7 +4222,7 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tether\/docs\/welcome\/sass\/welcome.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/examples\/chosen\/chosen-sprite.png": {
@@ -4463,7 +4463,7 @@
 		"uCM": 0
 		},
 	"\/bower_components\/tether\/src\/css\/helpers\/_tether-theme-arrows.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4472,11 +4472,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/tether\/src\/css\/helpers\/_tether-theme-arrows.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/helpers\/_tether-theme-basic.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4485,11 +4485,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/tether\/src\/css\/helpers\/_tether-theme-basic.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/helpers\/_tether.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4498,11 +4498,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/tether\/src\/css\/helpers\/_tether.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/mixins\/_inline-block.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4511,11 +4511,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/tether\/src\/css\/mixins\/_inline-block.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/mixins\/_pie-clearfix.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4524,11 +4524,11 @@
 		"oA": 1,
 		"oAP": "\/bower_components\/tether\/src\/css\/mixins\/_pie-clearfix.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/tether-theme-arrows-dark.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4537,11 +4537,11 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tether\/src\/css\/tether-theme-arrows-dark.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/tether-theme-arrows.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4550,11 +4550,11 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tether\/src\/css\/tether-theme-arrows.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/tether-theme-basic.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4563,11 +4563,11 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tether\/src\/css\/tether-theme-basic.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/css\/tether.sass": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -4576,7 +4576,7 @@
 		"oA": 2,
 		"oAP": "\/bower_components\/tether\/src\/css\/tether.sass",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/bower_components\/tether\/src\/js\/abutment.js": {
@@ -5422,7 +5422,7 @@
 		"sU": 0
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_animated.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5431,11 +5431,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_animated.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_bordered-pulled.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5444,11 +5444,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_bordered-pulled.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_core.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5457,11 +5457,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_core.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_fixed-width.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5470,11 +5470,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_fixed-width.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_icons.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5483,11 +5483,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_icons.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_larger.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5496,11 +5496,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_larger.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_list.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5509,11 +5509,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_list.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_mixins.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5522,11 +5522,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_mixins.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_path.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5535,11 +5535,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_path.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_rotated-flipped.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5548,11 +5548,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_rotated-flipped.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_screen-reader.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5561,11 +5561,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_screen-reader.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_stacked.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5574,11 +5574,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_stacked.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/_variables.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5587,11 +5587,11 @@
 		"oA": 1,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/_variables.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/font-awesome\/scss\/font-awesome.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -5600,7 +5600,7 @@
 		"oA": 0,
 		"oAP": "\/exampleSite\/public\/font-awesome\/css\/font-awesome.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/exampleSite\/public\/fonts\/glyphicons-halflings-regular.eot": {
@@ -5699,7 +5699,7 @@
 	"\/exampleSite\/public\/js\/bootstrap.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/exampleSite\/public\/js\/bootstrap-min.js",
 		"oF": 0,
 		"sC": 0,
@@ -5708,7 +5708,7 @@
 	"\/exampleSite\/public\/js\/bootstrap.min.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/exampleSite\/public\/js\/bootstrap.min-min.js",
 		"oF": 0,
 		"sC": 0,
@@ -5717,7 +5717,7 @@
 	"\/exampleSite\/public\/js\/bootstrap3_player.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/exampleSite\/public\/js\/bootstrap3_player-min.js",
 		"oF": 0,
 		"sC": 0,
@@ -5726,7 +5726,7 @@
 	"\/exampleSite\/public\/js\/jssocials.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/exampleSite\/public\/js\/jssocials-min.js",
 		"oF": 0,
 		"sC": 0,
@@ -5735,7 +5735,7 @@
 	"\/exampleSite\/public\/js\/jssocials.min.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/exampleSite\/public\/js\/jssocials.min-min.js",
 		"oF": 0,
 		"sC": 0,
@@ -5744,7 +5744,7 @@
 	"\/exampleSite\/public\/js\/npm.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/exampleSite\/public\/js\/npm-min.js",
 		"oF": 0,
 		"sC": 0,
@@ -7140,13 +7140,13 @@
 		},
 	"\/layouts\/episode\/single.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/layouts\/episode\/single.html",
 		"oF": 0
 		},
 	"\/layouts\/index.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/layouts\/index.html",
 		"oF": 0
 		},
@@ -7164,7 +7164,7 @@
 		},
 	"\/layouts\/partials\/footer_scripts.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/layouts\/partials\/footer_scripts.html",
 		"oF": 0
 		},
@@ -7212,13 +7212,13 @@
 		},
 	"\/layouts\/partials\/head_includes.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/layouts\/partials\/head_includes.html",
 		"oF": 0
 		},
 	"\/layouts\/partials\/header.html": {
 		"ft": 8192,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/layouts\/partials\/header.html",
 		"oF": 0
 		},
@@ -7244,12 +7244,6 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/LICENSE",
-		"oF": 0
-		},
-	"\/netlify-production.sh": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/netlify-production.sh",
 		"oF": 0
 		},
 	"\/netlify.toml": {
@@ -7514,7 +7508,7 @@
 	"\/static\/js\/castanet-min.js": {
 		"ft": 64,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/static\/js\/castanet-min-min.js",
 		"oF": 0,
 		"sC": 0,
@@ -7531,7 +7525,7 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/static\/js\/castanet-min.js",
-		"oF": 1,
+		"oF": 0,
 		"sC": 0,
 		"tS": 0
 		},
@@ -7594,7 +7588,7 @@
 		"opt": 0
 		},
 	"\/static\/scss\/blue.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -7603,20 +7597,20 @@
 		"oA": 0,
 		"oAP": "\/static\/css\/blue.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/static\/scss\/blue_variables.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/static\/css\/blue_variables.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/static\/scss\/bootstrap3_player.css": {
@@ -7630,20 +7624,20 @@
 		"oS": 0
 		},
 	"\/static\/scss\/custom.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/static\/css\/custom.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/static\/scss\/orange.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
@@ -7652,33 +7646,33 @@
 		"oA": 0,
 		"oAP": "\/static\/css\/orange.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/static\/scss\/orange_variables.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/static\/css\/orange_variables.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/static\/scss\/site.scss": {
-		"aP": 0,
+		"aP": 1,
 		"bl": 0,
 		"dP": 10,
 		"dS": 0,
 		"ft": 4,
 		"ma": 0,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "\/static\/css\/site.css",
 		"oF": 0,
-		"oS": 0,
+		"oS": 3,
 		"uL": 1
 		},
 	"\/static\/site.less": {
@@ -9503,7 +9497,7 @@
 		"quality": 100
 		},
 	"languageDefaultsJS": {
-		"autoOutputAction": 1,
+		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*-min.js",
 		"autoOutputPathRelativePath": "\/min",
 		"autoOutputPathReplace1": "",
@@ -9609,8 +9603,8 @@
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
+		"outputStyle": 3,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"useLibsass": 1
 		},
