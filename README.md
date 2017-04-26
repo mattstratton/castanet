@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/mattstratton/castanet.svg?branch=master)](https://travis-ci.org/devopsdays/devopsdays-theme)
-[![GitHub release](https://img.shields.io/github/release/mattstratton/castanet.svg)](https://github.com/qubyte/rubidium/releases)
+[![Build Status](https://travis-ci.org/mattstratton/castanet.svg?branch=master)](https://travis-ci.org/mattstratton/castanet)
+[![GitHub release](https://img.shields.io/github/release/mattstratton/castanet.svg)](https://github.com/mattstratton/castanet/releases)
 [![Github All Releases](https://img.shields.io/github/downloads/mattstratton/castanet/total.svg)]()
 [![license](https://img.shields.io/github/license/mattstratton/castanet.svg)]()
 
-[![Stories in Ready](https://badge.waffle.io/mattstratton/castanet.svg?label=ready&title=Ready)](http://waffle.io/mattstratton/devopsdays-web) [![Stories in Progress](https://badge.waffle.io/mattstratton/castanetb.svg?label=ready&title=In%20Progress)](http://waffle.io/mattstratton/devopsdays-web)
+[![Stories in Ready](https://badge.waffle.io/mattstratton/castanet.svg?label=ready&title=Ready)](http://waffle.io/mattstratton/castanet) [![Stories in Progress](https://badge.waffle.io/mattstratton/castanetb.svg?label=ready&title=In%20Progress)](http://waffle.io/mattstratton/castanet)
 
 You can see progress on tasks at http://waffle.io/mattstratton/castanet
 
