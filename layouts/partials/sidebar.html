@@ -7,13 +7,13 @@
     </div>
     <div class="row">
       {{ if (isset .Site.Params "itunes_subscribe") }}
-        <div class = "col-md-12 subscribe_buttons subscribe_buttons">
+        <div class = "col-md-12 subscribe_buttons">
           <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-apple"></i>&nbsp;iTunes</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "android_subscribe") }}
         <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Android</a>
+          <a class="btn btn-default subscribe_buttons" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Android</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "google_play_subscribe") }}
