@@ -1,7 +1,19 @@
 # Change Log
 
-## [0.2.6](https://github.com/mattstratton/castanet/tree/0.2.6) (2017-04-21)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.2.5...0.2.6)
+## [0.3.0](https://github.com/mattstratton/castanet/tree/0.3.0) (2017-04-26)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.2.6...0.3.0)
+
+**Implemented enhancements:**
+
+- Change to bootstrap 4 [\#41](https://github.com/mattstratton/castanet/issues/41)
+
+**Fixed bugs:**
+
+- Footer contains hardcoded link to Arrested DevOps privacy policy [\#50](https://github.com/mattstratton/castanet/issues/50)
+- Footer is offscreen on small viewports  [\#47](https://github.com/mattstratton/castanet/issues/47)
+
+## [v0.2.6](https://github.com/mattstratton/castanet/tree/v0.2.6) (2017-04-21)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.2.5...v0.2.6)
 
 **Implemented enhancements:**
 
