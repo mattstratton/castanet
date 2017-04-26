@@ -83,3 +83,30 @@
     </div>
   </div>
 {{ end }} <!-- end about -->
+
+<!-- host sidebar -->
+<div class = "row">
+  <div class="col-md-12 sidebar_general">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="sidebar_headline text-uppercase">
+        {{ if eq (len $.Site.Params.authors) 1 }}
+          Host
+        {{ else }}
+          Hosts
+        {{ end }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-12">
+        <div class="sidebar_content">
+          {{ range $p:= $.Site.Params.authors }}
+            <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail }}" class="img-fluid">
+            <br />
+            {{ $p.name }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

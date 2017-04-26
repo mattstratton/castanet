@@ -7174,6 +7174,12 @@
 		"oAP": "\/layouts\/partials\/google-analytics.html",
 		"oF": 0
 		},
+	"\/layouts\/partials\/grid.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/partials\/grid.html",
+		"oF": 0
+		},
 	"\/layouts\/partials\/head.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -7222,10 +7228,22 @@
 		"oAP": "\/layouts\/partials\/header.html",
 		"oF": 0
 		},
+	"\/layouts\/partials\/jumbotron.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/partials\/jumbotron.html",
+		"oF": 0
+		},
 	"\/layouts\/partials\/meta.html": {
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/layouts\/partials\/meta.html",
+		"oF": 0
+		},
+	"\/layouts\/partials\/row.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/partials\/row.html",
 		"oF": 0
 		},
 	"\/layouts\/partials\/sidebar.html": {
@@ -7257,6 +7275,24 @@
 		"oA": 2,
 		"oAP": "\/build\/node_modules",
 		"oF": 0
+		},
+	"\/README.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"\/static\/blue.less": {
 		"aP": 0,
