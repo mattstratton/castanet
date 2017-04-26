@@ -5,8 +5,13 @@
     padding: 0 2px !important;
 }
 .subscribe_buttons {
+  > a {
+    color: white
+  }
+  > div {
     padding-top: 2px;
     padding-bottom: 2px;
+  }
 }
 .homepage_thumbnail {
     width: 250px;
