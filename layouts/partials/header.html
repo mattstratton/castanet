@@ -2,7 +2,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="/">{{ .Site.Title }}</a>
+  <a class="navbar-brand" href="{{ "/" | absURL }}">{{ .Site.Title }}</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
@@ -13,13 +13,13 @@
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
         <div class="dropdown-menu">
         {{ range .Children }}
-          <a class="dropdown-item{{ if $currentNode.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+          <a class="dropdown-item{{ if $currentNode.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL | absURL }}">{{ .Name }}</a>
         {{ end }}
         </div>
         </li>
       {{ else }}
           <li class= "nav-item {{ if or ($currentNode.IsMenuCurrent "Main" .) ($currentNode.HasMenuCurrent "Main" .) }} active {{ end }}">
-          <a href="{{ .URL }}" class="nav-link">
+          <a href="{{ .URL | absURL }}" class="nav-link">
               {{ .Pre }}
               <span>{{ .Name }}</span>
           </a>

@@ -101,7 +101,7 @@
       <div class = "col-md-12">
         <div class="sidebar_content">
           {{ range $p:= $.Site.Params.authors }}
-            <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail }}" class="img-fluid">
+            <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail | absURL }}" class="img-fluid">
             <br />
             {{ $p.name }}
           {{ end }}

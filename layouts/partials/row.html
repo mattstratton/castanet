@@ -13,7 +13,7 @@
     </div>
     <div class = "row homepage_episode_row">
       <div class = "col-md-4">
-        <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image }}" />
+        <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
       </div>
       <div class = "col-md-8">
         <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
@@ -44,7 +44,7 @@
       </div>
       <div class = "row homepage_episode_row">
         <div class = "col-md-4">
-          <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image }}" />
+          <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
         </div>
         <div class = "col-md-8">
           <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
@@ -75,21 +75,21 @@
 <ul class="pagination pagination-lg">
   {{ with $paginator.First }}
   <li class="page-item">
-      <a href="{{ .URL }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      <a href="{{ .URL | absURL }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
   </li>
   {{ end }}
   <li class="{{ if not $paginator.HasPrev }}disabled {{ end }}page-item">
       <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous" class="page-link"><span aria-hidden="true">&laquo;</span></a>
   </li>
   {{ range $paginator.Pagers }}
-  <li class="{{ if eq . $paginator }}active {{ end }}page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
+  <li class="{{ if eq . $paginator }}active {{ end }}page-item"><a href="{{ .URL | absURL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
   {{ end }}
   <li class="{{ if not $paginator.HasNext }}disabled {{ end }}page-item">
       <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next" class="page-link"><span aria-hidden="true">&raquo;</span></a>
   </li>
   {{ with $paginator.Last }}
   <li class="page-item">
-      <a href="{{ .URL }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      <a href="{{ .URL | absURL }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
   {{ end }}
 </ul>
