@@ -9,6 +9,12 @@
 	],
 "creatorBuild": "25813",
 "files": {
+	"\/.github\/ISSUE_TEMPLATE": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/.github\/ISSUE_TEMPLATE",
+		"oF": 0
+		},
 	"\/.gitignore": {
 		"ft": 8192,
 		"oA": 2,
@@ -4650,6 +4656,14 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
+		},
+	"\/contributing.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/contributing-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"\/exampleSite\/.gitignore": {
 		"ft": 8192,
