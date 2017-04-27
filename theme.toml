@@ -4,10 +4,10 @@
 name = "Castanet"
 license = "MIT"
 licenselink = "https://github.com/mattstratton/castanet/blob/master/LICENSE.md"
-description = ""
+description = "A podcast-oriented theme for Hugo"
 homepage = "https://github.com/mattstratton/castanet"
-tags = ["", ""]
-features = ["", ""]
+tags = ["podcast", "responsive"]
+features = ["podcast RSS", "subscribe buttons"]
 min_version = 0.19
 theme_version = 0.3.0
 
