@@ -100,35 +100,36 @@ I recommend the following permalink settings, although the theme will work just 
 
 If you don't have guests on your episodes, feel free to ignore this section.
 
-#### Guest data files
+#### Guest pages
 
-Every guest on your show needs a corresponding data file in the `data/guests` directory of your site. Generally speaking, you should be able to name these however you like, but I have only tested it with the format `firstinitiallastname.yml`, i.e., for "John Doe" the file would be `jdoe.yml`.
+Every guest on your show needs a corresponding page  in the `content/guest` directory of your site. Generally speaking, you should be able to name these however you like, but I have only tested it with the format `firstinitiallastname.md`, i.e., for "John Doe" the file would be `jdoe.md`.
 
 A guest file takes the following structure:
 
 ```
-name: jdoe
-full_name: "John Doe"
-thumbnail: "/img/guest/jdoe.jpg"
-bio: "Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas."
-homepage: "http://www.google.com"
-github: "johndoe"
-facebook: "johndoe"
-twitter: "johndoe"
-linkedin: "johndoe"
++++
+Title = "John Doe"
+Twitter = "johndoe"
+Website = "http://www.google.com"
+Type = "guest"
+Facebook = "johndoe"
+Linkedin = "johndoe"
+GitHub = "johndoe"
+Thumbnail = "/img/guest/jdoe.jpg"
++++
+Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas.
+
 ```
 
 (See the example site for, well, examples)
 
-- `name` - This MUST match the name you will refer to the guest as in your frontmatter. Ideally it is the same name as the file. Again, I prefer first initial lastname format. Required.
-- `full_name` - The full name of the guest. This is what is displayed on the episode page, etc. Required.
-- `thumbnail` - The image for the guest. This image must be 500 px x 500 px. You can either enter a value relative to your `BaseURL`, or a fully qualified URL. If you want to use the default, set this to `""`. Optional. If left blank, or not existent, a default image will be provided. You can replace this default image by putting a new 500 px x 500 px PNG image at `/static/img/guest/default-guest.png` in your site (not in the theme!)
-- `bio` - The bio of your guest. You can use Markdown in here. If you use quotes, make sure to escape them. Required.
-- `homepage` - Optional.
-- `github` - Guest's GitHub username. Optional.
-- `facebook` - Guest's Facebook username. Example: `matt.stratton`. Do not use the full URL. Optional.
-- `twitter` - Guest's Twitter username, without the `@`. Optional.
-- `linkedin` - LinkedIn profile name. Optional. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. Example: `"mattstratton"`
+- `Title` - The full name of the guest. This is what is displayed on the episode page, etc. Required.
+- `Thumbnail` - The image for the guest. This image must be 500 px x 500 px. You can either enter a value relative to your `BaseURL`, or a fully qualified URL. If you want to use the default, set this to `""`. Optional. If left blank, or not existent, a default image will be provided. You can replace this default image by putting a new 500 px x 500 px PNG image at `/static/img/guest/default-guest.png` in your site (not in the theme!)
+- `Website` - Optional.
+- `GitHub` - Guest's GitHub username. Optional.
+- `Facebook` - Guest's Facebook username. Example: `matt.stratton`. Do not use the full URL. Optional.
+- `Twitter` - Guest's Twitter username, without the `@`. Optional.
+- `LinkedIn` - LinkedIn profile name. Optional. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. Example: `"mattstratton"`
 
 
 #### Frontmatter

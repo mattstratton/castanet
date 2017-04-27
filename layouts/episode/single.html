@@ -1,104 +1,175 @@
 {{ define "main" }}
 
-  <div class = "row">
-    <div class = "col-md-12">
+  <div class="row">
+    <div class="col-md-12">
       <h1>{{ title .Title }}</h1>
     </div>
   </div>
 
-  <div class = "row">
-    <div class = "col-md-3">
-      <img src = "{{ .Params.episode_image }}" class="img-fluid episode_image" />
+  <div class="row">
+    <div class="col-md-3">
+      <img src="{{ .Params.episode_image }}" class="img-fluid episode_image"/>
     </div>
-      <div class = "col-md-8">
-        {{ .Description | markdownify }}
-      </div>
+    <div class="col-md-8">
+      {{ .Description | markdownify }}
     </div>
-    <div class = "row">
-      <div class = "col-md-12 player_row">
-        <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto" />
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 player_row">
+      <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto"/>
     </div>
-  <div class = "row">
-    <div class = "col-md-12">
+  </div>
+  <div class="row">
+    <div class="col-md-12">
       <h2>Show Notes</h2>
       {{ .Content }}
     </div>
   </div>
-  {{ if .Params.guests }}
-    <div class = "row"><!-- guests begin -->
-      <div class = "col-md-12">
-        <h2>Guests</h2>
-      </div>
-      <div class = "col-md-12">
-        {{ range $person :=.Params.guests }}
-        {{ if (isset $.Site.Data.guests $person) }}
-          {{ $p :=  (index $.Site.Data.guests $person) }}
-            <div class="row">
-              <div class="col-md-3">
-                {{ if and (isset $p "thumbnail") (ne $p.thumbnail "") }}
-                  {{ if (eq (slicestr $p.thumbnail 0 4) "http") }}
-                    <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail}}" class="img-responsive" width = "250px">
-                  {{ else }}
-                    <img alt = "{{ $p.full_name }}" src = "{{ $.Site.BaseURL }}{{ $p.thumbnail}}" class="img-responsive" width = "250px">
-                  {{ end }}
-                {{ else }}
-                  <img alt = "{{ $p.full_name }}" src = "{{ $.Site.BaseURL }}/img/guest/default-guest.png" class="img-responsive" width = "250px" />
+
+  {{ with .Params.guests }}
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Guests</h2>
+          </div>
+        </div>
+            {{ range $name := . }}
+              {{ $.Scratch.Set "person" $name }}
+              {{ range where $.Site.Pages "Type" "guest" }}
+                {{ if eq .File.BaseFileName ($.Scratch.Get "person") }}
+                {{ $.Scratch.Set "guest-exist" "true" }}
+                <div class="row">
+                  <div class="col-md-3">
+                    {{ if and (isset .Params "thumbnail") (ne .Params.thumbnail "") }}
+                      {{ if (eq (slicestr .Params.thumbnail 0 4) "http") }}
+                        <img alt="{{ .Title }}" src="{{ .Params.thumbnail}}" class="img-responsive" width="250px">
+                        {{ else }}
+                        <img alt="{{ .Title }}" src="{{ $.Site.BaseURL }}{{ .Params.thumbnail}}" class="img-responsive" width="250px">
+                      {{ end }}
+                      {{ else }}
+                      <img alt="{{ .Title }}" src="{{ $.Site.BaseURL }}/img/guest/default-guest.png" class="img-responsive" width="250px"/>
+                    {{ end }}
+                  </div>
+                  <div class="col-md-8">
+                    <h2><a href = "/guest/{{.File.BaseFileName}}">{{ .Title }}</a></h2>
+                    {{ .Content }}
+                    {{ if .Params.Website }}
+                      <a href="{{ .Params.Website }}">
+                        <i class="fa fa-home fa-2x"></i>
+                      </a>
+                    {{ end }}
+                    {{ if .Params.Twitter }}
+                      <a href="https://twitter.com/{{ .Params.Twitter }}">
+                        <i class="fa fa-twitter-square fa-2x"></i>
+                      </a>
+                    {{ end }}
+                    {{ if .Params.GitHub }}
+                      <a href="https://github.com/{{ .Params.GitHub}}">
+                        <i class="fa fa-github-square fa-2x"></i>
+                      </a>
+                    {{ end }}
+                    {{ if .Params.LinkedIn }}
+                      <a href="https://www.linkedin.com/in/{{ .Params.LinkedIn}}">
+                        <i class="fa fa-linkedin-square fa-2x"></i>
+                      </a>
+                    {{ end }}
+                    {{ if .Params.Facebook }}
+                      <a href="https://www.facebook.com/{{ .Params.Facebook}}">
+                        <i class="fa fa-facebook-square fa-2x"></i>
+                      </a>
+                    {{ end }}
+                  </div>
+                </div>
                 {{ end }}
-              </div>
-              <div class= "col-md-8">
-                <h2>{{ $p.full_name }}</h2>
-                {{ if isset $p "bio" }}
-                  <p>{{ $p.bio | markdownify }}</p>
-                {{ end }}
-                {{ if isset $p "homepage" }}
-                  <a href = "{{ $p.homepage}}"><i class="fa fa-home fa-2x"></i></a>
-                {{ end }}
-                {{ if isset $p "twitter" }}
-                  <a href = "https://twitter.com/{{ $p.Twitter }}"><i class="fa fa-twitter-square fa-2x"></i></a>
-                {{ end }}
-                {{ if isset $p "github"}}
-                  <a href = "https://github.com/{{ $p.GitHub}}"><i class="fa fa-github-square fa-2x"></i></a>
-                {{ end }}
-                {{ if isset $p "linkedin" }}
-                  <a href = "{{ $p.LinkedIn}}"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                {{ end }}
-                {{ if isset $p "facebook" }}
-                  <a href = "{{ $p.Facebook}}"><i class="fa fa-facebook-square fa-2x"></i></a>
-                {{ end }}
-              </div>
               {{ end }}
-            </div>
-        {{ end }}
+              {{ if ne ($.Scratch.Get "guest-exist") "true"}}
+              {{ if (isset $.Site.Data.guests ($.Scratch.Get "person")) }}
+                  {{ $p :=  (index $.Site.Data.guests ($.Scratch.Get "person")) }}
+                    <div class="row">
+                      <div class="col-md-3">
+                        {{ if and (isset $p "thumbnail") (ne $p.thumbnail "") }}
+                          {{ if (eq (slicestr $p.thumbnail 0 4) "http") }}
+                            <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail}}" class="img-responsive" width = "250px">
+                          {{ else }}
+                            <img alt = "{{ $p.full_name }}" src = "{{ $.Site.BaseURL }}{{ $p.thumbnail}}" class="img-responsive" width = "250px">
+                          {{ end }}
+                        {{ else }}
+                          <img alt = "{{ $p.full_name }}" src = "{{ $.Site.BaseURL }}/img/guest/default-guest.png" class="img-responsive" width = "250px" />
+                        {{ end }}
+                      </div>
+                      <div class= "col-md-8">
+                        <h2>{{ $p.full_name }}</h2>
+                        {{ if isset $p "bio" }}
+                          <p>{{ $p.bio | markdownify }}</p>
+                        {{ end }}
+                        {{ if isset $p "homepage" }}
+                          <a href = "{{ $p.homepage}}"><i class="fa fa-home fa-2x"></i></a>
+                        {{ end }}
+                        {{ if isset $p "twitter" }}
+                          <a href = "https://twitter.com/{{ $p.Twitter }}"><i class="fa fa-twitter-square fa-2x"></i></a>
+                        {{ end }}
+                        {{ if isset $p "github"}}
+                          <a href = "https://github.com/{{ $p.GitHub}}"><i class="fa fa-github-square fa-2x"></i></a>
+                        {{ end }}
+                        {{ if isset $p "linkedin" }}
+                          <a href = "https://www.linkedin.com/in/{{ $p.LinkedIn}}"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                        {{ end }}
+                        {{ if isset $p "facebook" }}
+                          <a href = "{{ $p.Facebook}}"><i class="fa fa-facebook-square fa-2x"></i></a>
+                        {{ end }}
+                      </div>
+                      {{ end }}
+                    </div>
+                {{ end }}
+            {{ end }}
+  {{ end }}
+      <div class="row">
+        <!-- sharing begins -->
+        <div class="col-md-12">
+          <div id="share"></div>
+        </div>
       </div>
-    </div><!-- guests end -->
+      <!-- sharing ends -->
+      <div class="row">
+        <!-- disqus begins -->
+        <div class="col-md-12">
+          {{ partial "disqus.html" . }}
+        </div>
+      </div>
+      <!-- disqus ends -->
+      <div class="row">
+        <!-- pager begin -->
+        <div class="col-md-12">
+          <nav>
+            <ul class="pagination">
+              {{ if .PrevInSection }}
+                <li class="page-item">
+                  <a href="{{.PrevInSection.Permalink}}" class="page-link">
+                    <span aria-hidden="true">&larr;</span>
+                    Previous</a>
+                </li>
+                {{ else }}
+                <li class="page-item disabled">
+                  <a href="#" class="page-link">
+                    <span aria-hidden="true">&larr;</span>
+                    Previous</a>
+                </li>
+              {{ end }}
+              {{ if .NextInSection }}
+                <li class="page-item">
+                  <a href="{{.NextInSection.Permalink}}" class="page-link">Next
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </li>
+                {{ else }}
+                <li class="page-item disabled">
+                  <a href="#" class="page-link">Next
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- pager end -->
     {{ end }}
-  <div class = "row"><!-- sharing begins -->
-    <div class = "col-md-12">
-      <div id="share"></div>
-    </div>
-  </div><!-- sharing ends -->
-  <div class = "row"><!-- disqus begins -->
-    <div class = "col-md-12">
-      {{ partial "disqus.html" . }}
-    </div>
-  </div><!-- disqus ends -->
-  <div class = "row"> <!-- pager begin -->
-    <div class = "col-md-12">
-      <nav>
-        <ul class="pagination">
-          {{ if .PrevInSection }}
-            <li class="page-item"><a href="{{.PrevInSection.Permalink}}" class="page-link"><span aria-hidden="true">&larr;</span> Previous</a></li>
-          {{ else }}
-            <li class="page-item disabled"><a href="#" class="page-link"><span aria-hidden="true">&larr;</span> Previous</a></li>
-          {{ end }}
-          {{ if .NextInSection }}
-            <li class="page-item"><a href="{{.NextInSection.Permalink}}" class="page-link">Next <span aria-hidden="true">&rarr;</span></a></li>
-          {{ else }}
-            <li class="page-item disabled"><a href="#" class="page-link">Next <span aria-hidden="true">&rarr;</span></a></li>
-          {{ end }}
-        </ul>
-      </nav>
-    </div>
-  </div><!-- pager end -->
-{{ end }}

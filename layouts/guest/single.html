@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{ title .Title }}</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <img src="{{ .Params.thumbnail }}" class="img-fluid episode_image"/>
+  </div>
+  <div class="col-md-8">
+    <div class = "row">
+      <div class="col">
+        {{ .Content | markdownify }}
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        {{ if .Params.Website }}
+          <a href="{{ .Params.Website }}">
+            <i class="fa fa-home fa-2x"></i>
+          </a>
+        {{ end }}
+        {{ if .Params.Twitter }}
+          <a href="https://twitter.com/{{ .Params.Twitter }}">
+            <i class="fa fa-twitter-square fa-2x"></i>
+          </a>
+        {{ end }}
+        {{ if .Params.GitHub }}
+          <a href="https://github.com/{{ .Params.GitHub}}">
+            <i class="fa fa-github-square fa-2x"></i>
+          </a>
+        {{ end }}
+        {{ if .Params.LinkedIn }}
+          <a href="https://www.linkedin.com/in/{{ .Params.LinkedIn}}">
+            <i class="fa fa-linkedin-square fa-2x"></i>
+          </a>
+        {{ end }}
+        {{ if .Params.Facebook }}
+          <a href="https://www.facebook.com/{{ .Params.Facebook}}">
+            <i class="fa fa-facebook-square fa-2x"></i>
+          </a>
+        {{ end }}
+      </div>
+    </div>
+    <div class = "row">
+      <div class="col">
+        <h3>Episodes</h3>
+        <ul>
+            {{ $.Scratch.Set "guest-name" .File.BaseFileName }}
+            {{ range $page := where $.Site.Pages "Type" "episode" }}
+              {{ range $page.Params.guests }}
+                {{ if eq  . ($.Scratch.Get "guest-name") }}
+                  <li>
+                    <a href = "{{$page.Permalink}}">{{$page.Title}}</a>
+                  </li>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

@@ -81,6 +81,24 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/archetypes\/guest.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/archetypes\/guest.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
 	"\/bin\/hugo": {
 		"ft": 8192,
 		"oA": 2,
@@ -4911,6 +4929,42 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/exampleSite\/content\/guest\/jsmith.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/exampleSite\/content\/guest\/jsmith.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/exampleSite\/content\/guest\/mstratton.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/exampleSite\/content\/guest\/mstratton.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
 	"\/exampleSite\/data\/guests\/gbluth.yml": {
 		"ft": 8192,
 		"oA": 2,
@@ -7111,6 +7165,26 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/exampleSite\/static\/img\/guest\/jsmith.jpg": {
+		"ft": 16384,
+		"iS": 836952,
+		"oA": 0,
+		"oAP": "\/exampleSite\/static\/img\/guest\/jsmith.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/exampleSite\/static\/img\/guest\/mstratton.jpg": {
+		"ft": 16384,
+		"iS": 185724,
+		"oA": 0,
+		"oAP": "\/exampleSite\/static\/img\/guest\/mstratton.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/images\/screenshot-v01.png": {
 		"ft": 32768,
 		"iS": 545100,
@@ -7178,6 +7252,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/layouts\/episode\/single.html",
+		"oF": 0
+		},
+	"\/layouts\/guest\/single.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/guest\/single.html",
 		"oF": 0
 		},
 	"\/layouts\/index.html": {
