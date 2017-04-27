@@ -3,12 +3,6 @@
 [![Github All Releases](https://img.shields.io/github/downloads/mattstratton/castanet/total.svg)]()
 [![license](https://img.shields.io/github/license/mattstratton/castanet.svg)]()
 
-[![Stories in Ready](https://badge.waffle.io/mattstratton/castanet.svg?label=ready&title=Ready)](http://waffle.io/mattstratton/castanet) [![Stories in Progress](https://badge.waffle.io/mattstratton/castanetb.svg?label=ready&title=In%20Progress)](http://waffle.io/mattstratton/castanet)
-
-You can see progress on tasks at http://waffle.io/mattstratton/castanet
-
-[![Throughput Graph](https://graphs.waffle.io/mattstratton/castanet/throughput.svg)](https://waffle.io/devopsdays/devopsdays-web/metrics)
-
 If you would like to receive emails when new versions of this theme are released, [subscribe to the announcement email list](http://eepurl.com/cMAJcL).
 
 # Castanet
