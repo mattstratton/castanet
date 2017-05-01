@@ -1,10 +1,10 @@
 {{ if isset $.Site.Params "site_theme"}}
-<link href="{{ printf "/css/%s.css" $.Site.Params.site_theme | absURL}}" rel="stylesheet">
+<link href="{{ printf "css/%s.css" $.Site.Params.site_theme | absURL}}" rel="stylesheet">
 {{ else }}
-<link href={{"/css/orange.css" | absURL }} rel="stylesheet">
+<link href={{"css/orange.css" | absURL }} rel="stylesheet">
 {{ end }}
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
 <!-- Custom CSS -->
 {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="/{{ . | absURL }}">
+    <link rel="stylesheet" href="{{ . | absURL }}">
 {{ end }}

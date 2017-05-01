@@ -1,6 +1,6 @@
 +++
 title = "Matt Stratton"
-Thumbnail = "/img/guest/mstratton.jpg"
+Thumbnail = "img/guest/mstratton.jpg"
 Linkedin = "mattstratton"
 GitHub = "mattstratton"
 Pronouns = ""

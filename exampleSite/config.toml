@@ -20,12 +20,12 @@ themesdir = "../.."
 [[Menu.Main]]
     name = "About"
     identifier = "about"
-    url = "/about"
+    url = "about"
 
 [[Menu.Main]]
     name = "Contact"
     identifier = "contact"
-    url = "/contact"
+    url = "contact"
 
 [[Menu.Main]]
     name = "Resources"
@@ -35,7 +35,7 @@ themesdir = "../.."
 [[Menu.Main]]
     name = "Books"
     identifier = "books"
-    url = "/books"
+    url = "books"
     parent = "resources"
 
 [params]
