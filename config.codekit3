@@ -4689,12 +4689,6 @@
 		"oAP": "\/exampleSite\/.gitignore",
 		"oF": 0
 		},
-	"\/exampleSite\/config.toml": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/exampleSite\/config.toml",
-		"oF": 0
-		},
 	"\/exampleSite\/content\/about\/about.md": {
 		"cS": 0,
 		"eF": 1,
@@ -5127,6 +5121,68 @@
 		"oAP": "\/exampleSite\/public\/aug\/index.html",
 		"oF": 0
 		},
+	"\/exampleSite\/public\/blue.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/blue.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/exampleSite\/public\/blue_variables.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/blue_variables.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/exampleSite\/public\/books\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/books\/index.html",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/contact\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/contact\/index.html",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/css\/blue.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/blue-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/exampleSite\/public\/css\/blue.css.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/css\/blue.css.map",
+		"oF": 0
+		},
 	"\/exampleSite\/public\/css\/bootstrap.css": {
 		"aP": 1,
 		"bl": 0,
@@ -5177,6 +5233,22 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/exampleSite\/public\/css\/orange.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/orange-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/exampleSite\/public\/css\/orange.css.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/css\/orange.css.map",
+		"oF": 0
+		},
 	"\/exampleSite\/public\/css\/site.css": {
 		"aP": 1,
 		"bl": 0,
@@ -5186,6 +5258,12 @@
 		"oAP": "\/exampleSite\/public\/css\/site-min.css",
 		"oF": 0,
 		"oS": 0
+		},
+	"\/exampleSite\/public\/css\/site.css.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/css\/site.css.map",
+		"oF": 0
 		},
 	"\/exampleSite\/public\/css\/theme.css": {
 		"aP": 1,
@@ -5707,6 +5785,46 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/exampleSite\/public\/fonts\/fontawesome-webfont.eot": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/fonts\/fontawesome-webfont.eot",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/fonts\/fontawesome-webfont.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/fonts\/fontawesome-webfont.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/exampleSite\/public\/fonts\/fontawesome-webfont.ttf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/fonts\/fontawesome-webfont.ttf",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/fonts\/fontawesome-webfont.woff": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/fonts\/fontawesome-webfont.woff",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/fonts\/fontawesome-webfont.woff2": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/fonts\/fontawesome-webfont.woff2",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/fonts\/FontAwesome.otf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/fonts\/FontAwesome.otf",
+		"oF": 0
+		},
 	"\/exampleSite\/public\/fonts\/glyphicons-halflings-regular.eot": {
 		"ft": 8192,
 		"oA": 2,
@@ -5739,6 +5857,24 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/exampleSite\/public\/fonts\/glyphicons-halflings-regular.woff2",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/guest\/index.xml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/guest\/index.xml",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/guest\/jsmith\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/guest\/jsmith\/index.html",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/guest\/mstratton\/index.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/guest\/mstratton\/index.html",
 		"oF": 0
 		},
 	"\/exampleSite\/public\/img\/episode\/default-social.jpg": {
@@ -5781,6 +5917,42 @@
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/exampleSite\/public\/img\/guest\/jsmith.jpg": {
+		"ft": 16384,
+		"iS": 836952,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/img\/guest\/jsmith.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/exampleSite\/public\/img\/guest\/mstratton.jpg": {
+		"ft": 16384,
+		"iS": 185724,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/img\/guest\/mstratton.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/exampleSite\/public\/img\/player-graphics.gif": {
+		"ft": 4194304,
+		"iS": 4499,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/img\/player-graphics.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/exampleSite\/public\/img\/player-graphics@2x.gif": {
+		"ft": 4194304,
+		"iS": 4499,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/img\/player-graphics@2x.gif",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/exampleSite\/public\/index.html": {
 		"ft": 8192,
@@ -5827,6 +5999,30 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"\/exampleSite\/public\/js\/castanet-min.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/js\/castanet-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
+	"\/exampleSite\/public\/js\/castanet-min.js.map": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/js\/castanet-min.js.map",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/js\/castanet.js": {
+		"ft": 64,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/js\/castanet-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"\/exampleSite\/public\/js\/jssocials.js": {
 		"ft": 64,
 		"mi": 1,
@@ -5853,6 +6049,22 @@
 		"oF": 0,
 		"sC": 0,
 		"tS": 0
+		},
+	"\/exampleSite\/public\/js\/player-graphics.gif": {
+		"ft": 4194304,
+		"iS": 4499,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/js\/player-graphics.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/exampleSite\/public\/js\/player-graphics@2x.gif": {
+		"ft": 4194304,
+		"iS": 4499,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/js\/player-graphics@2x.gif",
+		"oF": 0,
+		"opt": 0
 		},
 	"\/exampleSite\/public\/july\/index.html": {
 		"ft": 8192,
@@ -7111,6 +7323,40 @@
 		"oAP": "\/exampleSite\/public\/oct\/index.html",
 		"oF": 0
 		},
+	"\/exampleSite\/public\/orange.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/orange.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/exampleSite\/public\/orange_variables.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/orange_variables.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
 	"\/exampleSite\/public\/page\/1\/index.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -7128,6 +7374,102 @@
 		"oA": 0,
 		"oAP": "\/exampleSite\/public\/page\/3\/index.html",
 		"oF": 0
+		},
+	"\/exampleSite\/public\/player-graphics@2x.gif": {
+		"ft": 4194304,
+		"iS": 4499,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/player-graphics@2x.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/exampleSite\/public\/scss\/blue.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/css\/blue.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/exampleSite\/public\/scss\/blue_variables.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/blue_variables.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/exampleSite\/public\/scss\/bootstrap3_player.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/scss\/bootstrap3_player-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/exampleSite\/public\/scss\/custom.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/custom.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/exampleSite\/public\/scss\/orange.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/exampleSite\/public\/css\/orange.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/exampleSite\/public\/scss\/orange_variables.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/orange_variables.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/exampleSite\/public\/scss\/site.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/exampleSite\/public\/css\/site.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
 		},
 	"\/exampleSite\/public\/sept\/index.html": {
 		"ft": 8192,
@@ -7173,6 +7515,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/exampleSite\/public\/sitemap.xml",
+		"oF": 0
+		},
+	"\/exampleSite\/public\/swf\/audiojs.swf": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/public\/swf\/audiojs.swf",
 		"oF": 0
 		},
 	"\/exampleSite\/static\/.gitkeep": {
@@ -7390,12 +7738,6 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/layouts\/partials\/meta.html",
-		"oF": 0
-		},
-	"\/layouts\/partials\/row.html": {
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/layouts\/partials\/row.html",
 		"oF": 0
 		},
 	"\/layouts\/partials\/sidebar.html": {

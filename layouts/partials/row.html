@@ -75,7 +75,7 @@
 <ul class="pagination pagination-lg">
   {{ with $paginator.First }}
   <li class="page-item">
-      <a href="{{ .URL | absURL }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      <a href="{{ $.Site.BaseURL }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
   </li>
   {{ end }}
   <li class="{{ if not $paginator.HasPrev }}disabled {{ end }}page-item">
@@ -89,7 +89,7 @@
   </li>
   {{ with $paginator.Last }}
   <li class="page-item">
-      <a href="{{ .URL | absURL }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      <a href="{{ $.Site.BaseURL}}{{ .URL }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
   {{ end }}
 </ul>
