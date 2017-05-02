@@ -82,7 +82,7 @@
       <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous" class="page-link"><span aria-hidden="true">&laquo;</span></a>
   </li>
   {{ range $paginator.Pagers }}
-  <li class="{{ if eq . $paginator }}active {{ end }}page-item"><a href="{{ .URL | absURL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
+  <li class="{{ if eq . $paginator }}active {{ end }}page-item"><a href="{{ $.Site.BaseURL}}{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
   {{ end }}
   <li class="{{ if not $paginator.HasNext }}disabled {{ end }}page-item">
       <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next" class="page-link"><span aria-hidden="true">&raquo;</span></a>
