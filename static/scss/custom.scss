@@ -71,8 +71,12 @@
     border-radius: 0px!important;
 }
 .footer_copyright {
+  > a {
+    color: $castanet-middle-container-bg;
+  }
     padding-right: 40px;
     padding-top: 10px;
+    color: $castanet-middle-container-bg
 }
 .sidebar_col {
     padding-top: 40px !important;
