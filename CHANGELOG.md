@@ -1,7 +1,35 @@
 # Change Log
 
-## [0.3.0](https://github.com/mattstratton/castanet/tree/0.3.0) (2017-04-26)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.2.6...0.3.0)
+## [0.4.0](https://github.com/mattstratton/castanet/tree/0.4.0) (2017-05-03)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.3.0...0.4.0)
+
+**Implemented enhancements:**
+
+- Add support for banner-style images to episode page [\#60](https://github.com/mattstratton/castanet/issues/60)
+- Add sidebar option to show hosts [\#46](https://github.com/mattstratton/castanet/issues/46)
+- Add grid option [\#43](https://github.com/mattstratton/castanet/issues/43)
+- Change guests to be pages instead of data files [\#42](https://github.com/mattstratton/castanet/issues/42)
+- add post data to episode page [\#29](https://github.com/mattstratton/castanet/issues/29)
+- Create episode archetype [\#5](https://github.com/mattstratton/castanet/issues/5)
+
+**Fixed bugs:**
+
+- Link in footer blends in with background [\#68](https://github.com/mattstratton/castanet/issues/68)
+- Theme causes issues with hosting on hugo-themes repository [\#66](https://github.com/mattstratton/castanet/issues/66)
+- Make all assets use absURL or relURL [\#64](https://github.com/mattstratton/castanet/issues/64)
+- Fix 404's in exampleSite [\#63](https://github.com/mattstratton/castanet/issues/63)
+- Wrap theme version in quotes in theme.toml [\#62](https://github.com/mattstratton/castanet/issues/62)
+- \[Bug\] Site title and hamburger menu overlap in mobile view [\#58](https://github.com/mattstratton/castanet/issues/58)
+- Subscribe buttons aren't buttons [\#52](https://github.com/mattstratton/castanet/issues/52)
+- add podcast\_length parameter to rss feed [\#15](https://github.com/mattstratton/castanet/issues/15)
+- orange background is off center on small devices [\#9](https://github.com/mattstratton/castanet/issues/9)
+
+**Closed issues:**
+
+- Share your theme with the community [\#57](https://github.com/mattstratton/castanet/issues/57)
+
+## [v0.3.0](https://github.com/mattstratton/castanet/tree/v0.3.0) (2017-04-26)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.2.6...v0.3.0)
 
 **Implemented enhancements:**
 
