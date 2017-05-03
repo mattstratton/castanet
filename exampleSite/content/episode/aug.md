@@ -6,6 +6,7 @@ categories = []
 date = "2016-08-25T04:09:58-05:00"
 episode = "11"
 episode_image = "img/episode/default.jpg"
+episode_banner = "img/episode/default-banner.jpg"
 explicit = "no"
 guests = ["mstratton"]
 images = ["img/episode/default-social.jpg"]
