@@ -3,17 +3,35 @@
   <div class="row">
     <div class="col-md-12">
       <h1>{{ title .Title }}</h1>
+      <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-3">
-      <img src="{{ .Params.episode_image | absURL }}" class="img-fluid episode_image"/>
+  {{ if isset .Params "episode_banner" }}
+    {{ if ne .Params.episode_banner "" }}
+    <div class = "row">
+    <div class = "col">
+      <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
     </div>
-    <div class="col-md-8">
-      {{ .Description | markdownify }}
     </div>
-  </div>
+    <div class = "row">
+    <div class = "col">
+    {{ .Description | markdownify }}
+    </div>
+    </div>
+    {{ end }}
+    {{ else }}
+    <!-- begin square row -->
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{{ .Params.episode_image | absURL }}" class="img-fluid episode_image"/>
+      </div>
+      <div class="col-md-8">
+        {{ .Description | markdownify }}
+      </div>
+    </div>
+    <!-- end square row -->
+    {{ end }}
   <div class="row">
     <div class="col-md-12 player_row">
       <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto"/>

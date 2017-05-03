@@ -5,6 +5,29 @@
   </h2>
 
   {{ range first 1 (where .Data.Pages "Type" "episode") }}
+  {{ if isset .Params "episode_banner" }}
+    {{ if ne .Params.episode_banner "" }}
+      <div class = "row homepage_episode_row">
+        <div class = "col">
+          <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+        </div>
+      </div>
+      <div class = "row homepage_episode_row">
+      <div class = "col">
+        <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
+      </div>
+      </div>
+      <div class = "row homepage_episode_row">
+      <div class = "col">
+      {{ .Description | markdownify }}
+      </div>
+      </div>
+
+
+      {{ end }}
+      {{ else }}
+  <!-- begin square row -->
     <div class = "row homepage_episode_row">
       <div class = "col-md-12">
         <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
@@ -18,12 +41,14 @@
       <div class = "col-md-8">
         <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
       </div>
-    </div>
+    </div><!-- end square row -->
+      {{ end }}
     <div class = "row">
       <div class = "col-md-12">
       <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto" />
       </div>
     </div>
+
   {{ end }}
   </div>
 </div>
