@@ -4689,6 +4689,12 @@
 		"oAP": "\/exampleSite\/.gitignore",
 		"oF": 0
 		},
+	"\/exampleSite\/config.toml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/config.toml",
+		"oF": 0
+		},
 	"\/exampleSite\/content\/about\/about.md": {
 		"cS": 0,
 		"eF": 1,
@@ -7738,6 +7744,12 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/layouts\/partials\/meta.html",
+		"oF": 0
+		},
+	"\/layouts\/partials\/row.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/partials\/row.html",
 		"oF": 0
 		},
 	"\/layouts\/partials\/sidebar.html": {
