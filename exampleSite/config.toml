@@ -85,6 +85,9 @@ media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arr
         twitter = "mattstratton"
         linkedin = "mattstratton"
         homepage = "https://www.mattstratton.io"
+        pinterest = "mattstratton"
+        instagram = "instagram"
+        youtube = "mattstratton"
     [params.authors.Trevor]
 			name = "Trevor Hess"
 			thumbnail = "https://www.arresteddevops.com/img/trevor.png"
