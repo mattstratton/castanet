@@ -6,4 +6,7 @@ Facebook = ""
 Linkedin = ""
 GitHub = ""
 Thumbnail = ""
+Pinterest = ""
+Instagram = ""
+YouTube = ""
 +++

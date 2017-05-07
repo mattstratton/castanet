@@ -95,6 +95,21 @@
                         <i class="fa fa-facebook-square fa-2x"></i>
                       </a>
                     {{ end }}
+                    {{ if .Params.Pinterest }}
+                      <a href="https://www.pinterest.com/{{ .Params.Pinterest}}">
+                        <i class="fa fa-pinterest-square fa-2x"></i>
+                      </a>
+                    {{ end }}
+                    {{ if .Params.Instagram }}
+                      <a href="https://www.instagram.com/{{ .Params.Instagram}}">
+                        <i class="fa fa-instagram fa-2x"></i>
+                      </a>
+                    {{ end }}
+                    {{ if .Params.YouTube }}
+                      <a href="https://www.youtube.com/{{ .Params.YouTube}}">
+                        <i class="fa fa-youtube-square fa-2x"></i>
+                      </a>
+                    {{ end }}
                   </div>
                 </div>
                 {{ end }}
