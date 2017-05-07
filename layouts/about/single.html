@@ -52,10 +52,19 @@
         <a href = "https://github.com/{{ $p.social.github}}"><i class="fa fa-github-square fa-2x"></i></a>
       {{ end }}
       {{ if isset $p.social "linkedin" }}
-        <a href = "{{ $p.social.linkedin}}"><i class="fa fa-linkedin-square fa-2x"></i></a>
+        <a href = "https://www.linkedin.com/in/{{ $p.social.linkedin}}"><i class="fa fa-linkedin-square fa-2x"></i></a>
       {{ end }}
       {{ if isset $p.social "facebook" }}
-        <a href = "{{ $p.social.facebook}}"><i class="fa fa-facebook-square fa-2x"></i></a>
+        <a href = "https://www.facebook.com/{{ $p.social.facebook}}"><i class="fa fa-facebook-square fa-2x"></i></a>
+      {{ end }}
+      {{ if isset $p.social "pinterest" }}
+        <a href = "https://www.pinterest.com/{{ $p.social.pinterest}}"><i class="fa fa-pinterest-square fa-2x"></i></a>
+      {{ end }}
+      {{ if isset $p.social "instagram" }}
+        <a href = "https://www.instagram.com/{{ $p.social.instagram}}"><i class="fa fa-instagram-square fa-2x"></i></a>
+      {{ end }}
+      {{ if isset $p.social "youtube" }}
+        <a href = "https://www.youtube.com/{{ $p.social.youtube}}"><i class="fa fa-youtube-square fa-2x"></i></a>
       {{ end }}
     </div>
     </div>
