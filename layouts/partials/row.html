@@ -1,4 +1,10 @@
+{{ if isset .Site.Params "enable_jumbo" }}
+  {{ if eq .Site.Params.enable_jumbo "true" }}
+    {{- partial "jumbotron.html" . }}
+  {{ end }}
+{{ end }}
 <div class="row hero_container">
+
   <div class="col-md-12">
   <h2>
   Latest Episode
@@ -72,7 +78,15 @@
 {{ $list := (where .Data.Pages "Type" "episode") }}
 {{ $len := (len $list)}}
 <div class="row main_container">
-<div class="col-md-8">
+{{ with .Site.Params.enable_jumbo }}
+  {{ if eq . "true" }}
+    <div class = "col">
+  {{ else }}
+    <div class="col-md-8">
+  {{ end }}
+{{ else }}
+  <div class="col-md-8">
+{{ end }}
 {{ if gt $len 1 }}
     {{ range $paginator.Pages }}
       <div class = "row homepage_episode_row">
@@ -112,9 +126,19 @@
     {{ end }}
   {{ end }}
 </div>
-<div class="col-md-4 sidebar_col">
-  {{ partial "sidebar.html" . }}
-</div>
+
+{{ if isset .Site.Params "enable_jumbo" }}
+  {{ if ne .Site.Params.enable_jumbo "true" }}
+    <div class="col-md-4 sidebar_col">
+      {{ partial "sidebar.html" . }}
+    </div>
+  {{ else }}
+    <div class="col-md-4 sidebar_col">
+      {{ partial "sidebar.html" . }}
+    </div>
+  {{ end }}
+{{ end }}
+
 </div>
 <div class="row">
 <div class="col-md-12">
