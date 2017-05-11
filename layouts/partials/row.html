@@ -20,7 +20,7 @@
       </div>
       <div class = "row homepage_episode_row">
       <div class = "col">
-      {{ .Description | markdownify }}
+      {{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
       </div>
       </div>
 
@@ -34,14 +34,28 @@
         <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
       </div>
     </div>
-    <div class = "row homepage_episode_row">
-      <div class = "col-md-4">
-        <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
+    {{ if .Params.episode_image }}
+      <div class = "row homepage_episode_row">
+        <div class = "col-md-3">
+          <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
+        </div>
+        <div class = "col-md-8">
+          {{ if ge (countrunes .Description ) 600 }}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{ else }}
+            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+          {{ end }}
+        </div>
+      </div><!-- end square row -->
+    {{ else }}
+      <div class = "col">
+      {{ if ge (countrunes .Description ) 600 }}
+        <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 900 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+      {{ else }}
+        <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+      {{ end }}
       </div>
-      <div class = "col-md-8">
-        <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
-      </div>
-    </div><!-- end square row -->
+    {{ end }}
       {{ end }}
     <div class = "row">
       <div class = "col-md-12">
@@ -68,13 +82,27 @@
         </div>
       </div>
       <div class = "row homepage_episode_row">
-        <div class = "col-md-4">
-          <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
+      {{ if .Params.episode_image}}
+          <div class = "col-md-4">
+            <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
+          </div>
+          <div class = "col-md-8">
+          {{ if ge (countrunes .Description ) 600 }}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{ else }}
+            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+          {{ end }}
+          </div>
+        {{ else }}
+          <div class = "col">
+          {{ if ge (countrunes .Description ) 900 }}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 900 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{ else }}
+            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+          {{ end }}
+          </div>
+        {{ end }}
         </div>
-        <div class = "col-md-8">
-          <p class = "hompage_episode_description">{{ .Description | markdownify}}</p>
-        </div>
-      </div>
       <div class = "row homepage_episode_row">
         <div class = "col-md-12 player_row">
         <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto" />
