@@ -123,6 +123,7 @@
                     {{ end }}
                   </div>
                 </div>
+                {{- $.Scratch.Set "guest-exist" "false" -}}
                 {{ end }}
               {{ end }}
               {{ if ne ($.Scratch.Get "guest-exist") "true"}}
