@@ -11,3 +11,12 @@
 [context.deploy-preview]
   publish = "exampleSite/public/"
   command = "bin/netlify.sh"
+
+  [context.production.environment]
+     HUGO_VERSION = "0.20.7"
+
+  [context.deploy-preview.environment]
+    HUGO_VERSION = "0.20.7"
+
+  [context.branch-deploy.environment]
+    HUGO_VERSION = "0.20.7"
