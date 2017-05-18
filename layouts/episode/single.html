@@ -9,27 +9,38 @@
 
   {{ if isset .Params "episode_banner" }}
     {{ if ne .Params.episode_banner "" }}
-    <div class = "row">
-    <div class = "col">
-      <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
-    </div>
-    </div>
-    <div class = "row">
-    <div class = "col">
-    {{ .Description | markdownify }}
-    </div>
-    </div>
+      <div class = "row">
+      <div class = "col">
+        <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
+      </div>
+      </div>
+      <div class = "row">
+      <div class = "col">
+      {{ .Description | markdownify }}
+      </div>
+      </div>
     {{ end }}
     {{ else }}
     <!-- begin square row -->
-    <div class="row">
-      <div class="col-md-3">
-        <img src="{{ .Params.episode_image | absURL }}" class="img-fluid episode_image"/>
+    {{- if isset .Params "episode_image" -}}
+      {{- if ne .Params.episode_image "" -}}
+        <div class="row">
+          <div class="col-md-3">
+            <img src="{{ .Params.episode_image | absURL }}" class="img-fluid episode_image"/>
+          </div>
+          <div class="col-md-8">
+            {{ .Description | markdownify }}
+          </div>
+        </div>
+      {{- end -}}
+      {{- else -}}
+      <div class="row">
+        <div class="col">
+          {{ .Description | markdownify }}
+        </div>
       </div>
-      <div class="col-md-8">
-        {{ .Description | markdownify }}
-      </div>
-    </div>
+      {{- end -}}
+
     <!-- end square row -->
     {{ end }}
   <div class="row">
