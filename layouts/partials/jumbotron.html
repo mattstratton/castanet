@@ -36,7 +36,7 @@
     {{ end }}
     {{ if (isset .Site.Params "rss_subscribe" )}}
       <div class = "col subscribe_buttons col-md-auto">
-        <a class="btn btn-default" href="{{ .Site.params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
+        <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
       </div>
     {{ else }}
       <div class = "col subscribe_buttons">
