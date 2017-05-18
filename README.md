@@ -19,6 +19,8 @@ Previews of different configurations:
 - [Orange Grid](https://www.castanet-theme.com/orange-grid)
 - [Blue Row](https://www.castanet-theme.com/blue-row)
 - [Blue Grid](https://www.castanet-theme.com/blue-grid)
+- [Grey Row](https://www.castanet-theme.com/grey-row)
+- [Grey Grid](https://www.castanet-theme.com/grey-grid)
 
 ## Installation
 

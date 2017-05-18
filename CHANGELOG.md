@@ -1,7 +1,20 @@
 # Change Log
 
-## [0.4.0](https://github.com/mattstratton/castanet/tree/0.4.0) (2017-05-03)
-[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.3.0...0.4.0)
+## [0.5.0](https://github.com/mattstratton/castanet/tree/0.5.0) (2017-05-18)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.4.0...0.5.0)
+
+**Implemented enhancements:**
+
+- Make episode images optional on episode pages [\#80](https://github.com/mattstratton/castanet/issues/80)
+- Provide option to use jumbotron on row layout [\#78](https://github.com/mattstratton/castanet/issues/78)
+- Make episode image optional [\#76](https://github.com/mattstratton/castanet/issues/76)
+- Add grey theme [\#74](https://github.com/mattstratton/castanet/issues/74)
+- Add links to previews of various themes/colors to README [\#73](https://github.com/mattstratton/castanet/issues/73)
+- Add additional host fields [\#71](https://github.com/mattstratton/castanet/issues/71)
+- Add additional guest fields [\#70](https://github.com/mattstratton/castanet/issues/70)
+
+## [v0.4.0](https://github.com/mattstratton/castanet/tree/v0.4.0) (2017-05-03)
+[Full Changelog](https://github.com/mattstratton/castanet/compare/v0.3.0...v0.4.0)
 
 **Implemented enhancements:**
 
