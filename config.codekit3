@@ -4689,6 +4689,12 @@
 		"oAP": "\/exampleSite\/.gitignore",
 		"oF": 0
 		},
+	"\/exampleSite\/config.toml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/config.toml",
+		"oF": 0
+		},
 	"\/exampleSite\/content\/about\/about.md": {
 		"cS": 0,
 		"eF": 1,
@@ -4843,6 +4849,24 @@
 		"ft": 4096,
 		"oA": 1,
 		"oAP": "\/exampleSite\/content\/episode\/july.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/exampleSite\/content\/episode\/june.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/exampleSite\/content\/episode\/june.html",
 		"oF": 0,
 		"oFM": 0,
 		"oS": 0,
@@ -7983,6 +8007,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/static\/css\/font-awesome.min-min.css",
+		"oF": 0,
+		"oS": 0
+		},
+	"\/static\/css\/grey.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/static\/css\/grey-min.css",
 		"oF": 0,
 		"oS": 0
 		},
