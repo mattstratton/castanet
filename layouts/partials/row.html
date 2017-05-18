@@ -73,6 +73,7 @@
   </div>
 </div>
 
+<section class="episode-list">
 <!-- rest of episodes -->
 {{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 }}
 {{ $list := (where .Data.Pages "Type" "episode") }}
@@ -175,3 +176,4 @@
 {{ end }}
 </div>
 </div>
+</div> <!-- end section -->
