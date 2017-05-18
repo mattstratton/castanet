@@ -8284,6 +8284,32 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/static\/scss\/grey.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/static\/css\/grey.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"\/static\/scss\/grey_variables.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/static\/css\/grey_variables.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"\/static\/scss\/orange.scss": {
 		"aP": 1,
 		"bl": 0,

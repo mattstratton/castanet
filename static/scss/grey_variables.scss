@@ -1,0 +1,28 @@
+//** Color scheme via https://coolors.co
+
+$brand-primary:                 #2A2D34;
+$body-bg:                       lighten($brand-primary, 20%);
+$castanet-main-container-bg:    #BCBDC0;
+$castanet-middle-container-bg:   #fff;
+$castanet-sidebar-bg:            $brand-primary;
+$link-color:              $brand-primary;
+
+//== Pagination
+//
+//##
+
+$pagination-color:                     $link-color;
+$pagination-bg:                        #fff;
+$pagination-border:                    #ddd;
+
+$pagination-hover-color:               $link-hover-color;
+$pagination-hover-bg:                  $gray-lighter;
+$pagination-hover-border:              #ddd;
+
+$pagination-active-color:              #fff;
+$pagination-active-bg:                 $brand-primary;
+$pagination-active-border:             $brand-primary;
+
+$pagination-disabled-color:            $gray-light;
+$pagination-disabled-bg:               #fff;
+$pagination-disabled-border:           #ddd;
