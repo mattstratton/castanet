@@ -41,7 +41,7 @@ You will need to add a handful of configuration items to your `config.toml` file
 - `disqusShortname` - the shortname for use in Disqus comments. Example: `"arresteddevops"`. Note: The Disqus comments will not appear if you are running on `localhost`.
 
 - `[params]`
-  - `site_theme` - the color scheme for the overall site. Currently the two options are `orange` and `blue`. Optional. Example: `"blue"`. Defaults to the `orange` theme if not set.
+  - `site_theme` - the color scheme for the overall site. Currently the options are `orange`, `grey`, and `blue`. Optional. Example: `"blue"`. Defaults to the `orange` theme if not set.
   - `site_layout` - the layout to use. The optiions are `grid` or `row`. Optional. Example `"grid"`.
   - `enable_jumbo` - When using the `row` layout, will set a jumbotron at the top intead of the sidebar. Optional. Can be "true" or "false".
   - `custom_css` - array of custom CSS files for over-riding theme settings or adding your own classes. Example: `["custom.css", "other_custom.css"]`. These files should be put into your `static` directory (not the `static` directory of the theme).
