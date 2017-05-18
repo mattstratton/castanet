@@ -9,14 +9,14 @@
      xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>{{ .Site.Title }}</title>
-    <atom:link href="{{ .Site.BaseURL }}/episode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ "episode/index.xml" | absURL }}" rel="self" type="application/rss+xml" />
     <link>{{ .Site.BaseURL }}</link>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <language>en-us</language>
     <copyright>{{ .Site.Params.feed_copyright }}</copyright>
-    <itunes:subtitle>{{ .Site.Params.feed.itunes_subtitle }}</itunes:subtitle>
+    {{ with .Site.Params.feed.itunes_subtitle }}<itunes:subtitle>{{ . }}</itunes:subtitle>{{ end }}
     <itunes:author>{{ .Site.Params.feed.itunes_author }}</itunes:author>
     <itunes:summary>{{ .Site.Params.feed.itunes_summary }}</itunes:summary>
     <description>{{ .Site.Params.feed.itunes_summary }}</description>
