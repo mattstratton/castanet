@@ -11,8 +11,15 @@
   </h2>
 
   {{ range first 1 (where .Data.Pages "Type" "episode") }}
-  {{ if isset .Params "episode_banner" }}
-    {{ if ne .Params.episode_banner "" }}
+    {{- with .Params.youtube -}}
+      {{- $.Scratch.Set "youtube" "true" -}}
+    {{- end -}}
+    {{- with .Params.episode_banner -}}
+      {{- $.Scratch.Set "episode_banner" "true" -}}
+    {{- end -}}
+
+    {{/* Begin youtube */}}
+    {{- if eq ($.Scratch.Get "youtube") "true" -}}
       <div class = "row homepage_episode_row">
         <div class = "col">
           <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
@@ -20,76 +27,94 @@
         </div>
       </div>
       <div class = "row homepage_episode_row">
-      <div class = "col">
-        <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
-      </div>
+        <div class = "col">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ .Params.youtube }}" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
       <div class = "row homepage_episode_row">
-      <div class = "col">
-      {{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
+        <div class = "col">
+          {{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
+        </div>
       </div>
+    {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
+      <div class = "row homepage_episode_row">
+        <div class = "col">
+          <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+        </div>
       </div>
-
-
-      {{ end }}
-      {{ else }}
-  <!-- begin square row -->
+      <div class = "row homepage_episode_row">
+        <div class = "col">
+          <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
+        </div>
+      </div>
+      <div class = "row homepage_episode_row">
+        <div class = "col">
+          {{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
+        </div>
+      </div>
+    {{- else -}}
+    <!-- begin square row -->
     <div class = "row homepage_episode_row">
       <div class = "col-md-12">
         <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
         <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
       </div>
     </div>
-    {{ if .Params.episode_image }}
+    {{- if .Params.episode_image -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-3">
-          <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
+          <img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" />
         </div>
         <div class = "col-md-8">
-          {{ if ge (countrunes .Description ) 600 }}
+          {{- if ge (countrunes .Description ) 600 -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-          {{ else }}
+          {{- else -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
-          {{ end }}
+          {{- end -}}
         </div>
       </div><!-- end square row -->
-    {{ else }}
+    {{- else -}}
       <div class = "col">
-      {{ if ge (countrunes .Description ) 600 }}
+      {{- if ge (countrunes .Description ) 600 -}}
         <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 900 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-      {{ else }}
+      {{- else -}}
         <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
-      {{ end }}
+      {{- end -}}
       </div>
-    {{ end }}
-      {{ end }}
+    {{- end -}}
+  {{- end -}}
+  {{- with .Params.podcast_file -}}
     <div class = "row">
       <div class = "col-md-12">
-      <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto" />
+      <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto" />
       </div>
     </div>
+  {{- end -}}
 
-  {{ end }}
+  {{- end -}}
   </div>
 </div>
 
 <section class="episode-list">
 <!-- rest of episodes -->
-{{ $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 }}
-{{ $list := (where .Data.Pages "Type" "episode") }}
-{{ $len := (len $list)}}
+{{- $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 -}}
+{{- $list := (where .Data.Pages "Type" "episode") -}}
+{{- $len := (len $list) -}}
 <div class="row main_container">
-{{ with .Site.Params.enable_jumbo }}
-  {{ if eq . "true" }}
+{{- with .Site.Params.enable_jumbo -}}
+  {{- if eq . "true" -}}
     <div class = "col">
-  {{ else }}
+  {{- else -}}
     <div class="col-md-8">
-  {{ end }}
-{{ else }}
+  {{- end -}}
+{{- else -}}
   <div class="col-md-8">
-{{ end }}
-{{ if gt $len 1 }}
-    {{ range $paginator.Pages }}
+{{- end -}}
+{{- if gt $len 1 -}}
+    {{- range $paginator.Pages -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
           <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
@@ -97,49 +122,51 @@
         </div>
       </div>
       <div class = "row homepage_episode_row">
-      {{ if .Params.episode_image}}
+      {{- if .Params.episode_image -}}
           <div class = "col-md-4">
-            <img class = "homepage_thumbnail img-rounded" src = "{{ .Params.episode_image | absURL }}" />
+            <img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" />
           </div>
           <div class = "col-md-8">
-          {{ if ge (countrunes .Description ) 600 }}
+          {{- if ge (countrunes .Description ) 600 -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-          {{ else }}
+          {{- else -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
-          {{ end }}
+          {{- end -}}
           </div>
-        {{ else }}
+        {{- else -}}
           <div class = "col">
-          {{ if ge (countrunes .Description ) 900 }}
+          {{- if ge (countrunes .Description ) 900 -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 900 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-          {{ else }}
+          {{- else -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
-          {{ end }}
+          {{- end -}}
           </div>
-        {{ end }}
-        </div>
-      <div class = "row homepage_episode_row">
-        <div class = "col-md-12 player_row">
-        <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto" />
-        </div>
+        {{- end -}}
       </div>
+      {{- with .Params.podcast_file -}}
+        <div class = "row homepage_episode_row">
+          <div class = "col-md-12 player_row">
+            <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto" />
+          </div>
+        </div>
+      {{- end -}}
 
-    {{ end }}
-  {{ end }}
+    {{- end -}}
+  {{- end -}}
 </div>
 
-{{ if isset .Site.Params "enable_jumbo" }}
-  {{ if ne .Site.Params.enable_jumbo "true" }}
+{{- if isset .Site.Params "enable_jumbo" -}}
+  {{- if ne .Site.Params.enable_jumbo "true" -}}
     <div class="col-md-4 sidebar_col">
-      {{ partial "sidebar.html" . }}
+      {{- partial "sidebar.html" . -}}
     </div>
-  {{ end }}
-{{ end }}
+  {{- end -}}
+{{- end -}}
 
 </div>
 <div class="row">
 <div class="col-md-12">
-{{ if gt $paginator.TotalPages 1 }}
+{{- if gt $paginator.TotalPages 1 -}}
 <div class = "row">
 <div class = "col">
 
@@ -147,33 +174,33 @@
 <nav class="pagination justify-content-center">
 
 <ul class="pagination pagination-lg">
-  {{ with $paginator.First }}
-  {{ $url := trim (string .URL) "/" | absURL  }}
-  <li class="page-item">
-      <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  {{ end }}
+  {{- with $paginator.First -}}
+    {{- $url := trim (string .URL) "/" | absURL -}}
+    <li class="page-item">
+        <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+  {{- end -}}
   <li class="{{ if not $paginator.HasPrev }}disabled {{ end }}page-item">
       <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous" class="page-link"><span aria-hidden="true">&laquo;</span></a>
   </li>
-  {{ range $paginator.Pagers }}
-  {{ $url := trim (string .URL) "/" | absURL  }}
-  <li class="{{ if eq . $paginator }}active {{ end }}page-item"><a href="{{ $url }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
-  {{ end }}
+  {{- range $paginator.Pagers -}}
+    {{- $url := trim (string .URL) "/" | absURL -}}
+    <li class="{{ if eq . $paginator }}active {{ end }}page-item"><a href="{{ $url }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
+  {{- end -}}
   <li class="{{ if not $paginator.HasNext }}disabled {{ end }}page-item">
       <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next" class="page-link"><span aria-hidden="true">&raquo;</span></a>
   </li>
-  {{ with $paginator.Last }}
-  {{ $url := trim (string .URL) "/" | absURL  }}
-  <li class="page-item">
-      <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-  {{ end }}
+  {{- with $paginator.Last -}}
+    {{- $url := trim (string .URL) "/" | absURL -}}
+    <li class="page-item">
+        <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+  {{- end -}}
 </ul>
 </nav>
 </div>
 </div>
-{{ end }}
+{{- end -}}
 </div>
 </div>
 </div> <!-- end section -->

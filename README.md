@@ -114,7 +114,7 @@ I recommend the following permalink settings, although the theme will work just 
 
 ### Episodes
 
-Every episode requires a page in the `content/episode` on your site. The command `hugo new episode/myepisod.md` should populate it properly.
+Every episode requires a page in the `content/episode` on your site. The command `hugo new episode/myepisode.md` should populate it properly.
 
 An episode file takes the following structure:
 
@@ -157,7 +157,7 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `podcast_file`     | Yes      | The filename of your episode, relative to the `media_prefix` of your config.toml.                                                                                       | `"arrested-devops-podcast-episode053.mp3"`                                                                                                                                                                                            |
 | `podcast_bytes`    | No       | The length of the podcast file in bytes. This is optional, but iTunes and many other podcast players prefer this to be set.                                             | "23907533"                                                                                                                                                                                                                            |
 | `Title`            | Yes      | The title of the episode.                                                                                                                                               | "Back to School"                                                                                                                                                                                                                      |
-| `youtube`          | No       | The ID of the YouTube video (not the full URL). Currently unusued.                                                                                                      | "8ClZXJsgpHY"
+| `youtube`          | No       | The ID of the YouTube video (not the full URL). This will display the video on the episode page, and if you are using the row layout, it will display for the latest episode.                                                                                                      | "8ClZXJsgpHY"
 
 ### Guests
 
