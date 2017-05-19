@@ -8308,6 +8308,12 @@
 		"oA": 2,
 		"oAP": "\/theme.toml",
 		"oF": 0
+		},
+	"\/utils\/release-theme.sh": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/utils\/release-theme.sh",
+		"oF": 0
 		}
 	},
 "hooks": [
