@@ -4749,24 +4749,6 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/exampleSite\/content\/episode\/april.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 1,
-		"oAP": "\/exampleSite\/content\/episode\/april.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
 	"\/exampleSite\/content\/episode\/aug.md": {
 		"cS": 0,
 		"eF": 1,
@@ -7703,6 +7685,17 @@
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
+		"q": 100
+		},
+	"\/exampleSite\/static\/img\/host\/matt.png": {
+		"ft": 32768,
+		"iS": 66491,
+		"oA": 0,
+		"oAP": "\/exampleSite\/static\/img\/host\/matt.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
 		"q": 100
 		},
 	"\/images\/screenshot-v01.png": {
