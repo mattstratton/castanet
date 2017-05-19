@@ -1,8 +1,9 @@
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar fixed-top navbar-toggleable-sm navbar-light bg-faded">
+<div class="container">
+<a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
@@ -71,5 +72,6 @@
           </li>
         {{ end }}
       </ul>
+  </div>
   </div>
   </nav>
