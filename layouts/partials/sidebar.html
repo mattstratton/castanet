@@ -21,6 +21,11 @@
           <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fa fa-music"></i>&nbsp;Google Play Music</a>
         </div>
       {{ end }}
+      {{ with .Site.Params.sticher_subscribe }}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="{{ . }}"><i class="fa fa-podcast"></i>&nbsp;Stitcher</a>
+        </div>
+      {{ end }}
       {{ if (isset .Site.Params "rss_subscribe" )}}
         <div class = "col-md-12 subscribe_buttons">
           <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
