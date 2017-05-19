@@ -1,7 +1,7 @@
 {{ define "main" }}
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col">
       <h1>{{ title .Title }}</h1>
       <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
     </div>
@@ -43,13 +43,25 @@
 
     <!-- end square row -->
     {{ end }}
-  <div class="row">
-    <div class="col-md-12 player_row">
-      <audio src="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" preload="auto"/>
+    {{- with .Params.podcast_file -}}
+      <div class="row">
+        <div class="col-md-12 player_row">
+          <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto"/>
+        </div>
+      </div>
+    {{- end -}}
+  {{- with .Params.youtube -}}
+    <div class = "row youtube_row">
+      <div class = "col">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ . }}" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
-  </div>
+  {{- end -}}
+
   <div class="row">
-    <div class="col-md-12">
+    <div class="col">
       <h2>Show Notes</h2>
       {{ .Content }}
     </div>
@@ -57,7 +69,7 @@
 
   {{ with .Params.guests }}
         <div class="row">
-          <div class="col-md-12">
+          <div class="col">
             <h2>Guests</h2>
           </div>
         </div>
