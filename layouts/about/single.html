@@ -36,9 +36,9 @@
     <div class="row person_row">
       <div class="col-md-3">
         {{ if (eq (slicestr $p.thumbnail 0 4) "http") }}
-         <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail }}" class="img-responsive">
+         <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail }}" class="img-fluid">
         {{ else }}
-          <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail | absURL }}" class="img-responsive">
+          <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail | absURL }}" class="img-fluid">
         {{ end }}
       </div>
       <div class= "col-md-6">
