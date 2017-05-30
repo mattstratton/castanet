@@ -71,6 +71,11 @@
             <a class = "social-links" href="https://github.com/{{ .Site.Params.social.github }}"><i class="fa fa-github fa-2x"></i></a>
           </li>
         {{ end }}
+        {{ if (isset .Site.Params.social "gitlab" ) }}
+          <li>
+            <a class = "social-links" href="https://gitlab.com/{{ .Site.Params.social.gitlab }}"><i class="fa fa-gitlab fa-2x"></i></a>
+          </li>
+        {{ end }}
       </ul>
   </div>
   </div>
