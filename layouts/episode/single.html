@@ -49,6 +49,11 @@
           <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto"/>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+          <a href="{{ $.Site.Params.media_prefix }}{{ . }}">Direct Download</a>
+        </div>
+      </div>
     {{- end -}}
   {{- with .Params.youtube -}}
     <div class = "row youtube_row">
