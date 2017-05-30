@@ -66,6 +66,7 @@ media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arr
 
   [params.social]
     github = "arresteddevops"
+    gitlab = "mattstratton"
     facebook = "Arresteddevops"
     facebook_admin = "500557137"  # This needs to be a page admin to get domain insights
     twitter = "arresteddevops"
