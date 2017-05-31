@@ -15,8 +15,7 @@ themesdir = "../.."
 
 # The theme supports menus with up to one submenu per menu item
 # The menu name must be "Main"
-# SectionPagesMenu = "Main"
-# About section of menu
+# The menus are sorted based upon their identifier
 [[Menu.Main]]
     name = "About"
     identifier = "about"
@@ -35,6 +34,11 @@ themesdir = "../.."
 [[Menu.Main]]
     name = "Books"
     identifier = "books"
+    url = "books"
+    parent = "resources"
+[[Menu.Main]]
+    name = "Podcasts"
+    identifier = "podcasts"
     url = "books"
     parent = "resources"
 

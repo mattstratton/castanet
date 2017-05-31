@@ -8,12 +8,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
     {{ $currentNode := . }}
-    {{ range .Site.Menus.main }}
+    {{ range sort .Site.Menus.main "Identifier"}}
       {{ if .HasChildren }}
         <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
         <div class="dropdown-menu">
-        {{ range .Children }}
+        {{ range sort .Children  "Identifier"}}
           <a class="dropdown-item{{ if $currentNode.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL | absURL }}">{{ .Name }}</a>
         {{ end }}
         </div>
