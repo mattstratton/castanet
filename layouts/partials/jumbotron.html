@@ -35,8 +35,18 @@
       </div>
     {{ end }}
     {{ with .Site.Params.sticher_subscribe }}
-      <div class = "col subscribe_buttons">
+      <div class = "col subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ . }}"><i class="fa fa-podcast"></i>&nbsp;Stitcher</a>
+      </div>
+    {{ end }}
+    {{ if (isset .Site.Params "soundcloud_subscribe") }}
+      <div class = "col subscribe_buttons col-md-auto">
+        <a class="btn btn-default" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fa fa-soundcloud"></i>&nbsp;Soundcloud</a>
+      </div>
+    {{ end }}
+    {{ if (isset .Site.Params "pocketcasts_subscribe") }}
+      <div class = "col subscribe_buttons col-md-auto">
+        <a class="btn btn-default" href="{{ .Site.Params.pocketcasts_subscribe }}"><i class="fa fa-podcast"></i>&nbsp;PocketCasts</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "rss_subscribe" )}}
@@ -44,11 +54,12 @@
         <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
       </div>
     {{ else }}
-      <div class = "col subscribe_buttons">
-        <a class="btn btn-default" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Subscribe via RSS</a>
+      <div class = "col subscribe_buttons col-md-auto">
+        <a class="btn btn-default" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
       </div>
     {{ end }}
 
 
+</div>
 </div>
 </div>
