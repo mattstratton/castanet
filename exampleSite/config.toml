@@ -101,3 +101,14 @@ media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arr
 			bio = ""
 				[params.authors.Trevor.social]
 					twitter = "trevorghess"
+
+    [params.links]
+      [params.links.ado]
+        name = "Arrested DevOps"
+        url = "https://www.arresteddevops.com"
+      [params.links.ffs]
+        name = "Food Fight Show"
+        url = "https://foodfightshow.org"
+      [params.links.sdt]
+        name = "Software Defined Talk"
+        url = "https://cote.io/podcasts/sdt/"

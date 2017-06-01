@@ -134,6 +134,25 @@ You also will set the social parameters (all are optional) under `[params.author
 | `homepage`  | No       | The user's website, including the `http` at the beginning.                                                       | "https://www.mattstratton.com" |
 
 
+#### Link Parameters
+
+To generate the list of links in the sidebar, you will set them in the `config.toml` similar to this:
+
+```
+[params.links]
+  [params.links.ado]
+    name = "Arrested DevOps"
+    url = "https://www.arresteddevops.com"
+  [params.links.ffs]
+    name = "Food Fight Show"
+    url = "https://foodfightshow.org"
+  [params.links.sdt]
+    name = "Software Defined Talk"
+    url = "https://cote.io/podcasts/sdt/"
+```
+
+The idetifier for the link simply needs to be unique; it's not used anywhere else.
+
 #### A note about `BaseURL`
 
 This theme is fairly dependent upon a proper `BaseURL` being set in the `config.toml`. This has to do with how the feed is generated as well as some of the social metadata (these things cannot be relative URL's). I'm fully aware that this can cause issues with some build systems, and I'm trying to work on a good solution for this. This must end in a slash. Example: `https://www.arresteddevops.com/`
