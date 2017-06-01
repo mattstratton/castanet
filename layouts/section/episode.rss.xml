@@ -8,7 +8,7 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
      xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>{{ .Site.Title }}</title>
+    <title>{{ $.Site.Title }}</title>
     <atom:link href="{{ "episode/index.xml" | absURL }}" rel="self" type="application/rss+xml" />
     <link>{{ .Site.BaseURL }}</link>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
@@ -18,8 +18,8 @@
     <copyright>{{ .Site.Params.feed_copyright }}</copyright>
     {{ with .Site.Params.feed.itunes_subtitle }}<itunes:subtitle>{{ . }}</itunes:subtitle>{{ end }}
     <itunes:author>{{ .Site.Params.feed.itunes_author }}</itunes:author>
-    <itunes:summary>{{ .Site.Params.feed.itunes_summary }}</itunes:summary>
-    <description>{{ .Site.Params.feed.itunes_summary }}</description>
+    <itunes:summary>{{ .Site.Params.feed.itunes_summary | truncate 4000 ""}}</itunes:summary>
+    <description>{{ .Site.Params.feed.itunes_summary | truncate 4000 ""}}</description>
     <itunes:owner>
     <itunes:name>{{ .Site.Params.feed.itunes_owner_name }}</itunes:name>
     <itunes:email>{{ .Site.Params.feed.itunes_owner_email }}</itunes:email>
