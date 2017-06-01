@@ -76,6 +76,9 @@
             <a class = "social-links" href="https://gitlab.com/{{ .Site.Params.social.gitlab }}"><i class="fa fa-gitlab fa-2x"></i></a>
           </li>
         {{ end }}
+        <li>
+          <a class = "social-links" href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}"><i class="fa fa-rss fa-2x"></i></a>
+        </li>
       </ul>
   </div>
   </div>
