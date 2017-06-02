@@ -80,6 +80,34 @@
   </div>
 {{ end }}<!-- mailchimp end -->
 
+<!-- links sidebar -->
+{{ if isset $.Site.Params "links" }}
+  <div class = "row">
+    <div class="col-md-12 sidebar_general">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="sidebar_headline text-uppercase">
+            {{/* {{ $.Site.Params.links.title }} */}}
+            Links
+          </h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class = "col-md-12">
+          <div class="sidebar_content">
+            <ul>
+              {{ range $l:= $.Site.Params.links }}
+                <li><a href = "{{ $l.url }}">{{ $l.name}}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}
+
+
 {{ if (isset .Site.Params "description") }} <!-- about begin -->
   <div class="row">
     <div class="col-md-12 sidebar_general">
