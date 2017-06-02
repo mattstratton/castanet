@@ -26,6 +26,16 @@
           <a class="btn btn-default" href="{{ . }}"><i class="fa fa-podcast"></i>&nbsp;Stitcher</a>
         </div>
       {{ end }}
+      {{ if (isset .Site.Params "soundcloud_subscribe") }}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fa fa-soundcloud"></i>&nbsp;Soundcloud</a>
+        </div>
+      {{ end }}
+      {{ if (isset .Site.Params "pocketcasts_subscribe") }}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="{{ .Site.Params.pocketcasts_subscribe }}"><i class="fa fa-podcast"></i>&nbsp;PocketCasts</a>
+        </div>
+      {{ end }}
       {{ if (isset .Site.Params "rss_subscribe" )}}
         <div class = "col-md-12 subscribe_buttons">
           <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
