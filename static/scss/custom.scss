@@ -34,6 +34,37 @@
 .grid_container {
   padding-top: 20px;
 }
+
+.grid_episode_col {
+  margin-bottom: 20px;
+}
+
+.grid_episode_detail {
+  background-color: #000;
+  padding: 10px;
+}
+
+.grid_episode_title {
+  color: $body-bg;
+  > h3 {
+    text-transform: capitalize;
+  }
+}
+.grid_episode_title:hover {
+  text-decoration: none;
+  color: $castanet-middle-container-bg;
+}
+
+.row_latest_episode_title {
+  > h3 {
+    text-transform: capitalize;
+  }
+}
+.row_latest_episode_title:hover {
+  text-decoration: none;
+  color: $castanet-main-container-bg;
+}
+
 .sidebar_general {
     background-color: $castanet-sidebar-bg;
     // border-radius:15px;

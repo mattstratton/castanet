@@ -43,8 +43,8 @@ themesdir = "../.."
     parent = "resources"
 
 [params]
-site_theme = "orange"
-site_layout = "grid"
+site_theme = "blue"
+site_layout = "row"
 enable_jumbo = "true"
 # about_logo = "/img/hugocast.png"
 copyright_notice = "Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"

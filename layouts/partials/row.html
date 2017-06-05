@@ -22,7 +22,7 @@
     {{- if eq ($.Scratch.Get "youtube") "true" -}}
       <div class = "row homepage_episode_row">
         <div class = "col">
-          <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
         </div>
       </div>
@@ -41,7 +41,7 @@
     {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
       <div class = "row homepage_episode_row">
         <div class = "col">
-          <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
         </div>
       </div>
@@ -59,7 +59,7 @@
     <!-- begin square row -->
     <div class = "row homepage_episode_row">
       <div class = "col-md-12">
-        <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+        <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
         <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
       </div>
     </div>
@@ -117,7 +117,7 @@
     {{- range $paginator.Pages -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
-          <a href="{{ .Permalink }}"><h2>{{ .Title }}</h2></a>
+          <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
         </div>
       </div>
