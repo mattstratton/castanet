@@ -185,6 +185,25 @@
                 {{ end }}
             {{ end }}
   {{ end }}
+
+<!-- begin sponsor section -->
+{{- with .Params.sponsors -}}
+  <hr />
+{{- end -}}
+{{ range $sponsor :=.Params.sponsors }}
+  {{ if isset $.Site.Data.sponsors $sponsor }}
+  {{ $s :=  (index $.Site.Data.sponsors $sponsor) }}
+  <div><a href = "{{ $s.url | absURL }}"><img alt = "{{ $sponsor }}" src = "{{ $s.ad | absURL }}" class="img-fluid"></a></div><br />
+  {{end}}
+{{end}}
+
+{{- with .Params.sponsors -}}
+  <hr />
+{{- end -}}
+
+
+
+<!-- end sponsor section -->
       <div class="row">
         <!-- sharing begins -->
         <div class="col-md-12">

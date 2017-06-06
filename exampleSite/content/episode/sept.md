@@ -8,6 +8,7 @@ episode = "12"
 episode_image = "img/episode/sept.jpg"
 explicit = "no"
 guests = ["jsmith"]
+sponsors = ["bluthcompany"]
 images = ["img/episode/default-social.jpg"]
 news_keywords = []
 podcast_duration = "1:08:22"
