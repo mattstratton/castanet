@@ -6,6 +6,7 @@ podcast_duration = ""
 podcast_bytes = "" # the length of the episode in bytes
 episode_image = "img/episode/default.jpg"
 guests = []
+sponsors = []
 episode = ""
 title = ""
 images = ["img/episode/default-social.jpg"]
@@ -13,5 +14,5 @@ author = "##" # The name of an author from your config.toml file
 aliases = ["/##"]
 youtube = ""
 explicit = "no" # values are "yes" or "no"
-# media_override # if you have want to use a specific URL for the audio file
+# media_override # if you want to use a specific URL for the audio file
 +++
