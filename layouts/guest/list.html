@@ -1,0 +1,126 @@
+{{ define "main" }}
+
+<div class = "row">
+  <div class = "col-md-12">
+    <h1>Guests of {{ .Site.Title }}</h1>
+  </div>
+</div>
+{{ with .Content }}
+<div clas = "row">
+  <div class = "col">
+    {{ . }}
+  </div>
+</div>
+{{- end -}}
+<div class = "row">
+  <div class = "col">
+
+    {{ $paginator := .Paginate (where .Data.Pages "Type" "guest") }}
+    {{ range $paginator.Pages }}
+        <div class="row person_row">
+          <div class="col-md-3">
+            {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
+              {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
+                <a href = "{{(printf "guest/%s" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="img-fluid" width="250px"></a>
+                {{- else -}}
+                <a href = "{{(printf "guest/%s" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="img-fluid" width="250px"></a>
+              {{- end -}}
+              {{- else -}}
+              <a href = "{{(printf "guest/%s" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ "img/guest/default-guest.png" | absURL }}" class="img-fluid" width="250px"/></a>
+            {{- end -}}
+          </div>
+          <div class= "col-md-6">
+            <h3><a href = "{{(printf "guest/%s" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h3>
+            <p>{{ .Content | markdownify }}</p>
+            {{ with .Params.Website }}
+              <a href = "{{ . }}"><i class="fa fa-home fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Twitter }}
+              <a href = "https://twitter.com/{{ . }}"><i class="fa fa-twitter-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.GitHub}}
+              <a href = "https://github.com/{{ . }}"><i class="fa fa-github-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.LinkedIn }}
+              <a href = "https://www.linkedin.com/in/{{ . }}"><i class="fa fa-linkedin-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Facebook }}
+              <a href = "https://www.facebook.com/{{ . }}"><i class="fa fa-facebook-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Pinterest }}
+              <a href = "https://www.pinterest.com/{{ . }}"><i class="fa fa-pinterest-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Instagram }}
+              <a href = "https://www.instagram.com/{{ . }}"><i class="fa fa-instagram fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.YouTube }}
+              <a href = "https://www.youtube.com/{{ . }}"><i class="fa fa-youtube-square fa-2x"></i></a>
+            {{ end }}
+        </div>
+      </div>
+  {{ end }}
+  </div>
+</div>
+{{ if gt $paginator.TotalPages 1 }}
+<div class = "row">
+<div class = "col">
+
+
+<nav class="pagination justify-content-center">
+
+{{ $pag := $.Paginator }}
+{{ $window := $.Site.Params.paginateWindow | default 1 }}
+{{ if gt $pag.TotalPages 1 }}
+  {{ $total := $pag.TotalPages }}
+  {{ $size := add 5 (add $window $window) }}
+  {{ $cur := $pag.PageNumber }}
+  {{ if gt $total $size }}
+    {{ if lt $cur (sub $size (add $window 1)) }}
+      {{ $.Scratch.Set "show" (seq 1 (sub $size 2)) }}
+    {{ else if lt (sub $total $cur) (sub $size (add $window 2)) }}
+      {{ $.Scratch.Set "show" (seq (add (sub $total $size) 3) $total) }}
+    {{ else }}
+      {{ $.Scratch.Set "show" (seq (sub $cur $window) (add $cur $window)) }}
+    {{ end }}
+    {{ $.Scratch.Add "show" 1 }}
+    {{ $.Scratch.Add "show" $total }}
+  {{ else }}
+    {{ $.Scratch.Set "show" (seq 1 $total) }}
+  {{ end }}
+
+<ul class="pagination pagination-lg">
+{{- with $paginator.First -}}
+  {{- $url := trim (string .URL) "/" | absURL -}}
+  <li class="page-item">
+      <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+{{- end -}}
+<li class="{{ if not $paginator.HasPrev }}disabled {{ end }}page-item">
+    <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous" class="page-link"><span aria-hidden="true">&laquo;</span></a>
+</li>
+
+  {{ range $pag.Pagers }}
+    {{ $cur := .PageNumber }}
+    {{- $url := trim (string .URL) "/" | absURL -}}
+    {{ if in ($.Scratch.Get "show") $cur }}
+      <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
+    {{ else if in (slice 2 (sub $total 1)) $cur }}
+      <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
+    {{ end }}
+  {{ end }}
+  {{- with $paginator.Last -}}
+  {{- $url := trim (string .URL) "/" | absURL -}}
+  <li class="page-item">
+      <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
+{{- end -}}
+</ul>
+{{ end }}
+</nav>
+</div>
+</div>
+{{ end }}
+
+
+
+{{ end }}
