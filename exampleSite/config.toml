@@ -27,6 +27,11 @@ themesdir = "../.."
     url = "contact"
 
 [[Menu.Main]]
+    name = "Guests"
+    identifier = "guests"
+    url = "guest"
+
+[[Menu.Main]]
     name = "Resources"
     identifier = "resources"
     url = "#!"
