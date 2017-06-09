@@ -4983,6 +4983,24 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"\/exampleSite\/content\/guest\/_index.md": {
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"eLB": 0,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 1,
+		"oAP": "\/exampleSite\/content\/guest\/_index.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
 	"\/exampleSite\/content\/guest\/jsmith.md": {
 		"cS": 0,
 		"eF": 1,
@@ -5035,6 +5053,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/exampleSite\/data\/guests\/msmith.yml",
+		"oF": 0
+		},
+	"\/exampleSite\/data\/sponsors\/bluthcompany.yml": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/exampleSite\/data\/sponsors\/bluthcompany.yml",
 		"oF": 0
 		},
 	"\/exampleSite\/public\/.gitkeep": {
@@ -7929,6 +7953,16 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/exampleSite\/static\/img\/sponsors\/bluthcompany.jpg": {
+		"ft": 16384,
+		"iS": 56682,
+		"oA": 0,
+		"oAP": "\/exampleSite\/static\/img\/sponsors\/bluthcompany.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/images\/screenshot-v01.png": {
 		"ft": 32768,
 		"iS": 545100,
@@ -7996,6 +8030,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/layouts\/episode\/single.html",
+		"oF": 0
+		},
+	"\/layouts\/guest\/list.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/layouts\/guest\/list.html",
 		"oF": 0
 		},
 	"\/layouts\/guest\/single.html": {
@@ -8458,7 +8498,7 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/static\/css\/custom.css",
-		"oF": 1,
+		"oF": 0,
 		"oS": 3,
 		"uL": 1
 		},
