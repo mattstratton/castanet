@@ -8164,36 +8164,6 @@
 		"opt": 0,
 		"q": 100
 		},
-	"\/exampleSite\/static\/img\/guest\/ajohnston.jpg": {
-		"ft": 16384,
-		"iS": 1731,
-		"oA": 0,
-		"oAP": "\/exampleSite\/static\/img\/guest\/ajohnston.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/exampleSite\/static\/img\/guest\/cadams.jpg": {
-		"ft": 16384,
-		"iS": 2811,
-		"oA": 0,
-		"oAP": "\/exampleSite\/static\/img\/guest\/cadams.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/exampleSite\/static\/img\/guest\/ccooper.jpg": {
-		"ft": 16384,
-		"iS": 3272,
-		"oA": 0,
-		"oAP": "\/exampleSite\/static\/img\/guest\/ccooper.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
 	"\/exampleSite\/static\/img\/guest\/chamilton.jpg": {
 		"ft": 16384,
 		"iS": 3735,
@@ -8201,17 +8171,7 @@
 		"oAP": "\/exampleSite\/static\/img\/guest\/chamilton.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/exampleSite\/static\/img\/guest\/chernandez.jpg": {
-		"ft": 16384,
-		"iS": 4028,
-		"oA": 0,
-		"oAP": "\/exampleSite\/static\/img\/guest\/chernandez.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/exampleSite\/static\/img\/guest\/jdoe.jpg": {
@@ -8231,7 +8191,7 @@
 		"oAP": "\/exampleSite\/static\/img\/guest\/jlong.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/exampleSite\/static\/img\/guest\/jsmith.jpg": {
@@ -8246,7 +8206,7 @@
 		},
 	"\/exampleSite\/static\/img\/guest\/kdixon.jpg": {
 		"ft": 16384,
-		"iS": 2639,
+		"iS": 524015,
 		"oA": 0,
 		"oAP": "\/exampleSite\/static\/img\/guest\/kdixon.jpg",
 		"oF": 0,
@@ -8261,7 +8221,7 @@
 		"oAP": "\/exampleSite\/static\/img\/guest\/kgrant.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/exampleSite\/static\/img\/guest\/mstratton.jpg": {
@@ -8281,7 +8241,7 @@
 		"oAP": "\/exampleSite\/static\/img\/guest\/rcastillo.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/exampleSite\/static\/img\/guest\/rshaw.jpg": {
@@ -8291,7 +8251,7 @@
 		"oAP": "\/exampleSite\/static\/img\/guest\/rshaw.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/exampleSite\/static\/img\/guest\/rtaylor.jpg": {
@@ -8301,37 +8261,7 @@
 		"oAP": "\/exampleSite\/static\/img\/guest\/rtaylor.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/exampleSite\/static\/img\/guest\/scox.jpg": {
-		"ft": 16384,
-		"iS": 3006,
-		"oA": 0,
-		"oAP": "\/exampleSite\/static\/img\/guest\/scox.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/exampleSite\/static\/img\/guest\/smorgan.jpg": {
-		"ft": 16384,
-		"iS": 3433,
-		"oA": 0,
-		"oAP": "\/exampleSite\/static\/img\/guest\/smorgan.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/exampleSite\/static\/img\/guest\/sparker.jpg": {
-		"ft": 16384,
-		"iS": 4736,
-		"oA": 0,
-		"oAP": "\/exampleSite\/static\/img\/guest\/sparker.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/exampleSite\/static\/img\/host\/matt.png": {
