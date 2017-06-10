@@ -79,7 +79,7 @@
     {{- else -}}
       <div class = "col">
       {{- if ge (countrunes .Description ) 600 -}}
-        <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 900 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+        <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
       {{- else -}}
         <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
       {{- end -}}
