@@ -2,7 +2,7 @@ baseurl = "http://sample-castanet.netlify.com/mysite/"
 languageCode = "en-us"
 title = "HugoCast"
 theme = "castanet"
-googleAnalytics = "UA-123-45"
+googleAnalytics = "UA-100789009-1"
 disqusShortname = "arresteddevops"
 themesdir = "../.."
 
