@@ -31,23 +31,27 @@
       {{- end -}}
       {{- with .Site.Params.feed.itunes_second_sub_category -}}
       <itunes:category text="{{ . }}" />
-      {{ end }}
-    </itunes:category>
-    {{ range (where .Site.Pages "Type" "episode") }}
-    <item>
-      <title>{{ title .Title }}</title>
-      <itunes:author> {{ .Site.Params.itunes_author }}</itunes:author>
-      <itunes:summary><![CDATA[{{ .Description | markdownify }}]></itunes:summary>
-      <description><![CDATA[{{ .Description | markdownify }}]></description>
-      <enclosure url="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" {{with .Params.podcast_bytes}}length="{{ . }}"{{ end }} type="audio/mpeg" />
-      <guid>{{ .Params.podcast }}</guid>
-      <link>{{ .Permalink }}</link>
-      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
-      {{- with .Params.podcast_duration -}}
-      <itunes:duration>{{ . }}</itunes:duration>
       {{- end -}}
-      <itunes:explicit>{{ .Params.explicit}}</itunes:explicit>
-    </item>
-    {{ end }}
+    </itunes:category>
+    {{- range (where .Site.Pages "Type" "episode") -}}
+      {{ if isset .Params "podcast_file" }}
+        <item>
+          <title>{{ title .Title }}</title>
+          <itunes:author> {{ .Site.Params.itunes_author }}</itunes:author>
+          <itunes:summary><![CDATA[{{ .Description | markdownify }}]></itunes:summary>
+          <description><![CDATA[{{ .Description | markdownify }}]></description>
+          <enclosure url="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" {{with .Params.podcast_bytes}}length="{{ . }}"{{ end }} type="audio/mpeg" />
+          <guid>{{ .Params.podcast_file }}</guid>
+          <link>{{ .Permalink }}</link>
+          <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
+          {{- with .Params.podcast_duration -}}
+          <itunes:duration>{{ . }}</itunes:duration>
+          {{- end -}}
+          {{- with .Params.explicit -}}
+          <itunes:explicit>{{ . }}</itunes:explicit>
+          {{- end -}}
+        </item>
+      {{- end -}}
+    {{- end -}}
   </channel>
 </rss>
