@@ -11,6 +11,15 @@
   </h2>
 
   {{ range first 1 (where .Data.Pages "Type" "episode") }}
+    {{- with .Params.truncate -}}
+      {{- $.Scratch.Set "truncate" . }}
+    {{- else -}}
+      {{- with .Site.Params.truncate -}}
+        {{- $.Scratch.Set "truncate" . }}
+      {{- else -}}
+        {{- $.Scratch.Set "truncate" 600 -}}
+      {{- end -}}
+    {{- end -}}
     {{- with .Params.youtube -}}
       {{- $.Scratch.Set "youtube" "true" -}}
     {{- end -}}
@@ -35,7 +44,7 @@
       </div>
       <div class = "row homepage_episode_row">
         <div class = "col">
-          {{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
+          {{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
         </div>
       </div>
     {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
@@ -52,7 +61,7 @@
       </div>
       <div class = "row homepage_episode_row">
         <div class = "col">
-          {{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
+          {{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
         </div>
       </div>
     {{- else -}}
@@ -69,8 +78,8 @@
           <img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" />
         </div>
         <div class = "col-md-8">
-          {{- if ge (countrunes .Description ) 600 -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
           {{- else -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
           {{- end -}}
@@ -78,8 +87,8 @@
       </div><!-- end square row -->
     {{- else -}}
       <div class = "col">
-      {{- if ge (countrunes .Description ) 600 -}}
-        <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+      {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+        <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
       {{- else -}}
         <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
       {{- end -}}
@@ -115,6 +124,21 @@
 {{- end -}}
 {{- if gt $len 1 -}}
     {{- range $paginator.Pages -}}
+    {{- with .Params.truncate -}}
+      {{- $.Scratch.Set "truncate" . }}
+    {{- else -}}
+      {{- with .Site.Params.truncate -}}
+        {{- $.Scratch.Set "truncate" . }}
+      {{- else -}}
+        {{- $.Scratch.Set "truncate" 600 -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Params.youtube -}}
+      {{- $.Scratch.Set "youtube" "true" -}}
+    {{- end -}}
+    {{- with .Params.episode_banner -}}
+      {{- $.Scratch.Set "episode_banner" "true" -}}
+    {{- end -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
           <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>
@@ -127,16 +151,16 @@
             <img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" />
           </div>
           <div class = "col-md-8">
-          {{- if ge (countrunes .Description ) 600 -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 600 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
           {{- else -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
           {{- end -}}
           </div>
         {{- else -}}
           <div class = "col">
-          {{- if ge (countrunes .Description ) 900 -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate 900 " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
           {{- else -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
           {{- end -}}
