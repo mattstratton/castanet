@@ -20,41 +20,41 @@
 
     <div class = "row">
     {{ if (isset .Site.Params "itunes_subscribe") }}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-apple"></i>&nbsp;iTunes</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "android_subscribe") }}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default subscribe_buttons" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Android</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "google_play_subscribe") }}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fa fa-music"></i>&nbsp;Google Play Music</a>
       </div>
     {{ end }}
     {{ with .Site.Params.sticher_subscribe }}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ . }}"><i class="fa fa-podcast"></i>&nbsp;Stitcher</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "soundcloud_subscribe") }}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fa fa-soundcloud"></i>&nbsp;Soundcloud</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "pocketcasts_subscribe") }}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ .Site.Params.pocketcasts_subscribe }}"><i class="fa fa-podcast"></i>&nbsp;PocketCasts</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "rss_subscribe" )}}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
       </div>
     {{ else }}
-      <div class = "col subscribe_buttons col-md-auto">
+      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
       </div>
     {{ end }}
