@@ -56,7 +56,7 @@
       </div>
       <div class = "row homepage_episode_row">
         <div class = "col">
-          <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
+          <a href="{{ .Permalink }}"><img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/></a>
         </div>
       </div>
       <div class = "row homepage_episode_row">
@@ -75,7 +75,7 @@
     {{- if .Params.episode_image -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-3">
-          <img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" />
+          <a href="{{ .Permalink }}"><img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" /></a>
         </div>
         <div class = "col-md-8">
           {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
@@ -148,7 +148,7 @@
       <div class = "row homepage_episode_row">
       {{- if .Params.episode_image -}}
           <div class = "col-md-4">
-            <img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" />
+            <a href="{{ .Permalink }}"><img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" /></a>
           </div>
           <div class = "col-md-8">
           {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
