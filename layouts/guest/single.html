@@ -87,11 +87,13 @@
               {{ end }}
             {{ end }}
             {{- with .Params.Aka -}}
-              {{- $.Scratch.Set "guest-name" . -}}
-              {{- range $page := where $.Site.Pages "Type" "episode" -}}
-                {{- range $page.Params.guests -}}
-                  {{- if eq  . ($.Scratch.Get "guest-name") -}}
-                      <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
+              {{ range $name := . }}
+                {{- $.Scratch.Set "guest-name" $name -}}
+                {{- range $page := where $.Site.Pages "Type" "episode" -}}
+                  {{- range $page.Params.guests -}}
+                    {{- if eq  . ($.Scratch.Get "guest-name") -}}
+                        <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
+                    {{- end -}}
                   {{- end -}}
                 {{- end -}}
               {{- end -}}
