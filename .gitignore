@@ -3,3 +3,4 @@ bower_components
 # released binaries
 release/
 dist
+.DS_Store

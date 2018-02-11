@@ -1,16 +1,30 @@
 <script src={{ "js/castanet-min.js" | absURL }}></script>
 <script>
     $("#share").jsSocials({
-        shares: ["facebook", "linkedin", "pinterest",
+        shares: [
+      {
+        share: "facebook",
+        logo: "fab fa-facebook",
+      },
       {
         share: "twitter",           // name of share
         label: "Tweet",             // share button text (optional)
+        logo: "fab fa-twitter",
         {{ if (isset .Site.Params.social "twitter" )}}
           via: "{{ .Site.Params.social.twitter }}",       // custom twitter sharing param 'via' (optional)
         {{ end }}
         url: "{{ .Params.permalink }}",
         text: "{{ title .Title }}"
-      }],
+      },
+      {
+        share: "linkedin",
+        logo: "fab fa-linkedin"
+      },
+      {
+        share: "pinterest",
+        logo: "fab fa-pinterest"
+      }
+    ],
     });
 </script>
 <script>
