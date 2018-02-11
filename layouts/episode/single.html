@@ -211,13 +211,15 @@
         </div>
       </div>
       <!-- sharing ends -->
+      {{ with .Site.Params.disqusShortname }}
+      <!-- disqus begins -->
       <div class="row">
-        <!-- disqus begins -->
         <div class="col-md-12">
           {{ partial "disqus.html" . }}
         </div>
       </div>
       <!-- disqus ends -->
+      {{ end }}
       <div class="row">
         <!-- pager begin -->
         <div class="col-md-12">
