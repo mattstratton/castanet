@@ -8,6 +8,7 @@ episode = "7"
 episode_image = "img/episode/april.jpg"
 explicit = "no"
 guests = ["jdoe", "jsmith"]
+hosts = ["mstratton","bkromhout"]
 images = ["http://www.google.comimg/episode/default-social.jpg"]
 news_keywords = []
 podcast_duration = "1:08:22"

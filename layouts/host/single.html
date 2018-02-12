@@ -1,0 +1,107 @@
+{{ define "main" }}
+<div class = "hero_container">
+<div class="row">
+  <div class="col">
+    <h1>{{ title .Title }}</h1>
+  </div>
+</div>
+
+<div class = "row">
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-md-3">
+      {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
+        {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
+          <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="img-fluid episode_image" width="250px">
+          {{- else -}}
+          <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="img-fluid episode_image" width="250px">
+        {{- end -}}
+        {{- else -}}
+        <img alt="{{ .Title }}" src="{{ "img/guest/default-guest.png" | absURL }}" class="img-fluid episode_image" width="250px"/>
+      {{- end -}}
+      </div>
+      <div class="col-md-8">
+        <div class = "row">
+          <div class="col">
+            {{ .Content | markdownify }}
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "col guest_social_icons">
+            {{ if .Params.Website }}
+              <a href="{{ .Params.Website }}">
+                <i class="fas fa-home fa-2x"></i>
+              </a>
+            {{ end }}
+            {{ if .Params.Twitter }}
+              <a href="https://twitter.com/{{ .Params.Twitter }}">
+                <i class="fab fa-twitter-square fa-2x"></i>
+              </a>
+            {{ end }}
+            {{ if .Params.GitHub }}
+              <a href="https://github.com/{{ .Params.GitHub}}">
+                <i class="fab fa-github-square fa-2x"></i>
+              </a>
+            {{ end }}
+            {{ if .Params.LinkedIn }}
+              <a href="https://www.linkedin.com/in/{{ .Params.LinkedIn}}">
+                <i class="fab fa-linkedin-square fa-2x"></i>
+              </a>
+            {{ end }}
+            {{ if .Params.Facebook }}
+              <a href="https://www.facebook.com/{{ .Params.Facebook}}">
+                <i class="fab fa-facebook-square fa-2x"></i>
+              </a>
+            {{ end }}
+            {{ if .Params.Pinterest }}
+              <a href="https://www.pinterest.com/{{ .Params.Pinterest}}">
+                <i class="fab fa-pinterest-square fa-2x"></i>
+              </a>
+            {{ end }}
+            {{ if .Params.Instagram }}
+              <a href="https://www.instagram.com/{{ .Params.Instagram}}">
+                <i class="fab fa-instagram fa-2x"></i>
+              </a>
+            {{ end }}
+            {{ if .Params.YouTube }}
+              <a href="https://www.youtube.com/{{ .Params.YouTube}}">
+                <i class="fab fa-youtube-square fa-2x"></i>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    <div class="col-lg-4">
+    <div class = "row">
+      <div class="col">
+        <h3>Episodes Hosted By {{ .Title }}</h3>
+        <div class="list-group guest_episode_list">
+            {{ $.Scratch.Set "host-name" .File.BaseFileName }}
+            {{ range $page := where $.Site.Pages "Type" "episode" }}
+              {{ range $page.Params.hosts }}
+                {{ if eq  . ($.Scratch.Get "host-name") }}
+                    <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            {{- with .Params.Aka -}}
+              {{ range $name := . }}
+                {{- $.Scratch.Set "host-name" $name -}}
+                {{- range $page := where $.Site.Pages "Type" "episode" -}}
+                  {{- range $page.Params.hosts -}}
+                    {{- if eq  . ($.Scratch.Get "host-name") -}}
+                        <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+{{ end }}
