@@ -53,8 +53,8 @@ themesdir = "../.."
     parent = "resources"
 
 [params]
-site_theme = "blue"
-site_layout = "row"
+site_theme = "grey"
+site_layout = "grid"
 enable_jumbo = "true"
 # truncate = "100"
 # about_logo = "/img/hugocast.png"
