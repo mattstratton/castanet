@@ -7,7 +7,7 @@
 		"uuidString": "8EA553B1-3C82-4209-BD99-AD6E17CE420B"
 		}
 	],
-"creatorBuild": "26261",
+"creatorBuild": "26268",
 "files": {
 	"\/.github\/ISSUE_TEMPLATE": {
 		"cB": 0,
@@ -921,7 +921,7 @@
 		"ft": 64,
 		"ma": 1,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/js\/src\/tooltip.js",
 		"oF": 0,
 		"sC": 0,
@@ -931,7 +931,7 @@
 		"ft": 64,
 		"ma": 1,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/bootstrap\/js\/src\/util.js",
 		"oF": 0,
 		"sC": 0,
@@ -42725,6 +42725,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
