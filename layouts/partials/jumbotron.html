@@ -21,17 +21,17 @@
     <div class = "row">
     {{ if (isset .Site.Params "itunes_subscribe") }}
       <div class = "d-flex p-2 subscribe_buttons col-md-auto">
-        <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-apple"></i>&nbsp;iTunes</a>
+        <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fab fa-itunes-note"></i>&nbsp;iTunes</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "android_subscribe") }}
       <div class = "d-flex p-2 subscribe_buttons col-md-auto">
-        <a class="btn btn-default subscribe_buttons" href="{{ .Site.Params.android_subscribe }}"><i class="fa fa-android"></i>&nbsp;Android</a>
+        <a class="btn btn-default subscribe_buttons" href="{{ .Site.Params.android_subscribe }}"><i class="fab fa-android"></i>&nbsp;Android</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "google_play_subscribe") }}
       <div class = "d-flex p-2 subscribe_buttons col-md-auto">
-        <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fa fa-music"></i>&nbsp;Google Play Music</a>
+        <a class="btn btn-default" href="{{ .Site.Params.google_play_subscribe }}"><i class="fab fa-google-play"></i>&nbsp;Google Play Music</a>
       </div>
     {{ end }}
     {{ with .Site.Params.sticher_subscribe }}
@@ -41,7 +41,7 @@
     {{ end }}
     {{ if (isset .Site.Params "soundcloud_subscribe") }}
       <div class = "d-flex p-2 subscribe_buttons col-md-auto">
-        <a class="btn btn-default" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fa fa-soundcloud"></i>&nbsp;Soundcloud</a>
+        <a class="btn btn-default" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fab fa-soundcloud"></i>&nbsp;Soundcloud</a>
       </div>
     {{ end }}
     {{ if (isset .Site.Params "pocketcasts_subscribe") }}
