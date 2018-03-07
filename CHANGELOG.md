@@ -1,5 +1,45 @@
 # Change Log
 
+## [0.9.0](https://github.com/mattstratton/castanet/tree/0.9.0) (2018-03-07)
+**Implemented enhancements:**
+
+- Create contributing document [\#162](https://github.com/mattstratton/castanet/issues/162)
+- Move configuration instructions from README to a separate doc [\#161](https://github.com/mattstratton/castanet/issues/161)
+- Add Code of Conduct [\#160](https://github.com/mattstratton/castanet/issues/160)
+- Host display should be a partial [\#158](https://github.com/mattstratton/castanet/issues/158)
+- Update documentation to include new host pages [\#156](https://github.com/mattstratton/castanet/issues/156)
+- \[Bug\] README.md Installation step should describe required Menu.Main config.toml setting [\#152](https://github.com/mattstratton/castanet/issues/152)
+- \[Bug\] README.md itunes\_image missing vital details about itunes min requirements [\#151](https://github.com/mattstratton/castanet/issues/151)
+- Upgrade to font-awesome 5 [\#138](https://github.com/mattstratton/castanet/issues/138)
+- \[Enhancement\] Can disqus comments be made optional? [\#136](https://github.com/mattstratton/castanet/issues/136)
+- titles should overlay images in grid layout [\#135](https://github.com/mattstratton/castanet/issues/135)
+- make episode images clickable from front page [\#134](https://github.com/mattstratton/castanet/issues/134)
+- add host support to episode page [\#28](https://github.com/mattstratton/castanet/issues/28)
+- make itunes author read from the authors fields in config.toml [\#10](https://github.com/mattstratton/castanet/issues/10)
+
+**Fixed bugs:**
+
+- Sidebar doesn't show if `enable\_jumbo` doesn't exist [\#167](https://github.com/mattstratton/castanet/issues/167)
+- Grid spills to second page without filling bottom row [\#164](https://github.com/mattstratton/castanet/issues/164)
+- \[Bug\] iTunes/android/Soundcloud subscribe image icons broken [\#155](https://github.com/mattstratton/castanet/issues/155)
+- \[Bug\] stitcher not sticher. Typo in config.toml variable [\#154](https://github.com/mattstratton/castanet/issues/154)
+- Support more than one aka with guest [\#140](https://github.com/mattstratton/castanet/issues/140)
+- Subscribe buttons wrap on small viewports in jumbo [\#131](https://github.com/mattstratton/castanet/issues/131)
+- RSS buttons in jumbotron are screwy [\#97](https://github.com/mattstratton/castanet/issues/97)
+
+**Closed issues:**
+
+- Enhanced Host Support [\#142](https://github.com/mattstratton/castanet/issues/142)
+
+**Merged pull requests:**
+
+- Update host code to be a partial [\#166](https://github.com/mattstratton/castanet/pull/166) ([mattstratton](https://github.com/mattstratton))
+- Host support [\#149](https://github.com/mattstratton/castanet/pull/149) ([mattstratton](https://github.com/mattstratton))
+- Make disqus optional [\#146](https://github.com/mattstratton/castanet/pull/146) ([mattstratton](https://github.com/mattstratton))
+- Make aka work for more than one to one [\#144](https://github.com/mattstratton/castanet/pull/144) ([mattstratton](https://github.com/mattstratton))
+- Make images clickable in row layout [\#143](https://github.com/mattstratton/castanet/pull/143) ([mattstratton](https://github.com/mattstratton))
+- Upgrade to font-awesome 5 [\#139](https://github.com/mattstratton/castanet/pull/139) ([mattstratton](https://github.com/mattstratton))
+
 ## [0.8.0](https://github.com/mattstratton/castanet/tree/0.8.0) (2017-06-13)
 **Implemented enhancements:**
 
