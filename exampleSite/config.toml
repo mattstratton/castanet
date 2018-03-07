@@ -5,6 +5,7 @@ theme = "castanet"
 googleAnalytics = "UA-100789009-1"
 disqusShortname = "arresteddevops"
 themesdir = "../.."
+paginate = "9"
 
 
 [permalinks]

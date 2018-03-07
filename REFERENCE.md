@@ -13,6 +13,7 @@
         - [Host Social Parameters](#host-social-parameters)
     - [Link Parameters](#link-parameters)
     - [A note about `BaseURL`](#a-note-about-baseurl)
+    - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)
     - [Permalinks](#permalinks)
     - [Menus](#menus)
 - [Episodes](#episodes)
@@ -149,6 +150,13 @@ The idetifier for the link simply needs to be unique; it's not used anywhere els
 
 This theme is fairly dependent upon a proper `BaseURL` being set in the `config.toml`. This has to do with how the feed is generated as well as some of the social metadata (these things cannot be relative URL's). I'm fully aware that this can cause issues with some build systems, and I'm trying to work on a good solution for this. This must end in a slash. Example: `https://www.arresteddevops.com/`
 
+### Pagination setting with grid layout
+
+If you are using the grid layout, you need to ensure that your pagination is set to a multiple of 3. For example, in your config file:
+
+```
+paginate = "9"
+```
 
 ### Permalinks
 
