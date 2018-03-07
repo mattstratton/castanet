@@ -55,8 +55,10 @@ paginate = "9"
 
 [params]
 site_theme = "grey"
+# site_layout = "grid"
 site_layout = "grid"
 enable_jumbo = "true"
+# enable_jumbo = "false"
 # truncate = "100"
 # about_logo = "/img/hugocast.png"
 copyright_notice = "Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"
