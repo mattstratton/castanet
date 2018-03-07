@@ -4,3 +4,4 @@ bower_components
 release/
 dist
 .DS_Store
+.Ulysses-Group.plist
