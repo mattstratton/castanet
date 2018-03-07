@@ -1,0 +1,54 @@
+<div class = "row">
+    <div class = "col-md-12">
+      <h2>Hosts</h2>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-12">
+    {{ range where .Site.Pages "Type" "host" }}
+    {{- if not (in .File.BaseFileName "_index") -}}
+      <div class="row person_row">
+          <div class="col-md-3">
+            {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
+              {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
+                <a href = "{{(printf "host/%s" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="img-fluid" width="250px"></a>
+                {{- else -}}
+                <a href = "{{(printf "host/%s" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="img-fluid" width="250px"></a>
+              {{- end -}}
+              {{- else -}}
+              <a href = "{{(printf "host/%s" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ "img/host/default-host.png" | absURL }}" class="img-fluid" width="250px"/></a>
+            {{- end -}}
+          </div>
+          <div class= "col-md-6">
+            <h3><a href = "{{(printf "host/%s" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h3>
+            <p>{{ .Content | markdownify }}</p>
+            {{ with .Params.Website }}
+              <a href = "{{ . }}"><i class="fas fa-home fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Twitter }}
+              <a href = "https://twitter.com/{{ . }}"><i class="fab fa-twitter-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.GitHub}}
+              <a href = "https://github.com/{{ . }}"><i class="fab fa-github-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.LinkedIn }}
+              <a href = "https://www.linkedin.com/in/{{ . }}"><i class="fab fa-linkedin fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Facebook }}
+              <a href = "https://www.facebook.com/{{ . }}"><i class="fab fa-facebook-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Pinterest }}
+              <a href = "https://www.pinterest.com/{{ . }}"><i class="fab fa-pinterest-square fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.Instagram }}
+              <a href = "https://www.instagram.com/{{ . }}"><i class="fab fa-instagram fa-2x"></i></a>
+            {{ end }}
+            {{ with .Params.YouTube }}
+              <a href = "https://www.youtube.com/{{ . }}"><i class="fab fa-youtube-square fa-2x"></i></a>
+            {{ end }}
+        </div>
+      </div>
+      {{- end -}}
+    {{ end }}
+  </div>
+  </div>

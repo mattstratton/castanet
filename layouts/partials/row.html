@@ -179,12 +179,17 @@
   {{- end -}}
 </div>
 
+
 {{- if isset .Site.Params "enable_jumbo" -}}
   {{- if ne .Site.Params.enable_jumbo "true" -}}
     <div class="col-md-4 sidebar_col">
       {{- partial "sidebar.html" . -}}
     </div>
   {{- end -}}
+{{- else -}}
+  <div class="col-md-4 sidebar_col">
+    {{- partial "sidebar.html" . -}}
+  </div>
 {{- end -}}
 
 </div>
