@@ -82,10 +82,10 @@
           {{ with .Params.episode }}
           <itunes:episode>{{ . }}</itunes:episode>
           {{ end }}
-          <itunes:summary><![CDATA[{{ .Description | markdownify }}]></itunes:summary>
-          <description><![CDATA[{{ .Description | markdownify }}]></description>
-          <googleplay:description><![CDATA[{{ .Description | markdownify }}]></googleplay:description>
-          <content:encoded><![CDATA[{{ .Content }}]></content:encoded>
+          <itunes:summary>{{ .Description | html }}</itunes:summary>
+          <description><![CDATA[{{ .Description  | html  }}]></description>
+          <googleplay:description><![CDATA[{{ .Description  | html  }}]></googleplay:description>
+          <content:encoded><![CDATA[{{ .Content | html }}]></content:encoded>
           {{- with .Params.episode_image -}}
           <itunes:image href="{{ . | absURL }}"></itunes:image>
           <googleplay:image href="{{ . | absURL }}"></googleplay:image>
