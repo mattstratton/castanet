@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.9.1](https://github.com/mattstratton/castanet/tree/0.9.1) (2018-03-08)
+**Implemented enhancements:**
+
+- Add show notes to rss feed [\#175](https://github.com/mattstratton/castanet/issues/175)
+- Create archetype for page/default [\#173](https://github.com/mattstratton/castanet/issues/173)
+- Add cover art to RSS feed [\#171](https://github.com/mattstratton/castanet/issues/171)
+- Add episode author tag to feed based on hosts [\#169](https://github.com/mattstratton/castanet/issues/169)
+- Improve build process to include all themes [\#104](https://github.com/mattstratton/castanet/issues/104)
+
+**Merged pull requests:**
+
+- Update rss feed and some archetypes [\#176](https://github.com/mattstratton/castanet/pull/176) ([mattstratton](https://github.com/mattstratton))
+
 ## [0.9.0](https://github.com/mattstratton/castanet/tree/0.9.0) (2018-03-07)
 **Implemented enhancements:**
 
@@ -15,7 +28,6 @@
 - titles should overlay images in grid layout [\#135](https://github.com/mattstratton/castanet/issues/135)
 - make episode images clickable from front page [\#134](https://github.com/mattstratton/castanet/issues/134)
 - add host support to episode page [\#28](https://github.com/mattstratton/castanet/issues/28)
-- make itunes author read from the authors fields in config.toml [\#10](https://github.com/mattstratton/castanet/issues/10)
 
 **Fixed bugs:**
 
