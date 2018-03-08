@@ -2,7 +2,7 @@
 Date = {{ .Date }}
 Twitter = ""
 Website = ""
-Type = "guest"
+Type = "host"
 Facebook = ""
 Linkedin = ""
 GitHub = ""
@@ -10,5 +10,4 @@ Thumbnail = ""
 Pinterest = ""
 Instagram = ""
 YouTube = ""
-#Aka = []
 +++
