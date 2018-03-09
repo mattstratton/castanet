@@ -4,27 +4,16 @@ language: ruby
 rvm:
   - 2.2
 
-env:
-  global:
-    - HUGO_THEME=castanet
-    - HUGO_BASEURL="https://sample-castanet.netlify.com"
-   
-
+install:
+  - sudo apt-get --yes install snapd
+  - sudo snap install hugo
 
 before_script:
-  - mkdir -p exampleSite/themes/castanet
-  - rsync -av --progress ./ exampleSite/themes/castanet --exclude exampleSite
-  - cd exampleSite
-  - pwd
-  - ls
-
-services:
-  - docker
+- cd exampleSite
 
 script:
-  - pwd
-  - ls
-  - docker run --name "castanet" -P -v $(pwd):/src jojomi/hugo
+- /snap/bin/hugo version
+- /snap/bin/hugo
   
 before_deploy:
 - cd $TRAVIS_BUILD_DIR
