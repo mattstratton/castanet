@@ -12,11 +12,11 @@ env:
 
 
 before_script:
-- mkdir -p exampleSite/themes/castanet
-- cp -r ./ exampleSite/themes/castanet
-- cd exampleSite
-- pwd
-- ls
+  - mkdir -p exampleSite/themes/castanet
+  - rsync -av --progress ./ exampleSite/themes/castanet --exclude exampleSite
+  - cd exampleSite
+  - pwd
+  - ls
 
 services:
   - docker
