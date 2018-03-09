@@ -8,22 +8,11 @@ env:
   global:
     - HUGO_THEME=castanet
     - HUGO_BASEURL="https://sample-castanet.netlify.com"
-  matrix:
-    - CASTANET_CONFIG=blue-grid
-    - CASTANET_CONFIG=blue-row
-    - CASTANET_CONFIG=blue-row-jumbo
-    - CASTANET_CONFIG=orange-grid
-    - CASTANET_CONFIG=orange-row
-    - CASTANET_CONFIG=orange-row-jumbo
-    - CASTANET_CONFIG=grey-grid
-    - CASTANET_CONFIG=grey-row
-    - CASTANET_CONFIG=grey-row-jumbo
+   
 
 
 before_script:
-- mkdir $CASTANET_CONFIG
-- cp -r exampleSite/. $CASTANET_CONFIG
-- cd $CASTANET_CONFIG
+- cd exampleSite
 - pwd
 - ls
 
