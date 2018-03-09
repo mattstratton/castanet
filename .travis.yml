@@ -4,18 +4,33 @@ language: ruby
 rvm:
   - 2.2
 
-install:
-  - sudo apt-get --yes install snapd
-  - sudo snap install hugo
+env:
+  global:
+    - HUGO_THEME=castanet
+    - HUGO_BASEURL="https://sample-castanet.netlify.com"
+  matrix:
+    - CASTANET_CONFIG=blue-grid
+    - CASTANET_CONFIG=blue-row
+    - CASTANET_CONFIG=blue-row-jumbo
+    - CASTANET_CONFIG=orange-grid
+    - CASTANET_CONFIG=orange-row
+    - CASTANET_CONFIG=orange-row-jumbo
+    - CASTANET_CONFIG=grey-grid
+    - CASTANET_CONFIG=grey-row
+    - CASTANET_CONFIG=grey-row-jumbo
+
 
 before_script:
-- cd exampleSite
+- mkdir $CASTNET_CONFIG
+- cp -r exampleSite/. $CASTNET_CONFIG
+- cd $CASTANET_CONFIG
+
+services:
+  - docker
 
 script:
-- /snap/bin/hugo version
-- /snap/bin/hugo
-
-
+  - docker run --name "castanet" -P -v $(pwd):/src jojomi/hugo
+  
 before_deploy:
 - cd $TRAVIS_BUILD_DIR
 - mkdir -p release
