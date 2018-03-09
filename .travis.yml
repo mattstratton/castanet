@@ -3,16 +3,17 @@ dist: trusty
 language: ruby
 rvm:
   - 2.2
-# before_install:
-# - sudo apt-get update
-# - sudo apt-get install nodejs
-# - sudo apt-get install npm
+
+install:
+  - sudo apt-get --yes install snapd
+  - sudo snap install hugo
+
 before_script:
 - cd exampleSite
 
 script:
-- "$TRAVIS_BUILD_DIR/bin/hugo version"
-- "$TRAVIS_BUILD_DIR/bin/hugo"
+- /snap/bin/hugo version
+- /snap/bin/hugo
 
 
 before_deploy:
