@@ -12,6 +12,8 @@ env:
 
 
 before_script:
+- mkdir -p exampleSite/themes/castanet
+- cp . exampleSite/themes/castanet
 - cd exampleSite
 - pwd
 - ls
