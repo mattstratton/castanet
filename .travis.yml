@@ -24,11 +24,15 @@ before_script:
 - mkdir $CASTANET_CONFIG
 - cp -r exampleSite/. $CASTANET_CONFIG
 - cd $CASTANET_CONFIG
+- pwd
+- ls
 
 services:
   - docker
 
 script:
+  - pwd
+  - ls
   - docker run --name "castanet" -P -v $(pwd):/src jojomi/hugo
   
 before_deploy:
