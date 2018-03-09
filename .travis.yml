@@ -21,8 +21,8 @@ env:
 
 
 before_script:
-- mkdir $CASTNET_CONFIG
-- cp -r exampleSite/. $CASTNET_CONFIG
+- mkdir $CASTANET_CONFIG
+- cp -r exampleSite/. $CASTANET_CONFIG
 - cd $CASTANET_CONFIG
 
 services:
