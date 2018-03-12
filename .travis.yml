@@ -5,16 +5,16 @@ rvm:
   - 2.2
 
 env:
-  - theme=blue-grid
-  - theme=blue-row-jumbo-false
-  - theme=blue-row-jumbo-true
-  - theme=blue-row-no-jumbo
-  - theme=orange-grid
-  - theme=orange-row
-  - theme=orange-row-jumbo
-  - theme=grey-grid
-  - theme=grey-row
-  - theme=grey-row-jumbo
+  - THEME=blue-grid
+  - THEME=blue-row-jumbo-false
+  - THEME=blue-row-jumbo-true
+  - THEME=blue-row-no-jumbo
+  - THEME=orange-grid
+  - THEME=orange-row
+  - THEME=orange-row-jumbo
+  - THEME=grey-grid
+  - THEME=grey-row
+  - THEME=grey-row-jumbo
 
 install:
   - sudo apt-get --yes install snapd
@@ -22,10 +22,13 @@ install:
 
 before_script:
 - mkdir -p test/$THEME
+- cd exampleSite
 
 script:
 - /snap/bin/hugo version
-- /snap/bin/hugo --theme=castanet --buildDrafts=false -d test/$THEME --config test/$THEME-config.toml --source exampleSite --themesDir ../.. --baseURL https://sample-castanet.netlify.com
+- echo $THEME
+- /snap/bin/hugo --theme=castanet --buildDrafts=false -d ../test/$THEME --config ../test/$THEME-config.toml --themesDir ../.. --baseURL https://sample-castanet.netlify.com
+
   
 before_deploy:
 - cd $TRAVIS_BUILD_DIR
