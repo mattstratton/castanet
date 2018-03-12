@@ -25,7 +25,7 @@ before_script:
 
 script:
 - /snap/bin/hugo version
-- /snap/bin/hugo --theme=castanet --buildDrafts=false -d test/$THEME --config test/$THEME-config.toml --source exampleSite --themesDir ../.. --BaseURL https://sample-castanet.netlify.com
+- /snap/bin/hugo --theme=castanet --buildDrafts=false -d test/$THEME --config test/$THEME-config.toml --source exampleSite --themesDir ../.. --baseURL https://sample-castanet.netlify.com
   
 before_deploy:
 - cd $TRAVIS_BUILD_DIR
