@@ -4,16 +4,28 @@ language: ruby
 rvm:
   - 2.2
 
+env:
+  - theme=blue-grid
+  - theme=blue-row-jumbo-false
+  - theme=blue-row-jumbo-true
+  - theme=blue-row-no-jumbo
+  - theme=orange-grid
+  - theme=orange-row
+  - theme=orange-row-jumbo
+  - theme=grey-grid
+  - theme=grey-row
+  - theme=grey-row-jumbo
+
 install:
   - sudo apt-get --yes install snapd
   - sudo snap install hugo
 
 before_script:
-- cd exampleSite
+- mkdir -p test/$THEME
 
 script:
 - /snap/bin/hugo version
-- /snap/bin/hugo
+- /snap/bin/hugo --theme=castanet --buildDrafts=false -d test/$THEME --config test/$THEME-config.toml --source exampleSite --themesDir ../.. --BaseURL https://sample-castanet.netlify.com
   
 before_deploy:
 - cd $TRAVIS_BUILD_DIR
