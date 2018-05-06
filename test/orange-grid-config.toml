@@ -58,6 +58,7 @@ site_theme = "orange"
 site_layout = "grid"
 # truncate = "100"
 # about_logo = "/img/hugocast.png"
+images = ["img/episode/default-social.jpg"]
 copyright_notice = "Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"
 itunes_subscribe = "http://itunes.apple.com/us/podcast/arrested-devops/id773888088?mt=2&uo=4&at=11lsCi"
 android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
