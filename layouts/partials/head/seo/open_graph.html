@@ -54,4 +54,6 @@
 {{ end }}{{ end }}
 
 <!-- Facebook Page Admin ID for Domain Insights -->
-{{ with .Site.Params.social.facebook_admin }}<meta property="fb:admins" content="{{ . }}" />{{ end }}
+{{ range .Site.Params.social.facebook_admin }}
+  <meta property="fb:admins" content="{{ . }}" />
+{{ end }}
