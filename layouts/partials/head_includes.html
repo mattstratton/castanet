@@ -1,3 +1,8 @@
+{{ if isset $.Site.Params "favicon"}}
+<link rel="icon" href="{{ $.Site.Params.favicon | absURL }}">
+{{ else }}
+<link rel="icon" href="icons/favicon.ico">
+{{ end }}
 {{ if isset $.Site.Params "site_theme"}}
 <link href="{{ printf "css/%s.css" $.Site.Params.site_theme | absURL}}" rel="stylesheet">
 {{ else }}
