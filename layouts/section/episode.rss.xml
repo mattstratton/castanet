@@ -18,7 +18,7 @@
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <language>en-us</language>
-    <copyright>{{ .Site.Params.feed_copyright }}</copyright>
+    <copyright>{{ .Site.Params.feed.copyright }}</copyright>
     {{ with .Site.Params.feed.itunes_subtitle }}<itunes:subtitle>{{ . }}</itunes:subtitle>{{ end }}
     <itunes:author>{{ .Site.Params.feed.itunes_author }}</itunes:author>
     <itunes:type>episodic</itunes:type>

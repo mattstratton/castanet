@@ -70,7 +70,7 @@ mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4
 description = "The HugoCast is the best podcast you've ever seen. You will learn everything you ever needed to know about [podcasting](https://en.wikipedia.org/wiki/Podcast) from the most inspiring experts to ever show up on the whole internet."
 media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arresteddevops/"
   [params.feed]
-    feed_copyright = "Copyright 2016 Matt Stratton" #do not use markdown in this field; it is used in the feed
+    copyright = "Copyright 2016 Matt Stratton" #do not use markdown in this field; it is used in the feed
     itunes_subtitle = "The best podcast ever" #no markdown or HTML
     itunes_author = "Matt Stratton" #no markdown or HTML
     itunes_summary = "The HugoCast is the best podcast you've ever seen. You will learn everything you ever needed to know about podcasting from the most inspiring experts to ever show up on the whole internet." # Limited to 4000 characters or less, plain text, no HTML
