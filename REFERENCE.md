@@ -84,7 +84,7 @@ These are the social network parameters for your overall site. They should be se
 | `github`         | No       | GitHub username only.                                                                                            | "mattstratton"       |
 | `gitlab`         | No       | GitLab username only.                                                                                            | "mattstratton"       |
 | `facebook`       | No       | Name of the Facebook page (not the URL).                                                                         | "Arresteddevops"      |
-| `facebook_admin` | No       | This needs to be a page admin to get domain insights.                                                            | "500557137"          |
+| `facebook_admin` | No       | This needs to be one or more page admins to get domain insights.                                                 | ["500557137","1234"] |
 | `twitter`        | No       | Twitter name without the `@` sign.                                                                               | "arresteddevops"     |
 | `twitter_domain` | Yes      | This domain shows in twitter cards as "View on `twitter_domain`".                                                | "arresteddevops.com" |
 | `googleplus`     | No       | Google Plus page name, without the `+`.                                                                          | "ArrestedDevOps"     |
