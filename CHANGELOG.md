@@ -1,5 +1,27 @@
 # Change Log
 
+## [0.10.0](https://github.com/mattstratton/castanet/tree/0.10.0) (2018-08-03)
+**Implemented enhancements:**
+
+- Create solution for favicon [\#6](https://github.com/mattstratton/castanet/issues/6)
+- Rename feed\_copyright config var to copyright [\#193](https://github.com/mattstratton/castanet/pull/193) ([rajeshduggal](https://github.com/rajeshduggal))
+
+**Closed issues:**
+
+- \[Bug\] Feed copyright var isn't referenced in episode.rss.xml [\#191](https://github.com/mattstratton/castanet/issues/191)
+- \[Bug\] Feed copyright var isn't referenced in episode.rss.xml [\#190](https://github.com/mattstratton/castanet/issues/190)
+- \[Enhancement\] Allow for multiple fb:admins [\#184](https://github.com/mattstratton/castanet/issues/184)
+- Errors on site without expected parameters set [\#182](https://github.com/mattstratton/castanet/issues/182)
+- Create tests in travis for every theme configuration [\#163](https://github.com/mattstratton/castanet/issues/163)
+
+**Merged pull requests:**
+
+- \(\#6\) Add solution for favicon [\#189](https://github.com/mattstratton/castanet/pull/189) ([michaeltlombardi](https://github.com/michaeltlombardi))
+- Allow more than one fb:admins [\#186](https://github.com/mattstratton/castanet/pull/186) ([rajeshduggal](https://github.com/rajeshduggal))
+- don't fail in case of .Data.Pages type:episode absence [\#183](https://github.com/mattstratton/castanet/pull/183) ([paskal](https://github.com/paskal))
+- Add travis tests for all themes [\#179](https://github.com/mattstratton/castanet/pull/179) ([mattstratton](https://github.com/mattstratton))
+- Travis improvements [\#178](https://github.com/mattstratton/castanet/pull/178) ([mattstratton](https://github.com/mattstratton))
+
 ## [0.9.1](https://github.com/mattstratton/castanet/tree/0.9.1) (2018-03-08)
 **Implemented enhancements:**
 
