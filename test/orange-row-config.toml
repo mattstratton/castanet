@@ -80,6 +80,7 @@ media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arr
     itunes_top_category = "Technology"
     itunes_first_sub_category = "Software How-To"
     itunes_second_sub_category = "Tech News"
+    language = "en-us"
 
   [params.social]
     github = "arresteddevops"
