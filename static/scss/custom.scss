@@ -42,10 +42,11 @@
 .grid_episode_detail {
   background-color: #000;
   padding: 10px;
+  color: $castanet-middle-container-bg;
 }
 
 .grid_episode_title {
-  color: $body-bg;
+  color: $castanet-middle-container-bg;
   > h3 {
     text-transform: capitalize;
   }
