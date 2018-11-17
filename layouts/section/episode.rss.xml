@@ -45,6 +45,10 @@
       <itunes:category text="{{ . }}" />
       {{- end -}}
     </itunes:category>
+    {{- if isset .Site.Params.feed "explicit" -}}
+    <itunes:explicit>{{ .Site.Params.feed.explicit }}</itunes:explicit>
+    <googleplay:explicit>{{ .Site.Params.feed.explicit }}</googleplay:explicit>
+    {{- end -}}
     <generator>Hugo -- gohugo.io</generator>
     {{- range (where .Site.Pages "Type" "episode") -}}
       {{ if isset .Params "podcast_file" }}
