@@ -1,6 +1,11 @@
 # Change Log
 
 ## [0.12.0](https://github.com/mattstratton/castanet/tree/0.12.0) (2018-11-17)
+**Merged pull requests:**
+
+- Add optional explicit for the feed itself since seems itunes wants this [\#196](https://github.com/mattstratton/castanet/pull/196) ([alexmurray](https://github.com/alexmurray))
+
+## [0.11.0](https://github.com/mattstratton/castanet/tree/0.11.0) (2018-11-17)
 **Implemented enhancements:**
 
 - Feed should pull language code from config file [\#177](https://github.com/mattstratton/castanet/issues/177)
@@ -11,7 +16,6 @@
 
 **Merged pull requests:**
 
-- Add optional explicit for the feed itself since seems itunes wants this [\#196](https://github.com/mattstratton/castanet/pull/196) ([alexmurray](https://github.com/alexmurray))
 - Use language config.toml value in RSS [\#195](https://github.com/mattstratton/castanet/pull/195) ([rajeshduggal](https://github.com/rajeshduggal))
 
 ## [0.10.0](https://github.com/mattstratton/castanet/tree/0.10.0) (2018-08-03)
