@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.11.0](https://github.com/mattstratton/castanet/tree/0.11.0) (2018-11-17)
+**Implemented enhancements:**
+
+- Feed should pull language code from config file [\#177](https://github.com/mattstratton/castanet/issues/177)
+
+**Closed issues:**
+
+- \[Bug\] Hugo warning when using archetypes that don't contain the string "date" [\#181](https://github.com/mattstratton/castanet/issues/181)
+
+**Merged pull requests:**
+
+- Use language config.toml value in RSS [\#195](https://github.com/mattstratton/castanet/pull/195) ([rajeshduggal](https://github.com/rajeshduggal))
+
 ## [0.10.0](https://github.com/mattstratton/castanet/tree/0.10.0) (2018-08-03)
 **Implemented enhancements:**
 
