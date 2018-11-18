@@ -2,28 +2,7 @@
 
 # Table of contents
 
-<!-- TOC depthFrom:2 -->
-
-- [The config file](#the-config-file)
-    - [Top-level items](#top-level-items)
-    - [General Parameters](#general-parameters)
-    - [Feed Parameters](#feed-parameters)
-    - [Social Parameters](#social-parameters)
-    - [Host/Author Parameters](#hostauthor-parameters)
-        - [Host Social Parameters](#host-social-parameters)
-    - [Link Parameters](#link-parameters)
-    - [A note about `BaseURL`](#a-note-about-baseurl)
-    - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)
-    - [Permalinks](#permalinks)
-    - [Menus](#menus)
-- [Episodes](#episodes)
-- [Guests](#guests)
-    - [Guest Pages](#guest-pages)
-- [Hosts](#hosts)
-    - [Host Pages](#host-pages)
-- [Sponsors](#sponsors)
-
-<!-- /TOC -->
+<!-- TOC depthFrom:2 -->autoauto- [The config file](#the-config-file)auto    - [Top-level items](#top-level-items)auto    - [General Parameters](#general-parameters)auto    - [Feed Parameters](#feed-parameters)auto    - [Social Parameters](#social-parameters)auto    - [Host/Author Parameters](#hostauthor-parameters)auto        - [Host Social Parameters](#host-social-parameters)auto    - [Link Parameters](#link-parameters)auto    - [A note about `BaseURL`](#a-note-about-baseurl)auto    - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)auto    - [Permalinks](#permalinks)auto    - [Menus](#menus)auto- [Episodes](#episodes)auto- [Guests](#guests)auto    - [Guest Pages](#guest-pages)auto- [Hosts](#hosts)auto    - [Host Pages](#host-pages)auto- [Sponsors](#sponsors)autoauto<!-- /TOC -->
 
 ## The config file
 
@@ -311,23 +290,8 @@ Host information comes from host pages. You can use the shortcode TODO: add shor
 
 Every host  needs a corresponding page  in the `content/host` directory of your site. Generally speaking, you should be able to name these however you like, but I have only tested it with the format `firstinitiallastname.md`, i.e., for "John Doe" the file would be `jdoe.md`.
 
-A guest file takes the following structure:
+A host file takes the following structure:
 
-```
-+++
-Title = "John Doe"
-Twitter = "johndoe"
-Website = "http://www.google.com"
-Type = "guest"
-Facebook = "johndoe"
-Linkedin = "johndoe"
-GitHub = "johndoe"
-Thumbnail = "img/guest/jdoe.jpg"
-Aka = ["jsmith", "jsmith2"]
-+++
-Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas.
-
-```
 
 ```
 +++
