@@ -6,6 +6,11 @@
       </div>
     </div>
     <div class="row">
+      {{ if (isset .Site.Params "spotify_subscribe") }}
+        <div class = "col-md-12 subscribe_buttons">
+          <a class="btn btn-default" href="{{ .Site.Params.spotify_subscribe}}"><i class="fab fa-spotify"></i>&nbsp;Spotify</a>
+        </div>
+      {{ end }}
       {{ if (isset .Site.Params "itunes_subscribe") }}
         <div class = "col-md-12 subscribe_buttons">
           <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fab fa-itunes-note"></i>&nbsp;iTunes</a>
