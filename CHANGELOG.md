@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.14.0](https://github.com/mattstratton/castanet/tree/0.14.0) (2019-03-07)
+**Closed issues:**
+
+- Castanet Demo on Hugo website contains 3rd party tracking [\#197](https://github.com/mattstratton/castanet/issues/197)
+
+**Merged pull requests:**
+
+- Add Spotify subscribe button [\#200](https://github.com/mattstratton/castanet/pull/200) ([089](https://github.com/089))
+
+## [0.13.0](https://github.com/mattstratton/castanet/tree/0.13.0) (2018-11-17)
 ## [0.12.0](https://github.com/mattstratton/castanet/tree/0.12.0) (2018-11-17)
 **Merged pull requests:**
 
@@ -111,9 +121,9 @@
 - Truncate iTunes summary based on characters in feed generation [\#93](https://github.com/mattstratton/castanet/issues/93)
 - Prettify the guest page [\#122](https://github.com/mattstratton/castanet/pull/122) ([mattstratton](https://github.com/mattstratton))
 - Prettify the grid page [\#118](https://github.com/mattstratton/castanet/pull/118) ([mattstratton](https://github.com/mattstratton))
-- add soundcloud and pocketcasts subscription options in sidebar [\#109](https://github.com/mattstratton/castanet/pull/109) ([thercast](https://github.com/thercast))
-- Add direct download link for audio file [\#103](https://github.com/mattstratton/castanet/pull/103) ([thercast](https://github.com/thercast))
-- add gitlab to social parameters [\#102](https://github.com/mattstratton/castanet/pull/102) ([thercast](https://github.com/thercast))
+- add soundcloud and pocketcasts subscription options in sidebar [\#109](https://github.com/mattstratton/castanet/pull/109) ([rpodcast](https://github.com/rpodcast))
+- Add direct download link for audio file [\#103](https://github.com/mattstratton/castanet/pull/103) ([rpodcast](https://github.com/rpodcast))
+- add gitlab to social parameters [\#102](https://github.com/mattstratton/castanet/pull/102) ([rpodcast](https://github.com/rpodcast))
 
 **Fixed bugs:**
 
@@ -242,7 +252,7 @@
 
 **Merged pull requests:**
 
-- Fix missing menu items in navigation bar [\#37](https://github.com/mattstratton/castanet/pull/37) ([thercast](https://github.com/thercast))
+- Fix missing menu items in navigation bar [\#37](https://github.com/mattstratton/castanet/pull/37) ([rpodcast](https://github.com/rpodcast))
 
 ## [v0.2.4](https://github.com/mattstratton/castanet/tree/v0.2.4) (2017-02-11)
 ## [v0.2.3](https://github.com/mattstratton/castanet/tree/v0.2.3) (2017-02-11)
