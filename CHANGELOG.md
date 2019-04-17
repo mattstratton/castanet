@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.14.1](https://github.com/mattstratton/castanet/tree/0.14.1) (2019-04-17)
+**Merged pull requests:**
+
+- Bug Fixes  & Improved Pagination to Grid and Row Layouts [\#201](https://github.com/mattstratton/castanet/pull/201) ([vichudson1](https://github.com/vichudson1))
+
 ## [0.14.0](https://github.com/mattstratton/castanet/tree/0.14.0) (2019-03-07)
 **Closed issues:**
 
