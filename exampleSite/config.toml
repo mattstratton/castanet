@@ -86,6 +86,19 @@ media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arr
     itunes_second_sub_category = "Tech News"
     language = "en-us"
 
+  [params.podlove] # https://subscribe-button.podlove.org
+    subscribe_title = ""              # fallback: site title from above
+    subscribe_subtitle = ""           # fallback: ""
+    subscribe_description = ""        # fallback: ""
+    subscribe_cover = "img/logo.jpg"  # fallback: ""
+    subscribe_color = "#585e6c"       # fallback: ""
+    subscribe_size = "medium"         # options: small, medium, big
+    subscribe_format = "rectangle"    # options: rectangle, square, cover
+    subscribe_style = "filled"        # options: filled, outline, frameless
+    subscribe_language = "de"         # options: nl (dutch), en (english), eo (esperanto), de (german), fi (finnish), fr (french), ja (french)
+    subscribe_feed_type = "audio"     # options: audio, video
+    subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
+
   [params.social]
     github = "arresteddevops"
     gitlab = "mattstratton"
