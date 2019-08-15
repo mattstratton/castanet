@@ -22,7 +22,7 @@ The technical details on how to set up your local development environment for ma
     - [Blocks](#blocks)
     - [CSS and SCSS](#css-and-scss)
         - [`site.scss`](#sitescss)
-        - [`custom-variables.scss`](#custom-variablesscss)
+        - [`color-variables.scss`](#color-variablesscss)
         - [`custom.scss`](#customscss)
     - [Javascript](#javascript)
 - [Local build and testing](#local-build-and-testing)
@@ -165,8 +165,10 @@ All CSS must be generated with SCSS. The SCSS files are located in `static/scss`
 #### `site.scss`
 This is the file that imports all the other SCSS files, including Bootstrap, font-awesome, jssocials, and the jquery oembed. It also imports our custom variables and any other customizations.
 
-#### `custom-variables.scss`
-Use this to set any SCSS variables, or to over-ride any variables used by Bootstrap.
+#### `color-variables.scss`
+Note that this refers to files like `blue-variables.scss` or `orange-variables.scss`. There is no actual file named `color-variables.scss`
+
+Use this to set any SCSS variables, or to over-ride any variables used by Bootstrap. You need one for each color theme created.
 
 #### `custom.scss`
 This is the only place you should declare custom SCSS or CSS code.
