@@ -192,6 +192,27 @@ Example:
     parent = "resources"
     
 ```
+
+### Podlove Subscribe Button
+
+[Podlove Subscribe Button](https://subscribe-button.podlove.org/) is a universal and easy-to-use button, to subscribe to podcasts with player clients or website players. 
+To customize your button please add the following section to your `config.toml`, which covers all features which are provided by the generator on [subscribe-button.podlove.org](https://subscribe-button.podlove.org/).
+
+```
+[params.podlove]
+  subscribe_title = ""              # fallback: site title from above
+  subscribe_subtitle = ""           # fallback: ""
+  subscribe_description = ""        # fallback: ""
+  subscribe_cover = "img/logo.jpg"  # fallback: ""
+  subscribe_color = "#585e6c"       # fallback: ""
+  subscribe_size = "medium"         # options: small, medium, big
+  subscribe_format = "rectangle"    # options: rectangle, square, cover
+  subscribe_style = "filled"        # options: filled, outline, frameless
+  subscribe_language = "de"         # options: nl (dutch), en (english), eo (esperanto), de (german), fi (finnish), fr (french), ja (french)
+  subscribe_feed_type = "audio"     # options: audio, video
+  subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
+```
+
 ## Episodes
 
 Every episode requires a page in the `content/episode` on your site. The command `hugo new episode/myepisode.md` should populate it properly.
