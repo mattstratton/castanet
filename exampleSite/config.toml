@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "HugoCast"
 theme = "castanet"
 googleAnalytics = ""
-disqusShortname = ""
 themesdir = "../.."
 paginate = "9"
 
@@ -73,6 +72,7 @@ mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4
 #rss_subscribe = "http://feed.com/myfeed" #only set this if you don't want to use the built-in feed
 description = "The HugoCast is the best podcast you've ever seen. You will learn everything you ever needed to know about [podcasting](https://en.wikipedia.org/wiki/Podcast) from the most inspiring experts to ever show up on the whole internet."
 media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arresteddevops/"
+disqusShortname = ""
   [params.feed]
     copyright = "Copyright 2016 Matt Stratton" #do not use markdown in this field; it is used in the feed
     itunes_subtitle = "The best podcast ever" #no markdown or HTML
