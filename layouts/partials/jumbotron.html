@@ -19,6 +19,15 @@
 
 
     <div class = "row">
+        {{ if (isset .Site.Params "podlove") }}
+        <div class = "d-flex p-2 subscribe_buttons col-md-auto">
+            <script>window.podcastData={'title':'{{ if (isset .Site.Params.podlove "subscribe_title") }}{{ .Site.Params.podlove.subscribe_title }}{{else}}{{ .Title }}{{end}}','subtitle':'{{ .Site.Params.podlove.subscribe_subtitle }}','description':'{{ if (isset .Site.Params.podlove "subscribe_description") }}{{ .Site.Params.podlove.subscribe_description }}{{else}}{{ .Site.Params.Description }}{{end}}','cover':'{{ .Site.Params.podlove.subscribe_cover }}','feeds':[{'type':'{{ .Site.Params.podlove.subscribe_feed_type }}','format':'{{ .Site.Params.podlove.subscribe_feed_format }}','url':'{{ .Site.Params.rss_subscribe }}','directory-url-itunes':'{{ .Site.Params.podlove.itunes_subscribe }}'}]}</script>
+            <script class="podlove-subscribe-button" src="https://cdn.podlove.org/subscribe-button/javascripts/app.js" data-language="{{ .Site.Params.podlove.subscribe_language }}" data-size="{{ .Site.Params.podlove.subscribe_size }}" data-json-data="podcastData" data-color="{{ .Site.Params.podlove.subscribe_color }}" data-format="{{ .Site.Params.podlove.subscribe_format }}" data-style="{{ .Site.Params.podlove.subscribe_style }}"></script>
+            <noscript><a href="{{ .Site.Params.rss_subscribe }}">Subscribe to feed</a></noscript>
+        </div>
+        {{ end }}
+    </div>
+    <div class = "row">
     {{ if (isset .Site.Params "spotify_subscribe") }}
       <div class = "d-flex p-2 subscribe_buttons col-md-auto">
         <a class="btn btn-default" href="{{ .Site.Params.spotify_subscribe}}"><i class="fab fa-spotify"></i>&nbsp;Spotify</a>
