@@ -13,15 +13,6 @@ An example site can be found at http://sample-castanet.netlify.com/
 
 ![Castanet screenshot](https://github.com/mattstratton/castanet/raw/master/images/screenshot.png)
 
-Previews of different configurations:
-
-- [Orange Row](https://www.castanet-theme.com/orange-row)
-- [Orange Grid](https://www.castanet-theme.com/orange-grid)
-- [Blue Row](https://www.castanet-theme.com/blue-row)
-- [Blue Grid](https://www.castanet-theme.com/blue-grid)
-- [Grey Row](https://www.castanet-theme.com/grey-row)
-- [Grey Grid](https://www.castanet-theme.com/grey-grid)
-
 ## Installation
 
 Download the latest version (zip file, not source code) from the [Releases](https://github.com/mattstratton/castanet/releases) page.
