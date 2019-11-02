@@ -6,28 +6,28 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav mr-auto">
-    {{ $currentNode := . }}
-    {{ range sort .Site.Menus.main "Identifier"}}
-      {{ if .HasChildren }}
-        <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
-        <div class="dropdown-menu">
-        {{ range sort .Children  "Identifier"}}
-          <a class="dropdown-item{{ if $currentNode.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ $.Permalink | absURL }}">{{ .Name }}</a>
-        {{ end }}
-        </div>
-        </li>
-      {{ else }}
-          <li class= "nav-item {{ if or ($currentNode.IsMenuCurrent "Main" .) ($currentNode.HasMenuCurrent "Main" .) }} active {{ end }}">
-          <a href="{{ $.Permalink | absURL }}" class="nav-link">
-              {{ .Pre }}
-              <span>{{ .Name }}</span>
-          </a>
-        </li>
-      {{ end }}
-    {{ end }}
-  </ul>
+      <ul class="navbar-nav mr-auto">
+          {{ $currentPage := . }}
+          {{ range sort .Site.Menus.main "Identifier"}}
+            {{ if .HasChildren }}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+              <div class="dropdown-menu">
+              {{ range sort .Children  "Identifier"}}
+                <a class="dropdown-item{{ if $currentPage.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+              {{ end }}
+              </div>
+              </li>
+            {{ else }}
+                <li class= "nav-item {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }} active {{ end }}">
+                <a href="{{ .URL }}" class="nav-link">
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                </a>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
 
 
       <ul class="navbar-nav ml-auto">
