@@ -1,5 +1,24 @@
 # Change Log
 
+## [1.0.0](https://github.com/mattstratton/castanet/tree/1.0.0) (2019-11-02)
+**Fixed bugs:**
+
+- Theme does not work on Hugo 0.58 [\#219](https://github.com/mattstratton/castanet/issues/219)
+
+**Closed issues:**
+
+- \[Bug\] Disqus comments not working [\#212](https://github.com/mattstratton/castanet/issues/212)
+- \[Bug\] Pagination is broken on mobile and needs general improvement. [\#202](https://github.com/mattstratton/castanet/issues/202)
+
+**Merged pull requests:**
+
+- Update theme for Hugo 0.58 and above [\#220](https://github.com/mattstratton/castanet/pull/220) ([mattstratton](https://github.com/mattstratton))
+- Podlove subscribe button [\#218](https://github.com/mattstratton/castanet/pull/218) ([089](https://github.com/089))
+- Update hugo version on Netlify to 0.55.1 [\#215](https://github.com/mattstratton/castanet/pull/215) ([mattstratton](https://github.com/mattstratton))
+- Fixing disqus issues [\#213](https://github.com/mattstratton/castanet/pull/213) ([robwirving](https://github.com/robwirving))
+- Allow to specify episode guid [\#210](https://github.com/mattstratton/castanet/pull/210) ([alexmurray](https://github.com/alexmurray))
+- use global hugo function,.URL deprecated [\#207](https://github.com/mattstratton/castanet/pull/207) ([nonumeros](https://github.com/nonumeros))
+
 ## [0.14.1](https://github.com/mattstratton/castanet/tree/0.14.1) (2019-04-17)
 **Merged pull requests:**
 
@@ -216,7 +235,7 @@
 - Add podcast length [\#69](https://github.com/mattstratton/castanet/pull/69) ([mattstratton](https://github.com/mattstratton))
 - Change to remove slashes [\#65](https://github.com/mattstratton/castanet/pull/65) ([mattstratton](https://github.com/mattstratton))
 - Fix broken hamburger menu [\#59](https://github.com/mattstratton/castanet/pull/59) ([mattstratton](https://github.com/mattstratton))
-- Add contributing.json \(GitMagic\) [\#56](https://github.com/mattstratton/castanet/pull/56) ([gitmagic-bot](https://github.com/gitmagic-bot))
+- Add contributing.json \(GitMagic\) [\#56](https://github.com/mattstratton/castanet/pull/56) ([ghost](https://github.com/ghost))
 - Add grid option [\#55](https://github.com/mattstratton/castanet/pull/55) ([mattstratton](https://github.com/mattstratton))
 - Add host sidebar [\#54](https://github.com/mattstratton/castanet/pull/54) ([mattstratton](https://github.com/mattstratton))
 - Make subscribe buttons look like buttons [\#53](https://github.com/mattstratton/castanet/pull/53) ([mattstratton](https://github.com/mattstratton))
