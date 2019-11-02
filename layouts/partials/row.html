@@ -10,7 +10,7 @@
   Latest Episode
   </h2>
 
-  {{ range first 1 (where .Data.Pages "Type" "episode") }}
+  {{ range first 1 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
     {{- with .Params.truncate -}}
       {{- $.Scratch.Set "truncate" . }}
     {{- else -}}
@@ -109,9 +109,9 @@
 
 <section class="episode-list">
 <!-- rest of episodes -->
-{{- if (where .Data.Pages "Type" "episode") -}}
-{{- $paginator := .Paginate (after 1 (where .Data.Pages "Type" "episode")) 5 -}}
-{{- $list := (where .Data.Pages "Type" "episode") -}}
+{{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
+{{- $paginator := .Paginate (after 1 (where site.RegularPages "Type" "in" site.Params.mainSections)) 5 -}}
+{{- $list := (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">
 {{- with .Site.Params.enable_jumbo -}}

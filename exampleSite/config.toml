@@ -53,9 +53,10 @@ paginate = "9"
     parent = "resources"
 
 [params]
+mainSections = ["episode"]
 site_theme = "grey"
 # site_layout = "grid"
-site_layout = "grid"
+site_layout = "row"
 enable_jumbo = "true"
 # enable_jumbo = "false"
 # truncate = "100"

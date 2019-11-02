@@ -7,7 +7,8 @@
   </div>
 
   <div class = "row">
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "episode") }}
+
+    {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
         {{ range $paginator.Pages }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}
           <div class="col-md-4 grid_episode_col">
