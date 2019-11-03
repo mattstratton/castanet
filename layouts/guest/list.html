@@ -88,33 +88,55 @@
     {{ $.Scratch.Set "show" (seq 1 $total) }}
   {{ end }}
 
-<ul class="pagination pagination-lg">
-{{- with $paginator.First -}}
-  {{- $url := trim (string .URL) "/" | absURL -}}
-  <li class="page-item">
-      <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-{{- end -}}
-<li class="{{ if not $paginator.HasPrev }}disabled {{ end }}page-item">
-    <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous" class="page-link"><span aria-hidden="true">&laquo;</span></a>
-</li>
-
-  {{ range $pag.Pagers }}
-    {{ $cur := .PageNumber }}
-    {{- $url := trim (string .URL) "/" | absURL -}}
-    {{ if in ($.Scratch.Get "show") $cur }}
-      <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
-    {{ else if in (slice 2 (sub $total 1)) $cur }}
-      <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
-    {{ end }}
-  {{ end }}
-  {{- with $paginator.Last -}}
-  {{- $url := trim (string .URL) "/" | absURL -}}
-  <li class="page-item">
-      <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-{{- end -}}
-</ul>
+  <ul class="pagination pagination-lg">
+      <!-- first page button -->
+      {{if $paginator.HasPrev }}
+        {{ if gt $paginator.PageNumber 2 }}
+            {{- with $paginator.First -}}
+            {{- $url := trim (string .URL) "/" | absURL -}}
+                <li class="page-item">
+                <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+                </li>
+            {{- end -}}
+        {{ end }}
+      {{ end }}
+    
+    
+      <!-- prev page button -->
+      {{- with $paginator.HasPrev -}}
+          <li class="page-item">
+            <a href="{{ $paginator.Prev.URL }}" class="page-link"> &laquo; </a>
+          </li>
+      {{ end }}
+      
+      <!-- page # buttons -->
+      {{ range $pag.Pagers }}
+        {{ $cur := .PageNumber }}
+        {{- $url := trim (string .URL) "/" | absURL -}}
+        {{ if in ($.Scratch.Get "show") $cur }}
+          <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
+        {{ else if in (slice 2 (sub $total 1)) $cur }}
+          <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
+        {{ end }}
+      {{ end }}
+      
+      <!-- next page button -->
+      {{- with $paginator.HasNext -}}
+      <li class="page-item">
+        <a href="{{ $paginator.Next.URL }}" class="page-link"> &raquo; </a>
+      </li>
+      {{ end }}
+      
+      <!-- last page button -->
+      {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
+        {{- with $paginator.Last -}}
+            {{- $url := trim (string .URL) "/" | absURL -}}
+                <li class="page-item">
+                    <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+                </li>
+        {{- end -}}
+      {{ end }}
+    </ul>
 {{ end }}
 </nav>
 </div>
