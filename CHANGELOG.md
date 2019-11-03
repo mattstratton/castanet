@@ -1,5 +1,15 @@
 # Change Log
 
+## [1.0.2](https://github.com/mattstratton/castanet/tree/1.0.2) (2019-11-03)
+**Closed issues:**
+
+- guid episode tag should be unique and not change [\#209](https://github.com/mattstratton/castanet/issues/209)
+
+**Merged pull requests:**
+
+- Update pagination menu on guest page for mobile [\#221](https://github.com/mattstratton/castanet/pull/221) ([mattstratton](https://github.com/mattstratton))
+
+## [1.0.1](https://github.com/mattstratton/castanet/tree/1.0.1) (2019-11-02)
 ## [1.0.0](https://github.com/mattstratton/castanet/tree/1.0.0) (2019-11-02)
 **Fixed bugs:**
 
