@@ -2,7 +2,31 @@
 
 # Table of contents
 
-<!-- TOC depthFrom:2 -->autoauto- [The config file](#the-config-file)auto    - [Top-level items](#top-level-items)auto    - [General Parameters](#general-parameters)auto    - [Feed Parameters](#feed-parameters)auto    - [Social Parameters](#social-parameters)auto    - [Host/Author Parameters](#hostauthor-parameters)auto        - [Host Social Parameters](#host-social-parameters)auto    - [Link Parameters](#link-parameters)auto    - [A note about `BaseURL`](#a-note-about-baseurl)auto    - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)auto    - [Permalinks](#permalinks)auto    - [Menus](#menus)auto- [Episodes](#episodes)auto- [Guests](#guests)auto    - [Guest Pages](#guest-pages)auto- [Hosts](#hosts)auto    - [Host Pages](#host-pages)auto- [Sponsors](#sponsors)autoauto<!-- /TOC -->
+<!-- TOC -->
+
+- [Reference for castanet](#reference-for-castanet)
+- [Table of contents](#table-of-contents)
+    - [The config file](#the-config-file)
+        - [Top-level items](#top-level-items)
+        - [General Parameters](#general-parameters)
+        - [Feed Parameters](#feed-parameters)
+        - [Social Parameters](#social-parameters)
+        - [Host/Author Parameters](#hostauthor-parameters)
+            - [Host Social Parameters](#host-social-parameters)
+        - [Link Parameters](#link-parameters)
+        - [A note about `BaseURL`](#a-note-about-baseurl)
+        - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)
+        - [Permalinks](#permalinks)
+        - [Menus](#menus)
+        - [Podlove Subscribe Button](#podlove-subscribe-button)
+    - [Episodes](#episodes)
+    - [Guests](#guests)
+        - [Guest Pages](#guest-pages)
+    - [Hosts](#hosts)
+        - [Host Pages](#host-pages)
+    - [Sponsors](#sponsors)
+
+<!-- /TOC -->
 
 ## The config file
 
