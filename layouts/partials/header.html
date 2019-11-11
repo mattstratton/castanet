@@ -1,11 +1,11 @@
-<nav class="navbar fixed-top navbar-toggleable-sm navbar-light bg-faded">
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
 <div class="container">
 <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div id="navbarNavDropdown" class="navbar-collapse collapse">
       <ul class="navbar-nav mr-auto">
           {{ $currentPage := . }}
           {{ range sort .Site.Menus.main "Identifier"}}
@@ -32,7 +32,7 @@
 
       <ul class="navbar-nav ml-auto">
         {{ if (isset .Site.Params.social "facebook" ) }}
-          <li>
+          <li class = "nav-item">
             <a class = "social-links" href="https://facebook.com/{{ .Site.Params.social.facebook }}"><i class="fab fa-facebook-square fa-2x"></i></a>
           </li>
         {{ end }}
