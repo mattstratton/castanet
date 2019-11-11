@@ -3,14 +3,13 @@
 The technical details on how to set up your local development environment for making changes to the `castanet` [Hugo](https://gohugo.io/) theme for podcasts.
 
 # Table of contents
-<!-- TOC depthFrom:2 -->
+<!-- TOC depthfrom:2 -->
 
 - [Set up your environment](#set-up-your-environment)
     - [Git remote setup](#git-remote-setup)
     - [Installing dependencies](#installing-dependencies)
         - [Install Node.js and npm](#install-nodejs-and-npm)
         - [Install gulp](#install-gulp)
-        - [Install bower](#install-bower)
         - [Install node modules](#install-node-modules)
 - [How can I help?](#how-can-i-help)
 - [Making changes](#making-changes)
@@ -26,6 +25,7 @@ The technical details on how to set up your local development environment for ma
         - [`custom.scss`](#customscss)
     - [Javascript](#javascript)
 - [Local build and testing](#local-build-and-testing)
+    - [Build new javascript and stylesheets](#build-new-javascript-and-stylesheets)
 - [Continuous Integration](#continuous-integration)
     - [Issues](#issues)
     - [GitHub Labels](#github-labels)
@@ -43,10 +43,9 @@ The technical details on how to set up your local development environment for ma
 Prerequisites:
 
 * `make` (note - this is not needed yet)
-* `gulp` v3.9.1+ (not needed yet)
-* `bower`
+* `gulp` v4.0.0+
 * `nodejs` and `npm`
-* [hugo v0.36.1+](https://gohugo.io)
+* [hugo v0.58.3+](https://gohugo.io)
 
 Clone `castanet` from source into your working directory of choice:
 
@@ -92,8 +91,6 @@ https://docs.npmjs.com/getting-started/installing-node
 #### Install gulp
 
 `npm install --global gulp`
-#### Install bower
-`npm install --global bower`
 
 #### Install node modules
 
@@ -178,7 +175,11 @@ All Javascript files are combined using CodeKit. The source Javascript files can
 
 ## Local build and testing
 
-TODO - add gulp information and make scripts
+### Build new javascript and stylesheets
+
+Inside the theme directory, run `npm install`. 
+
+Run `gulp dev` to build the compiled stylesheets and Javascript files
 
 ## Continuous Integration
 The `castanet` repo has hooks into Travis, Appveyor, and Netlify. Currently, the Travis build doesn’t do very much (the intent is to add some testing using Casper.js for web testing, but no tests have been written). The Appveyor tests ensure that the site can build with Windows.
