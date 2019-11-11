@@ -229,10 +229,10 @@ See [utils/README](https://github.com/mattstratton/castanet/blob/master/utils/RE
 
 Adding a color theme is quite simple - you will need to generate two new files for the theme:
 
-- `static/scss/<MYCOLOR>_varibles.scss`
+- `static/scss/<MYCOLOR>_variables.scss`
 - `static/scss/<MYCOLOR.scss`
 
-The `_variables.scss` file contains the Sass varibles uses to build the stylesheet. `<MYCOLOR>` should refer to the name of the style as you will set it in the `config.toml`.
+The `<MYCOLOR>_variables.scss` file contains the Sass variables uses to build the stylesheet. `<MYCOLOR>` should refer to the name of the style as you will set it in the `config.toml`.
 
 ## Developer Certification of Origin (DCO)
 
