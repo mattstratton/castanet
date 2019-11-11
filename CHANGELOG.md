@@ -1,5 +1,23 @@
 # Change Log
 
+## [1.1.0](https://github.com/mattstratton/castanet/tree/1.1.0) (2019-11-11)
+**Implemented enhancements:**
+
+- Migrate from codekit to gulp [\#105](https://github.com/mattstratton/castanet/issues/105)
+
+**Fixed bugs:**
+
+- TOC in REFERENCE.md is messed up [\#223](https://github.com/mattstratton/castanet/issues/223)
+
+**Closed issues:**
+
+- \[Bug\] Can't navigate guest listing on mobile [\#217](https://github.com/mattstratton/castanet/issues/217)
+- \[BUG\] Issue generating css from scss [\#211](https://github.com/mattstratton/castanet/issues/211)
+
+**Merged pull requests:**
+
+- Move to gulp [\#224](https://github.com/mattstratton/castanet/pull/224) ([mattstratton](https://github.com/mattstratton))
+
 ## [1.0.2](https://github.com/mattstratton/castanet/tree/1.0.2) (2019-11-03)
 **Closed issues:**
 
