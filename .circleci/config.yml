@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: "Run hugo against default config"
-          command: cd exampleSite && HUGO_ENV=production hugo -v -d workspace/public --themesDir ../.. --theme=castanet --buildDrafts=false
+          command: cd exampleSite && ls && HUGO_ENV=production hugo -v -d workspace/public --themesDir ../.. --theme=castanet --buildDrafts=false
 
 
 workflows:
