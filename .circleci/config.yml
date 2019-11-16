@@ -140,6 +140,9 @@ jobs:
             ls
             pwd
             zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.travis.ci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
+      - run:
+          name: "Create workspace directory"
+          command: mkdir ~/castanet/workspace
       - persist_to_workspace:
           root: ~/castanet/workspace
           paths:
