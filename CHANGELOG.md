@@ -1,5 +1,6 @@
 # Change Log
 
+## [1.1.3](https://github.com/mattstratton/castanet/tree/1.1.3) (2019-11-16)
 ## [1.1.2](https://github.com/mattstratton/castanet/tree/1.1.2) (2019-11-16)
 **Merged pull requests:**
 
