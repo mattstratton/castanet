@@ -141,7 +141,7 @@ jobs:
             pwd
             zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.travis.ci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: ~/castanet/workspace
           paths:
             - release
 
@@ -152,12 +152,12 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: ~/castanet/workspace
       - run:
           name: "Publish release on GitHub"
           command: |
             VERSION=${CIRCLE_TAG}
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} /tmp/workspace/
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION}  ~/castanet/workspace/
 
 workflows:
   version: 2
