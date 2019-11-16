@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.1.1](https://github.com/mattstratton/castanet/tree/1.1.1) (2019-11-15)
+**Fixed bugs:**
+
+- Drop down menu not working on iPhone  [\#228](https://github.com/mattstratton/castanet/issues/228)
+
+**Merged pull requests:**
+
+- Fix issue with navbar on mobile [\#229](https://github.com/mattstratton/castanet/pull/229) ([mattstratton](https://github.com/mattstratton))
+
 ## [1.1.0](https://github.com/mattstratton/castanet/tree/1.1.0) (2019-11-11)
 **Implemented enhancements:**
 
