@@ -7,11 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Change to example site directory"
-          command: cd exampleSite
-      - run:
           name: "Run hugo against default config"
-          command: HUGO_ENV=production hugo -v -d workspace/public
+          command: cd exampleSite && HUGO_ENV=production hugo -v -d workspace/public
 
 
 workflows:
