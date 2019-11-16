@@ -191,8 +191,6 @@ workflows:
           filters:
             tags:
               only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
           requires:
             - test-blue-grid
             - test-blue-row-jumbo-false
@@ -208,8 +206,6 @@ workflows:
           filters:
             tags:
               only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
           requires:
             - create-release
 
