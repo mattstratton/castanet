@@ -121,6 +121,39 @@ jobs:
           name: "Test grey-row-jumbo"
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-row-jumbo --config ../test/grey-row-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
+  create-release:
+    docker:
+      - image: cibuilds/node
+    working_directory: castanet-build
+
+    steps:
+      - checkout
+      - run:
+          name: "Create zip file for release"
+          command: | 
+            mkdir -p release
+            zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.travis.ci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
+      - persist_to_workspace:
+        root: workspace
+        paths:
+          - release
+
+
+publish-github-release:
+  docker:
+    - image: cibuilds/github:0.13.0
+
+    steps:
+      - attach_workspace:
+        at: ./artifacts
+      - run:
+        name: "Publish release on GitHub"
+        command: |
+          VERSION=${CIRCLE_TAG}
+          ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./artifacts/
+
+
+
 
 
 workflows:
@@ -158,4 +191,30 @@ workflows:
       - test-grey-row-jumbo:
           requires:
             - build
+      - create-release:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              only:
+                - master
+          requires:
+            - test-blue-grid
+            - test-blue-row-jumbo-false
+            - test-blue-row-jumbo-true
+            - test-blue-row-no-jumbo
+            - test-orange-grid
+            - test-orange-row
+            - test-orange-row-jumbo
+            - test-grey-grid
+            - test-grey-row
+            - test-grey-row-jumbo
+      - publish-github-release:
+        filters:
+          tags:
+            only: /^\d+\.\d+\.\d+$/
+          branches:
+            only:
+              - master
+
           
