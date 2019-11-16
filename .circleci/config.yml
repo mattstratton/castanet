@@ -11,9 +11,24 @@ jobs:
           name: "Run hugo against default config"
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/public --themesDir ../.. --theme=castanet --buildDrafts=false
 
+  test-blue-grid:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test blue-grid"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v --d workspace/test/blue-grid --config ../test/blue-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+
 
 workflows:
   version: 2
   build-test:
     jobs:
       - build
+      - test-blue-grid:
+        requires:
+          - build
