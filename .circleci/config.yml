@@ -132,6 +132,7 @@ jobs:
           name: "Create zip file for release"
           command: | 
             mkdir -p release
+            ls
             zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.travis.ci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
       - persist_to_workspace:
           root: workspace
