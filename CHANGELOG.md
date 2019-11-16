@@ -1,6 +1,11 @@
 # Change Log
 
-## [1.1.1](https://github.com/mattstratton/castanet/tree/1.1.1) (2019-11-15)
+## [1.1.2](https://github.com/mattstratton/castanet/tree/1.1.2) (2019-11-16)
+**Merged pull requests:**
+
+- Add skeleton circleci config [\#230](https://github.com/mattstratton/castanet/pull/230) ([mattstratton](https://github.com/mattstratton))
+
+## [1.1.1](https://github.com/mattstratton/castanet/tree/1.1.1) (2019-11-16)
 **Fixed bugs:**
 
 - Drop down menu not working on iPhone  [\#228](https://github.com/mattstratton/castanet/issues/228)
