@@ -127,7 +127,9 @@ jobs:
     working_directory: castanet
 
     steps:
-      - checkout
+      - run:
+          name: "Checkout tag"
+          command: git clone --branch "${CIRCLE_TAG}" --depth 1 "${CIRCLE_REPOSITORY_URL}"
       - run:
           name: "Create zip file for release"
           command: | 
