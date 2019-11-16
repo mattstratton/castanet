@@ -187,25 +187,18 @@ workflows:
       - test-grey-row-jumbo:
           requires:
             - build
+  deploy:
+    jobs:
       - create-release:
           filters:
             tags:
-              only: /.*/
-          requires:
-            - test-blue-grid
-            - test-blue-row-jumbo-false
-            - test-blue-row-jumbo-true
-            - test-blue-row-no-jumbo
-            - test-orange-grid
-            - test-orange-row
-            - test-orange-row-jumbo
-            - test-grey-grid
-            - test-grey-row
-            - test-grey-row-jumbo
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
       - publish-github-release:
           filters:
             tags:
-              only: /.*/
+              only: /^\d+\.\d+\.\d+$/
             branches:
               ignore: /.*/
           requires:
