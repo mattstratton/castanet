@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run:
           name: "Test blue-grid"
-          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v --d workspace/test/blue-grid --config ../test/blue-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-grid --config ../test/blue-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
 
 
