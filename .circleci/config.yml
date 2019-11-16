@@ -140,28 +140,29 @@ jobs:
             ls
             pwd
             zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.travis.ci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
-      - persist_to_workspace:
-          root: ./
-          paths:
-            - release
-
-
-  publish-github-release:
-    docker:
-      - image: cibuilds/github:0.13.0
-    working_directory: castanet
-
-    steps:
-      - attach_workspace:
-          at: ~/castanet/workspace
-      - run:
-          name: "List contents"
-          command: pwd && ls
       - run:
           name: "Publish release on GitHub"
           command: |
             VERSION=${CIRCLE_TAG}
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION}  ~/castanet/workspace/release/
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION}  ./release/
+
+
+  # publish-github-release:
+  #   docker:
+  #     - image: cibuilds/github:0.13.0
+  #   working_directory: castanet
+
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/castanet/workspace
+  #     - run:
+  #         name: "List contents"
+  #         command: pwd && ls
+  #     - run:
+  #         name: "Publish release on GitHub"
+  #         command: |
+  #           VERSION=${CIRCLE_TAG}
+  #           ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION}  ~/castanet/workspace/release/
 
 workflows:
   version: 2
@@ -206,13 +207,6 @@ workflows:
               only: /^\d+\.\d+\.\d+$/
             branches:
               ignore: /.*/
-      - publish-github-release:
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
-          requires:
-            - create-release
+
 
           
