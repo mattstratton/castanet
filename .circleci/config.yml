@@ -149,6 +149,7 @@ jobs:
   publish-github-release:
     docker:
       - image: cibuilds/github:0.13.0
+    working_directory: castanet
 
     steps:
       - attach_workspace:
