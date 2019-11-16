@@ -22,6 +22,105 @@ jobs:
           name: "Test blue-grid"
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-grid --config ../test/blue-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
+  test-blue-row-jumbo-false:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test blue-row-jumbo-false"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-jumbo-false --config ../test/blue-row-jumbo-false-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-blue-row-jumbo-true:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test blue-row-jumbo-true"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-jumbo-true --config ../test/blue-row-jumbo-true-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-blue-row-no-jumbo:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test blue-row-no-jumbo"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-no-jumbo --config ../test/blue-row-no-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-orange-grid:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test orange-grid"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-grid --config ../test/orange-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-orange-row:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test orange-row"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-row --config ../test/orange-row-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-orange-row-jumbo:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test orange-row-jumbo"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-row-jumbo --config ../test/orange-row-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-grey-grid:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test grey-grid"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-grid --config ../test/grey-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-grey-row:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test grey-row"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-row --config ../test/grey-row-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
+  test-grey-row-jumbo:
+    docker:
+      - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
+
+    steps:
+      - checkout
+      - run:
+          name: "Test grey-row-jumbo"
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-row-jumbo --config ../test/grey-row-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
+
 
 
 workflows:
@@ -32,3 +131,31 @@ workflows:
       - test-blue-grid:
           requires:
             - build
+      - test-blue-row-jumbo-false:
+          requires:
+            - build
+      - test-blue-row-jumbo-true:
+          requires:
+            - build
+      - test-blue-row-no-jumbo:
+          requires:
+            - build
+      - test-orange-grid:
+          requires:
+            - build
+      - test-orange-row:
+          requires:
+            - build
+      - test-orange-row-jumbo:
+          requires:
+            - build
+      - test-grey-grid:
+          requires:
+            - build
+      - test-grey-row:
+          requires:
+            - build
+      - test-grey-row-jumbo:
+          requires:
+            - build
+          
