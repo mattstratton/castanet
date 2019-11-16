@@ -30,5 +30,5 @@ workflows:
     jobs:
       - build
       - test-blue-grid:
-        requires:
-          - build
+          requires:
+            - build
