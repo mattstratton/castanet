@@ -3,12 +3,13 @@ jobs:
   build:
     docker:
       - image: cibuilds/hugo:0.58.3
+    working_directory: castanet
 
     steps:
       - checkout
       - run:
           name: "Run hugo against default config"
-          command: cd exampleSite && ls && HUGO_ENV=production hugo -v -d workspace/public --themesDir ../.. --theme=castanet --buildDrafts=false
+          command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/public --themesDir ../.. --theme=castanet --buildDrafts=false
 
 
 workflows:
