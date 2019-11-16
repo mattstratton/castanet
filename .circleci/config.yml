@@ -124,7 +124,7 @@ jobs:
   create-release:
     docker:
       - image: cibuilds/github:0.13.0
-    working_directory: castanet-build
+    working_directory: castanet
 
     steps:
       - checkout
