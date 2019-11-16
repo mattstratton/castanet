@@ -145,16 +145,12 @@ publish-github-release:
 
     steps:
       - attach_workspace:
-        at: ./artifacts
+          at: ./artifacts
       - run:
-        name: "Publish release on GitHub"
-        command: |
-          VERSION=${CIRCLE_TAG}
-          ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./artifacts/
-
-
-
-
+          name: "Publish release on GitHub"
+          command: |
+            VERSION=${CIRCLE_TAG}
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./artifacts/
 
 workflows:
   version: 2
@@ -210,11 +206,11 @@ workflows:
             - test-grey-row
             - test-grey-row-jumbo
       - publish-github-release:
-        filters:
-          tags:
-            only: /^\d+\.\d+\.\d+$/
-          branches:
-            only:
-              - master
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              only:
+                - master
 
           
