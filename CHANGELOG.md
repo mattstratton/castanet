@@ -1,5 +1,16 @@
 # Change Log
 
+## [1.1.19](https://github.com/mattstratton/castanet/tree/1.1.19) (2019-11-18)
+**Closed issues:**
+
+- \[Bug\] Image Doesn't Show up on Page 2 of Episodes in List View [\#231](https://github.com/mattstratton/castanet/issues/231)
+- Replace Travis with CircleCI [\#216](https://github.com/mattstratton/castanet/issues/216)
+
+**Merged pull requests:**
+
+- Fix bug with episode banners on row view [\#232](https://github.com/mattstratton/castanet/pull/232) ([mattstratton](https://github.com/mattstratton))
+
+## [1.1.18](https://github.com/mattstratton/castanet/tree/1.1.18) (2019-11-16)
 ## [1.1.17](https://github.com/mattstratton/castanet/tree/1.1.17) (2019-11-16)
 ## [1.1.16](https://github.com/mattstratton/castanet/tree/1.1.16) (2019-11-16)
 ## [1.1.15](https://github.com/mattstratton/castanet/tree/1.1.15) (2019-11-16)
