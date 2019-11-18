@@ -6,6 +6,7 @@ categories = []
 date = "2016-09-25T04:10:01-05:00"
 episode = "12"
 episode_image = "img/episode/sept.jpg"
+#episode_banner = "img/episode/default-banner.jpg"
 explicit = "no"
 guests = ["jsmith", "ccooper"]
 sponsors = ["bluthcompany"]

@@ -21,7 +21,9 @@
       {{- end -}}
     {{- end -}}
     {{- with .Params.youtube -}}
-      {{- $.Scratch.Set "youtube" "true" -}}
+      {{- if . ne "" -}}
+        {{- $.Scratch.Set "youtube" "true" -}}
+      {{- end -}}
     {{- end -}}
     {{- with .Params.episode_banner -}}
       {{- $.Scratch.Set "episode_banner" "true" -}}
@@ -32,7 +34,7 @@
       <div class = "row homepage_episode_row">
         <div class = "col">
           <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} youtube = {{($.Scratch.Get "youtube")}} and {{ .Params.youtube }}</small>
         </div>
       </div>
       <div class = "row homepage_episode_row">
@@ -133,12 +135,6 @@
       {{- else -}}
         {{- $.Scratch.Set "truncate" 600 -}}
       {{- end -}}
-    {{- end -}}
-    {{- with .Params.youtube -}}
-      {{- $.Scratch.Set "youtube" "true" -}}
-    {{- end -}}
-    {{- with .Params.episode_banner -}}
-      {{- $.Scratch.Set "episode_banner" "true" -}}
     {{- end -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
