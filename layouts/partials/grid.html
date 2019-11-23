@@ -64,7 +64,7 @@
   {{if $paginator.HasPrev }}
     {{ if gt $paginator.PageNumber 2 }}
         {{- with $paginator.First -}}
-        {{- $url := trim (string .Permalink) "/" | absURL -}}
+        {{- $url := trim (string .URL) "/" | absURL -}}
             <li class="page-item">
             <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
             </li>
@@ -83,7 +83,7 @@
   <!-- page # buttons -->
   {{ range $pag.Pagers }}
     {{ $cur := .PageNumber }}
-    {{- $url := trim (string $.Permalink) "/" | absURL -}}
+    {{- $url := trim (string $.URL) "/" | absURL -}}
     {{ if in ($.Scratch.Get "show") $cur }}
       <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ $.Permalink }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
     {{ else if in (slice 2 (sub $total 1)) $cur }}
@@ -101,7 +101,7 @@
   <!-- last page button -->
   {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
     {{- with $paginator.Last -}}
-        {{- $url := trim (string .Permalink) "/" | absURL -}}
+        {{- $url := trim (string .URL) "/" | absURL -}}
             <li class="page-item">
                 <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
             </li>
