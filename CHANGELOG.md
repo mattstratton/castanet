@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.1.20](https://github.com/mattstratton/castanet/tree/1.1.20) (2019-11-23)
+**Fixed bugs:**
+
+- \[Bug\] Trying to Switch Page Layouts [\#233](https://github.com/mattstratton/castanet/issues/233)
+
+**Merged pull requests:**
+
+- Fix pagination code on grid layout [\#235](https://github.com/mattstratton/castanet/pull/235) ([mattstratton](https://github.com/mattstratton))
+
 ## [1.1.19](https://github.com/mattstratton/castanet/tree/1.1.19) (2019-11-18)
 **Closed issues:**
 
