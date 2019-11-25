@@ -85,7 +85,7 @@
     {{ $cur := .PageNumber }}
     {{- $url := trim (string $.URL) "/" | absURL -}}
     {{ if in ($.Scratch.Get "show") $cur }}
-      <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ $.Permalink }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
+      <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ $.URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
     {{ else if in (slice 2 (sub $total 1)) $cur }}
       <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
     {{ end }}
