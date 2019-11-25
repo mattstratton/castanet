@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.1.21](https://github.com/mattstratton/castanet/tree/1.1.21) (2019-11-25)
+**Closed issues:**
+
+- Grid layout page number buttons don’t work  [\#236](https://github.com/mattstratton/castanet/issues/236)
+
 ## [1.1.20](https://github.com/mattstratton/castanet/tree/1.1.20) (2019-11-23)
 **Fixed bugs:**
 
