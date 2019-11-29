@@ -1,5 +1,5 @@
 {{ partial "meta.html" . }}
-{{ partial "head/seo.html" . }}
+{{ partial "seo.html" . }}
 <title>
 {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
 {{ if eq $url "/" }}
