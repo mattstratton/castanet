@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.2.0](https://github.com/mattstratton/castanet/tree/1.2.0) (2020-02-04)
+
+**Closed issues:**
+
+- Disabling audio preloading [\#241](https://github.com/mattstratton/castanet/issues/241)
+**Fixed bugs:**
+
+- Guest bios do not display with hugo 0.62 and higher [\#240](https://github.com/mattstratton/castanet/issues/240)
+
 ## [1.1.24](https://github.com/mattstratton/castanet/tree/1.1.24) (2019-12-01)
 **Closed issues:**
 
