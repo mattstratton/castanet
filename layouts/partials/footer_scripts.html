@@ -1,5 +1,4 @@
 <script src={{ "js/castanet-min.js" | absURL }}></script>
-<script src="/audiojs/audio.min.js"></script>
 <script>
     $("#share").jsSocials({
         shares: [
@@ -28,13 +27,15 @@
     ],
     });
 </script>
+
 <script>
-audiojs.events.ready(function() {
-  var as = audiojs.createAll({
-    imageLocation: '{{"img/player-graphics.gif" | relURL}}',
-    retinaImageLocation: '{{"img/player-graphics@2x.gif" | relURL}}',
-    swfLocation: '{{"swf/audiojs.swf" | relURL}}'
-   });
- });
+  var player = new MediaElementPlayer('player2', {
+      features: ['playpause', 'current', 'progress', 'duration', 'volume','speed'],
+      defaultSpeed: 1.0,
+      // other configuration elements
+  });
 </script>
+
+
+
 {{ template "_internal/google_analytics_async.html" . }}

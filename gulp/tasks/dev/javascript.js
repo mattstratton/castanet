@@ -7,9 +7,12 @@ var gulp = require('gulp'),
 var scripts = [
     'node_modules/jquery/dist/jquery.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
-    'static/components/audiojs/audiojs.js',
     'node_modules/jssocials/dist/jssocials.js',
-    'static/js/castanet.js'
+    'static/js/castanet.js',
+    'node_modules/mediaelement/build/mediaelement-and-player.js',
+    'node_modules/mediaelement-plugins/dist//speed/speed.js',
+    'node_modules/mediaelement-plugins/dist//speed/speed-i18n.js'
+
 ]
 
 gulp.task('js-concat', function(){
