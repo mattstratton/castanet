@@ -46,12 +46,10 @@
     {{- with .Params.podcast_file -}}
       <div class="row">
         <div class="col-md-12 player_row">
-          <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto"/>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-11 col-md-offset-1">
-          <a href="{{ $.Site.Params.media_prefix }}{{ . }}">Direct Download</a>
+
+        <audio id="player2" style="width: 100%" controls preload="none">
+          <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
+          </audio>
         </div>
       </div>
     {{- end -}}

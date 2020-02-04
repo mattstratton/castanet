@@ -5,3 +5,4 @@ release/
 dist
 .DS_Store
 .Ulysses-Group.plist
+public/
