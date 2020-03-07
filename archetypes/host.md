@@ -1,5 +1,6 @@
 +++
 Date = {{ .Date }}
+title = ""
 Twitter = ""
 Website = ""
 Type = "host"
