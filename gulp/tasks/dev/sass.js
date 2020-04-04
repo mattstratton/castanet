@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 sass.compiler = require('node-sass');
 
-gulp.task('sass', function () {
+gulp.task('site-sass', function () {
     return gulp.src('static/scss/site.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
@@ -12,24 +12,26 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('static/css'));
   });
 
-  gulp.task('sass', function () {
+  gulp.task('blue-sass', function () {
     return gulp.src('static/scss/blue.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('static/css'));
   });
-  gulp.task('sass', function () {
+  gulp.task('orange-sass', function () {
     return gulp.src('static/scss/orange.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('static/css'));
   });
-  gulp.task('sass', function () {
+  gulp.task('grey-sass', function () {
     return gulp.src('static/scss/grey.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('static/css'));
   });
+
+  gulp.task('sass', gulp.series('site-sass', 'blue-sass', 'orange-sass','grey-sass'))
