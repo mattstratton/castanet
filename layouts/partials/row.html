@@ -21,7 +21,7 @@
       {{- end -}}
     {{- end -}}
     {{- with .Params.youtube -}}
-      {{- if . ne "" -}}
+      {{- if . -}}
         {{- $.Scratch.Set "youtube" "true" -}}
       {{- end -}}
     {{- end -}}
