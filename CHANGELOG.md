@@ -1,84 +1,82 @@
-# Change Log
+# Changelog
+
+## [1.2.2](https://github.com/mattstratton/castanet/tree/1.2.2) (2020-04-04)
+
+**Fixed bugs:**
+
+- Row layout has issues if the most recent episode has a video [\#258](https://github.com/mattstratton/castanet/issues/258)
+- gulp task doesn't compile orange and blue files [\#254](https://github.com/mattstratton/castanet/issues/254)
+
+## [1.2.1](https://github.com/mattstratton/castanet/tree/1.2.1) (2020-03-07)
+
+**Fixed bugs:**
+
+- Host and Guest archetypes are missing Title field [\#248](https://github.com/mattstratton/castanet/issues/248)
 
 ## [1.2.0](https://github.com/mattstratton/castanet/tree/1.2.0) (2020-02-04)
 
-**Closed issues:**
-
-- Disabling audio preloading [\#241](https://github.com/mattstratton/castanet/issues/241)
 **Fixed bugs:**
 
 - Guest bios do not display with hugo 0.62 and higher [\#240](https://github.com/mattstratton/castanet/issues/240)
 
 ## [1.1.24](https://github.com/mattstratton/castanet/tree/1.1.24) (2019-12-01)
-**Closed issues:**
-
-- Per-show Tweet link leads to wrong pre-filled text in tweet [\#203](https://github.com/mattstratton/castanet/issues/203)
-
-**Merged pull requests:**
-
-- Fix twitter url in share button [\#239](https://github.com/mattstratton/castanet/pull/239) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.1.23](https://github.com/mattstratton/castanet/tree/1.1.23) (2019-11-29)
-**Merged pull requests:**
-
-- Consolidate social partial [\#237](https://github.com/mattstratton/castanet/pull/237) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.1.22](https://github.com/mattstratton/castanet/tree/1.1.22) (2019-11-25)
-## [1.1.21](https://github.com/mattstratton/castanet/tree/1.1.21) (2019-11-25)
-**Closed issues:**
 
-- Grid layout page number buttons don’t work  [\#236](https://github.com/mattstratton/castanet/issues/236)
+## [1.1.21](https://github.com/mattstratton/castanet/tree/1.1.21) (2019-11-25)
 
 ## [1.1.20](https://github.com/mattstratton/castanet/tree/1.1.20) (2019-11-23)
+
 **Fixed bugs:**
 
 - \[Bug\] Trying to Switch Page Layouts [\#233](https://github.com/mattstratton/castanet/issues/233)
 
-**Merged pull requests:**
-
-- Fix pagination code on grid layout [\#235](https://github.com/mattstratton/castanet/pull/235) ([mattstratton](https://github.com/mattstratton))
-
 ## [1.1.19](https://github.com/mattstratton/castanet/tree/1.1.19) (2019-11-18)
-**Closed issues:**
-
-- \[Bug\] Image Doesn't Show up on Page 2 of Episodes in List View [\#231](https://github.com/mattstratton/castanet/issues/231)
-- Replace Travis with CircleCI [\#216](https://github.com/mattstratton/castanet/issues/216)
-
-**Merged pull requests:**
-
-- Fix bug with episode banners on row view [\#232](https://github.com/mattstratton/castanet/pull/232) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.1.18](https://github.com/mattstratton/castanet/tree/1.1.18) (2019-11-16)
-## [1.1.17](https://github.com/mattstratton/castanet/tree/1.1.17) (2019-11-16)
-## [1.1.16](https://github.com/mattstratton/castanet/tree/1.1.16) (2019-11-16)
-## [1.1.15](https://github.com/mattstratton/castanet/tree/1.1.15) (2019-11-16)
-## [1.1.14](https://github.com/mattstratton/castanet/tree/1.1.14) (2019-11-16)
-## [1.1.13](https://github.com/mattstratton/castanet/tree/1.1.13) (2019-11-16)
-## [1.1.12](https://github.com/mattstratton/castanet/tree/1.1.12) (2019-11-16)
-## [1.1.11](https://github.com/mattstratton/castanet/tree/1.1.11) (2019-11-16)
-## [1.1.10](https://github.com/mattstratton/castanet/tree/1.1.10) (2019-11-16)
-## [1.1.9](https://github.com/mattstratton/castanet/tree/1.1.9) (2019-11-16)
-## [1.1.8](https://github.com/mattstratton/castanet/tree/1.1.8) (2019-11-16)
-## [1.1.7](https://github.com/mattstratton/castanet/tree/1.1.7) (2019-11-16)
-## [1.1.6](https://github.com/mattstratton/castanet/tree/1.1.6) (2019-11-16)
-## [1.1.5](https://github.com/mattstratton/castanet/tree/1.1.5) (2019-11-16)
-## [1.1.4](https://github.com/mattstratton/castanet/tree/1.1.4) (2019-11-16)
-## [1.1.3](https://github.com/mattstratton/castanet/tree/1.1.3) (2019-11-16)
-## [1.1.2](https://github.com/mattstratton/castanet/tree/1.1.2) (2019-11-16)
-**Merged pull requests:**
 
-- Add skeleton circleci config [\#230](https://github.com/mattstratton/castanet/pull/230) ([mattstratton](https://github.com/mattstratton))
+## [1.1.17](https://github.com/mattstratton/castanet/tree/1.1.17) (2019-11-16)
+
+## [1.1.16](https://github.com/mattstratton/castanet/tree/1.1.16) (2019-11-16)
+
+## [1.1.15](https://github.com/mattstratton/castanet/tree/1.1.15) (2019-11-16)
+
+## [1.1.14](https://github.com/mattstratton/castanet/tree/1.1.14) (2019-11-16)
+
+## [1.1.13](https://github.com/mattstratton/castanet/tree/1.1.13) (2019-11-16)
+
+## [1.1.12](https://github.com/mattstratton/castanet/tree/1.1.12) (2019-11-16)
+
+## [1.1.11](https://github.com/mattstratton/castanet/tree/1.1.11) (2019-11-16)
+
+## [1.1.10](https://github.com/mattstratton/castanet/tree/1.1.10) (2019-11-16)
+
+## [1.1.9](https://github.com/mattstratton/castanet/tree/1.1.9) (2019-11-16)
+
+## [1.1.8](https://github.com/mattstratton/castanet/tree/1.1.8) (2019-11-16)
+
+## [1.1.7](https://github.com/mattstratton/castanet/tree/1.1.7) (2019-11-16)
+
+## [1.1.6](https://github.com/mattstratton/castanet/tree/1.1.6) (2019-11-16)
+
+## [1.1.5](https://github.com/mattstratton/castanet/tree/1.1.5) (2019-11-16)
+
+## [1.1.4](https://github.com/mattstratton/castanet/tree/1.1.4) (2019-11-16)
+
+## [1.1.3](https://github.com/mattstratton/castanet/tree/1.1.3) (2019-11-16)
+
+## [1.1.2](https://github.com/mattstratton/castanet/tree/1.1.2) (2019-11-16)
 
 ## [1.1.1](https://github.com/mattstratton/castanet/tree/1.1.1) (2019-11-16)
+
 **Fixed bugs:**
 
 - Drop down menu not working on iPhone  [\#228](https://github.com/mattstratton/castanet/issues/228)
 
-**Merged pull requests:**
-
-- Fix issue with navbar on mobile [\#229](https://github.com/mattstratton/castanet/pull/229) ([mattstratton](https://github.com/mattstratton))
-
 ## [1.1.0](https://github.com/mattstratton/castanet/tree/1.1.0) (2019-11-11)
+
 **Implemented enhancements:**
 
 - Migrate from codekit to gulp [\#105](https://github.com/mattstratton/castanet/issues/105)
@@ -87,100 +85,39 @@
 
 - TOC in REFERENCE.md is messed up [\#223](https://github.com/mattstratton/castanet/issues/223)
 
-**Closed issues:**
-
-- \[Bug\] Can't navigate guest listing on mobile [\#217](https://github.com/mattstratton/castanet/issues/217)
-- \[BUG\] Issue generating css from scss [\#211](https://github.com/mattstratton/castanet/issues/211)
-
-**Merged pull requests:**
-
-- Move to gulp [\#224](https://github.com/mattstratton/castanet/pull/224) ([mattstratton](https://github.com/mattstratton))
-
 ## [1.0.2](https://github.com/mattstratton/castanet/tree/1.0.2) (2019-11-03)
-**Closed issues:**
-
-- guid episode tag should be unique and not change [\#209](https://github.com/mattstratton/castanet/issues/209)
-
-**Merged pull requests:**
-
-- Update pagination menu on guest page for mobile [\#221](https://github.com/mattstratton/castanet/pull/221) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.0.1](https://github.com/mattstratton/castanet/tree/1.0.1) (2019-11-02)
+
 ## [1.0.0](https://github.com/mattstratton/castanet/tree/1.0.0) (2019-11-02)
+
 **Fixed bugs:**
 
 - Theme does not work on Hugo 0.58 [\#219](https://github.com/mattstratton/castanet/issues/219)
 
-**Closed issues:**
-
-- \[Bug\] Disqus comments not working [\#212](https://github.com/mattstratton/castanet/issues/212)
-- \[Bug\] Pagination is broken on mobile and needs general improvement. [\#202](https://github.com/mattstratton/castanet/issues/202)
-
-**Merged pull requests:**
-
-- Update theme for Hugo 0.58 and above [\#220](https://github.com/mattstratton/castanet/pull/220) ([mattstratton](https://github.com/mattstratton))
-- Podlove subscribe button [\#218](https://github.com/mattstratton/castanet/pull/218) ([089](https://github.com/089))
-- Update hugo version on Netlify to 0.55.1 [\#215](https://github.com/mattstratton/castanet/pull/215) ([mattstratton](https://github.com/mattstratton))
-- Fixing disqus issues [\#213](https://github.com/mattstratton/castanet/pull/213) ([robwirving](https://github.com/robwirving))
-- Allow to specify episode guid [\#210](https://github.com/mattstratton/castanet/pull/210) ([alexmurray](https://github.com/alexmurray))
-- use global hugo function,.URL deprecated [\#207](https://github.com/mattstratton/castanet/pull/207) ([nonumeros](https://github.com/nonumeros))
-
 ## [0.14.1](https://github.com/mattstratton/castanet/tree/0.14.1) (2019-04-17)
-**Merged pull requests:**
-
-- Bug Fixes  & Improved Pagination to Grid and Row Layouts [\#201](https://github.com/mattstratton/castanet/pull/201) ([vichudson1](https://github.com/vichudson1))
 
 ## [0.14.0](https://github.com/mattstratton/castanet/tree/0.14.0) (2019-03-07)
-**Closed issues:**
-
-- Castanet Demo on Hugo website contains 3rd party tracking [\#197](https://github.com/mattstratton/castanet/issues/197)
-
-**Merged pull requests:**
-
-- Add Spotify subscribe button [\#200](https://github.com/mattstratton/castanet/pull/200) ([089](https://github.com/089))
 
 ## [0.13.0](https://github.com/mattstratton/castanet/tree/0.13.0) (2018-11-17)
-## [0.12.0](https://github.com/mattstratton/castanet/tree/0.12.0) (2018-11-17)
-**Merged pull requests:**
 
-- Add optional explicit for the feed itself since seems itunes wants this [\#196](https://github.com/mattstratton/castanet/pull/196) ([alexmurray](https://github.com/alexmurray))
+## [0.12.0](https://github.com/mattstratton/castanet/tree/0.12.0) (2018-11-17)
 
 ## [0.11.0](https://github.com/mattstratton/castanet/tree/0.11.0) (2018-11-17)
+
 **Implemented enhancements:**
 
 - Feed should pull language code from config file [\#177](https://github.com/mattstratton/castanet/issues/177)
 
-**Closed issues:**
-
-- \[Bug\] Hugo warning when using archetypes that don't contain the string "date" [\#181](https://github.com/mattstratton/castanet/issues/181)
-
-**Merged pull requests:**
-
-- Use language config.toml value in RSS [\#195](https://github.com/mattstratton/castanet/pull/195) ([rajeshduggal](https://github.com/rajeshduggal))
-
 ## [0.10.0](https://github.com/mattstratton/castanet/tree/0.10.0) (2018-08-03)
+
 **Implemented enhancements:**
 
 - Create solution for favicon [\#6](https://github.com/mattstratton/castanet/issues/6)
 - Rename feed\_copyright config var to copyright [\#193](https://github.com/mattstratton/castanet/pull/193) ([rajeshduggal](https://github.com/rajeshduggal))
 
-**Closed issues:**
-
-- \[Bug\] Feed copyright var isn't referenced in episode.rss.xml [\#191](https://github.com/mattstratton/castanet/issues/191)
-- \[Bug\] Feed copyright var isn't referenced in episode.rss.xml [\#190](https://github.com/mattstratton/castanet/issues/190)
-- \[Enhancement\] Allow for multiple fb:admins [\#184](https://github.com/mattstratton/castanet/issues/184)
-- Errors on site without expected parameters set [\#182](https://github.com/mattstratton/castanet/issues/182)
-- Create tests in travis for every theme configuration [\#163](https://github.com/mattstratton/castanet/issues/163)
-
-**Merged pull requests:**
-
-- \(\#6\) Add solution for favicon [\#189](https://github.com/mattstratton/castanet/pull/189) ([michaeltlombardi](https://github.com/michaeltlombardi))
-- Allow more than one fb:admins [\#186](https://github.com/mattstratton/castanet/pull/186) ([rajeshduggal](https://github.com/rajeshduggal))
-- don't fail in case of .Data.Pages type:episode absence [\#183](https://github.com/mattstratton/castanet/pull/183) ([paskal](https://github.com/paskal))
-- Add travis tests for all themes [\#179](https://github.com/mattstratton/castanet/pull/179) ([mattstratton](https://github.com/mattstratton))
-- Travis improvements [\#178](https://github.com/mattstratton/castanet/pull/178) ([mattstratton](https://github.com/mattstratton))
-
 ## [0.9.1](https://github.com/mattstratton/castanet/tree/0.9.1) (2018-03-08)
+
 **Implemented enhancements:**
 
 - Add show notes to rss feed [\#175](https://github.com/mattstratton/castanet/issues/175)
@@ -189,11 +126,8 @@
 - Add episode author tag to feed based on hosts [\#169](https://github.com/mattstratton/castanet/issues/169)
 - Improve build process to include all themes [\#104](https://github.com/mattstratton/castanet/issues/104)
 
-**Merged pull requests:**
-
-- Update rss feed and some archetypes [\#176](https://github.com/mattstratton/castanet/pull/176) ([mattstratton](https://github.com/mattstratton))
-
 ## [0.9.0](https://github.com/mattstratton/castanet/tree/0.9.0) (2018-03-07)
+
 **Implemented enhancements:**
 
 - Create contributing document [\#162](https://github.com/mattstratton/castanet/issues/162)
@@ -226,13 +160,9 @@
 **Merged pull requests:**
 
 - Update host code to be a partial [\#166](https://github.com/mattstratton/castanet/pull/166) ([mattstratton](https://github.com/mattstratton))
-- Host support [\#149](https://github.com/mattstratton/castanet/pull/149) ([mattstratton](https://github.com/mattstratton))
-- Make disqus optional [\#146](https://github.com/mattstratton/castanet/pull/146) ([mattstratton](https://github.com/mattstratton))
-- Make aka work for more than one to one [\#144](https://github.com/mattstratton/castanet/pull/144) ([mattstratton](https://github.com/mattstratton))
-- Make images clickable in row layout [\#143](https://github.com/mattstratton/castanet/pull/143) ([mattstratton](https://github.com/mattstratton))
-- Upgrade to font-awesome 5 [\#139](https://github.com/mattstratton/castanet/pull/139) ([mattstratton](https://github.com/mattstratton))
 
 ## [0.8.0](https://github.com/mattstratton/castanet/tree/0.8.0) (2017-06-13)
+
 **Implemented enhancements:**
 
 - Add a bunch more sample guests [\#125](https://github.com/mattstratton/castanet/issues/125)
@@ -241,6 +171,7 @@
 - Add proper use of CDATA to episode feed [\#23](https://github.com/mattstratton/castanet/issues/23)
 
 ## [0.7.0](https://github.com/mattstratton/castanet/tree/0.7.0) (2017-06-10)
+
 **Implemented enhancements:**
 
 - Create a page listing all guests [\#121](https://github.com/mattstratton/castanet/issues/121)
@@ -262,6 +193,7 @@
 - Paginator needs to be constrained [\#96](https://github.com/mattstratton/castanet/issues/96)
 
 ## [0.6.0](https://github.com/mattstratton/castanet/tree/0.6.0) (2017-05-19)
+
 **Implemented enhancements:**
 
 - add video support [\#26](https://github.com/mattstratton/castanet/issues/26)
@@ -276,22 +208,10 @@
 - Remove extra LESS files [\#82](https://github.com/mattstratton/castanet/issues/82)
 - Main nav spans entire viewport [\#61](https://github.com/mattstratton/castanet/issues/61)
 
-**Closed issues:**
-
-- Change README to use tables [\#49](https://github.com/mattstratton/castanet/issues/49)
-
-**Merged pull requests:**
-
-- Update README with tables [\#94](https://github.com/mattstratton/castanet/pull/94) ([mattstratton](https://github.com/mattstratton))
-- Make navbar align with center container [\#92](https://github.com/mattstratton/castanet/pull/92) ([mattstratton](https://github.com/mattstratton))
-- Add youtube support for episodes [\#91](https://github.com/mattstratton/castanet/pull/91) ([mattstratton](https://github.com/mattstratton))
-- Add stitcher support [\#90](https://github.com/mattstratton/castanet/pull/90) ([mattstratton](https://github.com/mattstratton))
-- Fix misaligned stuff at bottom of episodes [\#89](https://github.com/mattstratton/castanet/pull/89) ([mattstratton](https://github.com/mattstratton))
-- Make host images absURL [\#88](https://github.com/mattstratton/castanet/pull/88) ([mattstratton](https://github.com/mattstratton))
-- Remove deprecated LESS files [\#86](https://github.com/mattstratton/castanet/pull/86) ([mattstratton](https://github.com/mattstratton))
-
 ## [v0.5.1](https://github.com/mattstratton/castanet/tree/v0.5.1) (2017-05-18)
+
 ## [v.0.5.0](https://github.com/mattstratton/castanet/tree/v.0.5.0) (2017-05-18)
+
 **Implemented enhancements:**
 
 - Make episode images optional on episode pages [\#80](https://github.com/mattstratton/castanet/issues/80)
@@ -302,14 +222,8 @@
 - Add additional host fields [\#71](https://github.com/mattstratton/castanet/issues/71)
 - Add additional guest fields [\#70](https://github.com/mattstratton/castanet/issues/70)
 
-**Merged pull requests:**
-
-- Add grey theme [\#81](https://github.com/mattstratton/castanet/pull/81) ([mattstratton](https://github.com/mattstratton))
-- Add support for jumbotron on row layout [\#79](https://github.com/mattstratton/castanet/pull/79) ([mattstratton](https://github.com/mattstratton))
-- Make examplesite stuff look better [\#77](https://github.com/mattstratton/castanet/pull/77) ([mattstratton](https://github.com/mattstratton))
-- Add fields to guest and hosts [\#75](https://github.com/mattstratton/castanet/pull/75) ([mattstratton](https://github.com/mattstratton))
-
 ## [v0.4.0](https://github.com/mattstratton/castanet/tree/v0.4.0) (2017-05-03)
+
 **Implemented enhancements:**
 
 - Add support for banner-style images to episode page [\#60](https://github.com/mattstratton/castanet/issues/60)
@@ -331,22 +245,8 @@
 - add podcast\_length parameter to rss feed [\#15](https://github.com/mattstratton/castanet/issues/15)
 - orange background is off center on small devices [\#9](https://github.com/mattstratton/castanet/issues/9)
 
-**Closed issues:**
-
-- Share your theme with the community [\#57](https://github.com/mattstratton/castanet/issues/57)
-
-**Merged pull requests:**
-
-- Add banner option [\#72](https://github.com/mattstratton/castanet/pull/72) ([mattstratton](https://github.com/mattstratton))
-- Add podcast length [\#69](https://github.com/mattstratton/castanet/pull/69) ([mattstratton](https://github.com/mattstratton))
-- Change to remove slashes [\#65](https://github.com/mattstratton/castanet/pull/65) ([mattstratton](https://github.com/mattstratton))
-- Fix broken hamburger menu [\#59](https://github.com/mattstratton/castanet/pull/59) ([mattstratton](https://github.com/mattstratton))
-- Add contributing.json \(GitMagic\) [\#56](https://github.com/mattstratton/castanet/pull/56) ([ghost](https://github.com/ghost))
-- Add grid option [\#55](https://github.com/mattstratton/castanet/pull/55) ([mattstratton](https://github.com/mattstratton))
-- Add host sidebar [\#54](https://github.com/mattstratton/castanet/pull/54) ([mattstratton](https://github.com/mattstratton))
-- Make subscribe buttons look like buttons [\#53](https://github.com/mattstratton/castanet/pull/53) ([mattstratton](https://github.com/mattstratton))
-
 ## [v0.3.0](https://github.com/mattstratton/castanet/tree/v0.3.0) (2017-04-26)
+
 **Implemented enhancements:**
 
 - Change to bootstrap 4 [\#41](https://github.com/mattstratton/castanet/issues/41)
@@ -356,44 +256,29 @@
 - Footer contains hardcoded link to Arrested DevOps privacy policy [\#50](https://github.com/mattstratton/castanet/issues/50)
 - Footer is offscreen on small viewports  [\#47](https://github.com/mattstratton/castanet/issues/47)
 
-**Merged pull requests:**
-
-- \[WIP\] Update to Bootstrap 4 [\#48](https://github.com/mattstratton/castanet/pull/48) ([mattstratton](https://github.com/mattstratton))
-
 ## [v0.2.6](https://github.com/mattstratton/castanet/tree/v0.2.6) (2017-04-21)
+
 **Implemented enhancements:**
 
 - Add a blank override css file for customizations [\#33](https://github.com/mattstratton/castanet/issues/33)
 
-**Closed issues:**
-
-- Doesn't work with one episode [\#44](https://github.com/mattstratton/castanet/issues/44)
-- Create automated release pipeline [\#38](https://github.com/mattstratton/castanet/issues/38)
-
-**Merged pull requests:**
-
-- Check for single episode [\#45](https://github.com/mattstratton/castanet/pull/45) ([mattstratton](https://github.com/mattstratton))
-- Add capability for users to include their own custom CSS overrides. [\#40](https://github.com/mattstratton/castanet/pull/40) ([Fweeb](https://github.com/Fweeb))
-
 ## [v0.2.5](https://github.com/mattstratton/castanet/tree/v0.2.5) (2017-02-11)
-**Closed issues:**
-
-- Missing navbar items when testing included example site [\#36](https://github.com/mattstratton/castanet/issues/36)
-
-**Merged pull requests:**
-
-- Fix missing menu items in navigation bar [\#37](https://github.com/mattstratton/castanet/pull/37) ([rpodcast](https://github.com/rpodcast))
 
 ## [v0.2.4](https://github.com/mattstratton/castanet/tree/v0.2.4) (2017-02-11)
+
 ## [v0.2.3](https://github.com/mattstratton/castanet/tree/v0.2.3) (2017-02-11)
+
 ## [v.0.2.2](https://github.com/mattstratton/castanet/tree/v.0.2.2) (2017-02-11)
+
 ## [v.0.2.1](https://github.com/mattstratton/castanet/tree/v.0.2.1) (2017-02-11)
+
 **Implemented enhancements:**
 
 - refactor to the block/base layout [\#35](https://github.com/mattstratton/castanet/issues/35)
 - add support for other color schemes [\#27](https://github.com/mattstratton/castanet/issues/27)
 
 ## [v.0.2.0](https://github.com/mattstratton/castanet/tree/v.0.2.0) (2016-10-06)
+
 **Implemented enhancements:**
 
 - add google analytics support [\#21](https://github.com/mattstratton/castanet/issues/21)
@@ -407,12 +292,14 @@
 - change to use BaseURL [\#22](https://github.com/mattstratton/castanet/issues/22)
 
 ## [v.0.1.4](https://github.com/mattstratton/castanet/tree/v.0.1.4) (2016-09-25)
+
 **Implemented enhancements:**
 
 - add sample social image [\#17](https://github.com/mattstratton/castanet/issues/17)
 - Add guest support [\#16](https://github.com/mattstratton/castanet/issues/16)
 
 ## [v.0.1.3](https://github.com/mattstratton/castanet/tree/v.0.1.3) (2016-09-25)
+
 **Implemented enhancements:**
 
 - Create template for episodes [\#11](https://github.com/mattstratton/castanet/issues/11)
@@ -420,11 +307,8 @@
 - Add podcast media prefix to config file [\#3](https://github.com/mattstratton/castanet/issues/3)
 - Create example site [\#1](https://github.com/mattstratton/castanet/issues/1)
 
-**Closed issues:**
-
-- add sharing feature to episode template [\#18](https://github.com/mattstratton/castanet/issues/18)
-
 ## [v.0.1.2](https://github.com/mattstratton/castanet/tree/v.0.1.2) (2016-09-25)
+
 **Implemented enhancements:**
 
 - Create about page template [\#12](https://github.com/mattstratton/castanet/issues/12)
@@ -434,12 +318,11 @@
 - move default image into theme static image directory [\#13](https://github.com/mattstratton/castanet/issues/13)
 
 ## [v.0.1.1](https://github.com/mattstratton/castanet/tree/v.0.1.1) (2016-09-25)
+
 ## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
+
 ## [v0.1](https://github.com/mattstratton/castanet/tree/v0.1) (2016-09-25)
-**Merged pull requests:**
-
-- waffle.io Badge [\#2](https://github.com/mattstratton/castanet/pull/2) ([waffle-iron](https://github.com/waffle-iron))
 
 
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
