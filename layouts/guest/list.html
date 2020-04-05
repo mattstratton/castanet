@@ -56,6 +56,9 @@
             {{ with .Params.YouTube }}
               <a href = "https://www.youtube.com/{{ . }}"><i class="fab fa-youtube-square fa-2x"></i></a>
             {{ end }}
+            {{ with .Params.Twitch }}
+              <a href = "https://twitch.tv/{{ . }}"><i class="fab fa-twitch fa-2x"></i></a>
+            {{ end }}
         </div>
       </div>
   {{ end }}

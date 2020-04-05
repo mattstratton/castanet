@@ -76,6 +76,11 @@
             <a class = "social-links" href="https://gitlab.com/{{ .Site.Params.social.gitlab }}"><i class="fab fa-gitlab fa-2x"></i></a>
           </li>
         {{ end }}
+        {{ if (isset .Site.Params.social "twitch" ) }}
+        <li>
+          <a class = "social-links" href="https://twitch.tv/{{ .Site.Params.social.twitch }}"><i class="fab fa-twitch fa-2x"></i></a>
+        </li>
+      {{ end }}
       </ul>
   </div>
   </div>
