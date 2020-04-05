@@ -86,6 +86,7 @@
           {{ with .Params.episode }}
           <itunes:episode>{{ . }}</itunes:episode>
           {{ end }}
+        <itunes:title>{{ title .Title }}</itunes:title>
         <itunes:summary>{{ .Description | plainify }}</itunes:summary>
         <description>{{ .Description  | plainify  }}</description>
         <googleplay:description>{{ .Description  | plainify }}</googleplay:description>
