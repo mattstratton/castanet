@@ -10,7 +10,6 @@
 **Fixed bugs:**
 
 - LinkedIn does not show on individual guest pages [\#253](https://github.com/mattstratton/castanet/issues/253)
-- feed does not generate itunes titles [\#244](https://github.com/mattstratton/castanet/issues/244)
 
 ## [1.2.3](https://github.com/mattstratton/castanet/tree/1.2.3) (2020-04-04)
 
