@@ -136,6 +136,11 @@
                         <i class="fab fa-youtube-square fa-2x"></i>
                       </a>
                     {{- end -}}
+                    {{- with .Params.Twitch -}}
+                    <a href="https://twitch.tv/{{ . }}">
+                      <i class="fab fa-twitch fa-2x"></i>
+                    </a>
+                  {{- end -}}
                   </div>
                   </div>
                 {{- $.Scratch.Set "guest-exist" "false" -}}
@@ -250,6 +255,11 @@
                   <i class="fab fa-youtube-square fa-2x"></i>
                 </a>
               {{- end -}}
+              {{- with .Params.Twitch -}}
+              <a href="https://twitch.tv/{{ . }}">
+                <i class="fab fa-twitch fa-2x"></i>
+              </a>
+            {{- end -}}
             </div>
             </div>
           {{- $.Scratch.Set "host-exist" "false" -}}
