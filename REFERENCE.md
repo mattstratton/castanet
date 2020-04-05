@@ -89,7 +89,7 @@ These are the social network parameters for your overall site. They should be se
 |------------------|----------|------------------------------------------------------------------------------------------------------------------|----------------------|
 | `github`         | No       | GitHub username only.                                                                                            | "mattstratton"       |
 | `gitlab`         | No       | GitLab username only.                                                                                            | "mattstratton"       |
-| `facebook`       | No       | Name of the Facebook page (not the URL).                                                                         | "Arresteddevops"      |
+| `facebook`       | No       | Name of the Facebook page (not the URL).                                                                         | "Arresteddevops"     |
 | `facebook_admin` | No       | This needs to be one or more page admins to get domain insights.                                                 | ["500557137","1234"] |
 | `twitter`        | No       | Twitter name without the `@` sign.                                                                               | "arresteddevops"     |
 | `twitter_domain` | Yes      | This domain shows in twitter cards as "View on `twitter_domain`".                                                | "arresteddevops.com" |
@@ -98,6 +98,7 @@ These are the social network parameters for your overall site. They should be se
 | `instagram`      | No       | Instagram username.                                                                                              | "nozzleio"           |
 | `youtube`        | No       | Name of the YouTube channel.                                                                                     | "arresteddevops"     |
 | `linkedin`       | No       | LinkedIn profile name. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. | "mattstratton"       |
+| `twitch`         | No       | Twitch channel/profile for your site. This is the part that comes after `https://twitch.tv/`                     | "mattstratton"       |
 
 ### Host/Author Parameters
 
@@ -129,6 +130,7 @@ You also will set the social parameters (all are optional) under `[params.author
 | `pinterest` | No       | Pinterest username.                                                                                              | "nozzleio"                     |
 | `instagram` | No       | Instagram username.                                                                                              | "nozzleio"                     |
 | `youtube`   | No       | Name of the user's YouTube profile.                                                                              | mattstratton                   |
+| `twitch`    | No       | Name of the user's Twitch profile.                                                                               | mattstratton                   |
 | `linkedin`  | No       | LinkedIn profile name. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. | "mattstratton"                 |
 | `homepage`  | No       | The user's website, including the `http` at the beginning.                                                       | "https://www.mattstratton.com" |
 
@@ -174,6 +176,7 @@ I recommend the following permalink settings, although the theme will work just 
 	about = "/:filename/"
 	episode = "/:filename/"
 ```
+
 ### Menus
 
 Castanet supports menus with up to one submenu per menu item. The menu name must be "Main", and the menus are sorted based upon their identifier. At this time, you must have at least one menu item, or the theme will error out.
@@ -289,6 +292,7 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `youtube`          | No       | The ID of the YouTube video (not the full URL). This will display the video on the episode page, and if you are using the row layout, it will display for the latest episode.                                                                                     | "8ClZXJsgpHY"                                                                                                                                                                                                                         |
 | `truncate`         | No       | The number of characters to truncate the summary on the row layout.. The default value (if not set) is 600 characters.                                                                                                                                            | "700"                                                                                                                                                                                                                                 |
 | `guid`             | No       | A fixed, globally unique identifier for the episode which should never change. If one is not specified the URL of the `podcast_file` will be used instead.                                                                                                        | "aae20190418"                                                                                                                                                                                                                         |
+
 ## Guests
 
 If you don't have guests on your episodes, feel free to ignore this section.
@@ -309,6 +313,8 @@ Facebook = "johndoe"
 Linkedin = "johndoe"
 GitHub = "johndoe"
 Thumbnail = "img/guest/jdoe.jpg"
+Twitch = "johndoe"
+YouTube = "johndoe"
 Aka = ["jsmith", "jsmith2"]
 +++
 Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas.
@@ -327,6 +333,7 @@ Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Ch
 | `Pinterest` | No       | Pinterest profile name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | "mattstratton"                 |
 | `Instagram` | No       | Instagram profile name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | "mattstratton"                 |
 | `YouTube`   | No       | YouTube profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
+| `Twitch`   | No       | Twitch profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
 | `Aka`       | No       | The name(s) of another guest file which is an alternate identity for this guest (for example, if the bio changes, name changes, etc). This should be set in both directions (i.e., the `Aka` field should be set on `mstratton.md` and `mstratton2.md` pointing to each other).                                                                                                                                                                                                                | Aka = ["jsmith", "jsmith2"]                   |
 
 ## Hosts
@@ -353,6 +360,7 @@ Thumbnail = "img/host/johndoe.png"
 Pinterest = "johndoe"
 Instagram = "johndoe"
 YouTube = "johndoe"
+Twitch = "johndoe"
 +++
 Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas.
 ```
@@ -369,6 +377,7 @@ Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Ch
 | `Pinterest` | No       | Pinterest profile name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | "mattstratton"                 |
 | `Instagram` | No       | Instagram profile name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | "mattstratton"                 |
 | `YouTube`   | No       | YouTube profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
+| `Twitch`   | No       | Twitch profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
 
 ## Sponsors
 

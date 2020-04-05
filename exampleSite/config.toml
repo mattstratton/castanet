@@ -112,6 +112,7 @@ disqusShortname = ""
     instagram = "nozzleio"
     youtube = "arresteddevops"
     linkedin = "mattstratton"
+    twitch = "mattstratton"
 
   [params.authors]
     [params.authors.Matt]
@@ -127,6 +128,7 @@ disqusShortname = ""
         pinterest = "mattstratton"
         instagram = "instagram"
         youtube = "mattstratton"
+        twitch = "mattstratton"
     [params.authors.Trevor]
 			name = "Trevor Hess"
 			thumbnail = "https://www.arresteddevops.com/img/trevor.png"
