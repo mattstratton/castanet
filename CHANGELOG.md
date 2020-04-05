@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/mattstratton/castanet/tree/1.3.0) (2020-04-05)
+
+**Implemented enhancements:**
+
+- Sort hosts in partial based on...something [\#255](https://github.com/mattstratton/castanet/issues/255)
+- Provide ability for some hosts to be excluded from the Host page [\#251](https://github.com/mattstratton/castanet/issues/251)
+
+**Fixed bugs:**
+
+- LinkedIn does not show on individual guest pages [\#253](https://github.com/mattstratton/castanet/issues/253)
+
+## [1.2.3](https://github.com/mattstratton/castanet/tree/1.2.3) (2020-04-04)
+
 ## [1.2.2](https://github.com/mattstratton/castanet/tree/1.2.2) (2020-04-04)
 
 **Fixed bugs:**
