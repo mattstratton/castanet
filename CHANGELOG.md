@@ -1,15 +1,25 @@
 # Changelog
 
+## [1.3.2](https://github.com/mattstratton/castanet/tree/1.3.2) (2020-04-05)
+
+**Fixed bugs:**
+
+- \[Bug\] /host/ page not displaying each host's main content [\#266](https://github.com/mattstratton/castanet/issues/266)
+
+## [1.3.1](https://github.com/mattstratton/castanet/tree/1.3.1) (2020-04-05)
+
 ## [1.3.0](https://github.com/mattstratton/castanet/tree/1.3.0) (2020-04-05)
 
 **Implemented enhancements:**
 
+- Add twitch option under social [\#256](https://github.com/mattstratton/castanet/issues/256)
 - Sort hosts in partial based on...something [\#255](https://github.com/mattstratton/castanet/issues/255)
 - Provide ability for some hosts to be excluded from the Host page [\#251](https://github.com/mattstratton/castanet/issues/251)
 
 **Fixed bugs:**
 
 - LinkedIn does not show on individual guest pages [\#253](https://github.com/mattstratton/castanet/issues/253)
+- feed does not generate itunes titles [\#244](https://github.com/mattstratton/castanet/issues/244)
 
 ## [1.2.3](https://github.com/mattstratton/castanet/tree/1.2.3) (2020-04-04)
 
