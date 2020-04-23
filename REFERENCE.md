@@ -2,31 +2,7 @@
 
 # Table of contents
 
-<!-- TOC -->
-
-- [Reference for castanet](#reference-for-castanet)
-- [Table of contents](#table-of-contents)
-    - [The config file](#the-config-file)
-        - [Top-level items](#top-level-items)
-        - [General Parameters](#general-parameters)
-        - [Feed Parameters](#feed-parameters)
-        - [Social Parameters](#social-parameters)
-        - [Host/Author Parameters](#hostauthor-parameters)
-            - [Host Social Parameters](#host-social-parameters)
-        - [Link Parameters](#link-parameters)
-        - [A note about `BaseURL`](#a-note-about-baseurl)
-        - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)
-        - [Permalinks](#permalinks)
-        - [Menus](#menus)
-        - [Podlove Subscribe Button](#podlove-subscribe-button)
-    - [Episodes](#episodes)
-    - [Guests](#guests)
-        - [Guest Pages](#guest-pages)
-    - [Hosts](#hosts)
-        - [Host Pages](#host-pages)
-    - [Sponsors](#sponsors)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [Reference for castanet](#reference-for-castanet)auto- [Table of contents](#table-of-contents)auto    - [The config file](#the-config-file)auto        - [Top-level items](#top-level-items)auto        - [General Parameters](#general-parameters)auto        - [Feed Parameters](#feed-parameters)auto        - [Social Parameters](#social-parameters)auto        - [Host/Author Parameters](#hostauthor-parameters)auto            - [Host Social Parameters](#host-social-parameters)auto        - [Link Parameters](#link-parameters)auto        - [A note about `BaseURL`](#a-note-about-baseurl)auto        - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)auto        - [Permalinks](#permalinks)auto        - [Menus](#menus)auto        - [Podlove Subscribe Button](#podlove-subscribe-button)auto    - [Episodes](#episodes)auto    - [Guests](#guests)auto        - [Guest Pages](#guest-pages)auto    - [Hosts](#hosts)auto        - [Host Pages](#host-pages)auto    - [Sponsors](#sponsors)autoauto<!-- /TOC -->
 
 ## The config file
 
@@ -152,7 +128,7 @@ To generate the list of links in the sidebar, you will set them in the `config.t
     url = "https://cote.io/podcasts/sdt/"
 ```
 
-The idetifier for the link simply needs to be unique; it's not used anywhere else.
+The identifier for the link simply needs to be unique; it's not used anywhere else.
 
 ### A note about `BaseURL`
 
@@ -334,7 +310,8 @@ Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Ch
 | `Instagram` | No       | Instagram profile name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | "mattstratton"                 |
 | `YouTube`   | No       | YouTube profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
 | `Twitch`   | No       | Twitch profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
-| `Aka`       | No       | The name(s) of another guest file which is an alternate identity for this guest (for example, if the bio changes, name changes, etc). This should be set in both directions (i.e., the `Aka` field should be set on `mstratton.md` and `mstratton2.md` pointing to each other).                                                                                                                                                                                                                | Aka = ["jsmith", "jsmith2"]                   |
+| `Aka`       | No       | **DEPRECATED - use `guest_group` instead.** The name(s) of another guest file which is an alternate identity for this guest (for example, if the bio changes, name changes, etc). This should be set in both directions (i.e., the `Aka` field should be set on `mstratton.md` and `mstratton2.md` pointing to each other).                                                                                                                                                                                                                | Aka = ["jsmith", "jsmith2"]                   |
+| `guest_group`       | No       | Set to an identifier to mark guests as being different versions of the same person. Only the most recent file in a guest group will appear on the Guests page. Additionally, all members of a guest group will display the same "other episodes" on guest pages.                                                                                                                                                                                                               | "mattstratton"                   |
 
 ## Hosts
 

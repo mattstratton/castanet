@@ -82,27 +82,36 @@
     <div class = "row">
       <div class="col">
         <h3>Episodes Featuring {{ .Title }}</h3>
-        <div class="list-group guest_episode_list">
-            {{ $.Scratch.Set "guest-name" .File.BaseFileName }}
-            {{ range $page := where $.Site.Pages "Type" "episode" }}
-              {{ range $page.Params.guests }}
-                {{ if eq  . ($.Scratch.Get "guest-name") }}
-                    <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
-                {{ end }}
-              {{ end }}
-            {{ end }}
+
+          {{- with .Params.guest_group -}}
+            {{- range where $.Site.Pages "Params.guest_group" . -}}
+              {{- $.Scratch.Add "guest-names" (slice .File.BaseFileName) -}}
+            {{- end -}}
+          {{- else -}}
+
             {{- with .Params.Aka -}}
-              {{ range $name := . }}
-                {{- $.Scratch.Set "guest-name" $name -}}
-                {{- range $page := where $.Site.Pages "Type" "episode" -}}
-                  {{- range $page.Params.guests -}}
-                    {{- if eq  . ($.Scratch.Get "guest-name") -}}
-                        <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
-                    {{- end -}}
-                  {{- end -}}
+            {{- $.Scratch.Add "guest-names" (slice $.File.BaseFileName) -}}
+              {{- range $names := . -}}
+                {{- if ne $names $.File.BaseFileName }}
+                  {{- $.Scratch.Add "guest-names" (slice $names) -}}
                 {{- end -}}
               {{- end -}}
+              
+            {{- else -}}
+              {{ $.Scratch.Set "guest-names" (slice .File.BaseFileName) }}
             {{- end -}}
+          {{- end -}}
+        <div class="list-group guest_episode_list">
+          {{ range $name := ($.Scratch.Get "guest-names") }}
+          {{- $.Scratch.Set "guest-name" $name -}}
+            {{- range $page := where $.Site.Pages "Type" "episode" -}}
+              {{- range $page.Params.guests -}}
+                {{- if eq  . ($.Scratch.Get "guest-name") -}}
+                  <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
+                {{- end -}}<!-- if eq guest name-->
+              {{- end -}}<!-- range params guests -->
+            {{- end -}}<!--range episodes -->
+        {{- end -}}<!-- range -->
         </div>
       </div>
     </div>
