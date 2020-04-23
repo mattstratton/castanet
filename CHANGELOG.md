@@ -1,6 +1,15 @@
 # Changelog
 
-## [1.3.2](https://github.com/mattstratton/castanet/tree/1.3.2) (2020-04-05)
+## [1.4.0](https://github.com/mattstratton/castanet/tree/1.4.0) (2020-04-23)
+
+**Implemented enhancements:**
+
+- Change from "aka" field to "guest\_group" field for multi-guest [\#159](https://github.com/mattstratton/castanet/issues/159)
+- Deal with multiple iterations of the same guest on the guest page [\#137](https://github.com/mattstratton/castanet/issues/137)
+
+## [1.3.3](https://github.com/mattstratton/castanet/tree/1.3.3) (2020-04-13)
+
+## [1.3.2](https://github.com/mattstratton/castanet/tree/1.3.2) (2020-04-06)
 
 **Fixed bugs:**
 
