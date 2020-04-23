@@ -1,6 +1,6 @@
 +++
 Title = "Alan Johnston"
-date = "2017-06-10T09:12:39-05:00"
+date = "2020-02-10T09:12:39-05:00"
 Twitter = "@deserunt"
 Website = "http://Agimba.info"
 Type = "guest"
@@ -14,4 +14,4 @@ Instagram = ""
 YouTube = ""
 guest_group = "ajohnston"
 +++
-voluptate consequuntur est nihil aut.
+this is the newer version of Alan

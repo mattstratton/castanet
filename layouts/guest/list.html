@@ -14,9 +14,19 @@
 {{- end -}}
 <div class = "row">
   <div class = "col">
-
+    
     {{ $paginator := .Paginate (where .Data.Pages.ByTitle "Type" "guest") }}
     {{ range $paginator.Pages }}
+      {{- $.Scratch.Set "guest-name" .File.BaseFileName -}}
+      {{ $.Scratch.Set "hide-guest" "false" }}
+      {{- with .Params.guest_group -}}
+        {{ range first 1 (where $.Data.Pages "Params.guest_group" . ).ByDate.Reverse }}
+          {{ if ne ($.Scratch.Get "guest-name") .File.BaseFileName }}
+            {{ $.Scratch.Set "hide-guest" "true" }}
+          {{ end }}
+      {{ end }}
+      {{- end -}}
+      {{ if ne ($.Scratch.Get "hide-guest") "true"}}
         <div class="row person_row">
           <div class="col-md-3">
             {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
@@ -61,6 +71,7 @@
             {{ end }}
         </div>
       </div>
+      {{ end }}
   {{ end }}
   </div>
 </div>
