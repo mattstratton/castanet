@@ -152,7 +152,7 @@ To generate the list of links in the sidebar, you will set them in the `config.t
     url = "https://cote.io/podcasts/sdt/"
 ```
 
-The idetifier for the link simply needs to be unique; it's not used anywhere else.
+The identifier for the link simply needs to be unique; it's not used anywhere else.
 
 ### A note about `BaseURL`
 
