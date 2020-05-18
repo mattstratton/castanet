@@ -13,10 +13,10 @@
   command = "bin/netlify.sh"
 
   [context.production.environment]
-     HUGO_VERSION = "0.58.3"
+     HUGO_VERSION = "0.69.2"
 
   [context.deploy-preview.environment]
-    HUGO_VERSION = "0.58.3"
+    HUGO_VERSION = "0.69.2"
 
   [context.branch-deploy.environment]
-    HUGO_VERSION = "0.58.3"
+    HUGO_VERSION = "0.69.2"
