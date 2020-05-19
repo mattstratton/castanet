@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/mattstratton/castanet/tree/1.5.0) (2020-05-18)
+
+**Implemented enhancements:**
+
+- Add support for transcriptions [\#225](https://github.com/mattstratton/castanet/issues/225)
+
+## [1.4.1](https://github.com/mattstratton/castanet/tree/1.4.1) (2020-04-23)
+
 ## [1.4.0](https://github.com/mattstratton/castanet/tree/1.4.0) (2020-04-23)
 
 **Implemented enhancements:**
