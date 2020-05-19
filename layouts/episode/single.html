@@ -63,12 +63,30 @@
     </div>
   {{- end -}}
 
+        <!-- transcript POC begin-->
+        {{- with .Params.transcript -}}
+        <p>
+          <!-- <a class="btn btn-default" href="/"><i class="fab fa-spotify"></i>&nbsp;Spotify</a> -->
+          <button class="hide_transcript btn btn-secondary">Hide Transcript</button>
+          <button class="show_transcript btn btn-secondary">Display Transcript</button>
+          </p> 
+        <div class="row transcript">
+          <div class="col-md-12">
+            <h2>Transcript</h2>
+            {{ (readFile "/static/transcripts/chatops.txt") | markdownify}}
+          </div>
+        </div>
+        {{- end -}}
+        <!-- transcript POC end -->
+
   <div class="row">
     <div class="col">
       <h2>Show Notes</h2>
       {{ .Content }}
     </div>
   </div>
+
+
 
   {{ with .Params.guests }}
         <div class="row">
@@ -302,6 +320,7 @@
       </div>
       <!-- disqus ends -->
       {{ end }}
+
       <div class="row">
         <!-- pager begin -->
         <div class="col-md-12">

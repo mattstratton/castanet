@@ -29,6 +29,27 @@
 </script>
 
 <script>
+  $(document).ready(function() {
+
+    $('.transcript').hide();
+    $(".hide_transcript").hide();
+    $(".hide_transcript").click(function () {
+    $(".transcript").hide("fast");
+    $(".show_transcript").show();
+    $(".hide_transcript").hide();
+   });
+
+    $(".show_transcript").click(function () {
+    $(".transcript").show(500);
+    $(".hide_transcript").show();
+    $(".show_transcript").hide();
+   });
+
+  });
+
+</script>
+
+<script>
   var player = new MediaElementPlayer('player2', {
       features: ['playpause', 'current', 'progress', 'duration', 'volume','speed'],
       defaultSpeed: 1.0,
