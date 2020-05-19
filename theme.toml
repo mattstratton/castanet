@@ -8,7 +8,7 @@ description = "A podcast-oriented theme for Hugo"
 homepage = "https://github.com/mattstratton/castanet"
 tags = ["podcast", "responsive"]
 features = ["podcast RSS", "subscribe buttons"]
-min_version = "0.58.3"
+min_version = "0.69.2"
 theme_version = "1.4.1"
 
 [author]
