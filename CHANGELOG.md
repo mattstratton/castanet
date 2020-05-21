@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.5.0](https://github.com/mattstratton/castanet/tree/1.5.0) (2020-05-18)
+## [1.5.1](https://github.com/mattstratton/castanet/tree/1.5.1) (2020-05-21)
+
+**Fixed bugs:**
+
+- Fix bug in episode template with transcripts [\#276](https://github.com/mattstratton/castanet/pull/276) ([mattstratton](https://github.com/mattstratton))
+
+## [1.5.0](https://github.com/mattstratton/castanet/tree/1.5.0) (2020-05-19)
 
 **Implemented enhancements:**
 
