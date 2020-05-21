@@ -73,7 +73,7 @@
         <div class="row transcript">
           <div class="col-md-12">
             <h2>Transcript</h2>
-            {{ (readFile "/static/transcripts/chatops.txt") | markdownify}}
+            {{ (readFile .) | markdownify}}
           </div>
         </div>
         {{- end -}}
