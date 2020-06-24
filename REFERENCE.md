@@ -11,6 +11,7 @@ You will need to add a handful of configuration items to your `config.toml` file
 ### Top-level items
 
 - `googleAnalytics` - the Google Analytics tracking ID. We use the async method. Example: `"UA-123-45"`
+- `paginate` - The number of episodes to show per-page on the homepage (note, this also controls pagination for Guest and Host list pages). If this is not set, the default is 10.
 
 ### General Parameters
 
