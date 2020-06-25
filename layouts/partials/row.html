@@ -112,7 +112,7 @@
 <section class="episode-list">
 <!-- rest of episodes -->
 {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
-{{- $paginator := .Paginate (after 1 (where site.RegularPages "Type" "in" site.Params.mainSections)) 5 -}}
+{{- $paginator := .Paginate (after 1 (where site.RegularPages "Type" "in" site.Params.mainSections)) }}
 {{- $list := (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">
