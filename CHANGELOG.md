@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.6.0](https://github.com/mattstratton/castanet/tree/1.6.0) (2020-06-24)
+
+**Implemented enhancements:**
+
+- \[ENHANCEMENT\] Proposed fix to make row pagination count a param instead of hardcoded 5 [\#277](https://github.com/mattstratton/castanet/issues/277)
+
 ## [1.5.1](https://github.com/mattstratton/castanet/tree/1.5.1) (2020-05-21)
 
 **Fixed bugs:**
