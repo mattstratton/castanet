@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.6.0](https://github.com/mattstratton/castanet/tree/1.6.0) (2020-06-24)
+## [1.7.1](https://github.com/mattstratton/castanet/tree/1.7.1) (2020-07-17)
+
+**Implemented enhancements:**
+
+- change iTunes to Apple Podcasts [\#279](https://github.com/mattstratton/castanet/pull/279) ([darinpope](https://github.com/darinpope))
+
+## [1.6.0](https://github.com/mattstratton/castanet/tree/1.6.0) (2020-06-25)
 
 **Implemented enhancements:**
 
@@ -165,7 +171,6 @@
 
 **Implemented enhancements:**
 
-- Create solution for favicon [\#6](https://github.com/mattstratton/castanet/issues/6)
 - Rename feed\_copyright config var to copyright [\#193](https://github.com/mattstratton/castanet/pull/193) ([rajeshduggal](https://github.com/rajeshduggal))
 
 ## [0.9.1](https://github.com/mattstratton/castanet/tree/0.9.1) (2018-03-08)
@@ -355,6 +360,7 @@
 **Implemented enhancements:**
 
 - Create template for episodes [\#11](https://github.com/mattstratton/castanet/issues/11)
+- Create solution for favicon [\#6](https://github.com/mattstratton/castanet/issues/6)
 - Add "media\_override" to frontmatter option [\#4](https://github.com/mattstratton/castanet/issues/4)
 - Add podcast media prefix to config file [\#3](https://github.com/mattstratton/castanet/issues/3)
 - Create example site [\#1](https://github.com/mattstratton/castanet/issues/1)
