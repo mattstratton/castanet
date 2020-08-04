@@ -112,7 +112,7 @@
                     {{- end -}}
                   </div>
                   <div class="col-md-8">
-                    <h2><a href = "{{(printf "guest/%s" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h2>
+                    <h2><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h2>
                     {{ .Content }}
                     {{- with .Params.Website -}}
                       <a href="{{ . }}">
@@ -130,7 +130,7 @@
                       </a>
                     {{- end -}}
                     {{- with .Params.LinkedIn -}}
-                      <a href="https://www.linkedin.com/in/{{ . }}">
+                      <a href="https://www.linkedin.com/in/{{ . }}/">
                         <i class="fab fa-linkedin fa-2x"></i>
                       </a>
                     {{- end -}}
@@ -194,7 +194,7 @@
                           <a href = "https://github.com/{{ $p.GitHub}}"><i class="fab fa-github-square fa-2x"></i></a>
                         {{ end }}
                         {{ if isset $p "linkedin" }}
-                          <a href = "https://www.linkedin.com/in/{{ $p.LinkedIn}}"><i class="fab fa-linkedin-square fa-2x"></i></a>
+                          <a href = "https://www.linkedin.com/in/{{ $p.LinkedIn}}/"><i class="fab fa-linkedin-square fa-2x"></i></a>
                         {{ end }}
                         {{ if isset $p "facebook" }}
                           <a href = "{{ $p.Facebook}}"><i class="fab fa-facebook-square fa-2x"></i></a>
@@ -231,7 +231,7 @@
               {{- end -}}
             </div>
             <div class="col-md-8">
-              <h2><a href = "{{(printf "host/%s" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h2>
+              <h2><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h2>
               {{ .Content }}
               {{- with .Params.Website -}}
                 <a href="{{ . }}">
@@ -249,7 +249,7 @@
                 </a>
               {{- end -}}
               {{- with .Params.LinkedIn -}}
-                <a href="https://www.linkedin.com/in/{{ . }}">
+                <a href="https://www.linkedin.com/in/{{ . }}/">
                   <i class="fab fa-linkedin fa-2x"></i>
                 </a>
               {{- end -}}
