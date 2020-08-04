@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.7.2](https://github.com/mattstratton/castanet/tree/1.7.2) (2020-07-25)
+## [1.7.3](https://github.com/mattstratton/castanet/tree/1.7.3) (2020-08-04)
+
+**Fixed bugs:**
+
+- add trailing slashes [\#282](https://github.com/mattstratton/castanet/pull/282) ([darinpope](https://github.com/darinpope))
+
+## [1.7.2](https://github.com/mattstratton/castanet/tree/1.7.2) (2020-07-26)
 
 **Fixed bugs:**
 
