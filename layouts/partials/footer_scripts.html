@@ -60,3 +60,7 @@
 
 
 {{ template "_internal/google_analytics_async.html" . }}
+
+{{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
+  {{- partial "fathom" . -}}
+{{ end }}
