@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.8.1](https://github.com/mattstratton/castanet/tree/1.8.1) (2020-08-16)
+
+**Implemented enhancements:**
+
+- og:type should be article if an episode [\#285](https://github.com/mattstratton/castanet/pull/285) ([darinpope](https://github.com/darinpope))
+
+**Fixed bugs:**
+
+- update Open Graph date format [\#284](https://github.com/mattstratton/castanet/pull/284) ([darinpope](https://github.com/darinpope))
+- add missing quotes [\#283](https://github.com/mattstratton/castanet/pull/283) ([darinpope](https://github.com/darinpope))
+
 ## [1.7.3](https://github.com/mattstratton/castanet/tree/1.7.3) (2020-08-04)
 
 **Fixed bugs:**
