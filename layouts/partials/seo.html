@@ -28,8 +28,13 @@
 {{ with .Site.Params.social.twitter }}<meta name="twitter:site" content="@{{ . }}"/>{{ end }}
 {{ with .Site.Params.social.twitter }}<meta name="twitter:creator" content="@{{ . }}"/>{{ end }}
 {{ with .Site.Params.social.twitter_domain }}<meta name="twitter:domain" content="{{ . }}"/>{{ end }}
-<meta property="og:type" content="{{ if .Params.type }}{{ .Params.type }}{{ else }}website{{ end }}" />
-
+{{ if eq .Type "episode" }}
+<meta property="og:type" content="article" />
+{{- else if .Params.type -}}
+<meta property="og:type" content="{{ .Params.type }}" />
+{{- else -}}
+<meta property="og:type" content="website" />
+{{ end }}
 <meta property="og:url" content="{{ .Permalink | relURL }}" />
 
 {{ with .Params.images }}{{ range first 1 . }}
