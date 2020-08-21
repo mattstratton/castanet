@@ -3,7 +3,6 @@ languageCode = "en-us"
 title = "HugoCast"
 theme = "castanet"
 googleAnalytics = ""
-themesdir = "../.."
 paginate = "9"
 
 
