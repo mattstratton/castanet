@@ -58,6 +58,19 @@ These should be set under `[params.feed]`
 | `itunes_second_sub_category` | No       | The second sub-category for your podcast in Apple Podcasts. Do not set this if you didn't set the first one.                                                                                | "Tech News"                                                                                                                                                                                    |
 | `explicit`                   | No      | Whether or not the podcast itself contains explicit content (can also be set on a per-episode basis, see below). Default value from the archetype is "no". Valid values are "yes", "no", or "clean"                                                                                                                                    | "yes"                                                                                                                                                                                                                                 |
 
+### Favicon parameters
+
+These are the favicon parameters for your overall site. They should be set under `[params.realfavicongenerator]`
+
+Refer to https://realfavicongenerator.net/ for more details.
+
+| Field Name                | Required | Description                                                                                    | Example              |
+|---------------------------|----------|------------------------------------------------------------------------------------------------|----------------------|
+| `mask_icon_color`         | No       | Mac OS X El Capitan Safari                                                                     | "#5bbad5"            |
+| `msapplication_tilecolor` | No       | Windows 8 and 10                                                                               | "#2b5797"            |
+| `theme_color`             | No       | https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color                | "#ffffff"            |
+
+
 ### Social Parameters
 
 These are the social network parameters for your overall site. They should be set under `[params.social]`

@@ -87,6 +87,11 @@ disqusShortname = ""
     itunes_second_sub_category = "Tech News"
     language = "en-us"
 
+  [params.realfavicongenerator] # https://realfavicongenerator.net/
+    mask_icon_color="#5bbad5"
+    msapplication_tilecolor="#2b5797"
+    theme_color="#ffffff"
+
   [params.podlove] # https://subscribe-button.podlove.org
     subscribe_title = ""              # fallback: site title from above
     subscribe_subtitle = ""           # fallback: ""
