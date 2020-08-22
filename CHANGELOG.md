@@ -1,6 +1,19 @@
 # Changelog
 
+## [1.9.0](https://github.com/mattstratton/castanet/tree/1.9.0) (2020-08-21)
+
+**Implemented enhancements:**
+
+- Improve favicon implementation [\#234](https://github.com/mattstratton/castanet/issues/234)
+- Improve favicon implementation [\#288](https://github.com/mattstratton/castanet/pull/288) ([darinpope](https://github.com/darinpope))
+
+**Fixed bugs:**
+
+- \[BUG\] - misleading `themesdir` inside exampleSite -\> config.toml [\#286](https://github.com/mattstratton/castanet/issues/286)
+
 ## [1.8.1](https://github.com/mattstratton/castanet/tree/1.8.1) (2020-08-16)
+
+## [1.8.0](https://github.com/mattstratton/castanet/tree/1.8.0) (2020-08-16)
 
 **Implemented enhancements:**
 
