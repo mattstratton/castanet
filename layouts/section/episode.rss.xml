@@ -87,6 +87,13 @@
           <itunes:episode>{{ . }}</itunes:episode>
           {{ end }}
         <itunes:title>{{ title .Title }}</itunes:title>
+        {{"<itunes:subtitle><![CDATA[" | safeHTML }}
+        {{ with .Params.subtitle }}
+        {{ . | plainify | truncate 243 "..." }}
+        {{ else }}
+        {{ .Description | plainify | truncate 243 "..." }}
+        {{ end }}
+        {{"]]></itunes:subtitle>" | safeHTML}}
         <itunes:summary>{{ .Description | plainify }}</itunes:summary>
         <description>{{ .Description  | plainify  }}</description>
         <googleplay:description>{{ .Description  | plainify }}</googleplay:description>
