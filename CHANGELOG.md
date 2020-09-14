@@ -1,6 +1,13 @@
 # Changelog
 
-## [1.9.0](https://github.com/mattstratton/castanet/tree/1.9.0) (2020-08-21)
+## [1.10.0](https://github.com/mattstratton/castanet/tree/1.10.0) (2020-09-13)
+
+**Implemented enhancements:**
+
+- \[ENHANCEMENT\] Add itunes:subtitle tag  [\#246](https://github.com/mattstratton/castanet/issues/246)
+- Add itunes:subtitle tag [\#290](https://github.com/mattstratton/castanet/pull/290) ([darinpope](https://github.com/darinpope))
+
+## [1.9.0](https://github.com/mattstratton/castanet/tree/1.9.0) (2020-08-22)
 
 **Implemented enhancements:**
 
