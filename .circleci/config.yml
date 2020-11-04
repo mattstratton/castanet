@@ -14,7 +14,7 @@ jobs:
   test-blue-grid:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -25,7 +25,7 @@ jobs:
   test-blue-row-jumbo-false:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -36,7 +36,7 @@ jobs:
   test-blue-row-jumbo-true:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -47,7 +47,7 @@ jobs:
   test-blue-row-no-jumbo:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -58,7 +58,7 @@ jobs:
   test-orange-grid:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -69,7 +69,7 @@ jobs:
   test-orange-row:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -80,7 +80,7 @@ jobs:
   test-orange-row-jumbo:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -91,7 +91,7 @@ jobs:
   test-grey-grid:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -102,7 +102,7 @@ jobs:
   test-grey-row:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -113,7 +113,7 @@ jobs:
   test-grey-row-jumbo:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
@@ -124,7 +124,7 @@ jobs:
   create-release:
     docker:
       - image: cibuilds/github:0.13.0
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - run:
