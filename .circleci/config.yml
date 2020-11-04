@@ -1,6 +1,6 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+executors:
+  castanet-tests:
     docker:
       - image: cibuilds/hugo:0.76.5
         auth:
@@ -8,6 +8,9 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     working_directory: ~/castanet
 
+jobs:
+  build:
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -15,13 +18,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/public --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-grid:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -29,13 +26,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-grid --config ../test/blue-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-row-jumbo-false:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -43,13 +34,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-jumbo-false --config ../test/blue-row-jumbo-false-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-row-jumbo-true:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -57,13 +42,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-jumbo-true --config ../test/blue-row-jumbo-true-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-row-no-jumbo:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -71,13 +50,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-no-jumbo --config ../test/blue-row-no-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-orange-grid:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -85,13 +58,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-grid --config ../test/orange-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-orange-row:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -99,13 +66,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-row --config ../test/orange-row-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-orange-row-jumbo:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -113,13 +74,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-row-jumbo --config ../test/orange-row-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-grey-grid:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -127,13 +82,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-grid --config ../test/grey-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-grey-row:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -141,13 +90,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-row --config ../test/grey-row-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-grey-row-jumbo:
-    docker:
-      - image: cibuilds/hugo:0.76.5
-        auth:
-          username: mattstratton
-          password: $DOCKERHUB_PASSWORD
-    working_directory: ~/castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
