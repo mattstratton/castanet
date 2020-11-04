@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
+    working_directory: ~/castanet
 
     steps:
       - checkout
