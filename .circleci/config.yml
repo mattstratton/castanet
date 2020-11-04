@@ -157,6 +157,9 @@ jobs:
   create-release:
     docker:
       - image: cibuilds/github:0.13.0
+        auth:
+          username: mattstratton
+          password: $DOCKERHUB_PASSWORD
     working_directory: ~/castanet
 
     steps:
