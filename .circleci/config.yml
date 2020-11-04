@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -13,7 +13,7 @@ jobs:
 
   test-blue-grid:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -24,7 +24,7 @@ jobs:
 
   test-blue-row-jumbo-false:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -35,7 +35,7 @@ jobs:
 
   test-blue-row-jumbo-true:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -46,7 +46,7 @@ jobs:
 
   test-blue-row-no-jumbo:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -57,7 +57,7 @@ jobs:
 
   test-orange-grid:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -68,7 +68,7 @@ jobs:
 
   test-orange-row:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -79,7 +79,7 @@ jobs:
 
   test-orange-row-jumbo:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -90,7 +90,7 @@ jobs:
 
   test-grey-grid:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -101,7 +101,7 @@ jobs:
 
   test-grey-row:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
@@ -112,7 +112,7 @@ jobs:
 
   test-grey-row-jumbo:
     docker:
-      - image: cibuilds/hugo:0.58.3
+      - image: cibuilds/hugo:0.76.5
     working_directory: castanet
 
     steps:
