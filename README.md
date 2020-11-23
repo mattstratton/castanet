@@ -26,3 +26,11 @@ For more information read the official [setup guide](//gohugo.io/overview/instal
 After installing Castanet successfully it requires a just a few more steps to get your site running.
 
 See [REFERENCE.md](https://github.com/mattstratton/castanet/blob/master/REFERENCE.md) for all configuration file settings as well as instructions on episodes, guests, hosts, and sponsors
+
+## Sites using the Castanet theme
+This is a completely non-comprehensive list of podcasts that use this theme. Want to add your site? Submit a pull request against the README file!
+- [Arrested DevOps](https://www.arresteddevops.com)
+- [Page It to the Limit](https://www.pageittothelimit.com/)
+- [Quiche-Anon](https://quiche-anon.com)
+- [Community Pulse](https://www.communitypulse.io/)
+
