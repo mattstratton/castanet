@@ -1,6 +1,17 @@
 # Changelog
 
-## [1.10.0](https://github.com/mattstratton/castanet/tree/1.10.0) (2020-09-13)
+## [1.11.0](https://github.com/mattstratton/castanet/tree/1.11.0) (2020-11-23)
+
+**Implemented enhancements:**
+
+- Add list of sites using theme to the README [\#270](https://github.com/mattstratton/castanet/issues/270)
+- show future episodes [\#257](https://github.com/mattstratton/castanet/issues/257)
+
+**Fixed bugs:**
+
+- \[Bug\] Navbar nests links and results in 404 error [\#269](https://github.com/mattstratton/castanet/issues/269)
+
+## [1.10.0](https://github.com/mattstratton/castanet/tree/1.10.0) (2020-09-14)
 
 **Implemented enhancements:**
 
