@@ -1,119 +1,8 @@
-{{ if isset .Site.Params "enable_jumbo" }}
-  {{ if eq .Site.Params.enable_jumbo "true" }}
-    {{- partial "jumbotron.html" . }}
-  {{ end }}
-{{ end }}
-<div class="row hero_container">
-
-  <div class="col-md-12">
-  <h2>
-  Latest Episode
-  </h2>
-
-  {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
-    {{- with .Params.truncate -}}
-      {{- $.Scratch.Set "truncate" . }}
-    {{- else -}}
-      {{- with .Site.Params.truncate -}}
-        {{- $.Scratch.Set "truncate" . }}
-      {{- else -}}
-        {{- $.Scratch.Set "truncate" 600 -}}
-      {{- end -}}
-    {{- end -}}
-    {{- with .Params.youtube -}}
-      {{- if . -}}
-        {{- $.Scratch.Set "youtube" "true" -}}
-      {{- end -}}
-    {{- end -}}
-    {{- with .Params.episode_banner -}}
-      {{- $.Scratch.Set "episode_banner" "true" -}}
-    {{- end -}}
-
-    {{/* Begin youtube */}}
-    {{- if eq ($.Scratch.Get "youtube") "true" -}}
-      <div class = "row homepage_episode_row">
-        <div class = "col">
-          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
-        </div>
-      </div>
-      <div class = "row homepage_episode_row">
-        <div class = "col">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ .Params.youtube }}" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-      <div class = "row homepage_episode_row">
-        <div class = "col">
-          {{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
-        </div>
-      </div>
-    {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
-      <div class = "row homepage_episode_row">
-        <div class = "col">
-          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
-        </div>
-      </div>
-      <div class = "row homepage_episode_row">
-        <div class = "col">
-          <a href="{{ .Permalink }}"><img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/></a>
-        </div>
-      </div>
-      <div class = "row homepage_episode_row">
-        <div class = "col">
-          {{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
-        </div>
-      </div>
-    {{- else -}}
-    <!-- begin square row -->
-    <div class = "row homepage_episode_row">
-      <div class = "col-md-12">
-        <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
-      </div>
-    </div>
-    {{- if .Params.episode_image -}}
-      <div class = "row homepage_episode_row">
-        <div class = "col-md-3">
-          <a href="{{ .Permalink }}"><img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" /></a>
-        </div>
-        <div class = "col-md-8">
-          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-          {{- else -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
-          {{- end -}}
-        </div>
-      </div><!-- end square row -->
-    {{- else -}}
-      <div class = "col">
-      {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-        <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-      {{- else -}}
-        <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
-      {{- end -}}
-      </div>
-    {{- end -}}
-  {{- end -}}
-  {{- with .Params.podcast_file -}}
-    <div class = "row">
-      <div class = "col-md-12">
-      <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto" />
-      </div>
-    </div>
-  {{- end -}}
-
-  {{- end -}}
-  </div>
-</div>
-
 <section class="episode-list">
 <!-- rest of episodes -->
 {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
-{{- $paginator := .Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) }}
-{{- $list := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
+{{- $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
+{{- $list := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">
 {{- with .Site.Params.enable_jumbo -}}
@@ -125,7 +14,6 @@
 {{- else -}}
   <div class="col-md-8">
 {{- end -}}
-{{- if gt $len 1 -}}
     {{- range $paginator.Pages -}}
     {{- with .Params.truncate -}}
       {{- $.Scratch.Set "truncate" . }}
@@ -139,7 +27,7 @@
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
           <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+          <small>Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
         </div>
       </div>
       <div class = "row homepage_episode_row">
@@ -173,7 +61,6 @@
       {{- end -}}
 
     {{- end -}}
-  {{- end -}}
 </div>
 
 

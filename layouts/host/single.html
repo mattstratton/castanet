@@ -84,7 +84,7 @@
         <h3>Episodes Hosted By {{ .Title }}</h3>
         <div class="list-group guest_episode_list">
             {{ $.Scratch.Set "host-name" .File.BaseFileName }}
-            {{ range $page := where $.Site.Pages "Type" "episode" }}
+            {{ range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
               {{ range $page.Params.hosts }}
                 {{ if eq  . ($.Scratch.Get "host-name") }}
                     <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
@@ -94,7 +94,7 @@
             {{- with .Params.Aka -}}
               {{ range $name := . }}
                 {{- $.Scratch.Set "host-name" $name -}}
-                {{- range $page := where $.Site.Pages "Type" "episode" -}}
+                {{- range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
                   {{- range $page.Params.hosts -}}
                     {{- if eq  . ($.Scratch.Get "host-name") -}}
                         <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
