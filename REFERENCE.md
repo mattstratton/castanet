@@ -1,8 +1,29 @@
 # Reference for castanet
 
 # Table of contents
+<!-- TOC depthFrom:2 updateOnSave:false-->
 
-<!-- TOC -->autoauto- [Reference for castanet](#reference-for-castanet)auto- [Table of contents](#table-of-contents)auto    - [The config file](#the-config-file)auto        - [Top-level items](#top-level-items)auto        - [General Parameters](#general-parameters)auto        - [Feed Parameters](#feed-parameters)auto        - [Social Parameters](#social-parameters)auto        - [Host/Author Parameters](#hostauthor-parameters)auto            - [Host Social Parameters](#host-social-parameters)auto        - [Link Parameters](#link-parameters)auto        - [A note about `BaseURL`](#a-note-about-baseurl)auto        - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)auto        - [Permalinks](#permalinks)auto        - [Menus](#menus)auto        - [Podlove Subscribe Button](#podlove-subscribe-button)auto    - [Episodes](#episodes)auto    - [Guests](#guests)auto        - [Guest Pages](#guest-pages)auto    - [Hosts](#hosts)auto        - [Host Pages](#host-pages)auto    - [Sponsors](#sponsors)autoauto<!-- /TOC -->
+- [The config file](#the-config-file)
+    - [Top-level items](#top-level-items)
+    - [General Parameters](#general-parameters)
+    - [Feed Parameters](#feed-parameters)
+    - [Favicon parameters](#favicon-parameters)
+    - [Social Parameters](#social-parameters)
+    - [Host/Author Parameters](#hostauthor-parameters)
+        - [Host Social Parameters](#host-social-parameters)
+    - [Link Parameters](#link-parameters)
+    - [A note about `BaseURL`](#a-note-about-baseurl)
+    - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)
+    - [Permalinks](#permalinks)
+    - [Menus](#menus)
+    - [Podlove Subscribe Button](#podlove-subscribe-button)
+- [Episodes](#episodes)
+    - [Upcoming Episodes](#upcoming-episodes)
+- [Guests](#guests)
+    - [Guest Pages](#guest-pages)
+- [Hosts](#hosts)
+    - [Host Pages](#host-pages)
+- [Sponsors](#sponsors)
 
 ## The config file
 
@@ -256,6 +277,7 @@ podcast_bytes = "123456789"
 title = "Back to School"
 youtube = ""
 truncate = ""
+upcoming = false
 
 +++
 
@@ -284,6 +306,15 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `truncate`         | No       | The number of characters to truncate the summary on the row layout.. The default value (if not set) is 600 characters.                                                                                                                                            | "700"                                                                                                                                                                                                                                 |
 | `guid`             | No       | A fixed, globally unique identifier for the episode which should never change. If one is not specified the URL of the `podcast_file` will be used instead.                                                                                                        | "aae20190418"                                                                                                                                                                                                                         |
 | `transcript`       | No       | The path to the transcript file. The file can have Markdown or be in HTML. It must be relative to the root of your site (this is a file path, not a URL). It is recommended to put them in your `static` directory so that Hugo doesn't try to process them.      | "/static/transcripts/chatops.txt" |
+| `upcoming`       | No       | Boolean value if the episode should be considered "upcoming" and not published. Values include `true` or `false`. If set to `true`, the episode will not show up in episode lists (including guest and host pages) and will not be part of the feed. Upcoming episodes will be listed on the "Upcoming" page if created.      | true |
+
+### Upcoming Episodes
+
+If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`. 
+
+Any episodes that have `upcoming` in their frontmatter set to `true` will be listed here, but not listed on any other pages (feed, home page, guest pages, etc). Additionally, episodes that are marked as "upcoming" will not display a YouTube video or audio player, even if those parameters are set.
+
+Note: you will need to set `buildFuture = true` in your `config.toml` to allow Hugo to build upcoming episodes that are dated in the future.
 
 ## Guests
 

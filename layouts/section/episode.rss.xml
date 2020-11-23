@@ -50,7 +50,7 @@
     <googleplay:explicit>{{ .Site.Params.feed.explicit }}</googleplay:explicit>
     {{- end -}}
     <generator>Hugo -- gohugo.io</generator>
-    {{- range (where .Site.Pages "Type" "episode") -}}
+    {{- range (where ( where .Site.Pages "Type" "episode") ".Params.upcoming" "!=" true) -}}
       {{ if isset .Params "podcast_file" }}
         <item>
           <title>{{ title .Title }}</title>

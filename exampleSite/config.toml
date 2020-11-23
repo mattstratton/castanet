@@ -5,6 +5,7 @@ theme = "castanet"
 googleAnalytics = ""
 themesdir = "../.."
 paginate = "9"
+buildFuture = true
 
 
 [permalinks]
@@ -35,6 +36,11 @@ paginate = "9"
     name = "Guests"
     identifier = "guests"
     url = "/guest"
+
+[[Menu.Main]]
+    name = "Upcoming Episodes"
+    identifier = "upcoming"
+    url = "/upcoming"
 
 [[Menu.Main]]
     name = "Resources"

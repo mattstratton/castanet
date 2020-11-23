@@ -1,5 +1,3 @@
-{{- partial "jumbotron.html" . }}
-
 <section class="episode-list">
 
   <div class = "col episode-list-header">
@@ -8,7 +6,7 @@
 
   <div class = "row">
 
-    {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
+    {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
 
         {{ range $paginator.Pages }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}
@@ -23,7 +21,7 @@
             </div>
             <div class="grid_episode_detail">
               <a href="{{ .Permalink }}" class= "grid_episode_title"><h3>{{ title .Title }}</h3></a>
-              <small class = "grid_episode_title">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+              <small class = "grid_episode_title">Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
             </div>
 
           </div>

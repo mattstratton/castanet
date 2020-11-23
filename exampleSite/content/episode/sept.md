@@ -3,12 +3,13 @@ Description = "Bootstrapping alpha seed money scrum project. Business model canv
 aliases = ["/12"]
 author = "Matt"
 categories = []
-date = "2016-09-25T04:10:01-05:00"
+date = "2020-12-25T04:10:01-05:00"
 episode = "12"
 episode_image = "img/episode/sept.jpg"
 #episode_banner = "img/episode/default-banner.jpg"
 explicit = "no"
 guests = ["jsmith", "ccooper"]
+hosts = ["mstratton","bkromhout"]
 sponsors = ["bluthcompany"]
 images = ["img/episode/default-social.jpg"]
 news_keywords = []
@@ -20,6 +21,7 @@ title = "Back to School"
 youtube = ""
 truncate = ""
 transcript = "/static/transcripts/chatops.txt"
+upcoming = true
 +++
 
 Graphical user interface influencer value proposition startup hackathon iPad analytics gen-z entrepreneur release traction product management long tail. Buzz business-to-consumer android learning curve innovator seed money iteration buyer startup. Holy grail graphical user interface responsive web design lean startup bandwidth strategy release innovator low hanging fruit non-disclosure agreement. Strategy handshake iPhone interaction design early adopters. Low hanging fruit crowdfunding vesting period. Low hanging fruit social proof series A financing product management founders bootstrapping ecosystem buyer supply chain hackathon direct mailing churn rate client. Scrum project direct mailing ecosystem monetization innovator. Partner network gen-z conversion pivot iPhone infographic growth hacking business plan facebook alpha marketing beta technology. Focus crowdsource venture strategy user experience. Lean startup disruptive user experience stealth interaction design monetization client long tail virality seed round direct mailing hypotheses technology burn rate.

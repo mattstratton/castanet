@@ -3,7 +3,11 @@
   <div class="row">
     <div class="col">
       <h1>{{ title .Title }}</h1>
-      <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+      {{- if ne $.Params.upcoming true -}}
+        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+      {{- else -}}
+        <small>Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+      {{- end -}}
     </div>
   </div>
 
@@ -44,23 +48,27 @@
     <!-- end square row -->
     {{ end }}
     {{- with .Params.podcast_file -}}
-      <div class="row">
-        <div class="col-md-12 player_row">
+      {{- if ne $.Params.upcoming true -}}
+        <div class="row">
+          <div class="col-md-12 player_row">
 
-        <audio id="player2" style="width: 100%" controls preload="none">
-          <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
-          </audio>
+          <audio id="player2" style="width: 100%" controls preload="none">
+            <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
+            </audio>
+          </div>
+        </div>
+      {{- end -}}
+    {{- end -}}
+  {{- with .Params.youtube -}}
+    {{- if ne $.Params.upcoming true -}}
+      <div class = "row youtube_row">
+        <div class = "col">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ . }}" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     {{- end -}}
-  {{- with .Params.youtube -}}
-    <div class = "row youtube_row">
-      <div class = "col">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ . }}" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
   {{- end -}}
 
         <!-- transcript POC begin-->
