@@ -8,7 +8,7 @@
 
     {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
 
-        {{ range $paginator.Pages }}
+        {{ range $paginator.Pages.ByDate }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}
           <div class="col-md-4 grid_episode_col">
             <div class="episode-image-homepage">
