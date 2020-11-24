@@ -4,10 +4,11 @@ on:
   push:
     # branches to consider in the event; optional, defaults to all
     branches:
-      - $default-branch
+      - master
 
 jobs:
   update_release_draft:
+    name: Draft release
     runs-on: ubuntu-latest
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
