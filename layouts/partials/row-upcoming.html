@@ -14,7 +14,7 @@
 {{- else -}}
   <div class="col-md-8">
 {{- end -}}
-    {{- range $paginator.Pages -}}
+    {{- range $paginator.Pages.ByDate -}}
     {{- with .Params.truncate -}}
       {{- $.Scratch.Set "truncate" . }}
     {{- else -}}
