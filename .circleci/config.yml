@@ -178,14 +178,14 @@ workflows:
       - test-grey-row-jumbo:
           requires:
             - build
-  # deploy:
-  #   jobs:
-  #     - create-release:
-  #         filters:
-  #           tags:
-  #             only: /^\d+\.\d+\.\d+$/
-  #           branches:
-  #             ignore: /.*/
+  deploy:
+    jobs:
+      - create-release:
+          filters:
+            tags:
+              only: /^\d+\.\d+\.\d+$/
+            branches:
+              ignore: /.*/
 
 
           
