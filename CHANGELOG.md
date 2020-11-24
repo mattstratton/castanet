@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.2](https://github.com/mattstratton/castanet/tree/1.11.2) (2020-11-24)
+
+**Fixed bugs:**
+
+- Upcoming episodes should be sorted from soonest to furthest away [\#302](https://github.com/mattstratton/castanet/pull/302) ([chrisreddington](https://github.com/chrisreddington))
+
+## [1.11.1](https://github.com/mattstratton/castanet/tree/1.11.1) (2020-11-24)
+
 ## [1.11.0](https://github.com/mattstratton/castanet/tree/1.11.0) (2020-11-23)
 
 **Implemented enhancements:**
