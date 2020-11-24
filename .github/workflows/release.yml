@@ -19,14 +19,14 @@ jobs:
     name: Publish zip file
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: |
-        zip -r castanet-${{ steps.update_release_draft.outputs.tag }}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.circleci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
-    - name: Upload zip file to release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: castanet-${{ steps.update_release_draft.outputs.tag }}.zip
-        tag: ${{ steps.update_release_draft.outputs.tag }}
-        overwrite: true
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          zip -r castanet-${{ steps.update_release_draft.outputs.tag }}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.circleci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
+      - name: Upload zip file to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: castanet-${{ steps.update_release_draft.outputs.tag }}.zip
+          tag: ${{ steps.update_release_draft.outputs.tag }}
+          overwrite: true
