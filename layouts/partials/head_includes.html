@@ -48,3 +48,8 @@
     }
     </style>
 <link href={{"css/speed.min.css" | absURL }} rel="stylesheet">
+{{- if (isset $.Site.Params "rss_subscribe" ) -}}
+    <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{$.Site.Params.rss_subscribe}}"/>
+{{- else -}}
+    <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{"episode/index.xml" | absURL }}"/>
+{{- end -}}

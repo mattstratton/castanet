@@ -80,7 +80,7 @@ stitcher_subscribe = "http://www.stitcher.com/podcast/arrested-devops-2/arrested
 soundcloud_subscribe = "http://feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
 pocketcasts_subscribe = "http://pcasts.in/feed/feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
 mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4cbcac996bb9df25f970a89&amp;id=154fa76bcc"
-#rss_subscribe = "http://feed.com/myfeed" #only set this if you don't want to use the built-in feed
+# rss_subscribe = "http://feed.com/myfeed" #only set this if you don't want to use the built-in feed
 description = "The HugoCast is the best podcast you've ever seen. You will learn everything you ever needed to know about [podcasting](https://en.wikipedia.org/wiki/Podcast) from the most inspiring experts to ever show up on the whole internet."
 media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arresteddevops/"
 disqusShortname = ""
