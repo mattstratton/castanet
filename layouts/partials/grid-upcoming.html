@@ -21,7 +21,7 @@
             </div>
             <div class="grid_episode_detail">
               <a href="{{ .Permalink }}" class= "grid_episode_title"><h3>{{ title .Title }}</h3></a>
-              <small class = "grid_episode_title">Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+              <small class = "grid_episode_title">Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ partial "categories.html" .}} | {{ partial "series.html" .}} | {{ partial "tags.html" .}}</small>
             </div>
 
           </div>
