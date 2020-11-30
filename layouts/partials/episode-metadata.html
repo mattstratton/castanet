@@ -1,0 +1,10 @@
+
+{{ with .Param "categories" }}
+    | {{ partial "categories.html" .}}
+{{ end }}
+{{ with .Param "series" }}
+    | {{ partial "series.html" .}}
+{{ end }}
+{{ with .Param "tags" }}
+    | {{ partial "tags.html" .}}
+{{ end }}

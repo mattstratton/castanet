@@ -4,9 +4,9 @@
     <div class="col">
       <h1>{{ title .Title }}</h1>
       {{- if ne $.Params.upcoming true -}}
-        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ partial "categories.html" .}} | {{ partial "series.html" .}} | {{ partial "tags.html" .}}</small>
+        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
       {{- else -}}
-        <small>Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ partial "categories.html" .}} | {{ partial "series.html" .}} | {{ partial "tags.html" .}}</small>
+        <small>Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
       {{- end -}}
     </div>
   </div>

@@ -27,7 +27,7 @@
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
           <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>          
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} | {{ partial "categories.html" .}} | {{ partial "series.html" .}} | {{ partial "tags.html" .}}</small>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
         </div>
       </div>
       <div class = "row homepage_episode_row">
