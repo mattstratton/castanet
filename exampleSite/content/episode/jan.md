@@ -12,7 +12,6 @@ news_keywords = []
 podcast_duration = "1:08:22"
 podcast_file = "arrested-devops-podcast-episode053.mp3"
 podcast_bytes = ""
-tags = []
 title = "Happy New Year"
 youtube = ""
 

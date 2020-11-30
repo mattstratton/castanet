@@ -15,7 +15,6 @@ news_keywords = []
 podcast_duration = "1:08:22"
 podcast_file = "arrested-devops-podcast-episode053.mp3"
 podcast_bytes = "123456789"
-tags = []
 title = "Back to School"
 youtube = ""
 truncate = ""
