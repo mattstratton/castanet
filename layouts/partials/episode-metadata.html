@@ -1,4 +1,4 @@
-
+{{ $pageScope := . }}
 {{ with .Param "categories" }}
     | {{ partial "categories.html" .}}
 {{ end }}

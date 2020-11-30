@@ -2,7 +2,7 @@
 {{ $len := (len .) }}
 {{ range $index, $tag := . }}
   {{ $urlTag := $tag | urlize }}
-  {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $urlTag) -}}
+  {{ with $pageScope.Site.GetPage (printf "/%s/%s" $taxonomy $urlTag) -}}
     <a href="{{ .Permalink }}">{{ $tag }}</a>{{ cond (eq (add $index 1) $len) "" ", " }}
   {{- end -}}
 {{- end -}}
