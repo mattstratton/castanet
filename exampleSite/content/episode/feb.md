@@ -15,7 +15,7 @@ podcast_bytes = ""
 title = "All of the Presidents"
 youtube = ""
 categories = ["Politics"]
-series = ["Politely Presenting Politics]
+series = ["Politely Presenting Politics"]
 tags = ["Politics"]
 +++
 

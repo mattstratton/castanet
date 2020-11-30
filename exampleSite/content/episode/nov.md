@@ -15,7 +15,7 @@ podcast_bytes = ""
 title = "Turkey Time"
 youtube = ""
 categories = ["Politics"]
-series = ["Politely Presenting Politics]
+series = ["Politely Presenting Politics"]
 tags = ["Politics"]
 +++
 

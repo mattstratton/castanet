@@ -21,7 +21,7 @@ truncate = ""
 transcript = "/static/transcripts/chatops.txt"
 upcoming = true
 categories = ["Politics"]
-series = ["Politely Presenting Politics]
+series = ["Politely Presenting Politics"]
 tags = ["Politics"]
 +++
 
