@@ -14,8 +14,8 @@ podcast_file = "arrested-devops-podcast-episode053.mp3"
 podcast_bytes = ""
 title = "Independence For All"
 youtube = ""
-categories = []
-series = []
+categories = ["Cloud Technology"]
+series = ["Exploring the Cloud"]
 tags = []
 +++
 

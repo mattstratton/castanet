@@ -15,7 +15,7 @@ podcast_bytes = ""
 title = "Holiday Time"
 youtube = ""
 
-categories = []
+categories = ["Politics"]
 series = []
 tags = []
 +++
