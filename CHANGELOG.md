@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.12.0](https://github.com/mattstratton/castanet/tree/1.12.0) (2020-11-30)
+
+**Implemented enhancements:**
+
+- \[ENHANCEMENT\] - Add taxonomies for Tags, Series and Categories [\#306](https://github.com/mattstratton/castanet/issues/306)
+- \[ENHANCEMENT\] Add episode tags support. [\#245](https://github.com/mattstratton/castanet/issues/245)
+- Add Category, Tag and Series taxonomies to theme [\#307](https://github.com/mattstratton/castanet/pull/307) ([chrisreddington](https://github.com/chrisreddington))
+
+**Merged pull requests:**
+
+- Test of GH actions [\#305](https://github.com/mattstratton/castanet/pull/305) ([mattstratton](https://github.com/mattstratton))
+
 ## [1.11.2](https://github.com/mattstratton/castanet/tree/1.11.2) (2020-11-24)
 
 **Fixed bugs:**
