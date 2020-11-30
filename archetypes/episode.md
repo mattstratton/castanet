@@ -17,7 +17,10 @@ images = ["img/episode/default-social.jpg"]
 #aliases = ["/##"]
 #youtube = ""
 explicit = "no" # values are "yes" or "no"
-# media_override # if you want to use a specific URL for the audio file
-# truncate = ""
-# upcoming = true # set to true if you want this to be listed as upcoming, etc, etc
+#media_override # if you want to use a specific URL for the audio file
+#truncate = ""
+#upcoming = true # set to true if you want this to be listed as upcoming, etc, etc
+#categories = []
+#series = []
+#tags = []
 +++
