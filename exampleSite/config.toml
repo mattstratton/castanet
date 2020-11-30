@@ -7,6 +7,10 @@ themesdir = "../.."
 paginate = "9"
 buildFuture = true
 
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
 
 [permalinks]
 	# page = "/:filename/"
