@@ -1,10 +1,10 @@
 {{ $pageScope := . }}
 {{ with .Param "categories" }}
-    | {{ partial "categories.html" .}}
+    | {{ partial "categories.html" $pageScope}}
 {{ end }}
 {{ with .Param "series" }}
-    | {{ partial "series.html" .}}
+    | {{ partial "series.html" $pageScope}}
 {{ end }}
 {{ with .Param "tags" }}
-    | {{ partial "tags.html" .}}
+    | {{ partial "tags.html" $pageScope}}
 {{ end }}

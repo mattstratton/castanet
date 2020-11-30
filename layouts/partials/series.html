@@ -1,8 +1,8 @@
-{{ $taxonomy := "series" }}
-{{ $len := (len .) }}
-{{ range $index, $tag := . }}
+{{ $taxonomy := "series" }} {{ with .Param $taxonomy }}
+  {{ $len := (len .) }}
+  {{ range $index, $tag := . }}
   {{ $urlTag := $tag | urlize }}
-  {{ with $pageScope.Site.GetPage (printf "/%s/%s" $taxonomy $urlTag) -}}
-    <a href="{{ .Permalink }}">{{ $tag }}</a>{{ cond (eq (add $index 1) $len) "" ", " }}
-  {{- end -}}
-{{- end -}}
+  {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $urlTag) -}}
+  <a href="{{ .Permalink }}">{{ $tag }}</a>{{ cond (eq (add $index 1) $len) "" ", " }}
+  {{- end -}}{{- end -}}
+{{ end }} 
