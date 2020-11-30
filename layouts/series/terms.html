@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class = "row">
+  <div class = "col-md-12">
+    <h1>{{ .Site.Title }} Series</h1>
+  </div>
+</div>
+{{ with .Content }}
+<div class = "row">
+  <div class = "col">
+    {{ . }}
+  </div>
+</div>
+{{- end -}}
+
+{{ partial "taxonomies.html" . }}
+
+{{ end }} 
