@@ -15,6 +15,7 @@
     - [A note about `BaseURL`](#a-note-about-baseurl)
     - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)
     - [Permalinks](#permalinks)
+    - [Taxonomies](#taxonomies)
     - [Menus](#menus)
     - [Podlove Subscribe Button](#podlove-subscribe-button)
 - [Episodes](#episodes)
@@ -33,7 +34,6 @@ You will need to add a handful of configuration items to your `config.toml` file
 
 - `googleAnalytics` - the Google Analytics tracking ID. We use the async method. Example: `"UA-123-45"`
 - `paginate` - The number of episodes to show per-page on the homepage (note, this also controls pagination for Guest and Host list pages). If this is not set, the default is 10.
-
 ### General Parameters
 
 These should be set under the `[params]` section:
@@ -188,6 +188,16 @@ I recommend the following permalink settings, although the theme will work just 
 	episode = "/:filename/"
 ```
 
+### Taxonomies
+
+If you want to use the Categories, Series, or Tags features, you will need to set the appropriate taxonomies. Example:
+
+```
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+```
 ### Menus
 
 Castanet supports menus with up to one submenu per menu item. The menu name must be "Main", and the menus are sorted based upon their identifier. At this time, you must have at least one menu item, or the theme will error out.
@@ -307,7 +317,9 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `guid`             | No       | A fixed, globally unique identifier for the episode which should never change. If one is not specified the URL of the `podcast_file` will be used instead.                                                                                                        | "aae20190418"                                                                                                                                                                                                                         |
 | `transcript`       | No       | The path to the transcript file. The file can have Markdown or be in HTML. It must be relative to the root of your site (this is a file path, not a URL). It is recommended to put them in your `static` directory so that Hugo doesn't try to process them.      | "/static/transcripts/chatops.txt" |
 | `upcoming`       | No       | Boolean value if the episode should be considered "upcoming" and not published. Values include `true` or `false`. If set to `true`, the episode will not show up in episode lists (including guest and host pages) and will not be part of the feed. Upcoming episodes will be listed on the "Upcoming" page if created.      | true |
-
+| `categories[]`       | No       | If you are using taxonomies, this is the array of categories for the epsiode.     | ["Virtual Reality"] |
+| `series[]`       | No       | If you are using taxonomies, this is the array of series for the epsiode.     | ["Modern Tech Trends"] |
+| `tags[]`       | No       | If you are using taxonomies, this is the array of tags for the epsiode.     | ["VR", "Technology"] |
 ### Upcoming Episodes
 
 If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`. 

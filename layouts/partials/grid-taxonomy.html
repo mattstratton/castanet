@@ -6,9 +6,9 @@
 
   <div class = "row">
 
-    {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
+    {{ $paginator := .Paginator }}
 
-        {{ range $paginator.Pages.ByDate }}
+        {{ range $paginator.Pages }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}
           <div class="col-md-4 grid_episode_col">
             <div class="episode-image-homepage">
@@ -21,7 +21,7 @@
             </div>
             <div class="grid_episode_detail">
               <a href="{{ .Permalink }}" class= "grid_episode_title"><h3>{{ title .Title }}</h3></a>
-              <small class = "grid_episode_title">Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+              <small class = "grid_episode_title">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
             </div>
 
           </div>
@@ -78,7 +78,7 @@
     		<a href="{{ $paginator.Prev.URL }}" class="page-link"> &laquo; </a>
     	</li>
   {{ end }}
-  
+
   <!-- page # buttons -->
   {{ range $pag.Pagers }}
     {{ $cur := .PageNumber }}
@@ -89,14 +89,14 @@
       <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
     {{ end }}
   {{ end }}
-  
+
   <!-- next page button -->
   {{- with $paginator.HasNext -}}
   <li class="page-item">
     <a href="{{ $paginator.Next.URL }}" class="page-link"> &raquo; </a>
   </li>
   {{ end }}
-  
+
   <!-- last page button -->
   {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
     {{- with $paginator.Last -}}
@@ -106,7 +106,7 @@
             </li>
     {{- end -}}
   {{ end }}
-  
+
 </ul>
 {{ end }}
 </nav>

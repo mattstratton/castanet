@@ -1,8 +1,8 @@
 <section class="episode-list">
 <!-- rest of episodes -->
 {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
-{{- $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
-{{- $list := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) -}}
+{{- $paginator := .Paginator }}
+{{- $list := .Paginator.Pages  -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">
 {{- with .Site.Params.enable_jumbo -}}
@@ -14,7 +14,7 @@
 {{- else -}}
   <div class="col-md-8">
 {{- end -}}
-    {{- range $paginator.Pages.ByDate -}}
+    {{- range $paginator.Pages -}}
     {{- with .Params.truncate -}}
       {{- $.Scratch.Set "truncate" . }}
     {{- else -}}
@@ -26,8 +26,8 @@
     {{- end -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
-          <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>
-          <small>Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+          <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>          
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
         </div>
       </div>
       <div class = "row homepage_episode_row">
@@ -126,7 +126,7 @@
     		<a href="{{ $paginator.Prev.URL }}" class="page-link"> &laquo; </a>
     	</li>
   {{ end }}
-  
+
   <!-- page # buttons -->
   {{ range $pag.Pagers }}
     {{ $cur := .PageNumber }}
@@ -137,14 +137,14 @@
       <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
     {{ end }}
   {{ end }}
-  
+
   <!-- next page button -->
   {{- with $paginator.HasNext -}}
   <li class="page-item">
     <a href="{{ $paginator.Next.URL }}" class="page-link"> &raquo; </a>
   </li>
   {{ end }}
-  
+
   <!-- last page button -->
   {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
     {{- with $paginator.Last -}}
