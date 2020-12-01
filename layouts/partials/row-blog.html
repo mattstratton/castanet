@@ -1,0 +1,214 @@
+<div class="row hero_container">
+
+  <div class="col-md-12">
+  <h2>
+  Latest Blog Post
+  </h2>
+
+  {{ range first 1 (where .Pages.ByDate "Section" "blog") }}
+    {{- with .Params.truncate -}}
+      {{- $.Scratch.Set "truncate" . }}
+    {{- else -}}
+      {{- with .Site.Params.truncate -}}
+        {{- $.Scratch.Set "truncate" . }}
+      {{- else -}}
+        {{- $.Scratch.Set "truncate" 600 -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with .Params.blog_banner -}}
+      {{- $.Scratch.Set "blog_banner" "true" -}}
+    {{- end -}}
+
+    {{- if eq ($.Scratch.Get "blog_banner") "true" -}}
+      <div class = "row homepage_episode_row">
+        <div class = "col">
+          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+        </div>
+      </div>
+      <div class = "row homepage_episode_row">
+        <div class = "col">
+          <a href="{{ .Permalink }}"><img src="{{ .Params.blog_banner | absURL }}" class="img-fluid blog_image"/></a>
+        </div>
+      </div>
+      <div class = "row homepage_episode_row">
+        <div class = "col">
+          {{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
+        </div>
+      </div>
+    {{- else -}}
+    <!-- begin square row -->
+    <div class = "row homepage_episode_row">
+      <div class = "col-md-12">
+        <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
+        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+      </div>
+    </div>
+    {{- if .Params.blog_image -}}
+      <div class = "row homepage_episode_row">
+        <div class = "col-md-3">
+          <a href="{{ .Permalink }}"><img class = "img-fluid" src = "{{ .Params.blog_image | absURL }}" /></a>
+        </div>
+        <div class = "col-md-8">
+          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{- else -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+          {{- end -}}
+        </div>
+      </div><!-- end square row -->
+    {{- else -}}
+      <div class = "col">
+      {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+        <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+      {{- else -}}
+        <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+      {{- end -}}
+      </div>
+    {{- end -}}
+  {{- end -}}
+
+  {{- end -}}
+  </div>
+</div>
+
+<section class="episode-list">
+<!-- rest of episodes -->
+{{- if (where .Pages.ByDate "Section" "blog") -}}
+{{- $paginator := .Paginate (after 1 (where .Pages.ByDate "Section" "blog")) }}
+{{- $list := (where .Pages.ByDate "Section" "blog") -}}
+{{- $len := (len $list) -}}
+<div class="row main_container">
+
+  <div class="col-md-8">
+{{- if gt $len 1 -}}
+    {{- range $paginator.Pages -}}
+    {{- with .Params.truncate -}}
+      {{- $.Scratch.Set "truncate" . }}
+    {{- else -}}
+      {{- with .Site.Params.truncate -}}
+        {{- $.Scratch.Set "truncate" . }}
+      {{- else -}}
+        {{- $.Scratch.Set "truncate" 600 -}}
+      {{- end -}}
+    {{- end -}}
+      <div class = "row homepage_episode_row">
+        <div class = "col-md-12">
+          <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+        </div>
+      </div>
+      <div class = "row homepage_episode_row">
+      {{- if .Params.blog_image -}}
+          <div class = "col-md-4">
+            <a href="{{ .Permalink }}"><img class = "img-fluid" src = "{{ .Params.blog_image | absURL }}" /></a>
+          </div>
+          <div class = "col-md-8">
+          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{- else -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+          {{- end -}}
+          </div>
+        {{- else -}}
+          <div class = "col">
+          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          {{- else -}}
+            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+          {{- end -}}
+          </div>
+        {{- end -}}
+      </div>
+    {{- end -}}
+  {{- end -}}
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-12">
+{{- if gt $paginator.TotalPages 1 -}}
+<div class = "row">
+<div class = "col">
+
+
+<nav class="pagination justify-content-center">
+
+{{ $pag := $.Paginator }}
+{{ $window := $.Site.Params.paginateWindow | default 1 }}
+{{ if gt $pag.TotalPages 1 }}
+  {{ $total := $pag.TotalPages }}
+  {{ $size := add 5 (add $window $window) }}
+  {{ $cur := $pag.PageNumber }}
+  {{ if gt $total $size }}
+    {{ if lt $cur (sub $size (add $window 1)) }}
+      {{ $.Scratch.Set "show" (seq 1 (sub $size 2)) }}
+    {{ else if lt (sub $total $cur) (sub $size (add $window 2)) }}
+      {{ $.Scratch.Set "show" (seq (add (sub $total $size) 3) $total) }}
+    {{ else }}
+      {{ $.Scratch.Set "show" (seq (sub $cur $window) (add $cur $window)) }}
+    {{ end }}
+    {{ $.Scratch.Add "show" 1 }}
+    {{ $.Scratch.Add "show" $total }}
+  {{ else }}
+    {{ $.Scratch.Set "show" (seq 1 $total) }}
+  {{ end }}
+
+<ul class="pagination pagination-lg">
+	<!-- first page button -->
+  {{if $paginator.HasPrev }}
+    {{ if gt $paginator.PageNumber 2 }}
+        {{- with $paginator.First -}}
+        {{- $url := trim (string .URL) "/" | absURL -}}
+            <li class="page-item">
+            <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+            </li>
+        {{- end -}}
+    {{ end }}
+  {{ end }}
+
+
+  <!-- prev page button -->
+  {{- with $paginator.HasPrev -}}
+    	<li class="page-item">
+    		<a href="{{ $paginator.Prev.URL }}" class="page-link"> &laquo; </a>
+    	</li>
+  {{ end }}
+  
+  <!-- page # buttons -->
+  {{ range $pag.Pagers }}
+    {{ $cur := .PageNumber }}
+    {{- $url := trim (string .URL) "/" | absURL -}}
+    {{ if in ($.Scratch.Get "show") $cur }}
+      <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
+    {{ else if in (slice 2 (sub $total 1)) $cur }}
+      <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
+    {{ end }}
+  {{ end }}
+  
+  <!-- next page button -->
+  {{- with $paginator.HasNext -}}
+  <li class="page-item">
+    <a href="{{ $paginator.Next.URL }}" class="page-link"> &raquo; </a>
+  </li>
+  {{ end }}
+  
+  <!-- last page button -->
+  {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
+    {{- with $paginator.Last -}}
+        {{- $url := trim (string .URL) "/" | absURL -}}
+            <li class="page-item">
+                <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+            </li>
+    {{- end -}}
+  {{ end }}
+</ul>
+{{ end }}
+</nav>
+</div>
+</div>
+{{- end -}}
+</div>
+{{- end -}}
+</div>
+</div> <!-- end section -->

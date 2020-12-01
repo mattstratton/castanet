@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+{{ if isset $.Site.Params "site_layout" }}
+  {{ if eq $.Site.Params.site_layout "grid" }}
+    {{- partial "grid-blog.html" . }}
+  {{ else }}
+    {{- partial "row-blog.html" . }}
+  {{ end }}
+{{ else }}
+  {{- partial "row-blog.html" . }}
+{{ end }}
+{{ end }}
