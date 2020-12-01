@@ -3,38 +3,38 @@
 The technical details on how to set up your local development environment for making changes to the `castanet` [Hugo](https://gohugo.io/) theme for podcasts.
 
 # Table of contents
-<!-- TOC depthfrom:2 -->
+<!-- TOC depthFrom:2 -->
 
 - [Set up your environment](#set-up-your-environment)
-    - [Git remote setup](#git-remote-setup)
-    - [Installing dependencies](#installing-dependencies)
-        - [Install Node.js and npm](#install-nodejs-and-npm)
-        - [Install gulp](#install-gulp)
-        - [Install node modules](#install-node-modules)
+  - [Git remote setup](#git-remote-setup)
+  - [Installing dependencies](#installing-dependencies)
+    - [Install Node.js and npm](#install-nodejs-and-npm)
+    - [Install gulp](#install-gulp)
+    - [Install node modules](#install-node-modules)
 - [How can I help?](#how-can-i-help)
 - [Making changes](#making-changes)
-    - [Testing changes](#testing-changes)
-    - [Create a commit](#create-a-commit)
-    - [Branching and Pull Requests](#branching-and-pull-requests)
+  - [Testing changes](#testing-changes)
+  - [Create a commit](#create-a-commit)
+  - [Branching and Pull Requests](#branching-and-pull-requests)
 - [Design Principles](#design-principles)
-    - [Frameworks](#frameworks)
-    - [Blocks](#blocks)
-    - [CSS and SCSS](#css-and-scss)
-        - [`site.scss`](#sitescss)
-        - [`color-variables.scss`](#color-variablesscss)
-        - [`custom.scss`](#customscss)
-    - [Javascript](#javascript)
+  - [Frameworks](#frameworks)
+  - [Blocks](#blocks)
+  - [CSS and SCSS](#css-and-scss)
+    - [`site.scss`](#sitescss)
+    - [`color-variables.scss`](#color-variablesscss)
+    - [`custom.scss`](#customscss)
+  - [Javascript](#javascript)
 - [Local build and testing](#local-build-and-testing)
-    - [Build new javascript and stylesheets](#build-new-javascript-and-stylesheets)
+  - [Build new javascript and stylesheets](#build-new-javascript-and-stylesheets)
 - [Continuous Integration](#continuous-integration)
-    - [Issues](#issues)
-    - [GitHub Labels](#github-labels)
-    - [Pull Requests](#pull-requests)
+  - [Issues](#issues)
+  - [GitHub Labels](#github-labels)
+  - [Pull Requests](#pull-requests)
 - [Documentation](#documentation)
 - [Releasing](#releasing)
 - [Creating a new color theme](#creating-a-new-color-theme)
 - [Developer Certification of Origin (DCO)](#developer-certification-of-origin-dco)
-    - [DCO Sign-Off Methods](#dco-sign-off-methods)
+  - [DCO Sign-Off Methods](#dco-sign-off-methods)
 
 <!-- /TOC -->
 
@@ -45,7 +45,7 @@ Prerequisites:
 * `make` (note - this is not needed yet)
 * `gulp` v4.0.0+
 * `nodejs` and `npm`
-* [hugo v0.58.3+](https://gohugo.io)
+* [hugo v0.69.2+](https://gohugo.io)
 
 Clone `castanet` from source into your working directory of choice:
 
@@ -104,7 +104,7 @@ Sort the existing GitHub issues for the tag of `help-wanted`. These are issues t
 
 ### Testing changes
 
-TODO: Write the test instructions
+There are no automated tests, but it is recommended that you test manually by testing both `row` and `grid` configurations in the `config.toml` inside `exampleSite`.
 
 ### Create a commit
 
@@ -151,7 +151,7 @@ $ git reset --hard upstream/master
 
 ### Frameworks
 
-We use [Boostrap v4 Alpha](http://v4-alpha.getbootstrap.com/) as our basic framework.
+We use [Boostrap v4](https://getbootstrap.com/) as our basic framework.
 
 ### Blocks
 All page templates should make use of the `layouts/_default/baseof.html` file. This file contains all wrappers for the content. Anything within the `{{- block "main" . }} {{- end -}}` section is what will be displayed on a sub-template. Include a `{{ define "main" }}` block in your template to include what should be rendered.
@@ -182,7 +182,9 @@ Inside the theme directory, run `npm install`.
 Run `gulp dev` to build the compiled stylesheets and Javascript files
 
 ## Continuous Integration
-The `castanet` repo has hooks into Travis, Appveyor, and Netlify. Currently, the Travis build doesn’t do very much (the intent is to add some testing using Casper.js for web testing, but no tests have been written). The Appveyor tests ensure that the site can build with Windows.
+The `castanet` repo has hooks into CircleCI and Netlify. The CircleCI builds the site according the various configurations (row vs grid and with all the color schemes). If you're curious, you can check out the CircleCI configuration in [.circleci/config.yml](https://github.com/mattstratton/castanet/blob/master/.circleci/config.yml).
+
+We use the Deploy Previews feature of Netlify. The config for this is at [netlify.toml](https://github.com/mattstratton/castanet/blob/master/netlify.toml).
 
 All changes are built by Netlify to http://sample-castanet.netlify.com/ once merged to master.
 
@@ -195,6 +197,8 @@ All changes should be driven by issues (this is because our changelog generator 
 **Enhancement:** Adding new functionality to the theme. These issues should be set with a label of `enhancement`, and will be tagged with `ready` when they are ready to be worked on.
 
 Only repository contributors can add tags to issues; if you do not have permission to tag an issue, please prepend the title with `[BUG]` or `[ENHANCEMENT]` as appropriate.
+
+If you use the issue templates when opening your issues, the proper titles and tags should be added for you!
 
 ### GitHub Labels
 
@@ -212,7 +216,7 @@ These are the labels we use, and what they mean:
 
 ### Pull Requests
 
-Please submit your proposed changes as a Pull Request against this repository. If the PR will resolve an issue, please add `Fixes #123` to the PR. We also will label issues as `bug` or `enhancement` for proper CHANGELOG generation.
+Please submit your proposed changes as a Pull Request against this repository. If the PR will resolve an issue, please add `Fixes #123` to the PR. We also will label issues as `bug` or `enhancement` for proper CHANGELOG generation. For more details, see [Linking a pull request to an issue using a keyword](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword).
 
 ## Documentation
 
