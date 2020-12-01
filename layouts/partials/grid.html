@@ -1,5 +1,15 @@
 {{- partial "jumbotron.html" . }}
 
+{{ if and (and (isset .Site.Params "show_next_upcoming") (eq .Site.Params.show_next_upcoming "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true )) 1) }}
+<div class="row up_next_container">
+  <div class="col-md-12">
+    {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections).ByDate ".Params.upcoming" "==" true ) }}
+    Next Episode: <a href="{{ .Permalink }}">{{ .Title }}</a> - Scheduled for {{ dateFormat "Jan 2, 2006" .Date }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
 <section class="episode-list">
 
   <div class = "col episode-list-header">

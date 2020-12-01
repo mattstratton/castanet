@@ -130,6 +130,30 @@
   padding-bottom: 20px;
 }
 
+// Upcoming episode styles
+
+.up_next_container {
+  background-color: #5b5757;
+  margin-top: 20px;
+  padding-left: 0;
+  padding-right: 0; 
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #FFFFFF;
+  font-weight: 500;
+  Font-size: 1.5rem;
+  text-align: center;
+}
+
+.up_next_container a:link, .up_next_container a:visited {
+  color: #FFFFFF;
+}
+
+.up_next_container a:hover {
+  color: #939292;
+  text-decoration: none;
+}
+
 // Guest page styles
 
 .guest_page_episode_link {

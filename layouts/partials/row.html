@@ -3,9 +3,19 @@
     {{- partial "jumbotron.html" . }}
   {{ end }}
 {{ end }}
-<div class="row hero_container">
 
+{{ if and (and (isset .Site.Params "show_next_upcoming") (eq .Site.Params.show_next_upcoming "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true )) 1) }}
+<div class="row up_next_container">
   <div class="col-md-12">
+    {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections).ByDate ".Params.upcoming" "==" true ) }}
+    Next Episode: <a href="{{ .Permalink }}">{{ .Title }}</a> - Scheduled for {{ dateFormat "Jan 2, 2006" .Date }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+  <div class="row hero_container">
+    <div class="col-md-12">
   <h2>
   Latest Episode
   </h2>
@@ -33,7 +43,7 @@
     {{- if eq ($.Scratch.Get "youtube") "true" -}}
       <div class = "row homepage_episode_row">
         <div class = "col">
-          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
+          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>          
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
         </div>
       </div>
@@ -52,7 +62,7 @@
     {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
       <div class = "row homepage_episode_row">
         <div class = "col">
-          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
+          <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>          
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
         </div>
       </div>
@@ -71,6 +81,7 @@
     <div class = "row homepage_episode_row">
       <div class = "col-md-12">
         <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
+        
         <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
       </div>
     </div>
