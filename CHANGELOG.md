@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.13.0](https://github.com/mattstratton/castanet/tree/1.13.0) (2020-12-01)
+
+**Implemented enhancements:**
+
+- Add Functionality: Show next upcoming episode [\#309](https://github.com/mattstratton/castanet/pull/309) ([chrisreddington](https://github.com/chrisreddington))
+
 ## [1.12.1](https://github.com/mattstratton/castanet/tree/1.12.1) (2020-12-01)
 
 **Implemented enhancements:**
@@ -343,7 +349,6 @@
 
 **Fixed bugs:**
 
-- Sharing and pagination buttons are mis-aligned on some episode pages [\#87](https://github.com/mattstratton/castanet/issues/87)
 - Host images on about template need to be passed through absURL [\#83](https://github.com/mattstratton/castanet/issues/83)
 - Remove extra LESS files [\#82](https://github.com/mattstratton/castanet/issues/82)
 - Main nav spans entire viewport [\#61](https://github.com/mattstratton/castanet/issues/61)
@@ -361,6 +366,10 @@
 - Add links to previews of various themes/colors to README [\#73](https://github.com/mattstratton/castanet/issues/73)
 - Add additional host fields [\#71](https://github.com/mattstratton/castanet/issues/71)
 - Add additional guest fields [\#70](https://github.com/mattstratton/castanet/issues/70)
+
+**Fixed bugs:**
+
+- Sharing and pagination buttons are mis-aligned on some episode pages [\#87](https://github.com/mattstratton/castanet/issues/87)
 
 ## [v0.4.0](https://github.com/mattstratton/castanet/tree/v0.4.0) (2017-05-03)
 
