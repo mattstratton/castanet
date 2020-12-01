@@ -47,6 +47,11 @@ buildFuture = true
     url = "/upcoming"
 
 [[Menu.Main]]
+    name = "Blog"
+    identifier = "blog"
+    url = "/blog"
+
+[[Menu.Main]]
     name = "Resources"
     identifier = "resources"
     url = "#!"
