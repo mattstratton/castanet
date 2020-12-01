@@ -64,9 +64,11 @@ buildFuture = true
 
 [params]
 mainSections = ["episode"]
+
 site_theme = "grey"
 # site_layout = "grid"
 site_layout = "row"
+enable_show_next_episode = "true"
 enable_jumbo = "true"
 # enable_jumbo = "false"
 # truncate = "100"
