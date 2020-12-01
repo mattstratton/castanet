@@ -23,11 +23,11 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-hub": "~4.2.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^5.0.0",
-    "require-dir": "~1.2.0"
+    "require-dir": "~1.2.0",
+    "sass": "^1.29.0"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
