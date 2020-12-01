@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.12.1](https://github.com/mattstratton/castanet/tree/1.12.1) (2020-12-01)
+
+**Implemented enhancements:**
+
+- \[ENHANCEMENT\] - Add link to podcast rss feed to HEAD [\#299](https://github.com/mattstratton/castanet/issues/299)
+
 ## [1.12.0](https://github.com/mattstratton/castanet/tree/1.12.0) (2020-11-30)
 
 **Implemented enhancements:**
