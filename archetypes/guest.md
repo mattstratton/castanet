@@ -1,6 +1,7 @@
 +++
 Date = {{ .Date }}
 title = ""
+Pronouns = ""
 Twitter = ""
 Website = ""
 Type = "guest"
