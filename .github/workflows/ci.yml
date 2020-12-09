@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        castanet-config[blue-grid,blue-row-jumbo-false,blue-row-jumbo-true]
+        castanet-config: [blue-grid,blue-row-jumbo-false,blue-row-jumbo-true]
     steps:
       - uses: actions/checkout@v2
         with:
