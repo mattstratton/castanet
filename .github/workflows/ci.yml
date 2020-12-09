@@ -18,6 +18,7 @@ jobs:
         run: |
           cd exampleSite
           hugo
+          ls
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.6.x
