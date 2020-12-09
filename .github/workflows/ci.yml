@@ -27,7 +27,7 @@ jobs:
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.6.x
-          lhci collect --settings.configPath=../test/${{ matrix.castanet-config }}.js
+          lhci collect --settings.configPath=./test/${{ matrix.castanet-config }}.js
           lhci assert
           lhci upload
         env:
