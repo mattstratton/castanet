@@ -1,7 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: './exampleSite/public',
+      url: ['http://localhost:1313/'],
+      startServerCommand: 'cd exampleSite && hugo server --baseUrl="http://localhost:1313"',
     },
     upload: {
       target: 'temporary-public-storage',
