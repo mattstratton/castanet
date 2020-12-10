@@ -1,8 +1,18 @@
 {{ define "main" }}
 
   <div class="row">
-    <div class="col">
-      <h1>{{ title .Title }}</h1>
+    <div class="col">      
+      {{ if isset .Site.Params "episode_number_style"}}
+        {{ if eq .Site.Params.episode_number_style "parens" }}
+          <h1>{{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h1>
+        {{ else if eq .Site.Params.episode_number_style "brackets" }}
+          <h1>{{ title .Title }} [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h1>
+        {{ else if eq .Site.Params.episode_number_style "dash" }}
+          <h1>{{ title .Title }} - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h1>
+        {{ else }}
+          <h1>{{ title .Title }}</h1>
+        {{ end }}
+      {{ end }}
       {{- if ne $.Params.upcoming true -}}
         <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
       {{- else -}}
