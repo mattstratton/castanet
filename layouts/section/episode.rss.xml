@@ -53,7 +53,7 @@
     {{- range (where ( where .Site.Pages "Type" "episode") ".Params.upcoming" "!=" true) -}}
       {{ if isset .Params "podcast_file" }}
         <item>          
-          {{ if isset .Site.Params "episode_number_style"}}
+          {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}
               <title>{{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</title>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
@@ -63,6 +63,8 @@
             {{ else }}
               <title>{{ title .Title }}</title>
             {{ end }}
+          {{ else }}
+            <h1>{{ title .Title }}</h1>
           {{ end }}
           <link>{{ .Permalink }}</link>
           <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>

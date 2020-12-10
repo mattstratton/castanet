@@ -43,7 +43,7 @@
     {{- if eq ($.Scratch.Get "youtube") "true" -}}
       <div class = "row homepage_episode_row">
         <div class = "col">
-          {{ if isset .Site.Params "episode_number_style"}}
+          {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
               <h2><a href="{{ .Permalink }}" class= "row_latest_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
@@ -53,6 +53,8 @@
             {{ else }}
               <h2><a href="{{ .Permalink }}" class= "row_latest_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ end }}
+          {{ else }}
+            <h2><a href="{{ .Permalink }}" class= "row_latest_episode_title">{{ .Title }}</a></h2>
           {{ end }}        
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
         </div>
@@ -72,7 +74,7 @@
     {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
       <div class = "row homepage_episode_row">
         <div class = "col">
-          {{ if isset .Site.Params "episode_number_style"}}
+          {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
               <h2><a href="{{ .Permalink }}" class= "row_latest_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
@@ -82,6 +84,8 @@
             {{ else }}
               <h2><a href="{{ .Permalink }}" class= "row_latest_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ end }}
+          {{ else }}
+            <h2><a href="{{ .Permalink }}" class= "row_latest_episode_title">{{ .Title }}</a></h2>
           {{ end }} 
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
         </div>
@@ -169,7 +173,7 @@
     {{- end -}}
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
-          {{ if isset .Site.Params "episode_number_style"}}
+          {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
               <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
@@ -179,6 +183,8 @@
             {{ else }}
               <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
             {{ end }}
+          {{ else }}
+            <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a></h3>
           {{ end }}
           <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
         </div>

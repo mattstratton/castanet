@@ -3,7 +3,6 @@ Description = "First mover advantage business-to-consumer ramen innovator busine
 aliases = ["/11"]
 author = "Matt"
 date = "2016-08-25T04:09:58-05:00"
-episode = "11"
 episode_image = "img/episode/aug.jpg"
 episode_banner = "img/episode/default-banner.jpg"
 explicit = "no"
