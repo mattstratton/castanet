@@ -6,7 +6,7 @@
 
   <div class = "row">
 
-    {{ $paginator := .Paginate (where .Pages.ByDate "Section" "blog") }}
+    {{ $paginator := .Paginate ((where .Pages.ByDate "Section" "blog").Reverse) }}
 
         {{ range $paginator.Pages }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}
@@ -21,7 +21,7 @@
             </div>
             <div class="grid_episode_detail">
               <a href="{{ .Permalink }}" class= "grid_episode_title"><h3>{{ title .Title }}</h3></a>
-              <small class = "grid_episode_title">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+              <small class = "grid_episode_title">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
             </div>
 
           </div>

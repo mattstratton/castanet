@@ -1,11 +1,7 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
-{{- if isset .Params "author" -}}
-  <small>by {{ .Params.author }} - {{ dateFormat "02 January, 2006" .Date }}</small>
-{{- else -}}
-  <small>{{ dateFormat "02 January, 2006" .Date }}</small>
-{{- end -}}
+<small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" . }}</small>
 <br><br>
 {{ .Content }}
 <div id="share"></div>
