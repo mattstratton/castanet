@@ -105,7 +105,7 @@
           <enclosure url="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" {{with .Params.podcast_bytes}}length="{{ . }}"{{ end }} type="audio/mpeg" />
           {{- with .Params.podcast_duration -}}<itunes:duration>{{ . }}</itunes:duration>{{- end -}}
           {{- with .Params.explicit -}}
-          <itunes:explicit>{{ . }}</itunes:explicit>
+          <itunes:explicit>{{ if eq . "yes" }}true{{ else }}false{{ end }}</itunes:explicit>
           <googleplay:explicit>{{ . }}</googleplay:explicit>
           {{- end -}}
         </item>
