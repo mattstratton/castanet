@@ -64,7 +64,8 @@ buildFuture = true
 
 [params]
 mainSections = ["episode"]
-
+episode_number_style  = "brackets"
+episode_number_prefix = "CWC"
 site_theme = "grey"
 # site_layout = "grid"
 site_layout = "row"
