@@ -5,7 +5,7 @@
   Latest Blog Post
   </h2>
 
-  {{ range first 1 (where .Pages.ByDate "Section" "blog") }}
+  {{ range first 1 ((where .Pages.ByDate "Section" "blog").Reverse) }}
     {{- with .Params.truncate -}}
       {{- $.Scratch.Set "truncate" . }}
     {{- else -}}
@@ -23,7 +23,7 @@
       <div class = "row homepage_episode_row">
         <div class = "col">
           <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" . }}</small>
         </div>
       </div>
       <div class = "row homepage_episode_row">
@@ -41,7 +41,7 @@
     <div class = "row homepage_episode_row">
       <div class = "col-md-12">
         <a href="{{ .Permalink }}" class = "row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
       </div>
     </div>
     {{- if .Params.blog_image -}}
@@ -75,7 +75,7 @@
 <section class="episode-list">
 <!-- rest of episodes -->
 {{- if (where .Pages.ByDate "Section" "blog") -}}
-{{- $paginator := .Paginate (after 1 (where .Pages.ByDate "Section" "blog")) }}
+{{- $paginator := .Paginate (after 1 ((where .Pages.ByDate "Section" "blog").Reverse)) }}
 {{- $list := (where .Pages.ByDate "Section" "blog") -}}
 {{- $len := (len $list) -}}
 <div class="row main_container">
@@ -95,7 +95,7 @@
       <div class = "row homepage_episode_row">
         <div class = "col-md-12">
           <a href="{{ .Permalink }}" class= "grid_episode_title"><h3 class= "grid_episode_title">{{ .Title }}</h3></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
         </div>
       </div>
       <div class = "row homepage_episode_row">
