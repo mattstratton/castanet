@@ -105,8 +105,8 @@
           <enclosure url="{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}" {{with .Params.podcast_bytes}}length="{{ . }}"{{ end }} type="audio/mpeg" />
           {{- with .Params.podcast_duration -}}<itunes:duration>{{ . }}</itunes:duration>{{- end -}}
           {{- with .Params.explicit -}}
-          <itunes:explicit>{{ . }}</itunes:explicit>
-          <googleplay:explicit>{{ . }}</googleplay:explicit>
+          <itunes:explicit>{{ if (or (eq . "yes") (eq . "true")) }}true{{ else }}false{{ end }}</itunes:explicit>
+          <googleplay:explicit>{{ if (or (eq . "yes") (eq . "true")) }}yes{{ else }}no{{ end }}</googleplay:explicit>
           {{- end -}}
         </item>
       {{- end -}}
