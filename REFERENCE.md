@@ -18,6 +18,7 @@
     - [Taxonomies](#taxonomies)
     - [Menus](#menus)
     - [Podlove Subscribe Button](#podlove-subscribe-button)
+- [Blogs](#blogs)
 - [Episodes](#episodes)
     - [Upcoming Episodes](#upcoming-episodes)
 - [Guests](#guests)
@@ -265,6 +266,53 @@ To customize your button please add the following section to your `config.toml`,
   subscribe_feed_type = "audio"     # options: audio, video
   subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
 ```
+
+## Blogs
+
+Every blogs requires a page in the `content/blog` on your site. The command `hugo new blog/myblog.md` should populate it properly.
+
+A blog file takes the following structure:
+
+```
++++
+Description = "Another blog post!"
+Date = 2020-11-12T13:33:18-06:00
+PublishDate = 2020-11-12T13:33:18-06:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
+title = "My second blog"
+images = ["img/episode/default-social.jpg"]
+blog_image = "img/episode/default.jpg"
+Author = "Chris Reddington"
+categories = ["DevOps", "Release"]
+tags = ["Ring Deployment", "Phased Rollout"]
+series = ["The Nirvana of DevOps"]
+#aliases = ["/##"]
++++
+YOLO keytar scenester, williamsburg etsy mlkshk neutra hexagon photo booth church-key messenger bag. Lyft small batch enamel pin, bicycle rights la croix migas chartreuse ramps microdosing authentic pickled gochujang kombucha. Wolf vaporware stumptown, glossier vinyl everyday carry organic. Subway tile af tumblr listicle photo booth meh trust fund tote bag. Post-ironic gentrify direct trade blue bottle, fingerstache master cleanse butcher. Succulents ethical leggings hexagon vexillologist migas you probably haven't heard of them keytar sustainable church-key viral salvia hell of kinfolk. Lumbersexual taiyaki la croix literally man bun, truffaut mustache godard edison bulb artisan keytar jianbing air plant swag polaroid.
+
+Actually vinyl fingerstache kickstarter +1 roof party, XOXO swag tousled cold-pressed authentic affogato selvage taiyaki schlitz. Stumptown tumeric lumbersexual, pok pok pabst butcher helvetica coloring book keytar williamsburg. Fam cloud bread meditation, post-ironic waistcoat narwhal chicharrones live-edge authentic try-hard cornhole bespoke kickstarter echo park portland. Cold-pressed lo-fi cornhole kinfolk. Sustainable scenester seitan, vape fanny pack put a bird on it succulents. 90's dreamcatcher messenger bag flannel +1 taxidermy occupy single-origin coffee four dollar toast master cleanse VHS. Small batch williamsburg tumeric meggings fanny pack pok pok paleo cardigan.
+
+Leggings photo booth beard tumeric heirloom 90's flexitarian locavore unicorn, salvia humblebrag biodiesel lomo. Bushwick chillwave distillery kombucha tbh cray roof party tacos. Wayfarers fingerstache irony, celiac schlitz microdosing austin keytar echo park. Flannel drinking vinegar austin sustainable banjo bicycle rights keytar subway tile intelligentsia williamsburg humblebrag vinyl. Prism keffiyeh mlkshk, venmo glossier distillery +1 raw denim edison bulb pinterest crucifix. Freegan iceland chartreuse leggings hella single-origin coffee tilde. Swag neutra chia before they sold out.
+
+Cred tilde flannel shaman helvetica cronut bitters mlkshk. Selvage lyft chartreuse shaman man braid gastropub tattooed post-ironic organic freegan austin forage. Enamel pin unicorn +1 schlitz lomo man bun wayfarers. Readymade bespoke polaroid iceland sriracha schlitz tousled flannel. Raw denim enamel pin fanny pack sustainable, butcher deep v thundercats try-hard forage woke fam keffiyeh. Cronut kitsch cray shoreditch pabst paleo normcore DIY bespoke cardigan pug. Crucifix bitters knausgaard neutra, viral distillery selvage banh mi activated charcoal cray.
+
+Tofu taiyaki sriracha unicorn try-hard cornhole cloud bread keytar wayfarers kinfolk pour-over art party small batch. Tousled DIY coloring book wolf, small batch master cleanse austin letterpress af. Humblebrag pop-up vaporware, readymade organic woke af la croix succulents. Yr hoodie mlkshk woke whatever portland cornhole, brunch raw denim shaman YOLO prism bicycle rights. Helvetica la croix fingerstache chambray tumblr ramps blog waistcoat 8-bit. Dreamcatcher stumptown distillery mixtape sriracha blog la croix. Pabst copper mug street art, kinfolk letterpress chambray swag occupy shoreditch echo park migas post-ironic.
+
+Dummy text? More like dummy thicc text, amirite?
+```
+
+| Field Name   | Required | Description                                                                                                                                                                      | Example                               |
+|--------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| Description  | Yes      | The description of the blog, which is used on summary pages as well as the feed. Markdown is allowed, but only links.                                                            | Another blog post!                    |
+| Date         | Yes      | The release date of the blog. The hugo new blog will pre-populate this, but you may want to adjust it.                                                                           | 2020-11-12T13:33:18-06:00             |
+| PublishDate  | No       | The datetime used by hugo when the blog should be published. This is only required if you want to set the blog post to be released on a different date from when it was written. | 2020-11-12T13:33:18-06:00             |
+| title        | Yes      | The title of the blog.                                                                                                                                                           | "My second blog"                      |
+| images       | No       | The social sharing image used by Facebook, Twitter, etc. The archetype will populate this with a default sharing image. This image needs to be relative to your baseURL          | "img/episode/default-social.jpg"      |
+| blog_image   | Yes      | The square thumbnail to represent the blog. A default image is provided, and the archetype will pre-populate it. This image needs to be relative to your baseURL.                | "img/episode/default.jpg"             |
+| Author       | Yes      | The text representation of the Author of the post.                                                                                                                               | "Chris Reddington"                    |
+| categories[] | No       | If you are using taxonomies, this is the array of categories for the blog.                                                                                                       | ["DevOps", "Release"]                 |
+| series[]     | No       | If you are using taxonomies, this is the array of series for the blog.                                                                                                           | ["The Nirvana of DevOps"]             |
+| tags[]       | No       | If you are using taxonomies, this is the array of tags for the                                                                                                                   | ["Ring Deployment", "Phased Rollout"] |
+| aliases      | No       | Other aliases for this blog.                                                                                                                                                     | ["/##"]                               |
 
 ## Episodes
 

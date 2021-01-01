@@ -1,0 +1,14 @@
+{{ $pageScope := . }}
+
+{{ with .Page.Param "Author" }}
+    {{ partial "author.html" $pageScope }}
+{{ end }}
+{{ with .Page.Param "categories" }}
+    | Category: {{ partial "categories.html" $pageScope }}
+{{ end }}
+{{ with .Page.Param "series" }}
+    | Series: {{ partial "series.html" $pageScope }}
+{{ end }}
+{{ with .Page.Param "tags" }}
+    | {{ partial "tags.html" $pageScope }}
+{{ end }}
