@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.14.0](https://github.com/mattstratton/castanet/tree/1.14.0) (2021-01-01)
+
+**Implemented enhancements:**
+
+- \[ENHANCEMENT\] - Replace Google Play Music with Google Podcasts [\#328](https://github.com/mattstratton/castanet/issues/328)
+- \[ENHANCEMENT\] - Add support for preferred pronouns for guest and host [\#274](https://github.com/mattstratton/castanet/issues/274)
+- Feed improvements [\#247](https://github.com/mattstratton/castanet/issues/247)
+- Add Spotify subscribe button information to REFERENCE.md file [\#226](https://github.com/mattstratton/castanet/issues/226)
+- Allow for customization of titles in feed [\#168](https://github.com/mattstratton/castanet/issues/168)
+- Add episode numbers as an option [\#67](https://github.com/mattstratton/castanet/issues/67)
+- \[ENHANCEMENT\] Add support for blog posts [\#19](https://github.com/mattstratton/castanet/issues/19)
+- Add episode numbers/prefix in RSS and Relevant Titles/Links \[Attempt \#2\] [\#322](https://github.com/mattstratton/castanet/pull/322) ([chrisreddington](https://github.com/chrisreddington))
+- Initial implementation for pronouns [\#312](https://github.com/mattstratton/castanet/pull/312) ([chrisreddington](https://github.com/chrisreddington))
+- Create skeleton of blog feature [\#310](https://github.com/mattstratton/castanet/pull/310) ([mattstratton](https://github.com/mattstratton))
+
+**Fixed bugs:**
+
+- \[BUG\] - \<itunes:explicit\> tag should be true/false not yes/no [\#326](https://github.com/mattstratton/castanet/issues/326)
+- Update explicit tags for proper Apple/Google format [\#327](https://github.com/mattstratton/castanet/pull/327) ([chrisreddington](https://github.com/chrisreddington))
+
+**Closed issues:**
+
+- Add lighthouse checks to build for perf testing [\#318](https://github.com/mattstratton/castanet/issues/318)
+
+**Merged pull requests:**
+
+- Test with matrix build [\#321](https://github.com/mattstratton/castanet/pull/321) ([mattstratton](https://github.com/mattstratton))
+
 ## [1.13.0](https://github.com/mattstratton/castanet/tree/1.13.0) (2020-12-01)
 
 **Implemented enhancements:**
@@ -349,6 +377,7 @@
 
 **Fixed bugs:**
 
+- Sharing and pagination buttons are mis-aligned on some episode pages [\#87](https://github.com/mattstratton/castanet/issues/87)
 - Host images on about template need to be passed through absURL [\#83](https://github.com/mattstratton/castanet/issues/83)
 - Remove extra LESS files [\#82](https://github.com/mattstratton/castanet/issues/82)
 - Main nav spans entire viewport [\#61](https://github.com/mattstratton/castanet/issues/61)
@@ -366,10 +395,6 @@
 - Add links to previews of various themes/colors to README [\#73](https://github.com/mattstratton/castanet/issues/73)
 - Add additional host fields [\#71](https://github.com/mattstratton/castanet/issues/71)
 - Add additional guest fields [\#70](https://github.com/mattstratton/castanet/issues/70)
-
-**Fixed bugs:**
-
-- Sharing and pagination buttons are mis-aligned on some episode pages [\#87](https://github.com/mattstratton/castanet/issues/87)
 
 ## [v0.4.0](https://github.com/mattstratton/castanet/tree/v0.4.0) (2017-05-03)
 
