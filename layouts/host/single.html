@@ -2,7 +2,7 @@
 <div class = "hero_container">
 <div class="row">
   <div class="col">
-    <h1>{{ title .Title }}</h1>
+    <h1>{{ title .Title }} {{ with .Params.Pronouns }}({{ . }}){{ end }}</h1>
   </div>
 </div>
 
@@ -81,7 +81,7 @@
     <div class="col-lg-4">
     <div class = "row">
       <div class="col">
-        <h3>Episodes Hosted By {{ .Title }}</h3>
+        <h3>Episodes Hosted By {{ .Title }} {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
         <div class="list-group guest_episode_list">
             {{ $.Scratch.Set "host-name" .File.BaseFileName }}
             {{ range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
