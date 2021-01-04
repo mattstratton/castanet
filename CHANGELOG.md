@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.14.0](https://github.com/mattstratton/castanet/tree/1.14.0) (2021-01-01)
+## [1.14.1](https://github.com/mattstratton/castanet/tree/1.14.1) (2021-01-04)
+
+**Fixed bugs:**
+
+- Fixing RSS feed publishing bug [\#335](https://github.com/mattstratton/castanet/pull/335) ([chrisreddington](https://github.com/chrisreddington))
+
+## [1.14.0](https://github.com/mattstratton/castanet/tree/1.14.0) (2021-01-02)
 
 **Implemented enhancements:**
 
@@ -133,6 +139,10 @@
 **Fixed bugs:**
 
 - Fix bug in episode template with transcripts [\#276](https://github.com/mattstratton/castanet/pull/276) ([mattstratton](https://github.com/mattstratton))
+
+**Merged pull requests:**
+
+- Update host code to be a partial [\#166](https://github.com/mattstratton/castanet/pull/166) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.5.0](https://github.com/mattstratton/castanet/tree/1.5.0) (2020-05-19)
 
@@ -330,10 +340,6 @@
 **Closed issues:**
 
 - Enhanced Host Support [\#142](https://github.com/mattstratton/castanet/issues/142)
-
-**Merged pull requests:**
-
-- Update host code to be a partial [\#166](https://github.com/mattstratton/castanet/pull/166) ([mattstratton](https://github.com/mattstratton))
 
 ## [0.8.0](https://github.com/mattstratton/castanet/tree/0.8.0) (2017-06-13)
 
