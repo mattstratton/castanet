@@ -72,8 +72,8 @@
         <a class="btn btn-default" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Podcast</a>
       </div>
     {{ end }}
-    
-    {{ if ge (len .Site.Pages) 1 }}
+    {{ $blog := (where .Site.RegularPages "Section" "==" "blog") }}
+    {{ if ge (len $blog) 1 }}
     <div class = "d-flex p-2 subscribe_buttons col-md-auto">
       <a class="btn btn-default" href="{{"blog/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Blog</a>
     </div>
