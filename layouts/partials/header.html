@@ -14,13 +14,13 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
               <div class="dropdown-menu">
               {{ range sort .Children  "Identifier"}}
-                <a class="dropdown-item{{ if $currentPage.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+                <a class="dropdown-item{{ if $currentPage.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL | absURL}}">{{ .Name }}</a>
               {{ end }}
               </div>
               </li>
             {{ else }}
                 <li class= "nav-item {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }} active {{ end }}">
-                <a href="{{ .URL }}" class="nav-link">
+                <a href="{{ .URL | absURL }}" class="nav-link">
                     {{ .Pre }}
                     <span>{{ .Name }}</span>
                 </a>

@@ -66,6 +66,10 @@ buildFuture = true
     identifier = "podcasts"
     url = "/books"
     parent = "resources"
+[[Menu.Main]]
+    name = "Internet"
+    identifier = "internet"
+    url = "https://www.google.com"
 
 [params]
 mainSections = ["episode"]
