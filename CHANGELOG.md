@@ -1,6 +1,14 @@
 # Changelog
 
+## [1.14.4](https://github.com/mattstratton/castanet/tree/1.14.4) (2021-03-01)
+
+**Fixed bugs:**
+
+- Add absURL to menus [\#343](https://github.com/mattstratton/castanet/pull/343) ([mattstratton](https://github.com/mattstratton))
+
 ## [1.14.3](https://github.com/mattstratton/castanet/tree/1.14.3) (2021-02-18)
+
+## [1.14.2](https://github.com/mattstratton/castanet/tree/1.14.2) (2021-02-18)
 
 **Fixed bugs:**
 
