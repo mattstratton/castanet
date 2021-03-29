@@ -37,6 +37,8 @@ This is a completely non-comprehensive list of podcasts that use this theme. Wan
 - [Page It to the Limit](https://www.pageittothelimit.com/)
 - [Quiche-Anon](https://quiche-anon.com)
 - [Community Pulse](https://www.communitypulse.io/)
-- [Cloud with Chris](https://www.cloudwithchris.com)
 - [The Linux Lemming](https://linuxlemming.com)
+
+## Sites inspired by / building upon the Castanet theme
+- [Cloud with Chris](https://www.cloudwithchris.com)
 
