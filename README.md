@@ -1,8 +1,8 @@
 [![mattstratton](https://circleci.com/gh/mattstratton/castanet.svg?style=shield)](https://circleci.com/gh/mattstratton/castanet)
 [![GitHub release](https://img.shields.io/github/release/mattstratton/castanet.svg)](https://github.com/mattstratton/castanet/releases)
 [![Github All Releases](https://img.shields.io/github/downloads/mattstratton/castanet/total.svg)](https://github.com/mattstratton/castanet/releases)
-[![license](https://img.shields.io/github/license/mattstratton/castanet.svg)](https://github.com/mattstratton/castanet/blob/master/LICENSE)
-[![contributing](https://img.shields.io/badge/contributing-info-informational)](https://github.com/mattstratton/castanet/blob/master/CONTRIBUTING.md)
+[![license](https://img.shields.io/github/license/mattstratton/castanet.svg)](https://github.com/mattstratton/castanet/blob/main/LICENSE)
+[![contributing](https://img.shields.io/badge/contributing-info-informational)](https://github.com/mattstratton/castanet/blob/main/CONTRIBUTING.md)
 
 If you would like to receive emails when new versions of this theme are released, [subscribe to the announcement email list](http://eepurl.com/cMAJcL).
 
@@ -12,7 +12,7 @@ Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily 
 
 An example site can be found at http://sample-castanet.netlify.com/
 
-![Castanet screenshot](https://github.com/mattstratton/castanet/raw/master/images/screenshot.png)
+![Castanet screenshot](https://github.com/mattstratton/castanet/raw/main/images/screenshot.png)
 
 ## Installation
 
@@ -26,7 +26,7 @@ For more information read the official [setup guide](//gohugo.io/overview/instal
 
 After installing Castanet successfully it requires a just a few more steps to get your site running.
 
-See [REFERENCE.md](https://github.com/mattstratton/castanet/blob/master/REFERENCE.md) for all configuration file settings as well as instructions on episodes, guests, hosts, and sponsors
+See [REFERENCE.md](https://github.com/mattstratton/castanet/blob/main/REFERENCE.md) for all configuration file settings as well as instructions on episodes, guests, hosts, and sponsors
 
 ## Contributing to castanet
 If you would like to help make improvements or fixes to this theme, please see [CONTRIBUTING.md](https://github.com/mattstratton/castanet/blob/master/CONTRIBUTING.md) for detailed instructions.
