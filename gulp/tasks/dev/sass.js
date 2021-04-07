@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-dart-sass'),
   sourcemaps = require('gulp-sourcemaps');
 
-  sass.compiler = require('sass');
+  // sass.compiler = require('sass');
 
 gulp.task('site-sass', function () {
     return gulp.src('static/scss/site.scss')
