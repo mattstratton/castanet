@@ -10505,4 +10505,8 @@ a {
   padding: 0 12px;
   width: auto;
 }
+
+a.social-links:hover {
+  color: #adb5bd !important;
+}
 /*# sourceMappingURL=blue.css.map */

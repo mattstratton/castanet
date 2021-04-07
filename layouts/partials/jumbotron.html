@@ -65,17 +65,17 @@
     {{ end }}
     {{ if (isset .Site.Params "rss_subscribe" )}}
       <div class = "d-flex p-2 subscribe_buttons col-md-auto">
-        <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;Podcast</a>
+        <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;Podcast RSS</a>
       </div>
     {{ else }}
       <div class = "d-flex p-2 subscribe_buttons col-md-auto">
-        <a class="btn btn-default" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Podcast</a>
+        <a class="btn btn-default" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Podcast RSS</a>
       </div>
     {{ end }}
     {{ $blog := (where .Site.RegularPages "Section" "==" "blog") }}
     {{ if ge (len $blog) 1 }}
     <div class = "d-flex p-2 subscribe_buttons col-md-auto">
-      <a class="btn btn-default" href="{{"blog/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Blog</a>
+      <a class="btn btn-default" href="{{"blog/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Blog RSS</a>
     </div>
     {{ end }}
 
