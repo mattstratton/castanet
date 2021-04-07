@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.14.5](https://github.com/mattstratton/castanet/tree/1.14.5) (2021-04-07)
+
+**Fixed bugs:**
+
+- \[BUG\] - Can you change the link to the podcast rss to say "RSS Feed" instead of "Podcast"? [\#355](https://github.com/mattstratton/castanet/issues/355)
+- \[BUG\] - Host images are huge and inconsistently sized when the browser is small or mobile [\#353](https://github.com/mattstratton/castanet/issues/353)
+- \[BUG\] - Episode Layouts are wrong on home page [\#351](https://github.com/mattstratton/castanet/issues/351)
+- \[BUG\] - When site theme is blue, rolling over the social icons doesn't highlight them [\#349](https://github.com/mattstratton/castanet/issues/349)
+
 ## [1.14.4](https://github.com/mattstratton/castanet/tree/1.14.4) (2021-03-01)
 
 **Fixed bugs:**
@@ -343,7 +352,7 @@
 
 **Fixed bugs:**
 
-- Sidebar doesn't show if `enable\_jumbo` doesn't exist [\#167](https://github.com/mattstratton/castanet/issues/167)
+- Sidebar doesn't show if `enable_jumbo` doesn't exist [\#167](https://github.com/mattstratton/castanet/issues/167)
 - Grid spills to second page without filling bottom row [\#164](https://github.com/mattstratton/castanet/issues/164)
 - \[Bug\] iTunes/android/Soundcloud subscribe image icons broken [\#155](https://github.com/mattstratton/castanet/issues/155)
 - \[Bug\] stitcher not sticher. Typo in config.toml variable [\#154](https://github.com/mattstratton/castanet/issues/154)
