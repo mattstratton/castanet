@@ -158,13 +158,13 @@ disqusShortname = ""
         twitch = "mattstratton"
     [params.authors.Trevor]
 			name = "Trevor Hess"
-			thumbnail = "https://www.arresteddevops.com/img/trevor.png"
+			thumbnail = "img/host/trevor.jpg"
 			bio = ""
 				[params.authors.Trevor.social]
 					twitter = "trevorghess"
     [params.authors.Bridget]
       name = "Bridget Kromhout"
-      thumbnail = "https://www.arresteddevops.com/img/Bridget.png"
+      thumbnail = "img/host/bridget.jpg"
       bio = ""
       [params.authors.Bridget.social]
         twitter = "bridgetkromhout"
