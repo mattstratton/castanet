@@ -20,12 +20,24 @@
     width: 250px;
     height: 250px;
 }
-.hompage_episode_description {
+.homepage_episode_description {
     padding-left: 20px;
 }
 .homepage_episode_row {
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     padding-top: 20px;
+}
+
+.homepage_episode_row_first {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.homepage_episode_row_description {
+  padding-left: 0px;
+}
+
+.homepage_episode_row_image {
+  padding-right: 0px;
 }
 .jumbotron-host {
     margin: auto;

@@ -111,10 +111,10 @@
     </div>
     {{- if .Params.episode_image -}}
       <div class = "row homepage_episode_row">
-        <div class = "col-md-4">
+        <div class = "col-md-3">
           <a href="{{ .Permalink }}"><img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" /></a>
         </div>
-        <div class = "col-md-8">
+        <div class = "col-md-9">
           {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
             <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
           {{- else -}}
@@ -133,9 +133,11 @@
     {{- end -}}
   {{- end -}}
   {{- with .Params.podcast_file -}}
-    <div class = "row">
+    <div class = "row homepage_episode_row">
       <div class = "col-md-12">
-      <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto" />
+        <audio id="player2" style="width: 100%" controls preload="none">
+          <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
+          </audio>
       </div>
     </div>
   {{- end -}}
@@ -191,34 +193,26 @@
       </div>
       <div class = "row homepage_episode_row">
       {{- if .Params.episode_image -}}
-          <div class = "col-md-4">
+          <div class = "col-md-3 homepage_episode_row_image">
             <a href="{{ .Permalink }}"><img class = "img-fluid" src = "{{ .Params.episode_image | absURL }}" /></a>
           </div>
-          <div class = "col-md-8">
+          <div class = "col-md-9 homepage_episode_row_description">
           {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+            <p class = "homepage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
           {{- else -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+            <p class = "homepage_episode_description">{{ .Description | markdownify }}</p>
           {{- end -}}
           </div>
         {{- else -}}
           <div class = "col">
           {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+            <p class = "homepage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
           {{- else -}}
-            <p class = "hompage_episode_description">{{ .Description | markdownify }}</p>
+            <p class = "homepage_episode_description">{{ .Description | markdownify }}</p>
           {{- end -}}
           </div>
         {{- end -}}
       </div>
-      {{- with .Params.podcast_file -}}
-        <div class = "row homepage_episode_row">
-          <div class = "col-md-12 player_row">
-            <audio src="{{ $.Site.Params.media_prefix }}{{ . }}" preload="auto" />
-          </div>
-        </div>
-      {{- end -}}
-
     {{- end -}}
   {{- end -}}
 </div>
