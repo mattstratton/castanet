@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.15.0](https://github.com/mattstratton/castanet/tree/1.15.0) (2021-04-15)
+
+**Fixed bugs:**
+
+- \[BUG\] - Add trailing / whenever referring to a directory [\#360](https://github.com/mattstratton/castanet/issues/360)
+- \[BUG\] - Episode icon isn't centered [\#357](https://github.com/mattstratton/castanet/issues/357)
+- \[BUG\] - Row layout uses a different media player than episode pages [\#320](https://github.com/mattstratton/castanet/issues/320)
+
 ## [1.14.5](https://github.com/mattstratton/castanet/tree/1.14.5) (2021-04-07)
 
 **Fixed bugs:**
