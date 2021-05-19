@@ -9,6 +9,7 @@
     - [Feed Parameters](#feed-parameters)
     - [Favicon parameters](#favicon-parameters)
     - [Social Parameters](#social-parameters)
+    - [Giscus Parameters](#giscus-parameters)
     - [Host/Author Parameters](#hostauthor-parameters)
         - [Host Social Parameters](#host-social-parameters)
     - [Link Parameters](#link-parameters)
@@ -115,6 +116,24 @@ These are the social network parameters for your overall site. They should be se
 | `youtube`        | No       | Name of the YouTube channel.                                                                                     | "arresteddevops"     |
 | `linkedin`       | No       | LinkedIn profile name. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. | "mattstratton"       |
 | `twitch`         | No       | Twitch channel/profile for your site. This is the part that comes after `https://twitch.tv/`                     | "mattstratton"       |
+
+### Giscus Parameters
+
+As an alternative to Disqus for comments, you can leverage GitHub discussions, right below the episodes, thanks to [Giscus](https://giscus.vercel.app/). Giscus is driven by parameters under the `[params.giscus]` section.
+
+Follow the instructions at [giscus.vercel.app](https://giscus.vercel.app/) to set it up and get the value of the parameters.
+
+Example:
+
+```toml
+  [params.giscus]
+    data_repo="github-org/repo"
+    data_repo_id="MDAaBbClcG9zaXRvcnkzNTAyOTk3OTc="
+    data_category_id="MDE8Pazekd2N1c3Npb25DYXRlZ29yeTMyOTE4MDUx"
+    data_mapping="pathname"
+    data_theme="light"
+    crossorigin="anonymous"
+```
 
 ### Host/Author Parameters
 

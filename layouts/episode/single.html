@@ -340,6 +340,16 @@
       </div>
       <!-- disqus ends -->
       {{ end }}
+      {{ with .Site.Params.giscus }}
+      <!-- giscus begins -->
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          {{ partial "giscus.html" }}
+        </div>
+      </div>
+      {{ end }}
+      <!-- giscus ends -->
 
       <div class="row">
         <!-- pager begin -->
