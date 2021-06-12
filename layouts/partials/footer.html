@@ -2,6 +2,17 @@
   <div class="row">
   <div class="col-md-12">
     <nav class = "navbar navbar-default navbar_footer">
+      <ul class="footer-links">
+        {{- if and (isset .Site.Params "enable_jumbo") (and (isset .Site.Params "site_layout") (eq .Site.Params.site_layout "row")) -}}
+        {{- if ne .Site.Params.enable_jumbo "true" -}}        
+          {{ if isset $.Site.Params "links" }}
+            {{ range $l:= $.Site.Params.links }}
+              <li><p><a href = "{{ $l.url }}">{{ $l.name}}</a></p></li>
+            {{ end }}
+          {{ end }}
+        {{- end -}}
+      {{- end -}}
+      </ul>
     <ul class="nav navbar-nav navbar-right">
       {{ if (isset .Site.Params "copyright_notice" ) }}
         <li>
