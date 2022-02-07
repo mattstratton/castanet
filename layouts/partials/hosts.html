@@ -27,29 +27,29 @@
                 <a href = "{{ . }}"><i class="fas fa-home fa-2x"></i></a>
               {{ end }}
               {{ with .Params.Twitter }}
-                <a href = "https://twitter.com/{{ . }}"><i class="fab fa-twitter-square fa-2x"></i></a>
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-twitter-square fa-2x" "prefix" "https://twitter.com/") }}
               {{ end }}
               {{ with .Params.GitHub}}
-                <a href = "https://github.com/{{ . }}"><i class="fab fa-github-square fa-2x"></i></a>
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/") }}
               {{ end }}
               {{ with .Params.LinkedIn }}
-                <a href = "https://www.linkedin.com/in/{{ . }}/"><i class="fab fa-linkedin fa-2x"></i></a>
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-linkedin fa-2x" "prefix" "https://www.linkedin.com/in/") }}
               {{ end }}
               {{ with .Params.Facebook }}
-                <a href = "https://www.facebook.com/{{ . }}"><i class="fab fa-facebook-square fa-2x"></i></a>
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-facebook-square fa-2x" "prefix" "https://www.facebook.com/") }}
               {{ end }}
               {{ with .Params.Pinterest }}
-                <a href = "https://www.pinterest.com/{{ . }}"><i class="fab fa-pinterest-square fa-2x"></i></a>
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-pinterest-square fa-2x" "prefix" "https://www.pinterest.com/") }}
               {{ end }}
               {{ with .Params.Instagram }}
-                <a href = "https://www.instagram.com/{{ . }}"><i class="fab fa-instagram fa-2x"></i></a>
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-instagram-square fa-2x" "prefix" "https://www.instagram.com/") }}
               {{ end }}
               {{ with .Params.YouTube }}
-                <a href = "https://www.youtube.com/{{ . }}"><i class="fab fa-youtube-square fa-2x"></i></a>
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-youtube-square fa-2x" "prefix" "https://www.youtube.com/") }}
               {{ end }}
               {{ with .Params.Twitch }}
-              <a href = "https://twitch.tv/{{ . }}"><i class="fab fa-twitch fa-2x"></i></a>
-            {{ end }}
+                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/") }}
+              {{ end }}
           </div>
         </div>
         {{- end -}}

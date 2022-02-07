@@ -35,44 +35,28 @@
               </a>
             {{ end }}
             {{ if .Params.Twitter }}
-              <a href="https://twitter.com/{{ .Params.Twitter }}">
-                <i class="fab fa-twitter-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Twitter "aclass" "" "iclass" "fab fa-twitter-square fa-2x" "prefix" "https://twitter.com/") }}
             {{ end }}
             {{ if .Params.GitHub }}
-              <a href="https://github.com/{{ .Params.GitHub}}">
-                <i class="fab fa-github-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.GitHub "aclass" "" "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/") }}
             {{ end }}
             {{ if .Params.LinkedIn }}
-              <a href="https://www.linkedin.com/in/{{ .Params.LinkedIn}}/">
-                <i class="fab fa-linkedin fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.LinkedIn "aclass" "" "iclass" "fab fa-linkedin fa-2x" "prefix" "https://www.linkedin.com/in/") }}
             {{ end }}
             {{ if .Params.Facebook }}
-              <a href="https://www.facebook.com/{{ .Params.Facebook}}">
-                <i class="fab fa-facebook-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Facebook "aclass" "" "iclass" "fab fa-facebook-square fa-2x" "prefix" "https://www.facebook.com/") }}
             {{ end }}
             {{ if .Params.Pinterest }}
-              <a href="https://www.pinterest.com/{{ .Params.Pinterest}}">
-                <i class="fab fa-pinterest-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Pinterest "aclass" "" "iclass" "fab fa-pinterest-square fa-2x" "prefix" "https://www.pinterest.com/") }}
             {{ end }}
             {{ if .Params.Instagram }}
-              <a href="https://www.instagram.com/{{ .Params.Instagram}}">
-                <i class="fab fa-instagram fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Instagram "aclass" "" "iclass" "fab fa-instagram-square fa-2x" "prefix" "https://www.instagram.com/") }}
             {{ end }}
             {{ if .Params.YouTube }}
-              <a href="https://www.youtube.com/{{ .Params.YouTube}}">
-                <i class="fab fa-youtube-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.YouTube "aclass" "" "iclass" "fab fa-youtube-square fa-2x" "prefix" "https://www.youtube.com/") }}
             {{ end }}
             {{ if .Params.Twitch }}
-            <a href="https://www.twitch.tv/{{ .Params.Twitch}}">
-              <i class="fab fab fa-twitch fa-2x"></i>
-            </a>
+              {{ partial "social-link.html" (dict "context" .Params.Twitch "aclass" "" "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/") }}
           {{ end }}
           </div>
         </div>
@@ -97,7 +81,7 @@
                   {{- $.Scratch.Add "guest-names" (slice $names) -}}
                 {{- end -}}
               {{- end -}}
-              
+
             {{- else -}}
               {{ $.Scratch.Set "guest-names" (slice .File.BaseFileName) }}
             {{- end -}}
@@ -109,7 +93,7 @@
               {{- range $page.Params.guests -}}
                 {{- if eq  . ($.Scratch.Get "guest-name") -}}
                   {{ if and (isset $.Site.Params "episode_number_style") ($page.Params.episode)}}
-                    {{ if eq $.Site.Params.episode_number_style "parens" }}            
+                    {{ if eq $.Site.Params.episode_number_style "parens" }}
                       <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }} ({{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }})</a>
                     {{ else if eq $.Site.Params.episode_number_style "brackets" }}
                       <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }} [{{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}]</a>

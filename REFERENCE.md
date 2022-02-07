@@ -99,7 +99,7 @@ Refer to https://realfavicongenerator.net/ for more details.
 
 ### Social Parameters
 
-These are the social network parameters for your overall site. They should be set under `[params.social]`
+These are the social network parameters for your overall site. They should be set under `[params.social]` and all of them allow either the short form (e.g. just your twitter handle) where the theme will construct the URL or the full URL beginning with https://
 
 | Field Name       | Required | Description                                                                                                      | Example              |
 |------------------|----------|------------------------------------------------------------------------------------------------------------------|----------------------|
@@ -137,7 +137,7 @@ We use the "authors" from the configuration to list hosts in the jumbotron or si
 
 TODO: Remove these parameters from exampleSite, but also add one for the the shortname of the host for linking to host page (optional)
 
-You also will set the social parameters (all are optional) under `[params.authors.USERNAME.social]`
+You also will set the social parameters (all are optional) under `[params.authors.USERNAME.social]` and all of them allow either the short form (e.g. just your twitter handle) where the theme will construct the URL or the full URL beginning with https://
 
 | Field Name  | Required | Description                                                                                                      | Example                        |
 |-------------|----------|------------------------------------------------------------------------------------------------------------------|--------------------------------|
@@ -245,12 +245,12 @@ Example:
     identifier = "podcasts"
     url = "books"
     parent = "resources"
-    
+
 ```
 
 ### Podlove Subscribe Button
 
-[Podlove Subscribe Button](https://subscribe-button.podlove.org/) is a universal and easy-to-use button, to subscribe to podcasts with player clients or website players. 
+[Podlove Subscribe Button](https://subscribe-button.podlove.org/) is a universal and easy-to-use button, to subscribe to podcasts with player clients or website players.
 To customize your button please add the following section to your `config.toml`, which covers all features which are provided by the generator on [subscribe-button.podlove.org](https://subscribe-button.podlove.org/).
 
 ```
@@ -375,7 +375,7 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `tags[]`       | No       | If you are using taxonomies, this is the array of tags for the epsiode.     | ["VR", "Technology"] |
 ### Upcoming Episodes
 
-If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`. 
+If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`.
 
 Any episodes that have `upcoming` in their frontmatter set to `true` will be listed here, but not listed on any other pages (feed, home page, guest pages, etc). Additionally, episodes that are marked as "upcoming" will not display a YouTube video or audio player, even if those parameters are set.
 
