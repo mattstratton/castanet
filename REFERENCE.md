@@ -47,6 +47,7 @@ These should be set under the `[params]` section:
 | `episode_number_prefix`            | No       | A prefix used in the episode's RSS feed before the episode number. For example, if episode_number_prefix was set to CWC for episode 1, then the output might be Title of the Episode - CWC1.                                                                                                                                                            | "CWC"                                                                                                                                                                                                                                    |
 | `site_layout`           | No       | The layout for the home page. The options are `row` (default) or `grid`.                                                                                                                                                                                            | "grid"                                                                                                                                                                                                                                    |
 | `enable_jumbo`          | No       | When using the `row` layout, will set a jumbotron at the top instead of the sidebar.                                                                                                                                                                                | "true"                                                                                                                                                                                                                                    |
+| `disable_title_caps`          | No       | When generating the RSS XML file do not convert the episode title to Title Case                                                                                                                                                                               | "false"                                                                                                                                                                                                                                    |
 | `show_next_upcoming`          | No       | If there are episodes with the upcoming frontmatter set to true, then it will display the next episode on homepage. This halves the screen real estate of the latest episode section, which will then be displayed side by side.                              | "true"                                                                                                                                                                                                                                    |
 | `truncate`              | No       | The number of characters to truncate the summary on the row layout. This can be overridden per-episode as well. The default value (if not set) is 600 characters.                                                                                                   | "700"                                                                                                                                                                                                                                     |
 | `custom_css`            | No       | Array of custom CSS files for over-riding theme settings or adding your own classes. These files should be put into your `static` directory (not the `static` directory of the theme).                                                                              | ["custom.css", "other_custom.css"]                                                                                                                                                                                                        |
@@ -245,12 +246,12 @@ Example:
     identifier = "podcasts"
     url = "books"
     parent = "resources"
-    
+
 ```
 
 ### Podlove Subscribe Button
 
-[Podlove Subscribe Button](https://subscribe-button.podlove.org/) is a universal and easy-to-use button, to subscribe to podcasts with player clients or website players. 
+[Podlove Subscribe Button](https://subscribe-button.podlove.org/) is a universal and easy-to-use button, to subscribe to podcasts with player clients or website players.
 To customize your button please add the following section to your `config.toml`, which covers all features which are provided by the generator on [subscribe-button.podlove.org](https://subscribe-button.podlove.org/).
 
 ```
@@ -375,7 +376,7 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `tags[]`       | No       | If you are using taxonomies, this is the array of tags for the epsiode.     | ["VR", "Technology"] |
 ### Upcoming Episodes
 
-If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`. 
+If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`.
 
 Any episodes that have `upcoming` in their frontmatter set to `true` will be listed here, but not listed on any other pages (feed, home page, guest pages, etc). Additionally, episodes that are marked as "upcoming" will not display a YouTube video or audio player, even if those parameters are set.
 
