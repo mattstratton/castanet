@@ -97,7 +97,7 @@
                   {{- $.Scratch.Add "guest-names" (slice $names) -}}
                 {{- end -}}
               {{- end -}}
-              
+
             {{- else -}}
               {{ $.Scratch.Set "guest-names" (slice .File.BaseFileName) }}
             {{- end -}}
@@ -105,11 +105,11 @@
         <div class="list-group guest_episode_list">
           {{ range $name := ($.Scratch.Get "guest-names") }}
           {{- $.Scratch.Set "guest-name" $name -}}
-            {{- range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
+            {{- range $page := (where ( where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
               {{- range $page.Params.guests -}}
                 {{- if eq  . ($.Scratch.Get "guest-name") -}}
                   {{ if and (isset $.Site.Params "episode_number_style") ($page.Params.episode)}}
-                    {{ if eq $.Site.Params.episode_number_style "parens" }}            
+                    {{ if eq $.Site.Params.episode_number_style "parens" }}
                       <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }} ({{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }})</a>
                     {{ else if eq $.Site.Params.episode_number_style "brackets" }}
                       <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }} [{{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}]</a>
