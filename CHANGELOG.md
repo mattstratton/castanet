@@ -1,12 +1,15 @@
 # Changelog
 
-## [1.17.0](https://github.com/mattstratton/castanet/tree/1.17.0) (2022-02-22)
+## [1.17.1](https://github.com/mattstratton/castanet/tree/1.17.1) (2022-02-22)
+
+**Fixed bugs:**
+
+- \[BUG\] - Upper case problems in title attributes in XML RSS feed [\#337](https://github.com/mattstratton/castanet/issues/337)
+- Error when no menu items are set in config file [\#165](https://github.com/mattstratton/castanet/issues/165)
 
 **Merged pull requests:**
 
 - Bump follow-redirects from 1.13.0 to 1.14.8 [\#372](https://github.com/mattstratton/castanet/pull/372) ([dependabot[bot]](https://github.com/apps/dependabot))
-
-- Add GitHub discussions below episodes with Giscus [\#365](https://github.com/mattstratton/castanet/pull/365) ([ojacques](https://github.com/ojacques))
 
 ## [1.16.0](https://github.com/mattstratton/castanet/tree/1.16.0) (2022-02-22)
 
