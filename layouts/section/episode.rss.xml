@@ -52,20 +52,22 @@
     <generator>Hugo -- gohugo.io</generator>
     {{- range (where ( where .Site.Pages "Type" "episode") ".Params.upcoming" "!=" true) -}}
       {{ if isset .Params "podcast_file" }}
-        <item>          
+        <item>
+          {{ if and (isset .Site.Params "disable_title_caps") (eq .Site.Params.disable_title_caps "true") }}
+            <title>{{ .Title }}
+          {{ else }}
+            <title>{{ title .Title }}
+          {{ end }}
           {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}
-              <title>{{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</title>
+              ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
-              <title>{{ title .Title }} [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</title>
+              [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]
             {{ else if eq .Site.Params.episode_number_style "dash" }}
-              <title>{{ title .Title }} - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</title>
-            {{ else }}
-              <title>{{ title .Title }}</title>
+              - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}
             {{ end }}
-          {{ else }}
-            <title>{{ title .Title }}</title>
           {{ end }}
+          </title>
           <link>{{ .Permalink }}</link>
           <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
           <dc:creator>{{ .Site.Params.itunes_author }}</dc:creator>
@@ -98,7 +100,11 @@
           {{ with .Params.episode }}
           <itunes:episode>{{ . }}</itunes:episode>
           {{ end }}
-        <itunes:title>{{ title .Title }}</itunes:title>
+        {{ if and (isset .Site.Params "disable_title_caps") (eq .Site.Params.disable_title_caps "true") }}
+          <itunes:title>{{ .Title }}</itunes:title>
+        {{ else }}
+          <itunes:title>{{ title .Title }}</itunes:title>
+        {{ end }}
         {{"<itunes:subtitle><![CDATA[" | safeHTML }}
         {{ with .Params.subtitle }}
         {{ . | plainify | truncate 243 "..." }}
