@@ -6,6 +6,8 @@
 
 - Bump follow-redirects from 1.13.0 to 1.14.8 [\#372](https://github.com/mattstratton/castanet/pull/372) ([dependabot[bot]](https://github.com/apps/dependabot))
 
+- Add GitHub discussions below episodes with Giscus [\#365](https://github.com/mattstratton/castanet/pull/365) ([ojacques](https://github.com/ojacques))
+
 ## [1.16.0](https://github.com/mattstratton/castanet/tree/1.16.0) (2022-02-22)
 
 **Implemented enhancements:**
