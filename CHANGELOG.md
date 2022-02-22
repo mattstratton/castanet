@@ -1,16 +1,19 @@
 # Changelog
 
+## [1.17.0](https://github.com/mattstratton/castanet/tree/1.17.0) (2022-02-22)
+
+**Merged pull requests:**
+
+- Bump follow-redirects from 1.13.0 to 1.14.8 [\#372](https://github.com/mattstratton/castanet/pull/372) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [1.16.0](https://github.com/mattstratton/castanet/tree/1.16.0) (2022-02-22)
 
 **Implemented enhancements:**
 
-- \[ENHANCEMENT\] - Add support for embedding anchor.fm player [\#352](https://github.com/mattstratton/castanet/issues/352)
 - \[ENHANCEMENT\] - Social links/parameters should support the full URL [\#350](https://github.com/mattstratton/castanet/issues/350)
-- \[ENHANCEMENT\] - some tool that helps with uploads to all used services [\#341](https://github.com/mattstratton/castanet/issues/341)
 
 **Fixed bugs:**
 
-- \[BUG\] - Guest Page isn't generating new guests [\#363](https://github.com/mattstratton/castanet/issues/363)
 - \[BUG\] - Update config.toml and sample site to add trailing / for the URLs [\#361](https://github.com/mattstratton/castanet/issues/361)
 
 ## [1.15.0](https://github.com/mattstratton/castanet/tree/1.15.0) (2021-04-15)
