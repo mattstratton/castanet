@@ -14,7 +14,7 @@
 {{- end -}}
 <div class = "row">
   <div class = "col">
-    
+
     {{ $paginator := .Paginate (where .Data.Pages.ByTitle "Type" "guest") }}
     {{ range $paginator.Pages }}
       {{- $.Scratch.Set "guest-name" .File.BaseFileName -}}
@@ -46,28 +46,28 @@
               <a href = "{{ . }}"><i class="fas fa-home fa-2x"></i></a>
             {{ end }}
             {{ with .Params.Twitter }}
-              <a href = "https://twitter.com/{{ . }}"><i class="fab fa-twitter-square fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-twitter-square fa-2x" "prefix" "https://twitter.com/" "text" "") }}
             {{ end }}
             {{ with .Params.GitHub}}
-              <a href = "https://github.com/{{ . }}"><i class="fab fa-github-square fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/" "text" "") }}
             {{ end }}
             {{ with .Params.LinkedIn }}
-              <a href = "https://www.linkedin.com/in/{{ . }}/"><i class="fab fa-linkedin fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-linkedin fa-2x" "prefix" "https://www.linkedin.com/in/" "text" "") }}
             {{ end }}
             {{ with .Params.Facebook }}
-              <a href = "https://www.facebook.com/{{ . }}"><i class="fab fa-facebook-square fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-facebook-square fa-2x" "prefix" "https://www.facebook.com/" "text" "") }}
             {{ end }}
             {{ with .Params.Pinterest }}
-              <a href = "https://www.pinterest.com/{{ . }}"><i class="fab fa-pinterest-square fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-pinterest-square fa-2x" "prefix" "https://www.pinterest.com/" "text" "") }}
             {{ end }}
             {{ with .Params.Instagram }}
-              <a href = "https://www.instagram.com/{{ . }}"><i class="fab fa-instagram fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-instagram-square fa-2x" "prefix" "https://www.instagram.com/" "text" "") }}
             {{ end }}
             {{ with .Params.YouTube }}
-              <a href = "https://www.youtube.com/{{ . }}"><i class="fab fa-youtube-square fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-youtube-square fa-2x" "prefix" "https://www.youtube.com/" "text" "") }}
             {{ end }}
             {{ with .Params.Twitch }}
-              <a href = "https://twitch.tv/{{ . }}"><i class="fab fa-twitch fa-2x"></i></a>
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/" "text" "") }}
             {{ end }}
         </div>
       </div>
@@ -114,15 +114,15 @@
             {{- end -}}
         {{ end }}
       {{ end }}
-    
-    
+
+
       <!-- prev page button -->
       {{- with $paginator.HasPrev -}}
           <li class="page-item">
             <a href="{{ $paginator.Prev.URL }}" class="page-link"> &laquo; </a>
           </li>
       {{ end }}
-      
+
       <!-- page # buttons -->
       {{ range $pag.Pagers }}
         {{ $cur := .PageNumber }}
@@ -133,14 +133,14 @@
           <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
         {{ end }}
       {{ end }}
-      
+
       <!-- next page button -->
       {{- with $paginator.HasNext -}}
       <li class="page-item">
         <a href="{{ $paginator.Next.URL }}" class="page-link"> &raquo; </a>
       </li>
       {{ end }}
-      
+
       <!-- last page button -->
       {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
         {{- with $paginator.Last -}}

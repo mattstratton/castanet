@@ -84,6 +84,7 @@ enable_jumbo = "true"
 # truncate = "100"
 # about_logo = "/img/hugocast.png"
 copyright_notice = "Copyright 2016 [Matt Stratton](https://www.mattstrattion.io)"
+youtube_subscribe = "https://www.youtube.com/arresteddevops?sub_confirmation=1"
 itunes_subscribe = "https://podcasts.apple.com/us/podcast/arrested-devops/id773888088?ign-mpt=uo%3D4&mt=2"
 android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
 spotify_subscribe = "https://open.spotify.com/show/..."
@@ -127,18 +128,21 @@ disqusShortname = ""
     subscribe_feed_type = "audio"     # options: audio, video
     subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
 
+  # Social links can be given in full URL form or short form
+  # In the short form the theme will generate a relevant URL
   [params.social]
     github = "arresteddevops"
     gitlab = "mattstratton"
     facebook = "Arresteddevops"
     facebook_admin = ["500557137","1234"] # This needs to be one or more page admins to get domain insights
-    twitter = "arresteddevops"
+    twitter = "https://twitter.com/arresteddevops"
     twitter_domain = "arresteddevops.com" # This domain shows in twitter cards as "View on `twitter_domain`"
-    googleplus = "ArrestedDevOps"
     pinterest = "nozzleio"
     instagram = "nozzleio"
     youtube = "arresteddevops"
-    linkedin = "mattstratton"
+    # Short form in linkedin will link to a user's page so use long form for company pages
+    linkedin = "https://www.linkedin.com/company/linkedin/"
+    #linkedin = "mattstratton"
     twitch = "mattstratton"
 
   [params.authors]

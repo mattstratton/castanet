@@ -21,8 +21,22 @@
     <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}" />
     <meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}">
 {{- end -}}
-{{ with .Site.Params.social.twitter }}<meta name="twitter:site" content="@{{ . }}"/>{{ end }}
-{{ with .Site.Params.social.twitter }}<meta name="twitter:creator" content="@{{ . }}"/>{{ end }}
+<!--
+The twitter link can be based in short ("arresteddevops") or
+long form ("https://twitter.com/arresteddevops")
+
+In long form we need to strip everything but the twitter handle
+for the SEO tags
+-->
+{{ if (isset .Site.Params.social "twitter" )}}
+  {{ if gt (len (urls.Parse .Site.Params.social.twitter).Scheme) 0 }}
+    <meta name="twitter:site" content="@{{ trim ((urls.Parse .Site.Params.social.twitter).Path) "/" }}"/>
+    <meta name="twitter:creator" content="@{{ trim ((urls.Parse .Site.Params.social.twitter).Path) "/" }}"/>
+  {{ else }}
+    <meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}"/>
+    <meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}"/>
+  {{ end }}
+{{ end }}
 {{ with .Site.Params.social.twitter_domain }}<meta name="twitter:domain" content="{{ . }}"/>{{ end }}
 {{ if eq .Type "episode" }}
 <meta property="og:type" content="article" />
