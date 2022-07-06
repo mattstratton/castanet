@@ -1,11 +1,19 @@
 # Changelog
 
+## [1.17.2](https://github.com/mattstratton/castanet/tree/1.17.2) (2022-07-06)
+
+**Fixed bugs:**
+
+- Fixes Instagram icon [\#385](https://github.com/mattstratton/castanet/pull/385) ([AVGP](https://github.com/AVGP))
+
 ## [1.17.1](https://github.com/mattstratton/castanet/tree/1.17.1) (2022-02-22)
 
 **Fixed bugs:**
 
 - \[BUG\] - Upper case problems in title attributes in XML RSS feed [\#337](https://github.com/mattstratton/castanet/issues/337)
 - Error when no menu items are set in config file [\#165](https://github.com/mattstratton/castanet/issues/165)
+
+## [1.17.0](https://github.com/mattstratton/castanet/tree/1.17.0) (2022-02-22)
 
 **Merged pull requests:**
 
