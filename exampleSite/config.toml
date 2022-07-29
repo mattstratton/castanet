@@ -72,6 +72,7 @@ buildFuture = true
     url = "https://www.google.com"
 
 [params]
+googleAnalytics_UA = ""
 mainSections = ["episode"]
 episode_number_style  = "brackets"
 episode_number_prefix = "CWC"

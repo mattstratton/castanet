@@ -2,7 +2,7 @@ version: 2.1
 executors:
   castanet-tests:
     docker:
-      - image: cibuilds/hugo:0.76.5
+      - image: cibuilds/hugo:0.91.2
         auth:
           username: mattstratton
           password: $DOCKERHUB_PASSWORD

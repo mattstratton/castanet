@@ -37,34 +37,37 @@
 </script>
 
 <script>
-  $(document).ready(function() {
+    $(document).ready(function() {
 
-    $('.transcript').hide();
-    $(".hide_transcript").hide();
-    $(".hide_transcript").click(function () {
-    $(".transcript").hide("fast");
-    $(".show_transcript").show();
-    $(".hide_transcript").hide();
-   });
+        $('.transcript').hide();
+        $(".hide_transcript").hide();
+        $(".hide_transcript").click(function() {
+            $(".transcript").hide("fast");
+            $(".show_transcript").show();
+            $(".hide_transcript").hide();
+        });
 
-    $(".show_transcript").click(function () {
-    $(".transcript").show(500);
-    $(".hide_transcript").show();
-    $(".show_transcript").hide();
-   });
+        $(".show_transcript").click(function() {
+            $(".transcript").show(500);
+            $(".hide_transcript").show();
+            $(".show_transcript").hide();
+        });
 
-  });
-
+    });
 </script>
 
 <script>
-  var player = new MediaElementPlayer('player2', {
-      features: ['playpause', 'current', 'progress', 'duration', 'volume','speed'],
-      defaultSpeed: 1.0,
-      // other configuration elements
-  });
+    var player = new MediaElementPlayer('player2', {
+        features: ['playpause', 'current', 'progress', 'duration', 'volume', 'speed'],
+        defaultSpeed: 1.0,
+        // other configuration elements
+    });
 </script>
-
-
-
-{{ template "_internal/google_analytics_async.html" . }}
+<!------------ 
+  The following logic allows for both the GA4 support using Google Tag Manager and the legacy UA Google Analytics tag
+  to be used together. There may be situations where a organization support both tag methods simultaneously.
+------------->
+<!-- Check for the Global GoogleAnalytics variable to use the Hugo internal google_analytics template -->
+{{ if .Site.GoogleAnalytics }} {{ template "_internal/google_analytics.html" . }} {{ end }}
+<!-- Check for googleAnalytics_UA param to use the google-analytics-ua partial -->
+{{ if .Site.Params.googleAnalytics_UA }} {{ partial "google-analytics-ua.html" . }} {{ end }}
