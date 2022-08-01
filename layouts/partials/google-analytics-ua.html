@@ -6,7 +6,7 @@
             (ga.q = ga.q || []).push(arguments)
         };
         ga.l = +new Date;
-        ga('create', '{{ .Site.Params.GoogleAnalytics_U }}', 'auto');
+        ga('create', '{{ .Site.Params.GoogleAnalytics_UA }}', 'auto');
 
         ga('send', 'pageview');
     }
