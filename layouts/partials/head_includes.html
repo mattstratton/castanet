@@ -1,3 +1,12 @@
+<!------------ 
+  The following logic allows for both the GA4 support using Google Tag Manager and the legacy UA Google Analytics tag
+  to be used together. There may be situations where a organization support both tag methods simultaneously.
+------------->
+<!-- Check for the Global GoogleAnalytics variable to use the Hugo internal google_analytics template -->
+{{ if .Site.GoogleAnalytics }} {{ template "_internal/google_analytics.html" . }} {{ end }}
+<!-- Check for googleAnalytics_UA param to use the google-analytics-ua partial -->
+{{ if .Site.Params.googleAnalytics_UA }} {{ partial "google-analytics-ua.html" . }} {{ end }}
+
 {{ if isset $.Site.Params "favicon"}}
 <link rel="icon" href="{{ $.Site.Params.favicon | absURL }}">
 {{ else }}

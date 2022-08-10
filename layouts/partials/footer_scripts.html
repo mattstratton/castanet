@@ -1,70 +1,65 @@
 <script src='{{ "js/castanet-min.js" | absURL }}'></script>
 <script>
-    $("#share").jsSocials({
-        shares: [
-      {
-        share: "facebook",
-        logo: "fab fa-facebook",
-      },
-      {
-        share: "twitter",           // name of share
-        label: "Tweet",             // share button text (optional)
-        logo: "fab fa-twitter",
-        // The twitter link can be based in short ("arresteddevops") or
-        //  long form ("https://twitter.com/arresteddevops")
-        // In long form we need to strip everything but the twitter handle
-        //  for the 'via' parameter
-        {{ if (isset .Site.Params.social "twitter" )}}
-          {{ if gt (len (urls.Parse .Site.Params.social.twitter).Scheme) 0 }}
-            via: "{{ trim ((urls.Parse .Site.Params.social.twitter).Path) "/" }}", // custom twitter sharing param 'via' (optional)
-          {{ else }}
-            via: "{{ .Site.Params.social.twitter }}", // custom twitter sharing param 'via' (optional)
-          {{ end }}
+  $("#share").jsSocials({
+      shares: [
+    {
+      share: "facebook",
+      logo: "fab fa-facebook",
+    },
+    {
+      share: "twitter",           // name of share
+      label: "Tweet",             // share button text (optional)
+      logo: "fab fa-twitter",
+      // The twitter link can be based in short ("arresteddevops") or
+      //  long form ("https://twitter.com/arresteddevops")
+      // In long form we need to strip everything but the twitter handle
+      //  for the 'via' parameter
+      {{ if (isset .Site.Params.social "twitter" )}}
+        {{ if gt (len (urls.Parse .Site.Params.social.twitter).Scheme) 0 }}
+          via: "{{ trim ((urls.Parse .Site.Params.social.twitter).Path) "/" }}", // custom twitter sharing param 'via' (optional)
+        {{ else }}
+          via: "{{ .Site.Params.social.twitter }}", // custom twitter sharing param 'via' (optional)
         {{ end }}
-        url: "{{ .Permalink }}",
-        text: "{{ title .Title }}"
-      },
-      {
-        share: "linkedin",
-        logo: "fab fa-linkedin"
-      },
-      {
-        share: "pinterest",
-        logo: "fab fa-pinterest"
-      }
-    ],
+      {{ end }}
+      url: "{{ .Permalink }}",
+      text: "{{ title .Title }}"
+    },
+    {
+      share: "linkedin",
+      logo: "fab fa-linkedin"
+    },
+    {
+      share: "pinterest",
+      logo: "fab fa-pinterest"
+    }
+  ],
+  });
+</script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.transcript').hide();
+        $(".hide_transcript").hide();
+        $(".hide_transcript").click(function() {
+            $(".transcript").hide("fast");
+            $(".show_transcript").show();
+            $(".hide_transcript").hide();
+        });
+
+        $(".show_transcript").click(function() {
+            $(".transcript").show(500);
+            $(".hide_transcript").show();
+            $(".show_transcript").hide();
+        });
+
     });
 </script>
 
 <script>
-  $(document).ready(function() {
-
-    $('.transcript').hide();
-    $(".hide_transcript").hide();
-    $(".hide_transcript").click(function () {
-    $(".transcript").hide("fast");
-    $(".show_transcript").show();
-    $(".hide_transcript").hide();
-   });
-
-    $(".show_transcript").click(function () {
-    $(".transcript").show(500);
-    $(".hide_transcript").show();
-    $(".show_transcript").hide();
-   });
-
-  });
-
+    var player = new MediaElementPlayer('player2', {
+        features: ['playpause', 'current', 'progress', 'duration', 'volume', 'speed'],
+        defaultSpeed: 1.0,
+        // other configuration elements
+    });
 </script>
-
-<script>
-  var player = new MediaElementPlayer('player2', {
-      features: ['playpause', 'current', 'progress', 'duration', 'volume','speed'],
-      defaultSpeed: 1.0,
-      // other configuration elements
-  });
-</script>
-
-
-
-{{ template "_internal/google_analytics_async.html" . }}
