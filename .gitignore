@@ -6,3 +6,4 @@ dist
 .DS_Store
 .Ulysses-Group.plist
 public/
+.hugo_build.lock
