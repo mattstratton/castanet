@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.18.0](https://github.com/mattstratton/castanet/tree/1.18.0) (2022-08-10)
+
+**Fixed bugs:**
+
+- \[BUG\] - Issue deploying with Cloudflare pages [\#388](https://github.com/mattstratton/castanet/issues/388)
+
 ## [1.17.2](https://github.com/mattstratton/castanet/tree/1.17.2) (2022-07-06)
 
 **Fixed bugs:**
@@ -118,10 +124,6 @@
 - \[ENHANCEMENT\] Add episode tags support. [\#245](https://github.com/mattstratton/castanet/issues/245)
 - Add Category, Tag and Series taxonomies to theme [\#307](https://github.com/mattstratton/castanet/pull/307) ([chrisreddington](https://github.com/chrisreddington))
 
-**Merged pull requests:**
-
-- Test of GH actions [\#305](https://github.com/mattstratton/castanet/pull/305) ([mattstratton](https://github.com/mattstratton))
-
 ## [1.11.2](https://github.com/mattstratton/castanet/tree/1.11.2) (2020-11-24)
 
 **Fixed bugs:**
@@ -171,6 +173,10 @@
 
 - update Open Graph date format [\#284](https://github.com/mattstratton/castanet/pull/284) ([darinpope](https://github.com/darinpope))
 - add missing quotes [\#283](https://github.com/mattstratton/castanet/pull/283) ([darinpope](https://github.com/darinpope))
+
+**Merged pull requests:**
+
+- Test of GH actions [\#305](https://github.com/mattstratton/castanet/pull/305) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.7.3](https://github.com/mattstratton/castanet/tree/1.7.3) (2020-08-04)
 
@@ -389,7 +395,7 @@
 
 **Fixed bugs:**
 
-- Sidebar doesn't show if `enable_jumbo` doesn't exist [\#167](https://github.com/mattstratton/castanet/issues/167)
+- Sidebar doesn't show if `enable\_jumbo` doesn't exist [\#167](https://github.com/mattstratton/castanet/issues/167)
 - Grid spills to second page without filling bottom row [\#164](https://github.com/mattstratton/castanet/issues/164)
 - \[Bug\] iTunes/android/Soundcloud subscribe image icons broken [\#155](https://github.com/mattstratton/castanet/issues/155)
 - \[Bug\] stitcher not sticher. Typo in config.toml variable [\#154](https://github.com/mattstratton/castanet/issues/154)
