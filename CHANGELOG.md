@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.19.0](https://github.com/mattstratton/castanet/tree/1.19.0) (2022-08-10)
+
+**Implemented enhancements:**
+
+- Update Hugo to version 0.91.2 [\#389](https://github.com/mattstratton/castanet/pull/389) ([stmcallister](https://github.com/stmcallister))
+
 ## [1.18.0](https://github.com/mattstratton/castanet/tree/1.18.0) (2022-08-10)
 
 **Fixed bugs:**
@@ -90,6 +96,7 @@
 - Add episode numbers/prefix in RSS and Relevant Titles/Links \[Attempt \#2\] [\#322](https://github.com/mattstratton/castanet/pull/322) ([chrisreddington](https://github.com/chrisreddington))
 - Initial implementation for pronouns [\#312](https://github.com/mattstratton/castanet/pull/312) ([chrisreddington](https://github.com/chrisreddington))
 - Create skeleton of blog feature [\#310](https://github.com/mattstratton/castanet/pull/310) ([mattstratton](https://github.com/mattstratton))
+- Add Functionality: Show next upcoming episode [\#309](https://github.com/mattstratton/castanet/pull/309) ([chrisreddington](https://github.com/chrisreddington))
 
 **Fixed bugs:**
 
@@ -106,10 +113,6 @@
 
 ## [1.13.0](https://github.com/mattstratton/castanet/tree/1.13.0) (2020-12-01)
 
-**Implemented enhancements:**
-
-- Add Functionality: Show next upcoming episode [\#309](https://github.com/mattstratton/castanet/pull/309) ([chrisreddington](https://github.com/chrisreddington))
-
 ## [1.12.1](https://github.com/mattstratton/castanet/tree/1.12.1) (2020-12-01)
 
 **Implemented enhancements:**
@@ -123,6 +126,10 @@
 - \[ENHANCEMENT\] - Add taxonomies for Tags, Series and Categories [\#306](https://github.com/mattstratton/castanet/issues/306)
 - \[ENHANCEMENT\] Add episode tags support. [\#245](https://github.com/mattstratton/castanet/issues/245)
 - Add Category, Tag and Series taxonomies to theme [\#307](https://github.com/mattstratton/castanet/pull/307) ([chrisreddington](https://github.com/chrisreddington))
+
+**Merged pull requests:**
+
+- Test of GH actions [\#305](https://github.com/mattstratton/castanet/pull/305) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.11.2](https://github.com/mattstratton/castanet/tree/1.11.2) (2020-11-24)
 
@@ -173,10 +180,6 @@
 
 - update Open Graph date format [\#284](https://github.com/mattstratton/castanet/pull/284) ([darinpope](https://github.com/darinpope))
 - add missing quotes [\#283](https://github.com/mattstratton/castanet/pull/283) ([darinpope](https://github.com/darinpope))
-
-**Merged pull requests:**
-
-- Test of GH actions [\#305](https://github.com/mattstratton/castanet/pull/305) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.7.3](https://github.com/mattstratton/castanet/tree/1.7.3) (2020-08-04)
 
