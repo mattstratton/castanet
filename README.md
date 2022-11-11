@@ -36,7 +36,6 @@ This is a completely non-comprehensive list of podcasts that use this theme. Wan
 - [Arrested DevOps](https://www.arresteddevops.com)
 - [Page It to the Limit](https://www.pageittothelimit.com/)
 - [Quiche-Anon](https://quiche-anon.com)
-- [Community Pulse](https://www.communitypulse.io/)
 - [The Linux Lemming](https://linuxlemming.com)
 
 ## Sites inspired by / building upon the Castanet theme
