@@ -8,7 +8,7 @@ If you would like to receive emails when new versions of this theme are released
 
 # Castanet
 
-Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton).
+Castanet is a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton).
 
 An example site can be found at http://sample-castanet.netlify.com/
 
