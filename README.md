@@ -19,7 +19,7 @@ An example site can be found at http://sample-castanet.netlify.com/
 Download the latest version (zip file, not source code) from the [Releases](https://github.com/mattstratton/castanet/releases) page.
 
 
-For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
+For more information read the official [quick start](//gohugo.io/getting-started/quick-start/) of Hugo.
 
 
 ## Getting started
@@ -35,7 +35,7 @@ If you would like to help make improvements or fixes to this theme, please see [
 This is a completely non-comprehensive list of podcasts that use this theme. Want to add your site? Submit a pull request against the README file!
 - [Arrested DevOps](https://www.arresteddevops.com)
 - [Page It to the Limit](https://www.pageittothelimit.com/)
-- [Quiche-Anon](https://quiche-anon.com)
+- [Quiche-Anon](https://www.quicheanon.com/)
 - [The Linux Lemming](https://linuxlemming.com)
 
 ## Sites inspired by / building upon the Castanet theme
