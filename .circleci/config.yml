@@ -185,7 +185,8 @@ workflows:
             tags:
               only: /^\d+\.\d+\.\d+$/
             branches:
-              ignore: /.*/
+              only:
+                - main
 
 
           
