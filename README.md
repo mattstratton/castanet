@@ -38,6 +38,7 @@ This is a completely non-comprehensive list of podcasts that use this theme. Wan
 - [Quiche-Anon](https://quiche-anon.com)
 - [Tech Debt Burndown Podcast](https://techdebtburndown.com/)
 - [The Linux Lemming](https://linuxlemming.com)
+- [The R-Podcast](https://r-podcast.org)
 
 ## Sites inspired by / building upon the Castanet theme
 - [Cloud with Chris](https://www.cloudwithchris.com)
