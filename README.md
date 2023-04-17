@@ -8,7 +8,7 @@ If you would like to receive emails when new versions of this theme are released
 
 # Castanet
 
-Castanet is a a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton).
+Castanet is a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton).
 
 An example site can be found at http://sample-castanet.netlify.com/
 
@@ -36,6 +36,7 @@ This is a completely non-comprehensive list of podcasts that use this theme. Wan
 - [Arrested DevOps](https://www.arresteddevops.com)
 - [Page It to the Limit](https://www.pageittothelimit.com/)
 - [Quiche-Anon](https://quiche-anon.com)
+- [Tech Debt Burndown Podcast](https://techdebtburndown.com/)
 - [The Linux Lemming](https://linuxlemming.com)
 
 ## Sites inspired by / building upon the Castanet theme
