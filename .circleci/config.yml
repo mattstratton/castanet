@@ -111,7 +111,7 @@ jobs:
           command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - run:
           name: "Checkout tag"
-          command: git clone --branch "${CIRCLE_TAG}" --depth 1 "${CIRCLE_REPOSITORY_URL}"
+          command: echo ${CIRCLE_TAG} && git clone --branch "${CIRCLE_TAG}" --depth 1 "${CIRCLE_REPOSITORY_URL}"
       - run:
           name: "Create zip file for release"
           command: | 
