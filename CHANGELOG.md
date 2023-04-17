@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.21.3](https://github.com/mattstratton/castanet/tree/1.21.3) (2023-04-17)
+
+**Implemented enhancements:**
+
+- \[ENHANCEMENT\] - Add Mastodon to the Social options [\#392](https://github.com/mattstratton/castanet/issues/392)
+- \[ENHANCEMENT\] - Can we make an option to have youtube be a link on the main page just like spotify et al? [\#364](https://github.com/mattstratton/castanet/issues/364)
+- Add support for Mastodon for social links \(site, host, and guest\) [\#404](https://github.com/mattstratton/castanet/pull/404) ([mattstratton](https://github.com/mattstratton))
+
+**Fixed bugs:**
+
+- \[BUG\] - readme.md is out of date [\#403](https://github.com/mattstratton/castanet/issues/403)
+
 ## [1.19.0](https://github.com/mattstratton/castanet/tree/1.19.0) (2022-08-10)
 
 **Implemented enhancements:**
@@ -96,7 +108,6 @@
 - Add episode numbers/prefix in RSS and Relevant Titles/Links \[Attempt \#2\] [\#322](https://github.com/mattstratton/castanet/pull/322) ([chrisreddington](https://github.com/chrisreddington))
 - Initial implementation for pronouns [\#312](https://github.com/mattstratton/castanet/pull/312) ([chrisreddington](https://github.com/chrisreddington))
 - Create skeleton of blog feature [\#310](https://github.com/mattstratton/castanet/pull/310) ([mattstratton](https://github.com/mattstratton))
-- Add Functionality: Show next upcoming episode [\#309](https://github.com/mattstratton/castanet/pull/309) ([chrisreddington](https://github.com/chrisreddington))
 
 **Fixed bugs:**
 
@@ -112,6 +123,10 @@
 - Test with matrix build [\#321](https://github.com/mattstratton/castanet/pull/321) ([mattstratton](https://github.com/mattstratton))
 
 ## [1.13.0](https://github.com/mattstratton/castanet/tree/1.13.0) (2020-12-01)
+
+**Implemented enhancements:**
+
+- Add Functionality: Show next upcoming episode [\#309](https://github.com/mattstratton/castanet/pull/309) ([chrisreddington](https://github.com/chrisreddington))
 
 ## [1.12.1](https://github.com/mattstratton/castanet/tree/1.12.1) (2020-12-01)
 
@@ -398,7 +413,7 @@
 
 **Fixed bugs:**
 
-- Sidebar doesn't show if `enable\_jumbo` doesn't exist [\#167](https://github.com/mattstratton/castanet/issues/167)
+- Sidebar doesn't show if `enable_jumbo` doesn't exist [\#167](https://github.com/mattstratton/castanet/issues/167)
 - Grid spills to second page without filling bottom row [\#164](https://github.com/mattstratton/castanet/issues/164)
 - \[Bug\] iTunes/android/Soundcloud subscribe image icons broken [\#155](https://github.com/mattstratton/castanet/issues/155)
 - \[Bug\] stitcher not sticher. Typo in config.toml variable [\#154](https://github.com/mattstratton/castanet/issues/154)
