@@ -303,6 +303,11 @@
                 <i class="fab fa-twitch fa-2x"></i>
               </a>
             {{- end -}}
+            {{- with .Params.Mastodon -}}
+              <a href="{{ . }}">
+                <i class="fab fa-mastodon fa-2x"></i>
+              </a>
+            {{- end -}}
             </div>
             </div>
           {{- $.Scratch.Set "host-exist" "false" -}}

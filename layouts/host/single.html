@@ -57,6 +57,9 @@
             {{ if .Params.Twitch }}
               {{ partial "social-link.html" (dict "context" .Params.Twitch "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/" "text" "") }}
             {{ end }}
+            {{ if .Params.Mastodon }}
+              {{ partial "social-link.html" (dict "context" .Params.Mastodon "iclass" "fab fa-mastodon fa-2x" "prefix" "" "text" "") }}
+            {{ end }}
           </div>
         </div>
       </div>
