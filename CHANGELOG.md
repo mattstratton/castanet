@@ -2,6 +2,14 @@
 
 ## [1.21.3](https://github.com/mattstratton/castanet/tree/1.21.3) (2023-04-17)
 
+## [1.21.2](https://github.com/mattstratton/castanet/tree/1.21.2) (2023-04-17)
+
+## [1.21.1](https://github.com/mattstratton/castanet/tree/1.21.1) (2023-04-17)
+
+## [1.21.0](https://github.com/mattstratton/castanet/tree/1.21.0) (2023-04-17)
+
+## [1.20.0](https://github.com/mattstratton/castanet/tree/1.20.0) (2023-04-17)
+
 **Implemented enhancements:**
 
 - \[ENHANCEMENT\] - Add Mastodon to the Social options [\#392](https://github.com/mattstratton/castanet/issues/392)
