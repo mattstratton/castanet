@@ -19,7 +19,7 @@ An example site can be found at http://sample-castanet.netlify.com/
 Download the latest version (zip file, not source code) from the [Releases](https://github.com/mattstratton/castanet/releases) page.
 
 
-For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
+For more information read the official [quick start](//gohugo.io/getting-started/quick-start/) of Hugo.
 
 
 ## Getting started
