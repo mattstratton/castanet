@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.21.7](https://github.com/mattstratton/castanet/tree/1.21.7) (2023-12-22)
+
+**Fixed bugs:**
+
+- \[BUG\] - cannot build in grid mode on newer Hugo versions [\#406](https://github.com/mattstratton/castanet/issues/406)
+
+## [1.21.6](https://github.com/mattstratton/castanet/tree/1.21.6) (2023-04-17)
+
 ## [1.21.5](https://github.com/mattstratton/castanet/tree/1.21.5) (2023-04-17)
 
 ## [1.21.4](https://github.com/mattstratton/castanet/tree/1.21.4) (2023-04-17)
