@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.21.8](https://github.com/mattstratton/castanet/tree/1.21.8) (2023-12-22)
+
 ## [1.21.7](https://github.com/mattstratton/castanet/tree/1.21.7) (2023-12-22)
 
 **Fixed bugs:**
