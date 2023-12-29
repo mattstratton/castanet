@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/mattstratton/castanet#readme",
   "devDependencies": {
-    "gulp": "~4.0.0",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-dart-sass": "^1.0.2",
@@ -35,7 +35,7 @@
     "jssocials": "^1.5.0",
     "mediaelement": "^4.2.14",
     "mediaelement-plugins": "^2.5.0",
-    "netlify-cli": "^2.15.0",
+    "netlify-cli": "^17.10.2",
     "popper.js": "^1.15.0"
   }
 }
