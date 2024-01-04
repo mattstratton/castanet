@@ -119,6 +119,7 @@ These are the social network parameters for your overall site. They should be se
 | `linkedin`       | No       | LinkedIn profile name. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. | "mattstratton"       |
 | `twitch`         | No       | Twitch channel/profile for your site. This is the part that comes after `https://twitch.tv/`                     | "mattstratton"       |
 | `mastodon`         | No       | Mastodon account for your site. This needs to be the fully qualified URL including `https`                     | "https://hachyderm.io/@mattstratton"       |
+| `threads`         | No       | Threads account for your site. Account name without the `@`                     | "mattstratton"       |
 
 ### Giscus Parameters
 
@@ -173,6 +174,7 @@ You also will set the social parameters (all are optional) under `[params.author
 | `linkedin`  | No       | LinkedIn profile name. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. | "mattstratton"                 |
 | `homepage`  | No       | The user's website, including the `http` at the beginning.                                                       | "https://www.mattstratton.com" |
 | `mastodon`  | No       | The user's Mastodon URL, including the `https` at the beginning.                                                       | "https://hachyderm.io/@mattstratton" |
+| `threads`         | No       | Threads account the user. Account name without the `@`                     | "mattstratton"       |
 
 ### Link Parameters
 
@@ -446,7 +448,8 @@ Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Ch
 | `Instagram` | No       | Instagram profile name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | "mattstratton"                 |
 | `YouTube`   | No       | YouTube profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
 | `Twitch`   | No       | Twitch profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
-| `mastodon`  | No       | The user's Mastodon URL, including the `https` at the beginning.                                                       | "https://hachyderm.io/@mattstratton" |
+| `Mastodon`  | No       | The user's Mastodon URL, including the `https` at the beginning.                                                       | "https://hachyderm.io/@mattstratton" |
+| `Threads`         | No       | Threads account the user. Account name without the `@`                     | "mattstratton"       |
 | `Aka`       | No       | **DEPRECATED - use `guest_group` instead.** The name(s) of another guest file which is an alternate identity for this guest (for example, if the bio changes, name changes, etc). This should be set in both directions (i.e., the `Aka` field should be set on `mstratton.md` and `mstratton2.md` pointing to each other).                                                                                                                                                                                                                | Aka = ["jsmith", "jsmith2"]                   |
 | `guest_group`       | No       | Set to an identifier to mark guests as being different versions of the same person. Only the most recent file in a guest group will appear on the Guests page. Additionally, all members of a guest group will display the same "other episodes" on guest pages.                                                                                                                                                                                                               | "mattstratton"                   |
 

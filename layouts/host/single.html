@@ -54,11 +54,14 @@
             {{ if .Params.YouTube }}
               {{ partial "social-link.html" (dict "context" .Params.YouTube "iclass" "fab fa-youtube-square fa-2x" "prefix" "https://www.youtube.com/" "text" "") }}
             {{ end }}
-            {{ if .Params.Twitch }}
-              {{ partial "social-link.html" (dict "context" .Params.Twitch "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/" "text" "") }}
+            {{ if .Params.Threads }}
+              {{ partial "social-link.html" (dict "context" .Params.Threads "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/" "text" "") }}
             {{ end }}
             {{ if .Params.Mastodon }}
               {{ partial "social-link.html" (dict "context" .Params.Mastodon "iclass" "fab fa-mastodon fa-2x" "prefix" "" "text" "") }}
+            {{ end }}
+            {{ if .Params.Threads }}
+              {{ partial "social-link.html" (dict "context" .Params.Threads "iclass" "fa-brands fa-square-threads fa-2x" "prefix" "https://www.threads.net/@" "text" "") }}
             {{ end }}
           </div>
         </div>

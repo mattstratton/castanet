@@ -82,6 +82,11 @@
           {{ partial "social-link.html" (dict "context" $.Site.Params.social.mastodon "aclass" "social-links" "iclass" "fab fa-mastodon fa-2x" "prefix" "" "text" "") }}
         </li>
         {{ end }}
+        {{ if (isset .Site.Params.social "threads" ) }}
+        <li>
+          {{ partial "social-link.html" (dict "context" $.Site.Params.social.threads "aclass" "social-links" "iclass" "fa-brands fa-square-threads fa-2x" "prefix" "https://www.threads.net/@" "text" "") }}
+        </li>
+        {{ end }}
       </ul>
   </div>
   </div>

@@ -61,6 +61,9 @@
             {{ if .Params.Mastodon }}
               {{ partial "social-link.html" (dict "context" .Params.Mastodon "aclass" "" "iclass" "fab fa-mastodon fa-2x" "prefix" "" "text" "") }}
             {{ end }}
+            {{ if .Params.Threads }}
+            {{ partial "social-link.html" (dict "context" .Params.Threads "aclass" "" "iclass" "fab fa-square-threads fa-2x" "prefix" "https://threads.net/@" "text" "") }}
+          {{ end }}
           </div>
         </div>
       </div>

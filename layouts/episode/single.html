@@ -184,6 +184,11 @@
                       <i class="fab fa-mastodon fa-2x"></i>
                     </a>
                     {{- end -}}
+                    {{- with .Params.Threads -}}
+                    <a href="https://threads.net/@{{ . }}">
+                      <i class="fab fa-square-threads fa-2x"></i>
+                    </a>
+                    {{- end -}}
                   </div>
                   </div>
                 {{- $.Scratch.Set "guest-exist" "false" -}}
@@ -306,6 +311,11 @@
             {{- with .Params.Mastodon -}}
               <a href="{{ . }}">
                 <i class="fab fa-mastodon fa-2x"></i>
+              </a>
+            {{- end -}}
+            {{- with .Params.Threads -}}
+              <a href="https://threads.net/@{{ . }}">
+                <i class="fab fa-square-threads fa-2x"></i>
               </a>
             {{- end -}}
             </div>
