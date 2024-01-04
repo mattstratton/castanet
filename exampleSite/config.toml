@@ -147,6 +147,7 @@ disqusShortname = ""
     #linkedin = "mattstratton"
     twitch = "mattstratton"
     mastodon = "https://hachyderm.io/@mattstratton"
+    threads = "mattstratton"
 
   [params.authors]
     [params.authors.Matt]
