@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.22.9](https://github.com/mattstratton/castanet/tree/1.22.9) (2024-01-05)
+
+**Fixed bugs:**
+
+- \[BUG\] - Netlify build on sample site is not working [\#416](https://github.com/mattstratton/castanet/issues/416)
+- Fix Netlify build for sample site [\#418](https://github.com/mattstratton/castanet/pull/418) ([mattstratton](https://github.com/mattstratton))
+
+## [1.22.8](https://github.com/mattstratton/castanet/tree/1.22.8) (2024-01-05)
+
 ## [1.22.7](https://github.com/mattstratton/castanet/tree/1.22.7) (2024-01-05)
 
 ## [1.22.6](https://github.com/mattstratton/castanet/tree/1.22.6) (2024-01-05)
