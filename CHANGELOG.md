@@ -1,6 +1,15 @@
 # Changelog
 
+## [1.22.2](https://github.com/mattstratton/castanet/tree/1.22.2) (2024-01-05)
+
+**Closed issues:**
+
+- Update CONTRIBUTING.md to remove Codekit references [\#311](https://github.com/mattstratton/castanet/issues/311)
+- Remove unnecessary files from release archive [\#303](https://github.com/mattstratton/castanet/issues/303)
+
 ## [1.22.1](https://github.com/mattstratton/castanet/tree/1.22.1) (2024-01-04)
+
+## [1.22.0](https://github.com/mattstratton/castanet/tree/1.22.0) (2024-01-04)
 
 **Implemented enhancements:**
 
