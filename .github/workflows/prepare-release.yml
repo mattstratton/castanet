@@ -31,14 +31,14 @@ jobs:
           scheme: semver
           increment: "${{ env.TYPE }}"
       - name: Update theme TOML
-        run: sed -i "s/${{  github.ref_name }}/${{ steps.version.outputs.version }}/g" ./theme.toml
+        run: sed -i "s/${{ steps.version.outputs.current-version }}/${{ steps.version.outputs.version }}/g" ./theme.toml
       - name: Generate Changelog
         uses: heinrichreimer/action-github-changelog-generator@v2.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: mattstratton
           project: castanet
-          future-release: ${{ steps.version.outputs.version }}
+          futureRelease: ${{ steps.version.outputs.version }}
           issues: "true"
           issuesWoLabels: "false"
           pullRequests: "true"
