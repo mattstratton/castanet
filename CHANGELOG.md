@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.22.4](https://github.com/mattstratton/castanet/tree/1.22.4) (2024-01-05)
+
 ## [1.22.3](https://github.com/mattstratton/castanet/tree/1.22.3) (2024-01-05)
 
 ## [1.22.2](https://github.com/mattstratton/castanet/tree/1.22.2) (2024-01-05)
