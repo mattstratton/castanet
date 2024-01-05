@@ -29,7 +29,7 @@ jobs:
         id: version
         with:
           scheme: semver
-          increment: $TYPE
+          increment: "${{ env.TYPE }}"
       - name: Update theme TOML
         run: sed -i '' "s/${{  github.ref_name }}/${{ steps.version.outputs.version }}/g" ./theme.toml
       - name: Generate Changelog
