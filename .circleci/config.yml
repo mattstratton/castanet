@@ -118,7 +118,7 @@ jobs:
             mkdir -p release
             ls
             pwd
-            zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.circleci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
+            zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.circleci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md \*test\* \*images\* \*gulp\*
       - run:
           name: "Publish release on GitHub"
           command: |
