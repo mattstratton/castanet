@@ -35,7 +35,7 @@ jobs:
       - name: Generate Changelog
         uses: heinrichreimer/action-github-changelog-generator@v2.4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CHANGELOG_GITHUB_TOKEN }}
           user: mattstratton
           project: castanet
           futureRelease: ${{ steps.version.outputs.version }}
