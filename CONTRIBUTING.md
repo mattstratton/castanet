@@ -171,7 +171,7 @@ Use this to set any SCSS variables, or to over-ride any variables used by Bootst
 This is the only place you should declare custom SCSS or CSS code.
 
 ### Javascript
-All Javascript files are combined using CodeKit. The source Javascript files can be located either in `bower-components` or `static/js`. They are comibined and minified into `static/castanet-min.js`.
+All Javascript files are combined using gulp. The source Javascript files can be located either in `node_modules` or `static/js`. They are combined and minified into `static/castanet-min.js`.
 
 ## Local build and testing
 
