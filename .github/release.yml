@@ -20,7 +20,7 @@ changelog:
         - breaking-change
     - title: Exciting New Features 🎉
       labels:
-        - Enhancement
+        - enhancement
     - title: Other Changes
       labels:
         - "*"
