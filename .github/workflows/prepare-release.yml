@@ -33,7 +33,7 @@ jobs:
       - name: Update theme TOML
         run: sed -i "s/${{ steps.version.outputs.current-version }}/${{ steps.version.outputs.version }}/g" ./theme.toml
       - name: Generate Changelog
-        uses: heinrichreimer/action-github-changelog-generator@v2.3
+        uses: heinrichreimer/action-github-changelog-generator@v2.4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: mattstratton
@@ -45,6 +45,8 @@ jobs:
           prWoLabels: "false"
           compareLink: "false"
           excludeLabels: 'duplicate,question,invalid,wontfix,do-not-merge,no-changelog'
+      - run: ls
+          
       - name: Commit changed files
         uses: EndBug/add-and-commit@v9
         with:
