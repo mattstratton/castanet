@@ -45,7 +45,7 @@ jobs:
           prWoLabels: "false"
           compareLink: "false"
           excludeLabels: 'duplicate,question,invalid,wontfix,do-not-merge,no-changelog'
-      - run: ls
+      - run: pwd
           
       - name: Commit changed files
         uses: EndBug/add-and-commit@v9
