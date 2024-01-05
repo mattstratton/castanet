@@ -1,0 +1,27 @@
+name: Release
+on:
+  # workflow_run:
+  #   workflows: [prepare-release]
+  #   types:
+  #     - completed
+  push:
+    tags:
+      - '*'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Zip File For Release
+        uses: thedoctor0/zip-release@master
+        with:
+          command: "mkdir -p release"
+          type: 'zip'
+          filename: "release/${{  github.ref_name }}.zip"
+          exclusions: '*.git* /*node_modules/* /*exampleSite/* /*.circleci/* /*bin/* /*gulp/* /*images/* /*release/* /*test/* /*utils/* .nvmrc CODE_OF_CONDUCT.md contributing.json CONTRIBUTING.md gulpfile.js lighthouserc.js matt-test.txt netlify.toml package.json package-lock.json' 
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release/${{  github.ref_name }}.zip"
+          generateReleaseNotes: true
+          makeLatest: true
+          token: ${{ secrets.GITHUB_TOKEN }}
