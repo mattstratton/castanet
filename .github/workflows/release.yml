@@ -28,7 +28,7 @@ jobs:
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "release/${{ steps.previoustag.outputs.tag }}.zip"
+          artifacts: "release/castanet-${{ steps.previoustag.outputs.tag }}.zip"
           generateReleaseNotes: true
           makeLatest: true
           tag: ${{ steps.previoustag.outputs.tag }}
