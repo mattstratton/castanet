@@ -38,7 +38,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: mattstratton
           project: castanet
-          futureRelease: ${{ steps.version.outputs.version }}
+          # futureRelease: ${{ steps.version.outputs.version }}
           issues: "true"
           issuesWoLabels: "false"
           pullRequests: "true"
