@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.22.6](https://github.com/mattstratton/castanet/tree/1.22.6) (2024-01-05)
+
+**Fixed bugs:**
+
+- This is a pretend bug to test the changelog generator [\#417](https://github.com/mattstratton/castanet/issues/417)
+
+## [1.22.5](https://github.com/mattstratton/castanet/tree/1.22.5) (2024-01-05)
+
 ## [1.22.4](https://github.com/mattstratton/castanet/tree/1.22.4) (2024-01-05)
 
 ## [1.22.3](https://github.com/mattstratton/castanet/tree/1.22.3) (2024-01-05)
