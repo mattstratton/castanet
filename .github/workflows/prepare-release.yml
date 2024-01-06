@@ -53,7 +53,7 @@ jobs:
           add: '["theme.toml", "CHANGELOG.md"]'
           author_name: "Matt Stratton"
           author_email: "matt.stratton@gmail.com"
-          message: "Update theme to version ${{ steps.version.outputs.version }}"
+          message: "Update theme to version ${{ steps.version.outputs.v-version }}"
           tag: "${{ steps.version.outputs.v-version }} --force"
           tag_push: '--force'
       # - name: Create Zip File For Release
