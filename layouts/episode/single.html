@@ -22,7 +22,20 @@
       {{- end -}}
     </div>
   </div>
+<!-- put in test banner for bundle image -->
+<div class = "row">
+  <div class = "col">
+    {{ with .Resources.GetMatch "banner.*" }}
+  {{/*  <img src="data:{{ .MediaType.Type }};base64,{{ .Content | base64Encode }}" class="img-fluid episode_image"/>  */}}
+  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"class="img-fluid episode_image">
 
+{{ end }}
+  </div>
+  </div>
+
+
+
+<!-- end test -->
   {{ if isset .Params "episode_banner" }}
     {{ if ne .Params.episode_banner "" }}
       <div class = "row">
