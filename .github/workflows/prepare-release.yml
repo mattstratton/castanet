@@ -54,7 +54,7 @@ jobs:
           author_name: "Matt Stratton"
           author_email: "matt.stratton@gmail.com"
           message: "Update theme to version ${{ steps.version.outputs.version }}"
-          tag: "${{ steps.version.outputs.version }} --force"
+          tag: "${{ steps.version.outputs.v-version }} --force"
           tag_push: '--force'
       # - name: Create Zip File For Release
       #   uses: thedoctor0/zip-release@master
