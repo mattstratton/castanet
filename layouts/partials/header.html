@@ -64,7 +64,7 @@
         {{ end }}
         {{ if (isset .Site.Params.social "github" ) }}
           <li>
-            {{ partial "social-link.html" (dict "context" $.Site.Params.social.github "aclass" "social-links" "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/" "text" "") }}
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.github "aclass" "social-links" "iclass" "fa-brands fa-github-square fa-2x" "prefix" "https://github.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "gitlab" ) }}

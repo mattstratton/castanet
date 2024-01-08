@@ -33,17 +33,40 @@
 {{ if isset $.Site.Params.realfavicongenerator "theme_color" -}}
 <meta name="theme-color" content="{{ $.Site.Params.realfavicongenerator.theme_color}}">
 {{- end}}
+<!-- comment out old stylesheet //
 {{ if isset $.Site.Params "site_theme"}}
 <link href="{{ printf "css/%s.css" $.Site.Params.site_theme | absURL}}" rel="stylesheet">
 {{ else }}
 <link href={{"css/orange.css" | absURL }} rel="stylesheet">
 {{ end }}
+// end of comment -->
+
+<!-- preload main css file -->
+{{ $styles := partialCached "functions/getStylesBundle" . }}
+<link rel="preload" href="{{ $styles.Permalink }}" integrity = "{{ $styles.Data.Integrity }}" as="style" crossorigin="anonymous">
+
+<!-- preload javascript -->
+
+
+
+<!-- end preload -->
+
+<!-- actually use the stylesheets -->
+
+<!-- this is what loads font awesome -->
+<link href="/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="/fontawesome//css/brands.min.css" rel="stylesheet">
+<link href="/fontawesome//css/solid.min.css" rel="stylesheet">
+
+<!-- link main css file -->
+<link rel="stylesheet" type="text/css" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
 <!-- Custom CSS -->
 {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{ end }}
-<link href={{"css/all.css" | absURL }} rel="stylesheet">
+
 <link href={{"css/mediaelementplayer.min.css" | absURL }} rel="stylesheet">
 <style>
     .mejs__overlay-button {

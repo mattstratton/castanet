@@ -1,33 +1,20 @@
 {
-  "name": "castanet",
-  "version": "1.0.2",
-  "description": "A podcast-oriented theme for Hugo",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mattstratton/castanet.git"
-  },
   "author": "Matt Stratton",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mattstratton/castanet/issues"
   },
-  "homepage": "https://github.com/mattstratton/castanet#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-dart-sass": "^1.0.2",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-hub": "~4.2.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2",
-    "require-dir": "~1.2.0",
-    "sass": "^1.29.0"
+  "comments": {
+    "dependencies": {
+      "bootstrap": "project",
+      "jquery": "project",
+      "jssocials": "project",
+      "mediaelement": "project",
+      "mediaelement-plugins": "project",
+      "popper.js": "project"
+    },
+    "devDependencies": {
+      "sass": "project"
+    }
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -35,7 +22,22 @@
     "jssocials": "^1.5.0",
     "mediaelement": "^4.2.14",
     "mediaelement-plugins": "^2.5.0",
-    "netlify-cli": "^17.10.2",
     "popper.js": "^1.15.0"
-  }
+  },
+  "description": "A podcast-oriented theme for Hugo",
+  "devDependencies": {
+    "sass": "^1.29.0"
+  },
+  "homepage": "https://github.com/mattstratton/castanet#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "castanet",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattstratton/castanet.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
 }
