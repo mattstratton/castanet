@@ -1,4 +1,11 @@
-<script src='{{ "js/castanet-min.js" | absURL }}'></script>
+{{/*  {{ $scripts := partialCached "functions/getJavascriptBundle" . }}
+
+<script src='{{ $scripts.Permalink}}'></script>  */}}
+{{/*  <script src='{{ "js/castanet-min.js" | absURL }}'></script>  */}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/7.0.2/mediaelement.min.js" integrity="sha512-cq5uIUahE0VvpR0itKT9xSoGu81fl0m69xFpm+9ZgZEsCQdgBkLlNga8WZgjcohmSfkqe4y733UcJGpNB7QeUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.5.0/jssocials.min.js" integrity="sha512-3Ov4ZromgNap5Adyn3V0/q2CAaW3u38FTpOhDNuM5zkQ7Zcm9/NMtuO7xmBsb/HPqdA2AP9AHq1N2WOUdNzkKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
   $("#share").jsSocials({
       shares: [
@@ -57,7 +64,7 @@
 </script>
 
 <script>
-    var player = new MediaElementPlayer('player2', {
+    var player = new MediaElement('player2', {
         features: ['playpause', 'current', 'progress', 'duration', 'volume', 'speed'],
         defaultSpeed: 1.0,
         // other configuration elements

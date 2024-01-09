@@ -45,10 +45,6 @@
 {{ $styles := partialCached "functions/getStylesBundle" . }}
 <link rel="preload" href="{{ $styles.Permalink }}" integrity = "{{ $styles.Data.Integrity }}" as="style" crossorigin="anonymous">
 
-<!-- preload javascript -->
-
-
-
 <!-- end preload -->
 
 <!-- actually use the stylesheets -->
@@ -57,6 +53,12 @@
 <link href="/fontawesome/css/fontawesome.min.css" rel="stylesheet">
 <link href="/fontawesome//css/brands.min.css" rel="stylesheet">
 <link href="/fontawesome//css/solid.min.css" rel="stylesheet">
+
+<!-- link mediaplayer -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/7.0.2/mediaelementplayer.min.css" integrity="sha512-7D82/+kVzJhvYhr5k2+TueNVDAoZA4MAklU9vjupYEAnLx97qV3UFZQZgwaD6dPSAEEIiQXBDkK0Wh5BMTUFBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- link jssocials -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.5.0/jssocials.min.css" integrity="sha512-XdjXkWkkWkIFXdaUPqMs2QZ852gpPlCcOGuh3K7moTCvtYQTifqrsOfkgca5XKCDTwzFnJ4L8fiz7T+Z5EDAmA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- link main css file -->
 <link rel="stylesheet" type="text/css" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
