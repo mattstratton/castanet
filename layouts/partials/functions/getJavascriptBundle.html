@@ -1,7 +1,7 @@
 <!-- scripts definition -->
 {{ $main := resources.Get "js/main.js" }}
-{{ $bootstrap := resources.Get "js/bootstrap.js" }}
+{{ $sharing := resources.Get "js/sharing.js" }}
 {{ $custom := resources.Get "js/custom.js" }}
-{{ $defaultJS := slice $bootstrap $main $custom | resources.Concat "js/main.js" | resources.Fingerprint "sha512" }}
+{{ $defaultJS := slice $sharing $main $custom | resources.Concat "js/main.js" | resources.Fingerprint "sha512" }}
 
 {{ return $defaultJS }}
