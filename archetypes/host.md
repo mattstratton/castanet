@@ -13,4 +13,6 @@ Pinterest = ""
 Instagram = ""
 YouTube = ""
 Twitch = ""
+Mastodon = ""
+Threads = ""
 +++
