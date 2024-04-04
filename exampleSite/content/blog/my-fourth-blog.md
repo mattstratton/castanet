@@ -1,7 +1,7 @@
 +++
 Description = "Another blog post!"
 Date = 2020-12-01T13:33:18-06:00
-PublishDate = 2020-12-01T13:33:18-06:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
+PublishDate = 2020-12-01T13:33:18-06:00 # this is the datetime for the when the episode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 title = "My fourth blog"
 images = ["img/episode/default-social.jpg"]
 blog_image = "img/episode/default.jpg"

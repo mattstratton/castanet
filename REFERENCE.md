@@ -302,7 +302,7 @@ A blog file takes the following structure:
 +++
 Description = "Another blog post!"
 Date = 2020-11-12T13:33:18-06:00
-PublishDate = 2020-11-12T13:33:18-06:00 # this is the datetime for the when the epsiode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
+PublishDate = 2020-11-12T13:33:18-06:00 # this is the datetime for the when the episode was published. This will default to Date if it is not set. Example is "2016-04-25T04:09:45-05:00"
 title = "My second blog"
 images = ["img/episode/default-social.jpg"]
 blog_image = "img/episode/default.jpg"
@@ -394,9 +394,9 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `guid`             | No       | A fixed, globally unique identifier for the episode which should never change. If one is not specified the URL of the `podcast_file` will be used instead.                                                                                                        | "aae20190418"                                                                                                                                                                                                                         |
 | `transcript`       | No       | The path to the transcript file. The file can have Markdown or be in HTML. It must be relative to the root of your site (this is a file path, not a URL). It is recommended to put them in your `static` directory so that Hugo doesn't try to process them.      | "/static/transcripts/chatops.txt" |
 | `upcoming`       | No       | Boolean value if the episode should be considered "upcoming" and not published. Values include `true` or `false`. If set to `true`, the episode will not show up in episode lists (including guest and host pages) and will not be part of the feed. Upcoming episodes will be listed on the "Upcoming" page if created.      | true |
-| `categories[]`       | No       | If you are using taxonomies, this is the array of categories for the epsiode.     | ["Virtual Reality"] |
-| `series[]`       | No       | If you are using taxonomies, this is the array of series for the epsiode.     | ["Modern Tech Trends"] |
-| `tags[]`       | No       | If you are using taxonomies, this is the array of tags for the epsiode.     | ["VR", "Technology"] |
+| `categories[]`       | No       | If you are using taxonomies, this is the array of categories for the episode.     | ["Virtual Reality"] |
+| `series[]`       | No       | If you are using taxonomies, this is the array of series for the episode.     | ["Modern Tech Trends"] |
+| `tags[]`       | No       | If you are using taxonomies, this is the array of tags for the episode.     | ["VR", "Technology"] |
 ### Upcoming Episodes
 
 If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`.
