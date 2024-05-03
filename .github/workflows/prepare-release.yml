@@ -1,0 +1,72 @@
+name: Prepare Release
+on:
+  workflow_dispatch:
+    inputs:
+      releaseType:
+        description: 'Release Type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+        - major
+        - minor
+        - patch
+
+  # push:
+  #   tags:
+  #     - '*'
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Release type: $TYPE"
+        env:
+          TYPE: ${{ inputs.releaseType }} 
+      - uses: actions/checkout@master
+      - name: Get Next Version
+        uses: reecetech/version-increment@2023.9.3
+        id: version
+        with:
+          scheme: semver
+          increment: "${{ env.TYPE }}"
+      - name: Update theme TOML
+        run: sed -i "s/${{ steps.version.outputs.current-version }}/${{ steps.version.outputs.version }}/g" ./theme.toml
+      - name: Generate Changelog
+        uses: heinrichreimer/action-github-changelog-generator@v2.4
+        with:
+          token: ${{ secrets.CHANGELOG_GITHUB_TOKEN }}
+          user: mattstratton
+          project: castanet
+          futureRelease: ${{ steps.version.outputs.version }}
+          issues: "true"
+          issuesWoLabels: "false"
+          pullRequests: "true"
+          prWoLabels: "false"
+          compareLink: "false"
+          excludeLabels: 'duplicate,question,invalid,wontfix,do-not-merge,no-changelog'
+      - run: pwd
+          
+      - name: Commit changed files
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '["theme.toml", "CHANGELOG.md"]'
+          author_name: "Matt Stratton"
+          author_email: "matt.stratton@gmail.com"
+          message: "Update theme to version ${{ steps.version.outputs.v-version }}"
+          tag: "${{ steps.version.outputs.v-version }} --force"
+          tag_push: '--force'
+      # - name: Create Zip File For Release
+      #   uses: thedoctor0/zip-release@master
+      #   with:
+      #     command: "mkdir -p release"
+      #     type: 'zip'
+      #     filename: "release/${{  github.ref_name }}.zip"
+      #     exclusions: '*.git* /*node_modules/* /*exampleSite/* /*.circleci/* /*bin/* /*gulp/* /*images/* /*release/* /*test/* /*utils/* .nvmrc CODE_OF_CONDUCT.md contributing.json CONTRIBUTING.md gulpfile.js lighthouserc.js matt-test.txt netlify.toml package.json package-lock.json' 
+      # - name: Upload Release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "release/${{  github.ref_name }}.zip"
+      #     generateReleaseNotes: true
+      #     makeLatest: true
+      #     token: ${{ secrets.GITHUB_TOKEN }}

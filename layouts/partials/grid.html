@@ -1,5 +1,15 @@
 {{- partial "jumbotron.html" . }}
 
+{{ if and (and (isset .Site.Params "show_next_upcoming") (eq .Site.Params.show_next_upcoming "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true )) 1) }}
+<div class="row up_next_container">
+  <div class="col-md-12">
+    {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections).ByDate ".Params.upcoming" "==" true ) }}
+    Next Episode: <a href="{{ .Permalink }}">{{ .Title }}</a> - Scheduled for {{ dateFormat "Jan 2, 2006" .Date }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
 <section class="episode-list">
 
   <div class = "col episode-list-header">
@@ -8,7 +18,8 @@
 
   <div class = "row">
 
-    {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
+
         {{ range $paginator.Pages }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}
           <div class="col-md-4 grid_episode_col">
@@ -21,8 +32,20 @@
               </a>
             </div>
             <div class="grid_episode_detail">
-              <a href="{{ .Permalink }}" class= "grid_episode_title"><h3>{{ title .Title }}</h3></a>
-              <small class = "grid_episode_title">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+              {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
+                {{ if eq .Site.Params.episode_number_style "parens" }}            
+                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+                {{ else if eq .Site.Params.episode_number_style "brackets" }}
+                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
+                {{ else if eq .Site.Params.episode_number_style "dash" }}
+                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
+                {{ else }}
+                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+                {{ end }}
+              {{ else }}
+                <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a></h3>
+              {{ end }}
+              <small class = "grid_episode_title">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
             </div>
 
           </div>
@@ -83,7 +106,7 @@
   <!-- page # buttons -->
   {{ range $pag.Pagers }}
     {{ $cur := .PageNumber }}
-    {{- $url := trim (string $.URL) "/" | absURL -}}
+    {{- $url := trim (string .URL) "/" | absURL -}}
     {{ if in ($.Scratch.Get "show") $cur }}
       <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
     {{ else if in (slice 2 (sub $total 1)) $cur }}

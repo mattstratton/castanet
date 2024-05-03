@@ -1,8 +1,38 @@
+<!------------ 
+  The following logic allows for both the GA4 support using Google Tag Manager and the legacy UA Google Analytics tag
+  to be used together. There may be situations where a organization support both tag methods simultaneously.
+------------->
+<!-- Check for the Global GoogleAnalytics variable to use the Hugo internal google_analytics template -->
+{{ if .Site.GoogleAnalytics }} {{ template "_internal/google_analytics.html" . }} {{ end }}
+<!-- Check for googleAnalytics_UA param to use the google-analytics-ua partial -->
+{{ if .Site.Params.googleAnalytics_UA }} {{ partial "google-analytics-ua.html" . }} {{ end }}
+
 {{ if isset $.Site.Params "favicon"}}
 <link rel="icon" href="{{ $.Site.Params.favicon | absURL }}">
 {{ else }}
 <link rel="icon" href="icons/favicon.ico">
 {{ end }}
+{{ if (fileExists "static/apple-touch-icon.png") -}}
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+{{- end}}
+{{ if (fileExists "static/favicon-32x32.png") -}}
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+{{- end}}
+{{ if (fileExists "static/favicon-16x16.png") -}}
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+{{- end}}
+{{ if (fileExists "static/site.webmanifest") -}}
+<link rel="manifest" href="/site.webmanifest">
+{{- end}}
+{{ if and (isset $.Site.Params.realfavicongenerator "mask_icon_color") (fileExists "static/safari-pinned-tab.svg") -}}
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{ $.Site.Params.realfavicongenerator.mask_icon_color}}">
+{{- end}}
+{{ if isset $.Site.Params.realfavicongenerator "msapplication_tilecolor" -}}
+<meta name="msapplication-TileColor" content="{{ $.Site.Params.realfavicongenerator.msapplication_tilecolor}}">
+{{- end}}
+{{ if isset $.Site.Params.realfavicongenerator "theme_color" -}}
+<meta name="theme-color" content="{{ $.Site.Params.realfavicongenerator.theme_color}}">
+{{- end}}
 {{ if isset $.Site.Params "site_theme"}}
 <link href="{{ printf "css/%s.css" $.Site.Params.site_theme | absURL}}" rel="stylesheet">
 {{ else }}
@@ -27,3 +57,12 @@
     }
     </style>
 <link href={{"css/speed.min.css" | absURL }} rel="stylesheet">
+{{ if eq .Section "blog" }}
+    <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{"blog/index.xml" | absURL }}"/>
+{{ else }}
+    {{- if (isset $.Site.Params "rss_subscribe" ) -}}
+        <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{$.Site.Params.rss_subscribe}}"/>
+    {{- else -}}
+        <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{"episode/index.xml" | absURL }}"/>
+    {{- end -}}
+{{ end }}

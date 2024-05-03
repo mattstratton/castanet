@@ -1,0 +1,35 @@
+name: Release
+# on:
+#   push:
+#     tags:
+#       - '*'
+on:
+  workflow_run:
+    workflows: ["Prepare Release"]
+    types:
+      - completed
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - name: "Get Current Tag"
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        id: previoustag
+      - run: "mkdir -p release"
+      - name: Create Zip File For Release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          filename: "release/castanet-${{ steps.previoustag.outputs.tag }}.zip"
+          exclusions: '*.git* /*node_modules/* /*exampleSite/* /*.circleci/* /*bin/* /*gulp/* /*images/* /*release/* /*test/* /*utils/* .nvmrc CODE_OF_CONDUCT.md contributing.json CONTRIBUTING.md gulpfile.js lighthouserc.js matt-test.txt netlify.toml package.json package-lock.json' 
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release/castanet-${{ steps.previoustag.outputs.tag }}.zip"
+          generateReleaseNotes: true
+          makeLatest: true
+          tag: ${{ steps.previoustag.outputs.tag }}
+          token: ${{ secrets.GITHUB_TOKEN }}

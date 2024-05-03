@@ -8,79 +8,85 @@
   <div id="navbarSupportedContent" class="navbar-collapse collapse">
       <ul class="navbar-nav mr-auto">
           {{ $currentPage := . }}
-          {{ range sort .Site.Menus.main "Identifier"}}
-            {{ if .HasChildren }}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
-              <div class="dropdown-menu">
-              {{ range sort .Children  "Identifier"}}
-                <a class="dropdown-item{{ if $currentPage.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+          {{ if gt (len .Site.Menus) 0 }}
+            {{ range sort .Site.Menus.main "Identifier"}}
+              {{ if .HasChildren }}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+                <div class="dropdown-menu">
+                {{ range sort .Children  "Identifier"}}
+                  <a class="dropdown-item{{ if $currentPage.IsMenuCurrent "Main" . }} active {{ end }}" href="{{ .URL | absURL}}">{{ .Name }}</a>
+                {{ end }}
+                </div>
+                </li>
+              {{ else }}
+                  <li class= "nav-item {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }} active {{ end }}">
+                  <a href="{{ .URL | absURL }}" class="nav-link">
+                      {{ .Pre }}
+                      <span>{{ .Name }}</span>
+                  </a>
+                </li>
               {{ end }}
-              </div>
-              </li>
-            {{ else }}
-                <li class= "nav-item {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }} active {{ end }}">
-                <a href="{{ .URL }}" class="nav-link">
-                    {{ .Pre }}
-                    <span>{{ .Name }}</span>
-                </a>
-              </li>
             {{ end }}
-          {{ end }}
+          {{end}}
         </ul>
-
 
       <ul class="navbar-nav ml-auto">
         {{ if (isset .Site.Params.social "facebook" ) }}
-          <li class = "nav-item">
-            <a class = "social-links" href="https://facebook.com/{{ .Site.Params.social.facebook }}"><i class="fab fa-facebook-square fa-2x"></i></a>
+          <li class>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.facebook "aclass" "social-links" "iclass" "fab fa-facebook-square fa-2x" "prefix" "https://www.facebook.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "twitter" ) }}
           <li>
-            <a class = "social-links" href="https://twitter.com/{{ .Site.Params.social.twitter }}"><i class="fab fa-twitter-square fa-2x"></i></a>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.twitter "aclass" "social-links" "iclass" "fab fa-twitter-square fa-2x" "prefix" "https://twitter.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "youtube" ) }}
           <li>
-            <a class = "social-links"  href="https://youtube.com/{{ .Site.Params.social.youtube }}"><i class="fab fa-youtube-square fa-2x"></i></a>
-          </li>
-        {{ end }}
-        {{ if (isset .Site.Params.social "googleplus" ) }}
-          <li>
-            <a class = "social-links" href="https://plus.google.com/+{{ .Site.Params.social.googleplus }}"><i class="fab fa-google-plus-square fa-2x"></i></a>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.youtube "aclass" "social-links" "iclass" "fab fa-youtube-square fa-2x" "prefix" "https://youtube.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "pinterest" ) }}
           <li>
-            <a class = "social-links" href="https://www.pinterest.com/{{ .Site.Params.social.pinterest }}"><i class="fab fa-pinterest-square fa-2x"></i></a>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.pinterest "aclass" "social-links" "iclass" "fab fa-pinterest-square fa-2x" "prefix" "https://www.pinterest.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "instagram" ) }}
           <li>
-            <a class = "social-links" href="https://www.instagram.com/{{ .Site.Params.social.instagram }}"><i class="fab fa-instagram fa-2x"></i></a>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.instagram "aclass" "social-links" "iclass" "fab fa-instagram fa-2x" "prefix" "https://www.instagram.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "linkedin" ) }}
           <li>
-            <a class = "social-links" href="https://www.linkedin.com/in{{ .Site.Params.social.linkedin }}/"><i class="fab fa-linkedin fa-2x"></i></a>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.linkedin "aclass" "social-links" "iclass" "fab fa-linkedin fa-2x" "prefix" "https://www.linkedin.com/in/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "github" ) }}
           <li>
-            <a class = "social-links" href="https://github.com/{{ .Site.Params.social.github }}"><i class="fab fa-github-square fa-2x"></i></a>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.github "aclass" "social-links" "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "gitlab" ) }}
           <li>
-            <a class = "social-links" href="https://gitlab.com/{{ .Site.Params.social.gitlab }}"><i class="fab fa-gitlab fa-2x"></i></a>
+            {{ partial "social-link.html" (dict "context" $.Site.Params.social.gitlab "aclass" "social-links" "iclass" "fab fa-gitlab fa-2x" "prefix" "https://gitlab.com/" "text" "") }}
           </li>
         {{ end }}
         {{ if (isset .Site.Params.social "twitch" ) }}
         <li>
-          <a class = "social-links" href="https://twitch.tv/{{ .Site.Params.social.twitch }}"><i class="fab fa-twitch fa-2x"></i></a>
+          {{ partial "social-link.html" (dict "context" $.Site.Params.social.twitch "aclass" "social-links" "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/" "text" "") }}
         </li>
-      {{ end }}
+        {{ end }}
+        {{ if (isset .Site.Params.social "mastodon" ) }}
+        <li>
+          {{ partial "social-link.html" (dict "context" $.Site.Params.social.mastodon "aclass" "social-links" "iclass" "fab fa-mastodon fa-2x" "prefix" "" "text" "") }}
+        </li>
+        {{ end }}
+        {{ if (isset .Site.Params.social "threads" ) }}
+        <li>
+          {{ partial "social-link.html" (dict "context" $.Site.Params.social.threads "aclass" "social-links" "iclass" "fa-brands fa-square-threads fa-2x" "prefix" "https://www.threads.net/@" "text" "") }}
+        </li>
+        {{ end }}
       </ul>
   </div>
   </div>

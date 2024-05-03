@@ -20,12 +20,24 @@
     width: 250px;
     height: 250px;
 }
-.hompage_episode_description {
+.homepage_episode_description {
     padding-left: 20px;
 }
 .homepage_episode_row {
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     padding-top: 20px;
+}
+
+.homepage_episode_row_first {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.homepage_episode_row_description {
+  padding-left: 0px;
+}
+
+.homepage_episode_row_image {
+  padding-right: 0px;
 }
 .jumbotron-host {
     margin: auto;
@@ -128,6 +140,30 @@
 .youtube_row {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+// Upcoming episode styles
+
+.up_next_container {
+  background-color: #5b5757;
+  margin-top: 20px;
+  padding-left: 0;
+  padding-right: 0; 
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #FFFFFF;
+  font-weight: 500;
+  Font-size: 1.5rem;
+  text-align: center;
+}
+
+.up_next_container a:link, .up_next_container a:visited {
+  color: #FFFFFF;
+}
+
+.up_next_container a:hover {
+  color: #939292;
+  text-decoration: none;
 }
 
 // Guest page styles

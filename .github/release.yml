@@ -1,0 +1,26 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+      - duplicate
+      - question
+      - invalid
+      - wontfix
+      - do-not-merge
+      - no-changelog
+      - dependencies
+    authors:
+      - dependabot
+  categories:
+    - title: Fixed Bugs 🐛
+      labels:
+        - bug
+        - breaking-change
+    - title: Exciting New Features 🎉
+      labels:
+        - enhancement
+    - title: Other Changes
+      labels:
+        - "*"

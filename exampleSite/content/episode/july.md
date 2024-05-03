@@ -2,7 +2,6 @@
 Description = "Conversion agile development direct mailing ecosystem social proof pitch branding interaction design rockstar return on investment network effects churn rate holy grail. Early adopters iteration technology venture alpha learning curve responsive web design backing. Direct mailing backing handshake return on investment stock monetization validation branding infographic responsive web design incubator rockstar burn rate pivot. Product management seed money channels. Stealth value proposition infrastructure disruptive social media business model canvas buyer return on investment. Metrics product management analytics mass market leverage. Social media innovator rockstar. Stealth supply chain deployment advisor partner network ownership direct mailing rockstar social media crowdsource ecosystem value proposition focus. Series A financing agile development accelerator venture return on investment hackathon crowdfunding funding. Direct mailing research & development value proposition beta niche market equity backing traction."
 aliases = ["/10"]
 author = "Matt"
-categories = []
 date = "2016-07-25T04:09:54-05:00"
 episode = "10"
 episode_image = "img/episode/july.jpg"
@@ -13,10 +12,11 @@ news_keywords = []
 podcast_duration = "1:08:22"
 podcast_file = "arrested-devops-podcast-episode053.mp3"
 podcast_bytes = ""
-tags = []
 title = "Independence For All"
 youtube = ""
-
+categories = ["Cloud Technology"]
+series = ["Exploring the Cloud"]
+tags = []
 +++
 
 Bootstrapping alpha seed money scrum project. Business model canvas low hanging fruit series A financing release vesting period research & development market buzz network effects channels long tail client partner network pivot. Innovator market android buyer gamification. User experience gamification interaction design sales. Buyer stealth research & development sales business-to-business social media graphical user interface. Market incubator hypotheses seed money release low hanging fruit infographic responsive web design branding technology interaction design buyer. Ramen rockstar gen-z buzz supply chain first mover advantage crowdsource mass market entrepreneur user experience advisor business-to-business twitter strategy. Termsheet low hanging fruit lean startup crowdfunding customer. Buzz bandwidth growth hacking business plan channels incubator technology learning curve strategy. Disruptive sales founders paradigm shift stock growth hacking graphical user interface customer iPhone channels funding.

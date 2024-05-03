@@ -1,14 +1,11 @@
 <meta property="og:title" content="{{ title .Title }}" />
 <meta name="twitter:title" content="{{ .Title }}"/>
 <meta itemprop="name" content="{{ .Title }}">
-<meta property="article:modified_time" content="{{ .Date }}" />
-
-
-{{- with .Site.Params.title -}}<meta property="og:site_name" content="{{ . }}" />{{- end -}}
+<meta property="article:published_time" content="{{ dateFormat "2006-01-02T15:04:05Z07:00" .Date }}" />
+<meta property="article:modified_time" content="{{ dateFormat "2006-01-02T15:04:05Z07:00" .Lastmod }}" />
+<meta property="og:updated_time" content="{{ dateFormat "2006-01-02T15:04:05Z07:00" .Lastmod }}" />
+{{- with .Site.Title -}}<meta property="og:site_name" content="{{ . }}" />{{- end -}}
 {{- with .Params.locale -}}<meta property="og:locale" content="{{ . }}" />{{- end -}}
-
-
-
 {{- if .IsHome -}}
     {{ with .Site.Params.feed.itunes_summary -}}
         <meta property="og:description" content="{{ . }}" />
@@ -24,14 +21,31 @@
     <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}" />
     <meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}">
 {{- end -}}
+<!--
+The twitter link can be based in short ("arresteddevops") or
+long form ("https://twitter.com/arresteddevops")
 
-{{ with .Site.Params.social.twitter }}<meta name="twitter:site" content="@{{ . }}"/>{{ end }}
-{{ with .Site.Params.social.twitter }}<meta name="twitter:creator" content="@{{ . }}"/>{{ end }}
+In long form we need to strip everything but the twitter handle
+for the SEO tags
+-->
+{{ if (isset .Site.Params.social "twitter" )}}
+  {{ if gt (len (urls.Parse .Site.Params.social.twitter).Scheme) 0 }}
+    <meta name="twitter:site" content="@{{ trim ((urls.Parse .Site.Params.social.twitter).Path) "/" }}"/>
+    <meta name="twitter:creator" content="@{{ trim ((urls.Parse .Site.Params.social.twitter).Path) "/" }}"/>
+  {{ else }}
+    <meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}"/>
+    <meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}"/>
+  {{ end }}
+{{ end }}
 {{ with .Site.Params.social.twitter_domain }}<meta name="twitter:domain" content="{{ . }}"/>{{ end }}
-<meta property="og:type" content="{{ if .Params.type }}{{ .Params.type }}{{ else }}website{{ end }}" />
-
+{{ if eq .Type "episode" }}
+<meta property="og:type" content="article" />
+{{- else if .Params.type -}}
+<meta property="og:type" content="{{ .Params.type }}" />
+{{- else -}}
+<meta property="og:type" content="website" />
+{{ end }}
 <meta property="og:url" content="{{ .Permalink | relURL }}" />
-
 {{ with .Params.images }}{{ range first 1 . }}
     <meta name="twitter:card" content="summary_large_image" />
     {{ if (eq (slicestr . 0 4) "http") }}
@@ -44,9 +58,6 @@
         <meta itemprop="image" content="{{ $.Site.BaseURL}}/{{ . }}" />
     {{ end }}
 {{ end }}{{ end }}
-
-
-
 <!-- Facebook Page Admin ID for Domain Insights -->
 {{ with .Site.Params.social.facebook_admin }}
   {{ range . }}

@@ -1,10 +1,16 @@
-version: 2
+version: 2.1
+executors:
+  castanet-tests:
+    docker:
+      - image: cibuilds/hugo:0.91.2
+        auth:
+          username: mattstratton
+          password: $DOCKERHUB_PASSWORD
+    working_directory: ~/castanet
+
 jobs:
   build:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -12,10 +18,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/public --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-grid:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -23,10 +26,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-grid --config ../test/blue-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-row-jumbo-false:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -34,10 +34,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-jumbo-false --config ../test/blue-row-jumbo-false-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-row-jumbo-true:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -45,10 +42,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-jumbo-true --config ../test/blue-row-jumbo-true-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-blue-row-no-jumbo:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -56,10 +50,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/blue-row-no-jumbo --config ../test/blue-row-no-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-orange-grid:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -67,10 +58,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-grid --config ../test/orange-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-orange-row:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -78,10 +66,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-row --config ../test/orange-row-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-orange-row-jumbo:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -89,10 +74,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/orange-row-jumbo --config ../test/orange-row-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-grey-grid:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -100,10 +82,7 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-grid --config ../test/grey-grid-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-grey-row:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
@@ -111,20 +90,22 @@ jobs:
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-row --config ../test/grey-row-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
   test-grey-row-jumbo:
-    docker:
-      - image: cibuilds/hugo:0.58.3
-    working_directory: castanet
-
+    executor: castanet-tests
     steps:
       - checkout
       - run:
           name: "Test grey-row-jumbo"
           command: cd exampleSite && ls && pwd && HUGO_ENV=production hugo -v -d workspace/test/grey-row-jumbo --config ../test/grey-row-jumbo-config.toml --themesDir ../.. --theme=castanet --buildDrafts=false
 
+#
+
   create-release:
     docker:
       - image: cibuilds/github:0.13.0
-    working_directory: castanet
+        auth:
+          username: mattstratton
+          password: $DOCKERHUB_PASSWORD
+    working_directory: ~/castanet
 
     steps:
       - run:
@@ -132,20 +113,21 @@ jobs:
           command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - run:
           name: "Checkout tag"
-          command: git clone --branch "${CIRCLE_TAG}" --depth 1 "${CIRCLE_REPOSITORY_URL}"
+          command: echo ${CIRCLE_TAG} && git clone --branch "${CIRCLE_TAG}" --depth 1 "${CIRCLE_REPOSITORY_URL}"
       - run:
           name: "Create zip file for release"
           command: | 
             mkdir -p release
             ls
             pwd
-            zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.circleci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md *\node_modules\* \*test\*
+            zip -r release/castanet-${CIRCLE_TAG}.zip . -x \*.git\* \*exampleSite\* appveyor.yml \*.circleci\* \*tests\* \*bin\* \*build\* \*release\* config.codekit3 \*node_modules\* gulpfile.js netlify.toml package.json STYLE.md \*test\* \*images\* \*gulp\*
       - run:
           name: "Publish release on GitHub"
           command: |
             VERSION=${CIRCLE_TAG}
             ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION}  ./release/
 
+# this is what ends the commented out part
 
   # publish-github-release:
   #   docker:
@@ -199,14 +181,11 @@ workflows:
       - test-grey-row-jumbo:
           requires:
             - build
-  deploy:
-    jobs:
-      - create-release:
-          filters:
-            tags:
-              only: /^\d+\.\d+\.\d+$/
-            branches:
-              ignore: /.*/
-
-
-          
+  # deploy:
+  #   jobs:
+  #     - create-release:
+  #         filters:
+  #           tags:
+  #             only: /^\d+\.\d+\.\d+$/
+  #           branches:
+  #             ignore: /.*/         

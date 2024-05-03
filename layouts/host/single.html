@@ -2,7 +2,7 @@
 <div class = "hero_container">
 <div class="row">
   <div class="col">
-    <h1>{{ title .Title }}</h1>
+    <h1>{{ title .Title }} {{ with .Params.Pronouns }}({{ . }}){{ end }}</h1>
   </div>
 </div>
 
@@ -34,45 +34,35 @@
               </a>
             {{ end }}
             {{ if .Params.Twitter }}
-              <a href="https://twitter.com/{{ .Params.Twitter }}">
-                <i class="fab fa-twitter-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Twitter "iclass" "fab fa-twitter-square fa-2x" "prefix" "https://twitter.com/" "text" "") }}
             {{ end }}
             {{ if .Params.GitHub }}
-              <a href="https://github.com/{{ .Params.GitHub}}">
-                <i class="fab fa-github-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.GitHub "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/" "text" "") }}
             {{ end }}
             {{ if .Params.LinkedIn }}
-              <a href="https://www.linkedin.com/in/{{ .Params.LinkedIn}}/">
-                <i class="fab fa-linkedin fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.LinkedIn "iclass" "fab fa-linkedin fa-2x" "prefix" "https://www.linkedin.com/in/" "text" "") }}
             {{ end }}
             {{ if .Params.Facebook }}
-              <a href="https://www.facebook.com/{{ .Params.Facebook}}">
-                <i class="fab fa-facebook-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Facebook "iclass" "fab fa-facebook-square fa-2x" "prefix" "https://www.facebook.com/" "text" "") }}
             {{ end }}
             {{ if .Params.Pinterest }}
-              <a href="https://www.pinterest.com/{{ .Params.Pinterest}}">
-                <i class="fab fa-pinterest-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Pinterest "iclass" "fab fa-pinterest-square fa-2x" "prefix" "https://www.pinterest.com/" "text" "") }}
             {{ end }}
             {{ if .Params.Instagram }}
-              <a href="https://www.instagram.com/{{ .Params.Instagram}}">
-                <i class="fab fa-instagram fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.Instagram "iclass" "fab fa-instagram fa-2x" "prefix" "https://www.instagram.com/" "text" "") }}
             {{ end }}
             {{ if .Params.YouTube }}
-              <a href="https://www.youtube.com/{{ .Params.YouTube}}">
-                <i class="fab fa-youtube-square fa-2x"></i>
-              </a>
+              {{ partial "social-link.html" (dict "context" .Params.YouTube "iclass" "fab fa-youtube-square fa-2x" "prefix" "https://www.youtube.com/" "text" "") }}
             {{ end }}
-            {{ if .Params.Twitch }}
-            <a href="https://twitch.tv/{{ .Params.Twitch}}">
-              <i class="fab fa-twitch fa-2x"></i>
-            </a>
-          {{ end }}
+            {{ if .Params.Threads }}
+              {{ partial "social-link.html" (dict "context" .Params.Threads "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/" "text" "") }}
+            {{ end }}
+            {{ if .Params.Mastodon }}
+              {{ partial "social-link.html" (dict "context" .Params.Mastodon "iclass" "fab fa-mastodon fa-2x" "prefix" "" "text" "") }}
+            {{ end }}
+            {{ if .Params.Threads }}
+              {{ partial "social-link.html" (dict "context" .Params.Threads "iclass" "fa-brands fa-square-threads fa-2x" "prefix" "https://www.threads.net/@" "text" "") }}
+            {{ end }}
           </div>
         </div>
       </div>
@@ -81,20 +71,32 @@
     <div class="col-lg-4">
     <div class = "row">
       <div class="col">
-        <h3>Episodes Hosted By {{ .Title }}</h3>
+        <h3>Episodes Hosted By {{ .Title }} {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
         <div class="list-group guest_episode_list">
             {{ $.Scratch.Set "host-name" .File.BaseFileName }}
-            {{ range $page := where $.Site.Pages "Type" "episode" }}
+            {{ range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
               {{ range $page.Params.hosts }}
                 {{ if eq  . ($.Scratch.Get "host-name") }}
-                    <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>
+                  {{ if and (isset $.Site.Params "episode_number_style") ($page.Params.episode)}}
+                    {{ if eq $.Site.Params.episode_number_style "parens" }}
+                      <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }} ({{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }})</a>
+                    {{ else if eq $.Site.Params.episode_number_style "brackets" }}
+                      <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }} [{{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}]</a>
+                    {{ else if eq $.Site.Params.episode_number_style "dash" }}
+                      <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }} - {{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}</a>
+                    {{ else }}
+                      <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }}</a>
+                    {{ end }}
+                  {{ else  }}
+                    <a href="{{ $page.Permalink }}" class= "guest_page_episode_link list-group-item list-group-item-action">{{ $page.Title }}</a>
+                  {{ end }}
                 {{ end }}
               {{ end }}
             {{ end }}
             {{- with .Params.Aka -}}
               {{ range $name := . }}
                 {{- $.Scratch.Set "host-name" $name -}}
-                {{- range $page := where $.Site.Pages "Type" "episode" -}}
+                {{- range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
                   {{- range $page.Params.hosts -}}
                     {{- if eq  . ($.Scratch.Get "host-name") -}}
                         <a href = "{{$page.Permalink}}" class = "guest_page_episode_link list-group-item list-group-item-action">{{$page.Title}}</a>

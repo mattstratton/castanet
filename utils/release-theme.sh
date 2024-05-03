@@ -43,9 +43,9 @@ case $version_level in
 esac
 
 git stash
-git checkout master
-git pull origin master
-github_changelog_generator --user mattstratton --project castanet --future-release "$new_version" --no-issues-wo-labels --no-pr-wo-labels --no-compare-link --exclude-labels='duplicate,question,invalid,wontfix,do-not-merge,no-changelog'
+git checkout main
+git pull origin main
+docker run -it --rm -v "$(pwd)":/usr/local/src/your-app githubchangeloggenerator/github-changelog-generator --user mattstratton --project castanet --future-release "$new_version" --no-issues-wo-labels --no-pr-wo-labels --no-compare-link --exclude-labels='duplicate,question,invalid,wontfix,do-not-merge,no-changelog' --token $CHANGELOG_GITHUB_TOKEN
 sed -i '' "s/$current_version/$new_version/g" ./theme.toml
 
 git add .

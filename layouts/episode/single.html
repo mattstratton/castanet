@@ -1,9 +1,25 @@
 {{ define "main" }}
 
   <div class="row">
-    <div class="col">
-      <h1>{{ title .Title }}</h1>
-      <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }}</small>
+    <div class="col">      
+      {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
+        {{ if eq .Site.Params.episode_number_style "parens" }}
+          <h1>{{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h1>
+        {{ else if eq .Site.Params.episode_number_style "brackets" }}
+          <h1>{{ title .Title }} [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h1>
+        {{ else if eq .Site.Params.episode_number_style "dash" }}
+          <h1>{{ title .Title }} - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h1>
+        {{ else }}
+          <h1>{{ title .Title }}</h1>
+        {{ end }}
+      {{ else }}
+        <h1>{{ title .Title }}</h1>
+      {{ end }}
+      {{- if ne $.Params.upcoming true -}}
+        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+      {{- else -}}
+        <small>Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+      {{- end -}}
     </div>
   </div>
 
@@ -44,23 +60,27 @@
     <!-- end square row -->
     {{ end }}
     {{- with .Params.podcast_file -}}
-      <div class="row">
-        <div class="col-md-12 player_row">
+      {{- if ne $.Params.upcoming true -}}
+        <div class="row">
+          <div class="col-md-12 player_row">
 
-        <audio id="player2" style="width: 100%" controls preload="none">
-          <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
-          </audio>
+          <audio id="player2" style="width: 100%" controls preload="none">
+            <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
+            </audio>
+          </div>
+        </div>
+      {{- end -}}
+    {{- end -}}
+  {{- with .Params.youtube -}}
+    {{- if ne $.Params.upcoming true -}}
+      <div class = "row youtube_row">
+        <div class = "col">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ . }}" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     {{- end -}}
-  {{- with .Params.youtube -}}
-    <div class = "row youtube_row">
-      <div class = "col">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ . }}" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
   {{- end -}}
 
         <!-- transcript POC begin-->
@@ -112,7 +132,7 @@
                     {{- end -}}
                   </div>
                   <div class="col-md-8">
-                    <h2><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h2>
+                    <h2><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
                     {{ .Content }}
                     {{- with .Params.Website -}}
                       <a href="{{ . }}">
@@ -158,7 +178,17 @@
                     <a href="https://twitch.tv/{{ . }}">
                       <i class="fab fa-twitch fa-2x"></i>
                     </a>
-                  {{- end -}}
+                    {{- end -}}
+                    {{- with .Params.Mastodon -}}
+                    <a href="{{ . }}">
+                      <i class="fab fa-mastodon fa-2x"></i>
+                    </a>
+                    {{- end -}}
+                    {{- with .Params.Threads -}}
+                    <a href="https://threads.net/@{{ . }}">
+                      <i class="fab fa-square-threads fa-2x"></i>
+                    </a>
+                    {{- end -}}
                   </div>
                   </div>
                 {{- $.Scratch.Set "guest-exist" "false" -}}
@@ -231,7 +261,7 @@
               {{- end -}}
             </div>
             <div class="col-md-8">
-              <h2><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a></h2>
+              <h2><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
               {{ .Content }}
               {{- with .Params.Website -}}
                 <a href="{{ . }}">
@@ -278,6 +308,16 @@
                 <i class="fab fa-twitch fa-2x"></i>
               </a>
             {{- end -}}
+            {{- with .Params.Mastodon -}}
+              <a href="{{ . }}">
+                <i class="fab fa-mastodon fa-2x"></i>
+              </a>
+            {{- end -}}
+            {{- with .Params.Threads -}}
+              <a href="https://threads.net/@{{ . }}">
+                <i class="fab fa-square-threads fa-2x"></i>
+              </a>
+            {{- end -}}
             </div>
             </div>
           {{- $.Scratch.Set "host-exist" "false" -}}
@@ -320,6 +360,16 @@
       </div>
       <!-- disqus ends -->
       {{ end }}
+      {{ with .Site.Params.giscus }}
+      <!-- giscus begins -->
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          {{ partial "giscus.html" }}
+        </div>
+      </div>
+      {{ end }}
+      <!-- giscus ends -->
 
       <div class="row">
         <!-- pager begin -->

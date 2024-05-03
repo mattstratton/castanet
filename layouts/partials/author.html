@@ -1,0 +1,6 @@
+{{ with .Page.Param "Author" }}
+    {{ $hosts := where $.Site.RegularPages ".Section" "host" }}
+    {{ $filesWithAuthor := where $.Site.RegularPages ".File.BaseFileName" . }}
+    {{ $author := index ($filesWithAuthor | intersect $hosts) 0 }}
+    by <a href="{{ $author.Permalink}} ">{{ $author.Title }}</a>
+{{ end }} 

@@ -1,0 +1,16 @@
+<!--
+Original config had people giving short forms like "mattstratton" which were converted
+to full URLs like https://www.linkedin.com/in/mattstratton but later support was
+added to allow the user to pass in full URLs to support other use cases like
+linking to a company page e.g. https://www.linkedin.com/company/linkedin/
+
+This utility partial will parse the url to look for a schme like http or https.
+If a scheme exists then we will just include the full URL as it is, otherwise
+we will take the prefix passed in and concatenate them together for backwards
+compatability
+-->
+{{ if gt (len (urls.Parse .context).Scheme) 0 }}
+  <a class="{{ .aclass }}" href = "{{ .context }}"><i class="{{ .iclass }}"></i>{{ .text }}</a>
+{{ else }}
+  <a class="{{ .aclass }}" href = "{{ .prefix }}{{ .context }}"><i class="{{ .iclass }}"></i>{{ .text }}</a>
+{{ end }}
