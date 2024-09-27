@@ -25,7 +25,7 @@ jobs:
           TYPE: ${{ inputs.releaseType }} 
       - uses: actions/checkout@master
       - name: Get Next Version
-        uses: reecetech/version-increment@2023.9.3
+        uses: reecetech/version-increment@2023.10.2
         id: version
         with:
           scheme: semver
