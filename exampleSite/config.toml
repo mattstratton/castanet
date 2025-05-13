@@ -1,7 +1,7 @@
 baseurl = "https://example.com/"
 languageCode = "en-us"
 title = "HugoCast"
-theme = "castanet"
+# theme = "castanet"
 googleAnalytics = ""
 themesdir = "../.."
 pagination.pagerSize = "9"
