@@ -4,7 +4,7 @@ title = "HugoCast"
 theme = "castanet"
 googleAnalytics = ""
 themesdir = "../.."
-paginate = "9"
+pagination.pagerSize = "9"
 buildFuture = true
 
 [taxonomies]
