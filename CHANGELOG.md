@@ -1,5 +1,7 @@
 # Changelog
 
+## [v1.22.13](https://github.com/mattstratton/castanet/tree/v1.22.13) (2025-05-10)
+
 ## [1.22.12](https://github.com/mattstratton/castanet/tree/1.22.12) (2025-05-10)
 
 **Fixed bugs:**
@@ -658,9 +660,9 @@
 
 - move default image into theme static image directory [\#13](https://github.com/mattstratton/castanet/issues/13)
 
-## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
-
 ## [v.0.1.1](https://github.com/mattstratton/castanet/tree/v.0.1.1) (2016-09-25)
+
+## [v0.1.0](https://github.com/mattstratton/castanet/tree/v0.1.0) (2016-09-25)
 
 ## [v0.1](https://github.com/mattstratton/castanet/tree/v0.1) (2016-09-25)
 
