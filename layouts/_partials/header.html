@@ -1,13 +1,13 @@
-<nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50">
+<nav class="fixed top-0 left-0 right-0 bg-white dark:bg-slate-500 shadow-md z-50">
   <div class="w-full max-w-5xl mx-auto px-4">
     <div class="flex justify-between items-center h-16">
       <!-- Site Title -->
-      <a class="text-xl font-bold text-gray-800 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      <a class="text-xl font-bold text-slate-800 hover:text-slate-600 dark:text-slate-100 dark:hover:text-slate-300" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       <div class="flex items-center">
         <!-- Dark mode toggle button (mobile only) -->
         <button
           id="dark-mode-toggle-mobile"
-          class="mr-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-200 dark:bg-gray-700 md:hidden"
+          class="mr-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-slate-500 bg-slate-200 dark:bg-slate-700 md:hidden"
           aria-label="Toggle dark mode"
           type="button"
         >
@@ -22,7 +22,7 @@
           </span>
         </button>
         <!-- Hamburger for mobile -->
-        <button class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400 hover:text-gray-600 hover:border-gray-500 dark:bg-gray-800 dark:text-gray-300"
+        <button class="md:hidden flex items-center px-3 py-2 border rounded text-slate-500 border-slate-400 hover:text-slate-600 hover:border-slate-500 dark:bg-slate-800 dark:text-slate-300"
           type="button"
           aria-label="Toggle menu"
           onclick="document.getElementById('mobile-menu').classList.toggle('hidden');">
@@ -38,17 +38,17 @@
               {{ range sort .Site.Menus.main "Identifier"}}
                 {{ if .HasChildren }}
                   <li class="relative group">
-                    <div class="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white cursor-pointer">
+                    <div class="flex items-center px-0 py-2 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white cursor-pointer">
                       {{ .Name }}
                       <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                       </svg>
                     </div>
-                    <ul class="absolute left-0 top-full w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
+                    <ul class="absolute left-0 top-full w-48 rounded-md shadow-lg bg-white dark:bg-slate-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
                       {{ range sort .Children "Identifier" }}
                         <li>
                           <a href="{{ .URL | absURL }}"
-                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-900">
+                             class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900">
                             {{ .Name }}
                           </a>
                         </li>
@@ -58,7 +58,7 @@
                 {{ else }}
                   <li>
                     <a href="{{ .URL | absURL }}"
-                       class="px-3 py-2 text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 dark:text-white font-medium{{ end }}">
+                       class="px-0 py-2 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 dark:text-white font-medium{{ end }}">
                       {{ .Name }}
                     </a>
                   </li>
@@ -73,7 +73,7 @@
           <!-- Dark mode toggle button (desktop only) -->
           <button
             id="dark-mode-toggle"
-            class="ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-200 dark:bg-gray-700 hidden md:inline-flex"
+            class="ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-slate-500 bg-slate-200 dark:bg-slate-700 hidden md:inline-flex"
             aria-label="Toggle dark mode"
             type="button"
           >
@@ -95,10 +95,10 @@
 </nav>
 
 <!-- Mobile menu -->
-<div id="mobile-menu" class="fixed inset-0 z-50 bg-white dark:bg-gray-900 px-4 py-6 flex flex-col space-y-6 hidden md:hidden">
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-white dark:bg-slate-900 px-4 py-6 flex flex-col space-y-6 hidden md:hidden">
   <div class="flex justify-between items-center">
-    <span class="text-xl font-bold text-gray-800 dark:text-gray-100">{{ .Site.Title }}</span>
-    <button class="text-gray-500 hover:text-gray-700 dark:text-gray-300" aria-label="Close menu"
+    <span class="text-xl font-bold text-slate-800 dark:text-slate-100">{{ .Site.Title }}</span>
+    <button class="text-slate-500 hover:text-slate-700 dark:text-slate-300" aria-label="Close menu"
       onclick="document.getElementById('mobile-menu').classList.add('hidden');">
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -111,12 +111,12 @@
       {{ range sort .Site.Menus.main "Identifier"}}
         {{ if .HasChildren }}
           <li>
-            <div class="font-medium text-gray-900 dark:text-gray-100">{{ .Name }}</div>
+            <div class="font-medium text-slate-900 dark:text-slate-100">{{ .Name }}</div>
             <ul class="mt-2 space-y-2 pl-4">
               {{ range sort .Children "Identifier" }}
                 <li>
                   <a href="{{ .URL | absURL }}"
-                     class="block text-base text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
+                     class="block text-base text-slate-600 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white">
                     {{ .Name }}
                   </a>
                 </li>
@@ -126,7 +126,7 @@
         {{ else }}
           <li>
             <a href="{{ .URL | absURL }}"
-               class="block text-base text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 dark:text-white font-medium{{ end }}">
+               class="block text-base text-slate-600 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-slate-900 dark:text-white font-medium{{ end }}">
               {{ .Name }}
             </a>
           </li>
@@ -134,7 +134,7 @@
       {{ end }}
     {{ end }}
   </ul>
-  <div class="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+  <div class="flex space-x-4 pt-4 border-t border-slate-200 dark:border-slate-700">
     
       {{ partial "social-menu-mobile.html" .}}
 

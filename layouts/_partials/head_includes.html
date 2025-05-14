@@ -43,11 +43,11 @@
 {{/* Asset bundles */}}
 {{ $assets := newScratch }}
 {{ $algorithm := .Site.Params.fingerprintAlgorithm | default "sha256" }}
-{{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (lower .Site.Params.colorScheme | default "slate")) }}
+<!-- {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (lower .Site.Params.colorScheme | default "slate")) }}
 {{ if not $cssScheme }}
   {{ $cssScheme = resources.Get "css/schemes/slate.css" }}
 {{ end }}
-{{ $assets.Add "css" (slice $cssScheme) }}
+{{ $assets.Add "css" (slice $cssScheme) }} -->
 {{ $cssMain := resources.Get "css/compiled/main.css" }}
 {{ $assets.Add "css" (slice $cssMain) }}
 {{ $jssocials := resources.Get "lib/jssocials/css/jssocials.css" }}

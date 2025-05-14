@@ -1,17 +1,17 @@
-<div class="w-full bg-gray-100 dark:bg-gray-800 py-8 px-4 rounded-lg shadow mb-8">
+<div class="w-full bg-slate-100 dark:bg-slate-800 py-8 px-4 rounded-lg shadow mb-8">
   <div class="max-w-5xl mx-auto">
     <!-- Top row: description and hosts -->
     <div class="flex flex-col md:flex-row items-center md:items-center justify-between gap-6 pb-14">
       <div class="flex-1 min-w-[200px] text-center md:text-left">
-        <p class="text-lg text-gray-700 dark:text-gray-200">
+        <p class="text-lg text-slate-700 dark:text-slate-200">
           {{ .Site.Params.description | markdownify }}
         </p>
       </div>
       <div class="flex flex-col md:flex-row items-center md:items-end gap-6 mt-6 md:mt-0">
         {{ range $p:= $.Site.Params.authors }}
           <div class="relative flex flex-col items-center w-40 h-40">
-            <img alt="{{ $p.name }}" src="{{ $p.thumbnail | absURL }}" class="rounded-full w-40 h-40 object-cover border-2 border-gray-300 dark:border-gray-600">
-            <span class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-40 text-center capitalize text-gray-800 dark:text-gray-100 text-sm">{{ $p.name }}</span>
+            <img alt="{{ $p.name }}" src="{{ $p.thumbnail | absURL }}" class="rounded-full w-40 h-40 object-cover border-2 border-slate-300 dark:border-slate-600">
+            <span class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-40 text-center capitalize text-slate-800 dark:text-slate-100 text-sm">{{ $p.name }}</span>
           </div>
         {{ end }}
       </div>
@@ -40,7 +40,7 @@
         </a>
       {{ end }}
       {{ if (isset .Site.Params "itunes_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-gray-800 text-white hover:bg-gray-900 transition" href="{{ .Site.Params.itunes_subscribe}}">
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-slate-800 text-white hover:bg-slate-900 transition" href="{{ .Site.Params.itunes_subscribe}}">
           <i class="fa fa-podcast"></i> Apple Podcasts
         </a>
       {{ end }}

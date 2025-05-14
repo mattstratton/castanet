@@ -99,6 +99,7 @@ disqusShortname = ""
     twitch = "mattstratton"
     mastodon = "https://hachyderm.io/@mattstratton"
     threads = "mattstratton"
+    bluesky = "matty.wtf"
 
   [params.authors]
     [params.authors.Matt]

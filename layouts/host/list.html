@@ -1,13 +1,15 @@
 {{ define "main" }}
 
-<div class = "row">
-  <div class = "col-md-12">
-    <h1>Hosts of {{ .Site.Title }}</h1>
+<div class="max-w-5xl mx-auto py-8 px-4">
+  <div class="flex flex-wrap -mx-4 mb-6">
+    <div class="w-full px-4">
+      <h1 class="text-3xl font-bold mb-4">Hosts of {{ .Site.Title }}</h1>
+    </div>
   </div>
 </div>
 {{ with .Content }}
-<div class = "row">
-  <div class = "col">
+<div class="flex flex-wrap -mx-4 mb-6">
+  <div class="w-full px-4">
     {{ . }}
   </div>
 </div>

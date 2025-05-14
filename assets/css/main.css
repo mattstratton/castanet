@@ -2,3 +2,5 @@
 
 /* Custom styles can go here */ 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Slate scheme */

@@ -53,3 +53,8 @@
           {{ partial "social-link.html" (dict "context" $.Site.Params.social.threads "aclass" "text-gray-600 hover:text-gray-900" "iclass" "fa-brands fa-square-threads text-2xl" "prefix" "https://www.threads.net/@" "text" "") }}
         </li>
         {{ end }}
+        {{ if (isset .Site.Params.social "bluesky" ) }}
+        <li>
+          {{ partial "social-link.html" (dict "context" $.Site.Params.social.bluesky "aclass" "text-gray-600 hover:text-gray-900" "iclass" "fab fa-square-bluesky text-2xl" "prefix" "https://bsky.app/profile/" "text" "") }}
+        </li>
+        {{ end }}

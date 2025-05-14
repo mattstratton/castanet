@@ -77,6 +77,9 @@
             {{ with .Params.Threads }}
               {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fa-brands fa-square-threads fa-2x" "prefix" "https://threads.net/@" "text" "") }}
             {{ end }}
+            {{ with .Params.Bluesky }}
+              {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-square-bluesky fa-2x" "prefix" "https://bsky.app/profile/" "text" "") }}
+            {{ end }}
           </div>
         </div>
       {{ end }}
