@@ -4,9 +4,9 @@
   "description": "A podcast-oriented theme for Hugo",
   "main": "index.js",
   "scripts": {
-    "preinstall": "rimraf assets/lib && rimraf static/webfonts",
+    "preinstall": "rimraf assets/lib && rimraf static/webfonts && rimraf static/img/lib",
     "postinstall": "vendor-copy",
-    "assets": "rimraf assets/lib  && rimraf static/webfonts && vendor-copy",
+    "assets": "rimraf assets/lib  && rimraf static/webfonts && rimraf static/img/lib && vendor-copy",
     "css:dev": "NODE_ENV=development npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "css:build": "NODE_ENV=production npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build": "hugo -s exampleSite",
@@ -70,8 +70,20 @@
       "to": "assets/lib/mediaelement/mediaelement-and-player.js"
     },
     {
+      "from": "node_modules/mediaelement/build/mediaelementplayer.min.css",
+      "to": "assets/lib/mediaelement/css/mediaelementplayer.min.css"
+    },
+    {
+      "from": "node_modules/mediaelement/build/mejs-controls.svg",
+      "to": "static/img/lib/mediaelement/mejs-controls.svg"
+    },
+    {
       "from": "node_modules/mediaelement-plugins/dist/speed/speed.js",
       "to": "assets/lib/mediaelement/speed.js"
+    },
+    {
+      "from": "node_modules/mediaelement-plugins/dist/speed/speed.min.css",
+      "to": "assets/lib/mediaelement/css/speed.min.css"
     },
     {
       "from": "node_modules/mediaelement-plugins/dist/speed/speed-i18n.js",
