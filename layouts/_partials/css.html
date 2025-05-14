@@ -1,0 +1,7 @@
+{{- $styles := resources.Get "css/index.css" -}}
+<!-- {{- if hugo.IsDevelopment }}
+  {{- $styles = $styles | fingerprint -}}
+{{ else }}
+  {{- $styles = $styles | minify | fingerprint -}}
+{{ end -}} -->
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">

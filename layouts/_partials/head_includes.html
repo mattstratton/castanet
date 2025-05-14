@@ -33,11 +33,15 @@
 {{ if isset $.Site.Params.realfavicongenerator "theme_color" -}}
 <meta name="theme-color" content="{{ $.Site.Params.realfavicongenerator.theme_color}}">
 {{- end}}
-{{ if isset $.Site.Params "site_theme"}}
+<!-- {{ if isset $.Site.Params "site_theme"}}
 <link href="{{ printf "css/%s.css" $.Site.Params.site_theme | absURL}}" rel="stylesheet">
 {{ else }}
 <link href={{"css/orange.css" | absURL }} rel="stylesheet">
-{{ end }}
+{{ end }} -->
+
+<!-- Tailwind CSS -->
+{{ partialCached "css.html" . }}
+
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
 <!-- Custom CSS -->
 {{ range .Site.Params.custom_css }}

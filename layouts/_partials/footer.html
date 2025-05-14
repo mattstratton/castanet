@@ -1,0 +1,13 @@
+<footer class="bg-white border-t border-gray-200 mt-auto">
+  <div class="container mx-auto px-4 py-6">
+    <div class="flex justify-end items-center">
+      {{ if (isset .Site.Params "copyright_notice" ) }}
+        <p class="text-sm text-gray-600">{{ .Site.Params.copyright_notice | markdownify}}</p>
+      {{ end }}
+    </div>
+  </div>
+</footer>
+{{ partial "footer_scripts.html" . }}
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html itemscope lang="{{ .Site.LanguageCode }}" class="h-full bg-gray-50">
+<head>
+{{ partial "head.html" . }}
+</head>
+
+<body lang="{{ .Site.Params.Lang }}" class="min-h-screen flex flex-col">
+{{ partial "header.html" . }}
+<main class="flex-grow pt-16">
+  <div class="w-full max-w-5xl mx-auto px-4 py-8">
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+  </div>
+</main>
+{{ partial "footer.html" . }}
+</body>
+</html>

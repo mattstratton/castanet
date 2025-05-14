@@ -1,0 +1,68 @@
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+  <div class="w-full max-w-5xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Site Title -->
+      <a class="text-xl font-bold text-gray-800 hover:text-gray-600" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      <!-- Hamburger for mobile -->
+      <button class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400 hover:text-gray-600 hover:border-gray-500"
+        type="button"
+        aria-label="Toggle menu"
+        onclick="document.getElementById('mobile-menu').classList.toggle('hidden');">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Desktop menu -->
+      <div class="hidden md:flex md:items-center md:space-x-4">
+        <ul class="flex flex-row items-center space-x-4">
+          {{ $currentPage := . }}
+          {{ if gt (len .Site.Menus) 0 }}
+            {{ range sort .Site.Menus.main "Identifier"}}
+              <li>
+                <a href="{{ .URL | absURL }}"
+                   class="px-3 py-2 text-gray-700 hover:text-gray-900 {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 font-medium{{ end }}">
+                  {{ .Name }}
+                </a>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+        <!-- Social Links -->
+        <ul class="flex items-center space-x-4 ml-4">
+          {{ partial "social-menu.html" .}}
+          <!-- Add more social links as needed -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-white px-4 py-6 flex flex-col space-y-6 hidden md:hidden">
+  <div class="flex justify-between items-center">
+    <span class="text-xl font-bold text-gray-800">{{ .Site.Title }}</span>
+    <button class="text-gray-500 hover:text-gray-700" aria-label="Close menu"
+      onclick="document.getElementById('mobile-menu').classList.add('hidden');">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  <ul class="flex flex-col space-y-4">
+    {{ $currentPage := . }}
+    {{ if gt (len .Site.Menus) 0 }}
+      {{ range sort .Site.Menus.main "Identifier"}}
+        <li>
+          <a href="{{ .URL | absURL }}"
+             class="block text-base text-gray-600 hover:text-gray-900 {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 font-medium{{ end }}">
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+  <div class="flex space-x-4 pt-4 border-t border-gray-200">
+    {{ partial "social-menu-mobile.html" .}}
+    <!-- Add more social links as needed -->
+  </div>
+</div>

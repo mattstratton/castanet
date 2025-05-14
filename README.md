@@ -8,6 +8,42 @@ If you would like to receive emails when new versions of this theme are released
 
 # Castanet
 
+A podcast-oriented theme for Hugo.
+
+## Quick Start
+
+1. Add the theme to your Hugo site:
+```bash
+hugo mod init your-site
+hugo mod get github.com/mattstratton/castanet
+```
+
+2. Add the theme to your site's config.toml:
+```toml
+theme = "castanet"
+```
+
+## Development
+
+This theme uses Tailwind CSS for styling. The compiled CSS is included in the theme, so you don't need to build anything to use it. However, if you want to modify the styles:
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Build the CSS:
+```bash
+npm run css:build
+```
+
+3. For development with live reload:
+```bash
+npm run css:dev
+```
+
+## Theme Features
+
 Castanet is a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton).
 
 An example site can be found at https://sample-castanet.netlify.com/
