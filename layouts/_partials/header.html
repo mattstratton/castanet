@@ -67,7 +67,7 @@
             {{ end }}
           </ul>
           <!-- Social Links -->
-          <ul class="flex items-center space-x-4 ml-4">
+          <ul class="flex items-center space-x-2 ml-4">
             {{ partial "social-menu.html" .}}
           </ul>
           <!-- Dark mode toggle button (desktop only) -->
@@ -135,7 +135,9 @@
     {{ end }}
   </ul>
   <div class="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-    {{ partial "social-menu-mobile.html" .}}
+    
+      {{ partial "social-menu-mobile.html" .}}
+
     <!-- Add more social links as needed -->
   </div>
 </div>
