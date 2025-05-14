@@ -10,8 +10,10 @@
     "css:dev": "NODE_ENV=development npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "css:build": "NODE_ENV=production npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build": "hugo -s exampleSite",
+    "example": "hugo server --bind 0.0.0.0 -p 8008 --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/castanet/",
     "dev-hugo": "hugo server -s exampleSite --gc --themesDir=../..",
-    "dev": "run-p css:dev dev-hugo"
+    "dev": "run-p css:dev dev-hugo",
+    "lighthouse": "lhci autorun"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   },
   "homepage": "https://github.com/mattstratton/castanet#readme",
   "devDependencies": {
+    "@lhci/cli": "^0.14.0",
     "@tailwindcss/cli": "^4.1.6",
     "autoprefixer": "^10.4.17",
     "netlify-cli": "^21.4.0",

@@ -2,12 +2,13 @@ module.exports = {
   ci: {
     collect: {
       url: [
-        'http://localhost:1313/',
-        'http://localhost:1313/aug/',
-        'http://localhost:1313/guest/',
-        'http://localhost:1313/about/'
+        'http://localhost:8008/castanet/',
+        'http://localhost:8008/castanet/aug/',
+        'http://localhost:8008/castanet/guest/',
+        'http://localhost:8008/castanet/about/'
         ],
-      startServerCommand: 'cd exampleSite && HUGO_ENV=production && hugo server --baseUrl="http://localhost:1313"',
+      startServerCommand: "npm run example -- --disableLiveReload --minify",
+      startServerReadyPattern: 'Web Server is available'
     },
     upload: {
       target: 'temporary-public-storage',
