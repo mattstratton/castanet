@@ -22,7 +22,7 @@ jobs:
       - name: build
         run: |
           cd exampleSite
-          # hugo server --baseUrl="http://localhost:1313"
+          # hugo server --BaseURL="http://localhost:1313"
           ls
       - name: run Lighthouse CI
         run: |
