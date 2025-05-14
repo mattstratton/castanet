@@ -54,8 +54,9 @@
 {{ $jssocials_theme := resources.Get "lib/jssocials/css/jssocials-theme-plain.css" }}
 {{ $fontawesome := resources.Get "lib/fontawesome/css/all.css" }}
 {{ $mediaelement := resources.Get "lib/mediaelement/css/mediaelementplayer.min.css" }}
+{{ $mediaelementcustom := resources.Get "css/mediaelementplayer.custom.css" }}
 {{ $mediaelementspeed := resources.Get "lib/mediaelement/css/speed.min.css" }}
-{{ $assets.Add "css" (slice $jssocials $jssocials_theme $fontawesome $mediaelement $mediaelementspeed) }}
+{{ $assets.Add "css" (slice $jssocials $jssocials_theme $fontawesome $mediaelement $mediaelementcustom $mediaelementspeed) }}
 {{ $cssCustom := resources.Get "css/custom.css" }}
 {{ if $cssCustom }}
   {{ $assets.Add "css" (slice $cssCustom) }}
@@ -75,7 +76,7 @@
 {{ end }}
 <!-- <link href={{"css/all.css" | absURL }} rel="stylesheet"> -->
 <!-- <link href={{"css/mediaelementplayer.min.css" | absURL }} rel="stylesheet"> -->
-<style>
+<!-- <style>
     .mejs__overlay-button {
         background-image: url("/img/lib/mediaelement/mejs-controls.svg");
     }
@@ -86,7 +87,7 @@
         background-image: url("/img/lib/mediaelement/mejs-controls.svg");
     }
     </style>
-<link href={{"css/speed.min.css" | absURL }} rel="stylesheet">
+<link href={{"css/speed.min.css" | absURL }} rel="stylesheet"> -->
 {{ if eq .Section "blog" }}
     <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{"blog/index.xml" | absURL }}"/>
 {{ else }}
