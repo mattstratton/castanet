@@ -1,45 +1,51 @@
 {{ define "main" }}
-
-<h1>{{ .Title }}</h1>
-<small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" . }}</small>
-<br><br>
-{{ .Content }}
-<div id="share"></div>
-<div class="row">
-  <!-- pager begin -->
-  <div class="col-md-12">
-    <nav>
-      <ul class="pagination">
-        {{ if .PrevInSection }}
-          <li class="page-item">
-            <a href="{{.PrevInSection.Permalink}}" class="page-link">
-              <span aria-hidden="true">&larr;</span>
-              Previous</a>
-          </li>
-          {{ else }}
-          <li class="page-item disabled">
-            <a href="#" class="page-link">
-              <span aria-hidden="true">&larr;</span>
-              Previous</a>
-          </li>
-        {{ end }}
-        {{ if .NextInSection }}
-          <li class="page-item">
-            <a href="{{.NextInSection.Permalink}}" class="page-link">Next
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-          {{ else }}
-          <li class="page-item disabled">
-            <a href="#" class="page-link">Next
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-        {{ end }}
-      </ul>
-    </nav>
+<div class="max-w-4xl mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+  <div class="text-sm text-gray-600 dark:text-gray-400 mb-8">
+    Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" . }}
   </div>
-</div>
-<!-- pager end -->
+  
+  <div class="prose dark:prose-invert max-w-none mb-12">
+    {{ .Content }}
+  </div>
+  
+  <div id="share"></div>
 
+  <!-- Pagination -->
+  <nav class="flex justify-center my-8" aria-label="Blog navigation">
+    <ul class="inline-flex items-center space-x-2">
+      {{ if .PrevInSection }}
+        <li>
+          <a href="{{.PrevInSection.Permalink}}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">
+            <span aria-hidden="true">&larr;</span>
+            Previous
+          </a>
+        </li>
+      {{ else }}
+        <li>
+          <span class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-100 border border-gray-200 text-gray-400 dark:bg-gray-900 dark:border-gray-800 cursor-not-allowed">
+            <span aria-hidden="true">&larr;</span>
+            Previous
+          </span>
+        </li>
+      {{ end }}
+      
+      {{ if .NextInSection }}
+        <li>
+          <a href="{{.NextInSection.Permalink}}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">
+            Next
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      {{ else }}
+        <li>
+          <span class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-100 border border-gray-200 text-gray-400 dark:bg-gray-900 dark:border-gray-800 cursor-not-allowed">
+            Next
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
 {{ end }}

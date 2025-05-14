@@ -1,27 +1,25 @@
-<section class="episode-list">
-
-  <div class = "col episode-list-header">
-    <h2 class = "episode-list-header">Blog Posts</h2>
+<section class="episode-list max-w-6xl mx-auto">
+  <div class="w-full px-4 mb-6">
+    <h2 class="text-3xl font-bold mb-4">Blog Posts</h2>
   </div>
-
-  <div class = "row">
+  <div class="flex flex-wrap -mx-4">
 
     {{ $paginator := .Paginate ((where .Pages.ByDate "Section" "blog").Reverse) }}
 
         {{ range $paginator.Pages }}
         {{ $.Scratch.Set "episode" .File.BaseFileName }}
-          <div class="col-md-4 grid_episode_col">
-            <div class="episode-image-homepage">
+          <div class="w-full md:w-1/3 px-4 mb-8 grid_episode_col">
+            <div class="episode-image-homepage mb-4">
               <a href="{{ .Permalink }}">
-                  <img src="{{ .Params.blog_image | absURL }}" class="img-fluid" alt="{{ .Title }}" />
+                  <img src="{{ .Params.blog_image | absURL }}" class="w-full h-auto rounded-lg shadow" alt="{{ .Title }}" />
 
 
 
               </a>
             </div>
             <div class="grid_episode_detail">
-              <a href="{{ .Permalink }}" class= "grid_episode_title"><h3>{{ title .Title }}</h3></a>
-              <small class = "grid_episode_title">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
+              <a href="{{ .Permalink }}" class="grid_episode_title"><h3 class="text-lg font-semibold mb-2">{{ title .Title }}</h3></a>
+              <small class="block text-gray-500 dark:text-gray-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
             </div>
 
           </div>
@@ -32,86 +30,76 @@
 
 </section>
 {{ if gt $paginator.TotalPages 1 }}
-<div class = "row">
-<div class = "col">
-
-
-<nav class="pagination justify-content-center">
-
-{{ $pag := $.Paginator }}
-{{ $window := $.Site.Params.paginateWindow | default 1 }}
-{{ if gt $pag.TotalPages 1 }}
-  {{ $total := $pag.TotalPages }}
-  {{ $size := add 5 (add $window $window) }}
-  {{ $cur := $pag.PageNumber }}
-  {{ if gt $total $size }}
-    {{ if lt $cur (sub $size (add $window 1)) }}
-      {{ $.Scratch.Set "show" (seq 1 (sub $size 2)) }}
-    {{ else if lt (sub $total $cur) (sub $size (add $window 2)) }}
-      {{ $.Scratch.Set "show" (seq (add (sub $total $size) 3) $total) }}
-    {{ else }}
-      {{ $.Scratch.Set "show" (seq (sub $cur $window) (add $cur $window)) }}
-    {{ end }}
-    {{ $.Scratch.Add "show" 1 }}
-    {{ $.Scratch.Add "show" $total }}
-  {{ else }}
-    {{ $.Scratch.Set "show" (seq 1 $total) }}
-  {{ end }}
-
-<ul class="pagination pagination-lg">
-	<!-- first page button -->
-  {{if $paginator.HasPrev }}
-    {{ if gt $paginator.PageNumber 2 }}
-        {{- with $paginator.First -}}
-        {{- $url := trim (string .URL) "/" | absURL -}}
-            <li class="page-item">
-            <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
+<div class="flex justify-center my-8">
+  <nav aria-label="Blog pagination">
+    {{ $pag := $.Paginator }}
+    {{ $window := $.Site.Params.paginateWindow | default 1 }}
+    {{ if gt $pag.TotalPages 1 }}
+      {{ $total := $pag.TotalPages }}
+      {{ $size := add 5 (add $window $window) }}
+      {{ $cur := $pag.PageNumber }}
+      {{ if gt $total $size }}
+        {{ if lt $cur (sub $size (add $window 1)) }}
+          {{ $.Scratch.Set "show" (seq 1 (sub $size 2)) }}
+        {{ else if lt (sub $total $cur) (sub $size (add $window 2)) }}
+          {{ $.Scratch.Set "show" (seq (add (sub $total $size) 3) $total) }}
+        {{ else }}
+          {{ $.Scratch.Set "show" (seq (sub $cur $window) (add $cur $window)) }}
+        {{ end }}
+        {{ $.Scratch.Add "show" 1 }}
+        {{ $.Scratch.Add "show" $total }}
+      {{ else }}
+        {{ $.Scratch.Set "show" (seq 1 $total) }}
+      {{ end }}
+      <ul class="inline-flex items-center space-x-2">
+        <!-- first page button -->
+        {{if $paginator.HasPrev }}
+          {{ if gt $paginator.PageNumber 2 }}
+              {{- with $paginator.First -}}
+              {{- $url := trim (string .URL) "/" | absURL -}}
+                  <li>
+                  <a href="{{ $url }}" aria-label="First" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition"><span aria-hidden="true">&laquo;&laquo;</span></a>
+                  </li>
+              {{- end -}}
+          {{ end }}
+        {{ end }}
+        <!-- prev page button -->
+        {{- with $paginator.HasPrev -}}
+            <li>
+              <a href="{{ $paginator.Prev.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">&laquo;</a>
             </li>
-        {{- end -}}
-    {{ end }}
-  {{ end }}
-
-
-  <!-- prev page button -->
-  {{- with $paginator.HasPrev -}}
-    	<li class="page-item">
-    		<a href="{{ $paginator.Prev.URL }}" class="page-link"> &laquo; </a>
-    	</li>
-  {{ end }}
-  
-  <!-- page # buttons -->
-  {{ range $pag.Pagers }}
-    {{ $cur := .PageNumber }}
-    {{- $url := trim (string $.URL) "/" | absURL -}}
-    {{ if in ($.Scratch.Get "show") $cur }}
-      <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
-    {{ else if in (slice 2 (sub $total 1)) $cur }}
-      <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
-    {{ end }}
-  {{ end }}
-  
-  <!-- next page button -->
-  {{- with $paginator.HasNext -}}
-  <li class="page-item">
-    <a href="{{ $paginator.Next.URL }}" class="page-link"> &raquo; </a>
-  </li>
-  {{ end }}
-  
-  <!-- last page button -->
-  {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
-    {{- with $paginator.Last -}}
-        {{- $url := trim (string .URL) "/" | absURL -}}
-            <li class="page-item">
-                <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        {{ end }}
+        <!-- page # buttons -->
+        {{ range $pag.Pagers }}
+          {{ $cur := .PageNumber }}
+          {{- $url := trim (string .URL) "/" | absURL -}}
+          {{ if in ($.Scratch.Get "show") $cur }}
+            <li>
+              <a href="{{ .URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md border border-gray-300 dark:border-gray-700 {{ if eq . $pag }}bg-blue-600 text-white dark:bg-blue-500{{ else }}bg-white text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700{{ end }} transition">{{ .PageNumber }}</a>
             </li>
-    {{- end -}}
-  {{ end }}
-  
-</ul>
-{{ end }}
-</nav>
-</div>
+          {{ else if in (slice 2 (sub $total 1)) $cur }}
+            <li>
+              <span class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-100 border border-gray-200 text-gray-400 dark:bg-gray-900 dark:border-gray-800">&hellip;</span>
+            </li>
+          {{ end }}
+        {{ end }}
+        <!-- next page button -->
+        {{- with $paginator.HasNext -}}
+        <li>
+          <a href="{{ $paginator.Next.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">&raquo;</a>
+        </li>
+        {{ end }}
+        <!-- last page button -->
+        {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
+          {{- with $paginator.Last -}}
+              {{- $url := trim (string .URL) "/" | absURL -}}
+                  <li>
+                      <a href="{{ $url }}" aria-label="Last" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition"><span aria-hidden="true">&raquo;&raquo;</span></a>
+                  </li>
+          {{- end -}}
+        {{ end }}
+      </ul>
+    {{ end }}
+  </nav>
 </div>
 {{ end }}
-</div>
-</div>
