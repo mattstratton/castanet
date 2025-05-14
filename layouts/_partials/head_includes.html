@@ -50,6 +50,10 @@
 {{ $assets.Add "css" (slice $cssScheme) }}
 {{ $cssMain := resources.Get "css/compiled/main.css" }}
 {{ $assets.Add "css" (slice $cssMain) }}
+{{ $jssocials := resources.Get "lib/jssocials/css/jssocials.css" }}
+{{ $jssocials_theme := resources.Get "lib/jssocials/css/jssocials-theme-plain.css" }}
+{{ $fontawesome := resources.Get "lib/fontawesome/css/all.css" }}
+{{ $assets.Add "css" (slice $jssocials $jssocials_theme $fontawesome) }}
 {{ $cssCustom := resources.Get "css/custom.css" }}
 {{ if $cssCustom }}
   {{ $assets.Add "css" (slice $cssCustom) }}
@@ -67,7 +71,7 @@
 {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{ end }}
-<link href={{"css/all.css" | absURL }} rel="stylesheet">
+<!-- <link href={{"css/all.css" | absURL }} rel="stylesheet"> -->
 <link href={{"css/mediaelementplayer.min.css" | absURL }} rel="stylesheet">
 <style>
     .mejs__overlay-button {

@@ -1,11 +1,25 @@
 <!-- <script src='{{ "js/castanet-min.js" | absURL }}'></script> -->
 
 <script>
+  jsSocials.shares.bluesky = {
+    label: "Post",
+    logo: "fab fa-bluesky",
+    shareUrl: "https://bsky.app/intent/compose?text={url}&text={text}",
+    countUrl: "",
+    getCount: function(data) {
+        return data.count;
+    }
+};
   $("#share").jsSocials({
       shares: [
+        
     {
       share: "facebook",
       logo: "fab fa-facebook",
+    },
+    {
+      share: "bluesky",
+      logo: "fab fa-bluesky",
     },
     {
       share: "twitter",           // name of share

@@ -4,14 +4,15 @@
   "description": "A podcast-oriented theme for Hugo",
   "main": "index.js",
   "scripts": {
-    "preinstall": "rimraf assets/lib",
+    "preinstall": "rimraf assets/lib && rimraf static/webfonts",
     "postinstall": "vendor-copy",
-    "assets": "rimraf assets/lib && vendor-copy",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "assets": "rimraf assets/lib  && rimraf static/webfonts && vendor-copy",
+    "css:dev": "NODE_ENV=development npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
+    "css:build": "NODE_ENV=production npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build": "hugo -s exampleSite",
     "js:build": "utilities/build-scripts/copy-js-deps.sh",
-    "css:dev": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --watch",
-    "css:build": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --minify",
+    "css:dev:old": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --watch",
+    "css:build:old": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --minify",
     "dev-hugo": "hugo server -s exampleSite --gc --themesDir=../..",
     "dev": "run-p css:dev dev-hugo"
   },
@@ -26,6 +27,8 @@
   },
   "homepage": "https://github.com/mattstratton/castanet#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@tailwindcss/cli": "^4.1.6",
     "autoprefixer": "^10.4.17",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
@@ -43,7 +46,6 @@
   },
   "vendorCopy": [],
   "devVendorCopy": [
-
     {
       "from": "node_modules/jquery/dist/jquery.js",
       "to": "assets/lib/jquery/jquery.js"
@@ -51,6 +53,14 @@
     {
       "from": "node_modules/jssocials/dist/jssocials.js",
       "to": "assets/lib/jssocials/jssocials.js"
+    },
+    {
+      "from": "node_modules/jssocials/dist/jssocials.css",
+      "to": "assets/lib/jssocials/css/jssocials.css"
+    },
+    {
+      "from": "node_modules/jssocials/dist/jssocials-theme-plain.css",
+      "to": "assets/lib/jssocials/css/jssocials-theme-plain.css"
     },
     {
       "from": "node_modules/mediaelement/build/mediaelement-and-player.js",
@@ -63,6 +73,14 @@
     {
       "from": "node_modules/mediaelement-plugins/dist/speed/speed-i18n.js",
       "to": "assets/lib/mediaelement/speed-i18n.js"
+    },
+    {
+      "from": "node_modules/@fortawesome/fontawesome-free/css/all.css",
+      "to": "assets/lib/fontawesome/css/all.css"
+    },
+    {
+      "from": "node_modules/@fortawesome/fontawesome-free/webfonts",
+      "to": "static/webfonts"
     }
   ]
 }
