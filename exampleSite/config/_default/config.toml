@@ -19,8 +19,8 @@ buildFuture = true
 
 [permalinks]
 	# page = "/:filename/"
-	about = "/:filename/"
-	episode = "/:filename/"
+	about = "/:contentbasename/"
+	episode = "/:contentbasename/"
 
 
 [params]

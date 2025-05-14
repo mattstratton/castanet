@@ -1,0 +1,52 @@
+# The theme supports menus with up to one submenu per menu item
+# The menu name must be "Main"
+# The menus are sorted based upon their identifier
+[[Main]]
+    name = "About"
+    identifier = "about"
+    url = "/about"
+
+[[Main]]
+    name = "Contact"
+    identifier = "contact"
+    url = "/contact"
+
+[[Main]]
+    name = "Hosts"
+    identifier = "hosts"
+    url = "/host"
+
+[[Main]]
+    name = "Guests"
+    identifier = "guests"
+    url = "/guest"
+
+#[[Main]]
+#    name = "Upcoming Episodes"
+#    identifier = "upcoming"
+#    url = "/upcoming"
+
+#[[Main]]
+#    name = "Blog"
+#    identifier = "blog"
+#    url = "/blog"
+
+[[Main]]
+    name = "Resources"
+    identifier = "resources"
+    url = "#!"
+
+[[Main]]
+    name = "Books"
+    identifier = "books"
+    url = "/books"
+    parent = "resources"
+[[Main]]
+    name = "Podcasts"
+    identifier = "podcasts"
+    url = "/books"
+    parent = "resources"
+#[[Main]]
+#    name = "Internet"
+#    identifier = "internet"
+#    url = "https://www.google.com"

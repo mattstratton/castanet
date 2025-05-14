@@ -1,0 +1,9 @@
+.mejs__overlay-button {
+  background-image: url("/img/lib/mediaelement/mejs-controls.svg");
+}
+.mejs__overlay-loading-bg-img {
+  background-image: url("/img/lib/mediaelement/mejs-controls.svg");
+}
+.mejs__button > button {
+  background-image: url("/img/lib/mediaelement/mejs-controls.svg");
+}

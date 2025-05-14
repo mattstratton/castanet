@@ -5,7 +5,13 @@ theme = "castanet"
 googleAnalytics = "UA-100789009-1"
 disqusShortname = "arresteddevops"
 themesdir = "../.."
-paginate = "9"
+pagination.pagerSize = "9"
+
+[module]
+  [module.hugoVersion]
+  [[module.imports]]
+    # This is replaced in go.mod to point to the directory above.
+    path = "github.com/mattstratton/castanet/v2"
 
 
 [permalinks]
@@ -14,47 +20,7 @@ paginate = "9"
 	episode = "/:filename/"
 
 
-# The theme supports menus with up to one submenu per menu item
-# The menu name must be "Main"
-# The menus are sorted based upon their identifier
-[[Menu.Main]]
-    name = "About"
-    identifier = "about"
-    url = "about"
-
-[[Menu.Main]]
-    name = "Contact"
-    identifier = "contact"
-    url = "contact"
-
-[[Menu.Main]]
-    name = "Hosts"
-    identifier = "hosts"
-    url = "host"
-
-[[Menu.Main]]
-    name = "Guests"
-    identifier = "guests"
-    url = "guest"
-
-[[Menu.Main]]
-    name = "Resources"
-    identifier = "resources"
-    url = "#!"
-
-[[Menu.Main]]
-    name = "Books"
-    identifier = "books"
-    url = "books"
-    parent = "resources"
-[[Menu.Main]]
-    name = "Podcasts"
-    identifier = "podcasts"
-    url = "books"
-    parent = "resources"
-
 [params]
-site_theme = "blue"
 site_layout = "row"
 enable_jumbo = "true"
 # truncate = "100"

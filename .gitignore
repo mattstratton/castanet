@@ -7,3 +7,4 @@ dist
 .Ulysses-Group.plist
 public/
 .hugo_build.lock
+.lighthouseci/
