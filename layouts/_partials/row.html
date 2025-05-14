@@ -120,7 +120,7 @@
       {{- end -}}
       {{- with .Params.podcast_file -}}
         <div class="mb-6">
-          <audio id="player2" class="w-full" controls preload="none">
+          <audio id="player2" class="w-full" width="100%" controls preload="none">
             <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
           </audio>
         </div>

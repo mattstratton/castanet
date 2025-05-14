@@ -4,14 +4,16 @@
   "description": "A podcast-oriented theme for Hugo",
   "main": "index.js",
   "scripts": {
+    "preinstall": "rimraf assets/lib",
+    "postinstall": "vendor-copy",
+    "assets": "rimraf assets/lib && vendor-copy",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "hugo -s exampleSite",
     "js:build": "utilities/build-scripts/copy-js-deps.sh",
-    "css:dev": "tailwindcss -i ./assets/css/main.css -o assets/css/index.css --watch",
-    "css:build": "tailwindcss -i ./assets/css/main.css -o assets/css/index.css --minify",
+    "css:dev": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --watch",
+    "css:build": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --minify",
     "dev-hugo": "hugo server -s exampleSite --gc --themesDir=../..",
-    "dev-tailwind-old": "npx @tailwindcss/cli -i assets/css/main.css -o assets/css/index.css --watch",
-    "dev": "run-p dev-hugo css:dev"
+    "dev": "run-p css:dev dev-hugo"
   },
   "repository": {
     "type": "git",
@@ -28,7 +30,9 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
-    "tailwindcss": "^3.4.1"
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1",
+    "vendor-copy": "^3.0.1"
   },
   "dependencies": {
     "jquery": "^3.5.1",
@@ -36,5 +40,29 @@
     "mediaelement": "^4.2.14",
     "mediaelement-plugins": "^2.5.0",
     "netlify-cli": "^17.21.1"
-  }
+  },
+  "vendorCopy": [],
+  "devVendorCopy": [
+
+    {
+      "from": "node_modules/jquery/dist/jquery.js",
+      "to": "assets/lib/jquery/jquery.js"
+    },
+    {
+      "from": "node_modules/jssocials/dist/jssocials.js",
+      "to": "assets/lib/jssocials/jssocials.js"
+    },
+    {
+      "from": "node_modules/mediaelement/build/mediaelement-and-player.js",
+      "to": "assets/lib/mediaelement/mediaelement-and-player.js"
+    },
+    {
+      "from": "node_modules/mediaelement-plugins/dist/speed/speed.js",
+      "to": "assets/lib/mediaelement/speed.js"
+    },
+    {
+      "from": "node_modules/mediaelement-plugins/dist/speed/speed-i18n.js",
+      "to": "assets/lib/mediaelement/speed-i18n.js"
+    }
+  ]
 }

@@ -1,20 +1,22 @@
 {{ define "main" }}
 
-  <div class="row">
-    <div class="col">      
-      {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
-        {{ if eq .Site.Params.episode_number_style "parens" }}
-          <h1>{{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h1>
+  <div class="flex flex-wrap -mx-4 mb-6">
+    <div class="w-full px-4">      
+      <h1 class="text-3xl font-bold mb-2">
+        {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
+          {{ if eq .Site.Params.episode_number_style "parens" }}
+          {{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})
         {{ else if eq .Site.Params.episode_number_style "brackets" }}
-          <h1>{{ title .Title }} [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h1>
+          {{ title .Title }} [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]
         {{ else if eq .Site.Params.episode_number_style "dash" }}
-          <h1>{{ title .Title }} - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h1>
+          {{ title .Title }} - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}
         {{ else }}
-          <h1>{{ title .Title }}</h1>
+          {{ title .Title }}
         {{ end }}
       {{ else }}
-        <h1>{{ title .Title }}</h1>
+        {{ title .Title }}
       {{ end }}
+    </h1>
       {{- if ne $.Params.upcoming true -}}
         <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
       {{- else -}}
@@ -25,33 +27,33 @@
 
   {{ if isset .Params "episode_banner" }}
     {{ if ne .Params.episode_banner "" }}
-      <div class = "row">
-      <div class = "col">
-        <img src="{{ .Params.episode_banner | absURL }}" class="img-fluid episode_image"/>
+      <div class="flex flex-wrap -mx-4 mb-6">
+        <div class="w-full px-4">
+          <img src="{{ .Params.episode_banner | absURL }}" class="w-full h-auto rounded-lg shadow"/>
+        </div>
       </div>
-      </div>
-      <div class = "row">
-      <div class = "col">
-        {{ .Description | markdownify }}
-      </div>
+      <div class="flex flex-wrap -mx-4 mb-6">
+        <div class="w-full px-4">
+          {{ .Description | markdownify }}
+        </div>
       </div>
     {{ end }}
     {{ else }}
     <!-- begin square row -->
     {{- if isset .Params "episode_image" -}}
       {{- if ne .Params.episode_image "" -}}
-        <div class="row">
-          <div class="col-md-3">
-            <img src="{{ .Params.episode_image | absURL }}" class="img-fluid episode_image"/>
+        <div class="flex flex-wrap -mx-4 mb-6">
+          <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
+            <img src="{{ .Params.episode_image | absURL }}" class="w-full h-auto rounded-lg shadow"/>
           </div>
-          <div class="col-md-8">
+          <div class="w-full md:w-3/4 px-4">
             {{ .Description | markdownify }}
           </div>
         </div>
       {{- end -}}
       {{- else -}}
-      <div class="row">
-        <div class="col">
+      <div class="flex flex-wrap -mx-4 mb-6">
+        <div class="w-full px-4">
           {{ .Description | markdownify }}
         </div>
       </div>
@@ -61,11 +63,10 @@
     {{ end }}
     {{- with .Params.podcast_file -}}
       {{- if ne $.Params.upcoming true -}}
-        <div class="row">
-          <div class="col-md-12 player_row">
-
-          <audio id="player2" style="width: 100%" controls preload="none">
-            <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
+        <div class="flex flex-wrap -mx-4 mb-6">
+          <div class="w-full">
+            <audio id="player2" class="w-full" controls preload="none" width="100%">
+              <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
             </audio>
           </div>
         </div>
@@ -73,10 +74,10 @@
     {{- end -}}
   {{- with .Params.youtube -}}
     {{- if ne $.Params.upcoming true -}}
-      <div class = "row youtube_row">
-        <div class = "col">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/{{ . }}" allowfullscreen></iframe>
+      <div class="flex flex-wrap -mx-4 mb-6">
+        <div class="w-full px-4">
+          <div class="w-full aspect-[16/9]">
+            <iframe class="w-full h-full rounded-lg shadow-lg" src="//www.youtube.com/embed/{{ . }}" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -85,23 +86,27 @@
 
         <!-- transcript POC begin-->
         {{- with .Params.transcript -}}
-        <p>
-          <!-- <a class="btn btn-default" href="/"><i class="fab fa-spotify"></i>&nbsp;Spotify</a> -->
-          <button class="hide_transcript btn btn-secondary">Hide Transcript</button>
-          <button class="show_transcript btn btn-secondary">Display Transcript</button>
-          </p> 
-        <div class="row transcript">
-          <div class="col-md-12">
-            <h2>Transcript</h2>
+        <div class="flex flex-wrap -mx-4 mb-6">
+          <div class="w-full px-4">
+            <p>
+              <!-- <a class="btn btn-default" href="/"><i class="fab fa-spotify"></i>&nbsp;Spotify</a> -->
+              <button class="hide_transcript btn btn-secondary">Hide Transcript</button>
+              <button class="show_transcript btn btn-secondary">Display Transcript</button>
+            </p> 
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-4 mb-6">
+          <div class="w-full px-4">
+            <h2 class="text-2xl font-bold mb-4">Transcript</h2>
             {{ (readFile .) | markdownify}}
           </div>
         </div>
         {{- end -}}
         <!-- transcript POC end -->
 
-  <div class="row">
-    <div class="col">
-      <h2>Show Notes</h2>
+  <div class="flex flex-wrap -mx-4 mb-6">
+    <div class="w-full px-4">
+      <h2 class="text-2xl font-bold mb-4">Show Notes</h2>
       {{ .Content }}
     </div>
   </div>
@@ -109,9 +114,9 @@
 
 
   {{ with .Params.guests }}
-        <div class="row">
-          <div class="col">
-            <h2>Guests</h2>
+        <div class="flex flex-wrap -mx-4 mb-6">
+          <div class="w-full px-4">
+            <h2 class="text-3xl font-bold mb-4">Guests</h2>
           </div>
         </div>
             {{ range $name := . }}
@@ -119,20 +124,20 @@
               {{- range where $.Site.Pages "Type" "guest" -}}
                 {{- if eq .File.BaseFileName ($.Scratch.Get "person") -}}
                 {{- $.Scratch.Set "guest-exist" "true" -}}
-                <div class="row person_row">
-                  <div class="col-md-3">
+                <div class="flex flex-wrap -mx-4 mb-6">
+                  <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
                     {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
                       {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
-                        <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="img-fluid" width="250px">
+                        <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow">
                         {{- else -}}
-                        <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="img-fluid" width="250px">
+                        <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow">
                       {{- end -}}
                       {{- else -}}
-                      <img alt="{{ .Title }}" src="{{ "img/guest/default-guest.png" | absURL }}" class="img-fluid" width="250px"/>
+                      <img alt="{{ .Title }}" src="{{ "img/guest/default-guest.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/>
                     {{- end -}}
                   </div>
-                  <div class="col-md-8">
-                    <h2><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
+                  <div class="w-full md:w-3/4 px-4">
+                    <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
                     {{ .Content }}
                     {{- with .Params.Website -}}
                       <a href="{{ . }}">
@@ -190,27 +195,27 @@
                     </a>
                     {{- end -}}
                   </div>
-                  </div>
+                </div>
                 {{- $.Scratch.Set "guest-exist" "false" -}}
                 {{- end -}}
               {{- end -}}
               {{- if ne ($.Scratch.Get "guest-exist") "true" -}}
               {{- if (isset $.Site.Data.guests ($.Scratch.Get "person")) -}}
                   {{- $p :=  (index $.Site.Data.guests ($.Scratch.Get "person")) -}}
-                    <div class="row person_row">
-                      <div class="col-md-3">
+                    <div class="flex flex-wrap -mx-4 mb-6">
+                      <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
                         {{- if and (isset $p "thumbnail") (ne $p.thumbnail "") -}}
                           {{- if (eq (slicestr $p.thumbnail 0 4) "http") -}}
-                            <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail}}" class="img-fluid" width = "250px">
+                            <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail}}" class="w-full h-auto rounded-lg shadow">
                           {{- else -}}
-                            <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail | absURL }}" class="img-fluid" width = "250px">
+                            <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail | absURL }}" class="w-full h-auto rounded-lg shadow">
                           {{- end -}}
                         {{- else -}}
-                          <img alt = "{{ $p.full_name }}" src = "{{ "img/guest/default-guest.png" | absURL }}" class="img-fluid" width = "250px" />
+                          <img alt = "{{ $p.full_name }}" src = "{{ "img/guest/default-guest.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px" />
                         {{- end -}}
                       </div>
-                      <div class= "col-md-8">
-                        <h2>{{ $p.full_name }}</h2>
+                      <div class="w-full md:w-3/4 px-4">
+                        <h2 class="text-3xl font-bold mb-4">{{ $p.full_name }}</h2>
                         {{- if isset $p "bio" -}}
                           <p>{{ $p.bio | markdownify }}</p>
                         {{ end }}
@@ -238,9 +243,9 @@
   {{ end }}
 
   {{ with .Params.hosts }}
-  <div class="row">
-    <div class="col">
-      <h2>Hosts</h2>
+  <div class="flex flex-wrap -mx-4 mb-6">
+    <div class="w-full px-4">
+      <h2 class="text-3xl font-bold mb-4">Hosts</h2>
     </div>
   </div>
       {{ range $name := . }}
@@ -248,20 +253,20 @@
         {{- range where $.Site.Pages "Type" "host" -}}
           {{- if eq .File.BaseFileName ($.Scratch.Get "person") -}}
           {{- $.Scratch.Set "host-exist" "true" -}}
-          <div class="row person_row">
-            <div class="col-md-3">
+          <div class="flex flex-wrap -mx-4 mb-6">
+            <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
               {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
                 {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
-                  <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="img-fluid" width="250px">
+                  <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow">
                   {{- else -}}
-                  <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="img-fluid" width="250px">
+                  <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow">
                 {{- end -}}
                 {{- else -}}
-                <img alt="{{ .Title }}" src="{{ "img/host/default-host.png" | absURL }}" class="img-fluid" width="250px"/>
+                <img alt="{{ .Title }}" src="{{ "img/host/default-host.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/>
               {{- end -}}
             </div>
-            <div class="col-md-8">
-              <h2><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
+            <div class="w-full md:w-3/4 px-4">
+              <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
               {{ .Content }}
               {{- with .Params.Website -}}
                 <a href="{{ . }}">
@@ -319,7 +324,7 @@
               </a>
             {{- end -}}
             </div>
-            </div>
+          </div>
           {{- $.Scratch.Set "host-exist" "false" -}}
           {{- end -}}
         {{- end -}}
