@@ -5,8 +5,8 @@
 {{ end }}
 
 {{ if and (and (isset .Site.Params "show_next_upcoming") (eq .Site.Params.show_next_upcoming "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true )) 1) }}
-<div class="w-full bg-blue-50 p-4 mb-6 rounded-lg">
-  <div class="container mx-auto">
+<div class="w-full bg-blue-50 p-4 mb-6 rounded-lg shadow">
+  <div class="w-full max-w-5xl mx-auto px-4">
     {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections).ByDate ".Params.upcoming" "==" true ) }}
     <p class="text-blue-800">
       Next Episode: <a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 font-medium">{{ .Title }}</a> - Scheduled for {{ dateFormat "Jan 2, 2006" .Date }}
@@ -16,9 +16,9 @@
 </div>
 {{ end }}
 
-<div class="container mx-auto px-4">
+<div class="w-full max-w-5xl mx-auto px-4 bg-blue-50 dark:bg-gray-900 rounded-lg shadow">
   <div class="mb-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-4">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
       Latest Episode
     </h2>
 
@@ -46,18 +46,18 @@
         <div class="mb-6">
           {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
             {{ else if eq .Site.Params.episode_number_style "dash" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
             {{ else }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ end }}
           {{ else }}
-            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a></h2>
+            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
           {{ end }}        
-          <p class="text-sm text-gray-600 mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <p class="text-sm text-gray-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         <div class="mb-6">
           <div class="aspect-w-16 aspect-h-9">
@@ -65,35 +65,35 @@
           </div>
         </div>
         <div class="mb-6">
-          <p class="text-gray-700">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm">Read More</a></p>
+          <p class="text-gray-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
         </div>
       {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
         <div class="mb-6">
           {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
             {{ else if eq .Site.Params.episode_number_style "dash" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
             {{ else }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ end }}
           {{ else }}
-            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a></h2>
+            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
           {{ end }} 
-          <p class="text-sm text-gray-600 mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <p class="text-sm text-gray-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         <div class="mb-6">
           <a href="{{ .Permalink }}"><img src="{{ .Params.episode_banner | absURL }}" class="w-full h-auto rounded-lg shadow-lg"/></a>
         </div>
         <div class="mb-6">
-          <p class="text-gray-700">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm">Read More</a></p>
+          <p class="text-gray-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
         </div>
       {{- else -}}
         <div class="mb-6">
-          <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a></h2>
-          <p class="text-sm text-gray-600 mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
+          <p class="text-sm text-gray-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         {{- if .Params.episode_image -}}
           <div class="flex flex-col md:flex-row gap-6 mb-6">
@@ -102,18 +102,18 @@
             </div>
             <div class="md:w-3/4">
               {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-                <p class="text-gray-700">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm">Read More</a></p>
+                <p class="text-gray-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
               {{- else -}}
-                <p class="text-gray-700">{{ .Description | markdownify }}</p>
+                <p class="text-gray-700 dark:text-white">{{ .Description | markdownify }}</p>
               {{- end -}}
             </div>
           </div>
         {{- else -}}
           <div class="mb-6">
             {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-              <p class="text-gray-700">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm">Read More</a></p>
+              <p class="text-gray-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
             {{- else -}}
-              <p class="text-gray-700">{{ .Description | markdownify }}</p>
+              <p class="text-gray-700 dark:text-white">{{ .Description | markdownify }}</p>
             {{- end -}}
           </div>
         {{- end -}}
@@ -129,16 +129,16 @@
   </div>
 </div>
 
-<section class="container mx-auto px-4">
+<section class="w-full max-w-5xl mx-auto px-4">
   <!-- rest of episodes -->
   {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
   {{- $paginator := .Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) }}
   {{- $list := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
   {{- $len := (len $list) -}}
-  <div class="flex flex-col lg:flex-row gap-8">
+  <div class="flex flex-col lg:flex-row gap-8 ">
     {{- with .Site.Params.enable_jumbo -}}
       {{- if eq . "true" -}}
-        <div class="w-full">
+        <div class="w-full rounded-lg shadow  dark:bg-gray-900 px-25">
       {{- else -}}
         <div class="lg:w-2/3">
       {{- end -}}
@@ -159,18 +159,18 @@
         <div class="mb-8">
           {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
             {{ else if eq .Site.Params.episode_number_style "dash" }}
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
             {{ else }}
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
             {{ end }}
           {{ else }}
-            <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600">{{ .Title }}</a></h3>
+            <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-gray-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h3>
           {{ end }}
-          <p class="text-sm text-gray-600 mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <p class="text-sm text-gray-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         {{- if .Params.episode_image -}}
           <div class="flex flex-col md:flex-row gap-6 mb-8">
@@ -179,24 +179,25 @@
             </div>
             <div class="md:w-3/4">
               {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-                <p class="text-gray-700">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm">Read More</a></p>
+                <p class="text-gray-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm dark:text-white">Read More</a></p>
               {{- else -}}
-                <p class="text-gray-700">{{ .Description | markdownify }}</p>
+                <p class="text-gray-700 dark:text-white">{{ .Description | markdownify }}</p>
               {{- end -}}
             </div>
           </div>
         {{- else -}}
           <div class="mb-8">
             {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-              <p class="text-gray-700">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm">Read More</a></p>
+              <p class="text-gray-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
             {{- else -}}
-              <p class="text-gray-700">{{ .Description | markdownify }}</p>
+              <p class="text-gray-700 dark:text-white">{{ .Description | markdownify }}</p>
             {{- end -}}
           </div>
         {{- end -}}
       {{- end -}}
     {{- end -}}
     </div>
+ 
 
     {{- if isset .Site.Params "enable_jumbo" -}}
       {{- if ne .Site.Params.enable_jumbo "true" -}}
@@ -241,7 +242,7 @@
               {{- with $paginator.First -}}
                 {{- $url := trim (string .URL) "/" | absURL -}}
                 <li>
-                  <a href="{{ $url }}" aria-label="First" class="px-3 py-2 rounded-md bg-white text-gray-700 hover:bg-gray-50 border border-gray-300">
+                  <a href="{{ $url }}" aria-label="First" class="px-3 py-2 rounded-md bg-white text-gray-700 hover:bg-gray-50 border border-gray-300 dark:text-white">
                     <span aria-hidden="true">&laquo;&laquo;</span>
                   </a>
                 </li>
