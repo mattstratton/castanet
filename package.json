@@ -1,6 +1,6 @@
 {
   "name": "castanet",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A podcast-oriented theme for Hugo",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,6 @@
     "css:dev": "NODE_ENV=development npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
     "css:build": "NODE_ENV=production npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
     "build": "hugo -s exampleSite",
-    "js:build": "utilities/build-scripts/copy-js-deps.sh",
-    "css:dev:old": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --watch",
-    "css:build:old": "tailwindcss -i ./assets/css/main.css -o assets/css/compiled/main.css --minify",
     "dev-hugo": "hugo server -s exampleSite --gc --themesDir=../..",
     "dev": "run-p css:dev dev-hugo"
   },
@@ -20,6 +17,12 @@
     "type": "git",
     "url": "https://github.com/mattstratton/castanet.git"
   },
+  "keywords": [
+    "hugo",
+    "hugo-theme",
+    "tailwind",
+    "dark-mode"
+  ],
   "author": "Matt Stratton",
   "license": "MIT",
   "bugs": {
@@ -27,9 +30,9 @@
   },
   "homepage": "https://github.com/mattstratton/castanet#readme",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
     "@tailwindcss/cli": "^4.1.6",
     "autoprefixer": "^10.4.17",
+    "netlify-cli": "^21.4.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",
@@ -38,11 +41,11 @@
     "vendor-copy": "^3.0.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "jquery": "^3.5.1",
     "jssocials": "^1.5.0",
     "mediaelement": "^4.2.14",
-    "mediaelement-plugins": "^2.5.0",
-    "netlify-cli": "^17.21.1"
+    "mediaelement-plugins": "^2.5.0"
   },
   "vendorCopy": [],
   "devVendorCopy": [
