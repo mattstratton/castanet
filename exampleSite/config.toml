@@ -45,15 +45,15 @@ buildFuture = true
     identifier = "guests"
     url = "/guest"
 
-[[Menu.Main]]
-    name = "Upcoming Episodes"
-    identifier = "upcoming"
-    url = "/upcoming"
+#[[Menu.Main]]
+#    name = "Upcoming Episodes"
+#    identifier = "upcoming"
+#    url = "/upcoming"
 
-[[Menu.Main]]
-    name = "Blog"
-    identifier = "blog"
-    url = "/blog"
+#[[Menu.Main]]
+#    name = "Blog"
+#    identifier = "blog"
+#    url = "/blog"
 
 [[Menu.Main]]
     name = "Resources"
@@ -70,10 +70,10 @@ buildFuture = true
     identifier = "podcasts"
     url = "/books"
     parent = "resources"
-[[Menu.Main]]
-    name = "Internet"
-    identifier = "internet"
-    url = "https://www.google.com"
+#[[Menu.Main]]
+#    name = "Internet"
+#    identifier = "internet"
+#    url = "https://www.google.com"
 
 [params]
 googleAnalytics_UA = ""

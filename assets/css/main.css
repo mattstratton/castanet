@@ -3,3 +3,4 @@
 @tailwind utilities;
 
 /* Custom styles can go here */ 
+@custom-variant dark (&:where(.dark, .dark *));

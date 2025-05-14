@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "devopsdays-min.js",
+  "sources": [
+    "vendor/jquery.js",
+    "vendor/jssocials.js",
+    "vendor/mediaelement-and-player.js",
+    "vendor/speed.js",
+    "vendor/speed-i18n.js",
+    "castanet.js"
+  ],
+  "mappings": "AAAA"
+}
+EOL 

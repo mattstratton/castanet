@@ -70,3 +70,12 @@
         <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{"episode/index.xml" | absURL }}"/>
     {{- end -}}
 {{ end }}
+{{ $jquery := resources.Get "js/vendor/jquery.js" }}
+{{ $jssocials := resources.Get "js/vendor/jssocials.js" }}
+{{ $mediaelement := resources.Get "js/vendor/mediaelement-and-player.js" }}
+{{ $speed := resources.Get "js/vendor/speed.js" }}
+{{ $speed_i18n := resources.Get "js/vendor/speed-i18n.js" }}
+{{ $castanet := resources.Get "js/castanet.js" }}
+
+{{ $js := slice $jquery $jssocials $mediaelement $speed $speed_i18n $castanet | resources.Concat "js/castanet-min.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

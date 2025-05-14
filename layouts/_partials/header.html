@@ -1,47 +1,104 @@
-<nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+<nav class="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 shadow-md z-50">
   <div class="w-full max-w-5xl mx-auto px-4">
     <div class="flex justify-between items-center h-16">
       <!-- Site Title -->
-      <a class="text-xl font-bold text-gray-800 hover:text-gray-600" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-      <!-- Hamburger for mobile -->
-      <button class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400 hover:text-gray-600 hover:border-gray-500"
-        type="button"
-        aria-label="Toggle menu"
-        onclick="document.getElementById('mobile-menu').classList.toggle('hidden');">
-        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-      <!-- Desktop menu -->
-      <div class="hidden md:flex md:items-center md:space-x-4">
-        <ul class="flex flex-row items-center space-x-4">
-          {{ $currentPage := . }}
-          {{ if gt (len .Site.Menus) 0 }}
-            {{ range sort .Site.Menus.main "Identifier"}}
-              <li>
-                <a href="{{ .URL | absURL }}"
-                   class="px-3 py-2 text-gray-700 hover:text-gray-900 {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 font-medium{{ end }}">
-                  {{ .Name }}
-                </a>
-              </li>
+      <a class="text-xl font-bold text-gray-800 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+      <div class="flex items-center">
+        <!-- Dark mode toggle button (mobile only) -->
+        <button
+          id="dark-mode-toggle-mobile"
+          class="mr-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-200 dark:bg-gray-700 md:hidden"
+          aria-label="Toggle dark mode"
+          type="button"
+        >
+          <span>
+            <svg class="h-5 w-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+            </svg>
+            <svg class="h-5 w-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.34 6.34L4.93 4.93m12.02 0l-1.41 1.41M6.34 17.66l-1.41 1.41"/>
+            </svg>
+          </span>
+        </button>
+        <!-- Hamburger for mobile -->
+        <button class="md:hidden flex items-center px-3 py-2 border rounded text-gray-500 border-gray-400 hover:text-gray-600 hover:border-gray-500 dark:bg-gray-800 dark:text-gray-300"
+          type="button"
+          aria-label="Toggle menu"
+          onclick="document.getElementById('mobile-menu').classList.toggle('hidden');">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <!-- Desktop menu and dark mode toggle (unchanged) -->
+        <div class="hidden md:flex md:items-center md:space-x-4">
+          <ul class="flex flex-row items-center space-x-4">
+            {{ $currentPage := . }}
+            {{ if gt (len .Site.Menus) 0 }}
+              {{ range sort .Site.Menus.main "Identifier"}}
+                {{ if .HasChildren }}
+                  <li class="relative group">
+                    <div class="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white cursor-pointer">
+                      {{ .Name }}
+                      <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                    </div>
+                    <ul class="absolute left-0 top-full w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50">
+                      {{ range sort .Children "Identifier" }}
+                        <li>
+                          <a href="{{ .URL | absURL }}"
+                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-900">
+                            {{ .Name }}
+                          </a>
+                        </li>
+                      {{ end }}
+                    </ul>
+                  </li>
+                {{ else }}
+                  <li>
+                    <a href="{{ .URL | absURL }}"
+                       class="px-3 py-2 text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 dark:text-white font-medium{{ end }}">
+                      {{ .Name }}
+                    </a>
+                  </li>
+                {{ end }}
+              {{ end }}
             {{ end }}
-          {{ end }}
-        </ul>
-        <!-- Social Links -->
-        <ul class="flex items-center space-x-4 ml-4">
-          {{ partial "social-menu.html" .}}
-          <!-- Add more social links as needed -->
-        </ul>
+          </ul>
+          <!-- Social Links -->
+          <ul class="flex items-center space-x-4 ml-4">
+            {{ partial "social-menu.html" .}}
+          </ul>
+          <!-- Dark mode toggle button (desktop only) -->
+          <button
+            id="dark-mode-toggle"
+            class="ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-200 dark:bg-gray-700 hidden md:inline-flex"
+            aria-label="Toggle dark mode"
+            type="button"
+          >
+            <span id="dark-mode-icon">
+              <!-- Moon icon for light mode, sun for dark mode -->
+              <svg id="icon-moon" class="h-5 w-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+              </svg>
+              <svg id="icon-sun" class="h-5 w-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.34 6.34L4.93 4.93m12.02 0l-1.41 1.41M6.34 17.66l-1.41 1.41"/>
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </nav>
 
 <!-- Mobile menu -->
-<div id="mobile-menu" class="fixed inset-0 z-50 bg-white px-4 py-6 flex flex-col space-y-6 hidden md:hidden">
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-white dark:bg-gray-900 px-4 py-6 flex flex-col space-y-6 hidden md:hidden">
   <div class="flex justify-between items-center">
-    <span class="text-xl font-bold text-gray-800">{{ .Site.Title }}</span>
-    <button class="text-gray-500 hover:text-gray-700" aria-label="Close menu"
+    <span class="text-xl font-bold text-gray-800 dark:text-gray-100">{{ .Site.Title }}</span>
+    <button class="text-gray-500 hover:text-gray-700 dark:text-gray-300" aria-label="Close menu"
       onclick="document.getElementById('mobile-menu').classList.add('hidden');">
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -52,16 +109,32 @@
     {{ $currentPage := . }}
     {{ if gt (len .Site.Menus) 0 }}
       {{ range sort .Site.Menus.main "Identifier"}}
-        <li>
-          <a href="{{ .URL | absURL }}"
-             class="block text-base text-gray-600 hover:text-gray-900 {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 font-medium{{ end }}">
-            {{ .Name }}
-          </a>
-        </li>
+        {{ if .HasChildren }}
+          <li>
+            <div class="font-medium text-gray-900 dark:text-gray-100">{{ .Name }}</div>
+            <ul class="mt-2 space-y-2 pl-4">
+              {{ range sort .Children "Identifier" }}
+                <li>
+                  <a href="{{ .URL | absURL }}"
+                     class="block text-base text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </li>
+        {{ else }}
+          <li>
+            <a href="{{ .URL | absURL }}"
+               class="block text-base text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white {{ if or ($currentPage.IsMenuCurrent "Main" .) ($currentPage.HasMenuCurrent "Main" .) }}text-gray-900 dark:text-white font-medium{{ end }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
       {{ end }}
     {{ end }}
   </ul>
-  <div class="flex space-x-4 pt-4 border-t border-gray-200">
+  <div class="flex space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
     {{ partial "social-menu-mobile.html" .}}
     <!-- Add more social links as needed -->
   </div>
