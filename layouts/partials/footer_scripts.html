@@ -63,3 +63,7 @@
         // other configuration elements
     });
 </script>
+
+{{ if and .Site.Params.fathomAnalytics .Site.Params.fathomAnalytics.siteID }}
+  {{- partial "fathom" . -}}
+{{ end }}
