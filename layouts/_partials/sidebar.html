@@ -1,57 +1,57 @@
-<div class="row"><!-- subscribe begin -->
-  <div class="col-md-12 sidebar_general">
-    <div class = "row">
-      <div class = "col-md-12">
-        <h3 class="sidebar_headline text-uppercase">Subscribe</h3>
+<div class="flex flex-wrap -mx-4 mb-8 bg-slate-200 dark:bg-slate-500 p-4 rounded-lg shadow-md"><!-- subscribe begin -->
+  <div class="w-full px-4">
+    <div class="flex flex-wrap -mx-4 mb-4">
+      <div class="w-full px-4">
+        <h3 class="text-lg font-bold uppercase tracking-wide mb-4 text-slate-900 dark:text-slate-100">Subscribe</h3>
       </div>
     </div>
-    <div class = "row">
+    <div class="flex flex-wrap -mx-4">
       {{ if (isset .Site.Params "podlove") }}
-      <div class = "d-flex p-2 subscribe_buttons col-md-auto">
+      <div class="flex p-2 w-full md:w-auto">
         <script>window.podcastData={'title':'{{ if (isset .Site.Params.podlove "subscribe_title") }}{{ .Site.Params.podlove.subscribe_title }}{{else}}{{ .Title }}{{end}}','subtitle':'{{ .Site.Params.podlove.subscribe_subtitle }}','description':'{{ if (isset .Site.Params.podlove "subscribe_description") }}{{ .Site.Params.podlove.subscribe_description }}{{else}}{{ .Site.Params.Description }}{{end}}','cover':'{{ .Site.Params.podlove.subscribe_cover }}','feeds':[{'type':'{{ .Site.Params.podlove.subscribe_feed_type }}','format':'{{ .Site.Params.podlove.subscribe_feed_format }}','url':'{{ .Site.Params.rss_subscribe }}','directory-url-itunes':'{{ .Site.Params.podlove.itunes_subscribe }}'}]}</script>
         <script class="podlove-subscribe-button" src="https://cdn.podlove.org/subscribe-button/javascripts/app.js" data-language="{{ .Site.Params.podlove.subscribe_language }}" data-size="{{ .Site.Params.podlove.subscribe_size }}" data-json-data="podcastData" data-color="{{ .Site.Params.podlove.subscribe_color }}" data-format="{{ .Site.Params.podlove.subscribe_format }}" data-style="{{ .Site.Params.podlove.subscribe_style }}"></script>
-        <noscript><a href="{{ .Site.Params.rss_subscribe }}">Subscribe to feed</a></noscript>
+        <noscript><a href="{{ .Site.Params.rss_subscribe }}" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Subscribe to feed</a></noscript>
       </div>
       {{ end }}
     </div>
-    <div class="row">
+    <div class="flex flex-wrap -mx-4">
       {{ if (isset .Site.Params "spotify_subscribe") }}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.spotify_subscribe}}"><i class="fab fa-spotify"></i>&nbsp;Spotify</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.spotify_subscribe}}"><i class="fab fa-spotify mr-2"></i>Spotify</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "itunes_subscribe") }}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-podcast"></i>&nbsp;Apple Podcasts</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-podcast mr-2"></i>Apple Podcasts</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "android_subscribe") }}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default subscribe_buttons" href="{{ .Site.Params.android_subscribe }}"><i class="fab fa-android"></i>&nbsp;Android</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.android_subscribe }}"><i class="fab fa-android mr-2"></i>Android</a>
         </div>
       {{ end }}
       {{ with .Site.Params.stitcher_subscribe }}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ . }}"><i class="fa fa-podcast"></i>&nbsp;Stitcher</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ . }}"><i class="fa fa-podcast mr-2"></i>Stitcher</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "soundcloud_subscribe") }}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fab fa-soundcloud"></i>&nbsp;Soundcloud</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fab fa-soundcloud mr-2"></i>Soundcloud</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "pocketcasts_subscribe") }}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.pocketcasts_subscribe }}"><i class="fa fa-podcast"></i>&nbsp;PocketCasts</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.pocketcasts_subscribe }}"><i class="fa fa-podcast mr-2"></i>PocketCasts</a>
         </div>
       {{ end }}
       {{ if (isset .Site.Params "rss_subscribe" )}}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss"></i>&nbsp;RSS</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss mr-2"></i>RSS</a>
         </div>
       {{ else }}
-        <div class = "col-md-12 subscribe_buttons">
-          <a class="btn btn-default" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss"></i>&nbsp;Subscribe via RSS</a>
+        <div class="w-full mb-2">
+          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss mr-2"></i>Subscribe via RSS</a>
         </div>
       {{ end }}
     </div>
@@ -59,30 +59,28 @@
 </div><!-- subscribe end -->
 
 {{ if (isset .Site.Params "mailchimp_subscribe") }} <!-- mailchimp begin -->
-  <div class="row">
-    <div class="col-md-12 sidebar_general">
-      <div class = "row">
-        <div class = "col-md-12">
-          <h3 class="sidebar_headline text-uppercase">Join Our Mailing List</h3>
+  <div class="flex flex-wrap -mx-4 mb-8 bg-slate-200 dark:bg-slate-500 p-4 rounded-lg shadow-md">
+    <div class="w-full px-4">
+      <div class="flex flex-wrap -mx-4 mb-4">
+        <div class="w-full px-4">
+          <h3 class="text-lg font-bold uppercase tracking-wide mb-4 text-slate-900 dark:text-slate-100">Join Our Mailing List</h3>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <!-- Begin MailChimp Signup Form -->
-          <!-- <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"> -->
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4">
           <div id="mc_embed_signup">
-          <form action="{{ .Site.Params.mailchimp_subscribe }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <form action="{{ .Site.Params.mailchimp_subscribe }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
               <div id="mc_embed_signup_scroll">
-          	<label for="mce-EMAIL">Subscribe to our mailing list</label>
-          	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5e4cbcac996bb9df25f970a89_154fa76bcc" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                <label for="mce-EMAIL" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Subscribe to our mailing list</label>
+                <input type="email" value="" name="EMAIL" class="w-full px-3 py-2 text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-200" id="mce-EMAIL" placeholder="email address" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div class="hidden" aria-hidden="true"><input type="text" name="b_5e4cbcac996bb9df25f970a89_154fa76bcc" tabindex="-1" value=""></div>
+                <div class="mt-4">
+                  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500  dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 ">
+                </div>
               </div>
-          </form>
+            </form>
           </div>
-
-          <!--End mc_embed_signup-->
         </div>
       </div>
     </div>
@@ -91,22 +89,22 @@
 
 <!-- links sidebar -->
 {{ if isset $.Site.Params "links" }}
-  <div class = "row">
-    <div class="col-md-12 sidebar_general">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="sidebar_headline text-uppercase">
+  <div class="flex flex-wrap -mx-4 mb-8 bg-slate-200 dark:bg-slate-500 p-4 rounded-lg shadow-md">
+    <div class="w-full px-4">
+      <div class="flex flex-wrap -mx-4 mb-4">
+        <div class="w-full px-4">
+          <h3 class="text-lg font-bold uppercase tracking-wide mb-4">
             {{/* {{ $.Site.Params.links.title }} */}}
             Links
           </h3>
         </div>
       </div>
-      <div class="row">
-        <div class = "col-md-12">
-          <div class="sidebar_content">
-            <ul>
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4">
+          <div class="prose dark:prose-invert">
+            <ul class="space-y-2">
               {{ range $l:= $.Site.Params.links }}
-                <li><a href = "{{ $l.url }}">{{ $l.name}}</a></li>
+                <li><a href="{{ $l.url }}" class="text-slate-600 hover:text-slate-800 dark:text-slate-200 dark:hover:text-slate-300">{{ $l.name}}</a></li>
               {{ end }}
             </ul>
           </div>
@@ -116,18 +114,17 @@
   </div>
 {{ end }}
 
-
 {{ if (isset .Site.Params "description") }} <!-- about begin -->
-  <div class="row">
-    <div class="col-md-12 sidebar_general">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="sidebar_headline text-uppercase">About {{ .Site.Params.title }}</h3>
+  <div class="flex flex-wrap -mx-4 mb-8 bg-slate-200 dark:bg-slate-500 p-4 rounded-lg shadow-md">
+    <div class="w-full px-4">
+      <div class="flex flex-wrap -mx-4 mb-4">
+        <div class="w-full px-4">
+          <h3 class="text-lg font-bold uppercase tracking-wide mb-4">About {{ .Site.Params.title }}</h3>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="sidebar_content">
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4">
+          <div class="prose dark:prose-invert">
             {{ .Site.Params.description | markdownify }}
           </div>
         </div>
@@ -137,11 +134,11 @@
 {{ end }} <!-- end about -->
 
 <!-- host sidebar -->
-<div class = "row">
-  <div class="col-md-12 sidebar_general">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="sidebar_headline text-uppercase">
+<div class="flex flex-wrap -mx-4 mb-8 bg-slate-200 dark:bg-slate-500 p-4 rounded-lg shadow-md">
+  <div class="w-full px-4">
+    <div class="flex flex-wrap -mx-4 mb-4">
+      <div class="w-full px-4">
+        <h3 class="text-lg font-bold uppercase tracking-wide mb-4">
         {{ if eq (len $.Site.Params.authors) 1 }}
           Host
         {{ else }}
@@ -149,13 +146,12 @@
         {{ end }}</h3>
       </div>
     </div>
-    <div class="row">
-      <div class = "col-md-12">
-        <div class="sidebar_content">
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full px-4">
+        <div class="prose dark:prose-invert">
           {{ range $p:= $.Site.Params.authors }}
-            <img alt = "{{ $p.name }}" src = "{{ $p.thumbnail | absURL }}" class="img-fluid">
-            <br />
-            {{ $p.name }}
+            <img alt="{{ $p.name }}" src="{{ $p.thumbnail | absURL }}" class="w-full h-auto rounded-lg shadow mb-2">
+            <div class="text-slate-700 dark:text-slate-300 mb-4">{{ $p.name }}</div>
           {{ end }}
         </div>
       </div>

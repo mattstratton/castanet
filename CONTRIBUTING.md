@@ -1,51 +1,47 @@
+<!-- vscode-markdown-toc -->
+* [Set up your environment](#Setupyourenvironment)
+	* [Git remote setup](#Gitremotesetup)
+	* [Installing dependencies](#Installingdependencies)
+		* [Install Node.js and npm](#InstallNode.jsandnpm)
+		* [Install node modules](#Installnodemodules)
+* [How can I help?](#HowcanIhelp)
+* [Making changes](#Makingchanges)
+	* [Testing changes](#Testingchanges)
+	* [Create a commit](#Createacommit)
+	* [Branching and Pull Requests](#BranchingandPullRequests)
+* [Design Principles](#DesignPrinciples)
+	* [Frameworks](#Frameworks)
+	* [Blocks](#Blocks)
+		* [`site.scss`](#site.scss)
+		* [`color-variables.scss`](#color-variables.scss)
+		* [`custom.scss`](#custom.scss)
+	* [Javascript](#Javascript)
+* [Local build and testing](#Localbuildandtesting)
+* [Continuous Integration](#ContinuousIntegration)
+	* [Issues](#Issues)
+	* [GitHub Labels](#GitHubLabels)
+	* [Pull Requests](#PullRequests)
+* [Documentation](#Documentation)
+* [Releasing](#Releasing)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
 # Contributing to castanet
 
 The technical details on how to set up your local development environment for making changes to the `castanet` [Hugo](https://gohugo.io/) theme for podcasts.
 
-# Table of contents
-<!-- TOC depthFrom:2 -->
 
-- [Set up your environment](#set-up-your-environment)
-  - [Git remote setup](#git-remote-setup)
-  - [Installing dependencies](#installing-dependencies)
-    - [Install Node.js and npm](#install-nodejs-and-npm)
-    - [Install gulp](#install-gulp)
-    - [Install node modules](#install-node-modules)
-- [How can I help?](#how-can-i-help)
-- [Making changes](#making-changes)
-  - [Testing changes](#testing-changes)
-  - [Create a commit](#create-a-commit)
-  - [Branching and Pull Requests](#branching-and-pull-requests)
-- [Design Principles](#design-principles)
-  - [Frameworks](#frameworks)
-  - [Blocks](#blocks)
-  - [CSS and SCSS](#css-and-scss)
-    - [`site.scss`](#sitescss)
-    - [`color-variables.scss`](#color-variablesscss)
-    - [`custom.scss`](#customscss)
-  - [Javascript](#javascript)
-- [Local build and testing](#local-build-and-testing)
-  - [Build new javascript and stylesheets](#build-new-javascript-and-stylesheets)
-- [Continuous Integration](#continuous-integration)
-  - [Issues](#issues)
-  - [GitHub Labels](#github-labels)
-  - [Pull Requests](#pull-requests)
-- [Documentation](#documentation)
-- [Releasing](#releasing)
-- [Creating a new color theme](#creating-a-new-color-theme)
-- [Developer Certification of Origin (DCO)](#developer-certification-of-origin-dco)
-  - [DCO Sign-Off Methods](#dco-sign-off-methods)
-
-<!-- /TOC -->
-
-## Set up your environment
+## <a name='Setupyourenvironment'></a>Set up your environment
 
 Prerequisites:
 
-* `make` (note - this is not needed yet)
-* `gulp` v4.0.0+
+
 * `nodejs` and `npm`
-* [hugo v0.69.2+](https://gohugo.io)
+* [hugo v0.147.3+](https://gohugo.io)
 
 Clone `castanet` from source into your working directory of choice:
 
@@ -55,21 +51,24 @@ $ cd $_
 $ git clone git@github.com:mattstratton/castanet.git .
 ```
 
-Working with a Hugo theme outside of a content-based repo has a few challenges. The `castanet` repo contains a directory called `exampleSite`, which is what is used for testing theme development. The `config.toml` for the `exampleSite` contains the following value:
+Working with a Hugo theme outside of a content-based repo has a few challenges. The `castanet` repo contains a directory called `exampleSite`, which is what is used for testing theme development. The `go.mod` for the `exampleSite` contains the following value:
 
 ```
-themesdir = "../.."
+require github.com/mattstratton/castanet/v2 v2.0.0 // indirect
+
+replace github.com/mattstratton/castanet/v2 => ../
 ```
 
-This tells Hugo where to look for its theme directories. This requires Hugo 0.18 or later.
+This tells Hugo to get the module from the parent directory.
 
-You will need to run your watch command from the `exampleSite` directory; use something like this:
+To run the Hugo server, use the following command:
 
 ```
-hugo server -w --baseUrl="http://localhost:1313"
+npm run dev
 ```
 
-### Git remote setup
+This will start the Hugo server and watch for changes to the Tailwind CSS.
+### <a name='Gitremotesetup'></a>Git remote setup
 
 Change our remote to be named `upstream`:
 
@@ -83,30 +82,27 @@ Add your fork as `origin`:
 $ git remote add fork git@github.com:you/castanet.git
 ```
 
-### Installing dependencies
+### <a name='Installingdependencies'></a>Installing dependencies
 
-#### Install Node.js and npm
+#### <a name='InstallNode.jsandnpm'></a>Install Node.js and npm
 
 https://docs.npmjs.com/getting-started/installing-node
-#### Install gulp
 
-`npm install --global gulp`
-
-#### Install node modules
+#### <a name='Installnodemodules'></a>Install node modules
 
 `npm install`
 
-## How can I help?
+## <a name='HowcanIhelp'></a>How can I help?
 
 Sort the existing GitHub issues for the tag of `help-wanted`. These are issues that we need help with! If you are going to tackle one, please comment on the issue so folks know you are on it.
 
-## Making changes
+## <a name='Makingchanges'></a>Making changes
 
-### Testing changes
+### <a name='Testingchanges'></a>Testing changes
 
 There are no automated tests, but it is recommended that you test manually by testing both `row` and `grid` configurations in the `config.toml` inside `exampleSite`.
 
-### Create a commit
+### <a name='Createacommit'></a>Create a commit
 
 Commit messages should be well formatted.
 Start your commit message with a title in the imperative, i.e., "Updates function foo" vs "Updated function foo". Capitalize it.
@@ -126,7 +122,7 @@ everyone is using now.
 Fixes #284
 ```
 
-### Branching and Pull Requests
+### <a name='BranchingandPullRequests'></a>Branching and Pull Requests
 
 (inspired by [Katrina Owen](kytrinyx)'s [excellent blog post](https://splice.com/blog/contributing-open-source-git-repositories-go/))
 
@@ -147,48 +143,46 @@ Don't forget to keep up to date with `upstream`:
 $ git fetch upstream
 $ git reset --hard upstream/master
 ```
-## Design Principles
+## <a name='DesignPrinciples'></a>Design Principles
 
-### Frameworks
+### <a name='Frameworks'></a>Frameworks
 
-We use [Boostrap v4](https://getbootstrap.com/) as our basic framework.
+We use [Tailwind CSS](https://tailwindcss.com/) for all styling. We prefer using utility classes over custom CSS.
 
-### Blocks
-All page templates should make use of the `layouts/_default/baseof.html` file. This file contains all wrappers for the content. Anything within the `{{- block "main" . }} {{- end -}}` section is what will be displayed on a sub-template. Include a `{{ define "main" }}` block in your template to include what should be rendered.
+### <a name='Blocks'></a>Blocks
+All page templates should make use of the `layouts/baseof.html` file. This file contains all wrappers for the content. Anything within the `{{- block "main" . }} {{- end -}}` section is what will be displayed on a sub-template. Include a `{{ define "main" }}` block in your template to include what should be rendered.
 
-### CSS and SCSS
+<!-- ###  4.3. <a name='CSSandSCSS'></a>CSS and SCSS
 All CSS must be generated with SCSS. The SCSS files are located in `static/scss`.
 
-#### `site.scss`
+#### <a name='site.scss'></a>`site.scss`
 This is the file that imports all the other SCSS files, including Bootstrap, font-awesome, jssocials, and the jquery oembed. It also imports our custom variables and any other customizations.
 
-#### `color-variables.scss`
+#### <a name='color-variables.scss'></a>`color-variables.scss`
 Note that this refers to files like `blue-variables.scss` or `orange-variables.scss`. There is no actual file named `color-variables.scss`
 
 Use this to set any SCSS variables, or to over-ride any variables used by Bootstrap. You need one for each color theme created.
 
-#### `custom.scss`
-This is the only place you should declare custom SCSS or CSS code.
+#### <a name='custom.scss'></a>`custom.scss`
+This is the only place you should declare custom SCSS or CSS code. -->
 
-### Javascript
-All Javascript files are combined using gulp. The source Javascript files can be located either in `node_modules` or `static/js`. They are combined and minified into `static/castanet-min.js`.
+### <a name='Javascript'></a>Javascript
+All Javascript files are combined using Hugo Pipes. The source Javascript files can be located either in `node_modules` or `static/js`. They are combined and minified into `static/castanet-min.js`.
 
-## Local build and testing
+## <a name='Localbuildandtesting'></a>Local build and testing
 
-### Build new javascript and stylesheets
+Inside the theme directory, run `npm install` if you haven't already.
 
-Inside the theme directory, run `npm install`. 
+Run `npm run dev` to run Tailwind CSS and Hugo in watch mode.
 
-Run `gulp dev` to build the compiled stylesheets and Javascript files
-
-## Continuous Integration
-The `castanet` repo has hooks into CircleCI and Netlify. The CircleCI builds the site according the various configurations (row vs grid and with all the color schemes). If you're curious, you can check out the CircleCI configuration in [.circleci/config.yml](https://github.com/mattstratton/castanet/blob/master/.circleci/config.yml).
+## <a name='ContinuousIntegration'></a>Continuous Integration
+The `castanet` repo has hooks into GitHub Actions and Netlify. GitHub Actions builds the site according the various configurations (row vs grid) and runs Lighthouse checks. If you're curious, you can check out the GitHub actions configuration in [.github/workflows/ci.yml](https://github.com/mattstratton/castanet/blob/master/.github/workflows/ci.yml).
 
 We use the Deploy Previews feature of Netlify. The config for this is at [netlify.toml](https://github.com/mattstratton/castanet/blob/master/netlify.toml).
 
-All changes are built by Netlify to http://sample-castanet.netlify.com/ once merged to master.
+All changes are built by Netlify to http://sample-castanet.netlify.app/ once merged to master.
 
-### Issues
+### <a name='Issues'></a>Issues
 
 All changes should be driven by issues (this is because our changelog generator is issue-driven). So before you implement a bugfix or an enhancement, you should make sure an issue has been created and properly tagged. These are the issue labels that really matter:
 
@@ -200,7 +194,7 @@ Only repository contributors can add tags to issues; if you do not have permissi
 
 If you use the issue templates when opening your issues, the proper titles and tags should be added for you!
 
-### GitHub Labels
+### <a name='GitHubLabels'></a>GitHub Labels
 
 These are the labels we use, and what they mean:
 
@@ -214,77 +208,27 @@ These are the labels we use, and what they mean:
 - `no-changelog`: This issue/PR should be excluded from the changelog.
 - `question`: Issues that are for discussion, not an actual bug or enhancement.
 
-### Pull Requests
+### <a name='PullRequests'></a>Pull Requests
 
 Please submit your proposed changes as a Pull Request against this repository. If the PR will resolve an issue, please add `Fixes #123` to the PR. We also will label issues as `bug` or `enhancement` for proper CHANGELOG generation. For more details, see [Linking a pull request to an issue using a keyword](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword).
 
-## Documentation
+## <a name='Documentation'></a>Documentation
 
 If you add a new feature, please do the following:
 
 1. Update the README to reflect how this field/feature is used (to assist with adding rows to our tables, we recommend the excellent [Tables Generator](http://www.tablesgenerator.com/markdown_tables) tool).
 2. If possible, add this feature to the `exampleSite`, for testing and display purposes.
 
-## Releasing
+## <a name='Releasing'></a>Releasing
 
-See [utils/README](https://github.com/mattstratton/castanet/blob/master/utils/README.md) for instructions.
+See [.github/workflows/prepare-release.yml](https://github.com/mattstratton/castanet/blob/master/.github/workflows/prepare-release.yml) for details on the release process.
 
-## Creating a new color theme
+<!-- ## Creating a new color theme
 
 Adding a color theme is quite simple - you will need to generate two new files for the theme:
 
 - `static/scss/<MYCOLOR>_variables.scss`
 - `static/scss/<MYCOLOR.scss`
 
-The `<MYCOLOR>_variables.scss` file contains the Sass variables uses to build the stylesheet. `<MYCOLOR>` should refer to the name of the style as you will set it in the `config.toml`.
+The `<MYCOLOR>_variables.scss` file contains the Sass variables uses to build the stylesheet. `<MYCOLOR>` should refer to the name of the style as you will set it in the `config.toml`. -->
 
-## Developer Certification of Origin (DCO)
-
-Licensing is very important to open source projects. It helps ensure the software continues to be available under the terms that the author desired.
-
-This project uses [the MIT license](https://github.com/mattstratton/castanet/blob/master/LICENSE).
-
-The license tells you what rights you have that are provided by the copyright holder. It is important that the contributor fully understands what rights they are licensing and agrees to them. Sometimes the copyright holder isn't the contributor, such as when the contributor is doing work on behalf of a company.
-
-To make a good faith effort to ensure these criteria are met, we requires the Developer Certificate of Origin (DCO) process to be followed.
-
-The DCO is an attestation attached to every contribution made by every developer. In the commit message of the contribution, the developer simply adds a Signed-off-by statement and thereby agrees to the DCO, which you can find below or at <http://developercertificate.org/>.
-
-```
-Developer's Certificate of Origin 1.1
-
-By making a contribution to this project, I certify that:
-
-(a) The contribution was created in whole or in part by me and I
-    have the right to submit it under the open source license
-    indicated in the file; or
-
-(b) The contribution is based upon previous work that, to the
-    best of my knowledge, is covered under an appropriate open
-    source license and I have the right under that license to   
-    submit that work with modifications, whether created in whole
-    or in part by me, under the same open source license (unless
-    I am permitted to submit under a different license), as
-    Indicated in the file; or
-
-(c) The contribution was provided directly to me by some other
-    person who certified (a), (b) or (c) and I have not modified
-    it.
-
-(d) I understand and agree that this project and the contribution
-    are public and that a record of the contribution (including
-    all personal information I submit with it, including my
-    sign-off) is maintained indefinitely and may be redistributed
-    consistent with this project or the open source license(s)
-    involved.
-```
-
-### DCO Sign-Off Methods
-
-The DCO requires a sign-off message in the following format appear on each commit in the pull request:
-
-```
-Signed-off-by: George Bluth <george.bluth@bluthcompany.com>
-```
-
-The DCO text can either be manually added to your commit body, or you can add either **-s** or **--signoff** to your usual git commit commands. If you forget to add the sign-off you can also amend a previous commit with the sign-off by running **git commit --amend -s**. If you've pushed your changes to Github already you'll need to force push your branch after this with **git push -f**.
