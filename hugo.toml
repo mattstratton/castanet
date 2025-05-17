@@ -3,3 +3,73 @@
     extended = true
     # max = ''
     min = '0.147.3'
+  [[module.mounts]]
+    source = ".node_modules/jquery/dist/"
+    target = "assets/lib/jquery"
+    includeFiles = ['jquery.js']
+
+  [[module.mounts]]
+    source = "./node_modules/jssocials/dist"
+    target = "assets/lib/jssocials"
+    includeFiles = ['jssocials.js']
+
+  [[module.mounts]]
+    source = "./node_modules/jssocials/dist"
+    target = "assets/lib/jssocials/css"
+    includeFiles = ['jssocials.css', 'jssocials-theme-plain.css']
+
+  [[module.mounts]]
+    source = "./node_modules/@fortawesome/fontawesome-free/css"
+    target = "assets/lib/fontawesome/css"
+    includeFiles = ['all.css']
+
+  [[module.mounts]]
+    source = "./node_modules/@fortawesome/fontawesome-free/webfonts"
+    target = "static/webfonts"
+
+  [[module.mounts]]
+    source = "./node_modules/mediaelement/build"
+    target = "assets/lib/mediaelement"
+    includeFiles = ['mediaelement-and-player.js']
+
+  [[module.mounts]]
+    source = "./node_modules/mediaelement/build"
+    target = "assets/lib/mediaelement/css"
+    includeFiles = ['mediaelementplayer.min.css']
+
+  [[module.mounts]]
+    source = "./node_modules/mediaelement/build"
+    target = "static/img/lib/mediaelement/"
+    includeFiles = ['mejs-controls.svg']
+
+  [[module.mounts]]
+    source = "./node_modules/mediaelement-plugins/dist/speed"
+    target = "assets/lib/mediaelement/speed"
+    includeFiles = ['speed.js', 'speed-i18n.js']
+
+  [[module.mounts]]
+    source = "./node_modules/mediaelement-plugins/dist/speed"
+    target = "assets/lib/mediaelement/speed/css"
+    includeFiles = ['speed.min.css']
+  
+  # standard hugo mounts
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+
+  [[module.mounts]]
+    source = 'static'
+    target = 'static'
+
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+
+  [[module.mounts]]
+    source = 'data'
+    target = 'data'
+
+  [[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+

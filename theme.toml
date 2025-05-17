@@ -9,7 +9,7 @@ homepage = "https://github.com/mattstratton/castanet"
 tags = ["podcast", "responsive", "dark-mode", "tailwind"]
 features = ["podcast RSS", "subscribe buttons"]
 min_version = "0.147.3"
-theme_version = "2.0.0-beta.1"
+theme_version = "2.0.0-beta.2"
 
 [author]
   name = "Matt Stratton"

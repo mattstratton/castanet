@@ -4,20 +4,10 @@
   "description": "A podcast-oriented theme for Hugo",
   "main": "index.js",
   "scripts": {
-    "preinstall": "rimraf assets/lib && rimraf static/webfonts && rimraf static/img/lib",
-    "postinstall": "vendor-copy",
-    "assets": "rimraf assets/lib  && rimraf static/webfonts && rimraf static/img/lib && vendor-copy",
-    "css:dev:all": "run-p css:dev:slate css:dev:violet",
-    "css:dev": "NODE_ENV=development npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit -w",
-    "css:dev:slate": "NODE_ENV=development npx @tailwindcss/cli  -i ./assets/css/slate.css -o ./assets/css/compiled/slate.css --jit -w",
-    "css:dev:violet": "NODE_ENV=development npx @tailwindcss/cli  -i ./assets/css/violet.css -o ./assets/css/compiled/violet.css --jit -w",
-    "css:build": "NODE_ENV=production npx @tailwindcss/cli  -i ./assets/css/main.css -o ./assets/css/compiled/main.css --jit",
-    "css:build:slate": "NODE_ENV=production npx @tailwindcss/cli  -i ./assets/css/slate.css -o ./assets/css/compiled/slate.css --jit",
-    "css:build:violet": "NODE_ENV=production npx @tailwindcss/cli  -i ./assets/css/violet.css -o ./assets/css/compiled/violet.css --jit",
     "build": "hugo -s exampleSite",
     "example": "hugo server --bind 0.0.0.0 -p 8008 --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/castanet/",
     "dev-hugo": "hugo server -s exampleSite --gc --themesDir=../..",
-    "dev": "run-p css:dev dev-hugo",
+    "dev": "run-p dev-hugo",
     "lighthouse": "lhci autorun"
   },
   "repository": {
