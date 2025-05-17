@@ -23,12 +23,11 @@ jobs:
       - name: build
         run: |
           cd exampleSite
+          npm install
           hugo mod get -u && hugo --gc --minify --buildDrafts --buildFuture --baseURL="http://localhost:1313"
           # hugo server --BaseURL="http://localhost:1313"
           ls
-      - name: npm-install
-        run: |
-          npm install
+
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.13.x
