@@ -12,35 +12,90 @@ A podcast-oriented theme for Hugo.
 
 ## Quick Start
 
-1. Add the theme to your Hugo site:
+##### 1. Initialize Hugo modules on your repo
+
+First, initialize [Hugo modules](https://gohugo.io/hugo-modules/) in your repo. This will create a `go.mod` file.
+
 ```bash
-hugo mod init your-site
-hugo mod get github.com/mattstratton/castanet
+hugo mod init github.com/<your username>/<your repo name>
 ```
 
-2. Add the theme to your site's config.toml:
+##### 2. Add this theme as your module dependency
+
+In your `hugo.toml` file, add a `module` section. (exampleSite uses `config/_default/module.toml`)
+
+```toml
+[module]
+  [[module.imports]]
+    path = "github.com/mattstratton/castanet/v2"
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+```
+
+##### 3. Update config.toml
+
+In your `hugo.toml` file, add the following lines: (exampleSite uses `config/_default/build.toml`)
+
+```toml
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+```
+
+Also add the following line to your `hugo.toml` file:
+
 ```toml
 theme = "castanet"
 ```
 
-## Development
+##### 4. Update your module
 
-This theme uses Tailwind CSS for styling. The compiled CSS is included in the theme, so you don't need to build anything to use it. However, if you want to modify the styles:
+Now, run this command to load this theme as your module.
 
-1. Install dependencies:
+```bash
+hugo mod tidy
+```
+
+#### Running Locally
+
+Now, you can run your hugo site locally with the following steps:
+
+##### 1. Generate node dependency configuration
+
+Now run the following command to generate node dependency configuration. This will create the a `package.json` file in you repo.
+
+```bash
+hugo mod npm pack
+```
+
+##### 2. Install dependencies
+
+Install the node dependencies using following command:
 ```bash
 npm install
 ```
 
-2. Build the CSS:
+##### 3. Run your site
+
+Now, run you site locally using following command.
+
 ```bash
-npm run css:build
+hugo server -w
 ```
 
-3. For development with live reload:
-```bash
-npm run css:dev
-```
+## Development
+
 
 ## Theme Features
 

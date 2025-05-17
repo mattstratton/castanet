@@ -43,7 +43,7 @@
               {{ else }}
                 <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a></h3>
               {{ end }}
-              <small class="block text-gray-500 dark:text-gray-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+              <small class="block text-castanet-primary-500 dark:text-castanet-primary-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
             </div>
 
           </div>
@@ -82,7 +82,7 @@
             {{- with $paginator.First -}}
             {{- $url := trim (string .URL) "/" | absURL -}}
                 <li>
-                <a href="{{ $url }}" aria-label="First" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition"><span aria-hidden="true">&laquo;&laquo;</span></a>
+                <a href="{{ $url }}" aria-label="First" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition"><span aria-hidden="true">&laquo;&laquo;</span></a>
                 </li>
             {{- end -}}
         {{ end }}
@@ -90,7 +90,7 @@
       <!-- prev page button -->
       {{- with $paginator.HasPrev -}}
           <li>
-            <a href="{{ $paginator.Prev.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">&laquo;</a>
+            <a href="{{ $paginator.Prev.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">&laquo;</a>
           </li>
       {{ end }}
       <!-- page # buttons -->
@@ -99,18 +99,18 @@
         {{- $url := trim (string .URL) "/" | absURL -}}
         {{ if in ($.Scratch.Get "show") $cur }}
           <li>
-            <a href="{{ .URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md border border-gray-300 dark:border-gray-700 {{ if eq . $pag }}bg-blue-600 text-white dark:bg-blue-500{{ else }}bg-white text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700{{ end }} transition">{{ .PageNumber }}</a>
+            <a href="{{ .URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md border border-castanet-primary-300 dark:border-castanet-primary-700 {{ if eq . $pag }}bg-blue-600 text-white dark:bg-blue-500{{ else }}bg-white text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:hover:bg-castanet-primary-700{{ end }} transition">{{ .PageNumber }}</a>
           </li>
         {{ else if in (slice 2 (sub $total 1)) $cur }}
           <li>
-            <span class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-100 border border-gray-200 text-gray-400 dark:bg-gray-900 dark:border-gray-800">&hellip;</span>
+            <span class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 dark:bg-castanet-primary-900 dark:border-castanet-primary-800">&hellip;</span>
           </li>
         {{ end }}
       {{ end }}
       <!-- next page button -->
       {{- with $paginator.HasNext -}}
       <li>
-        <a href="{{ $paginator.Next.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">&raquo;</a>
+        <a href="{{ $paginator.Next.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">&raquo;</a>
       </li>
       {{ end }}
       <!-- last page button -->
@@ -118,7 +118,7 @@
         {{- with $paginator.Last -}}
             {{- $url := trim (string .URL) "/" | absURL -}}
                 <li>
-                    <a href="{{ $url }}" aria-label="Last" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition"><span aria-hidden="true">&raquo;&raquo;</span></a>
+                    <a href="{{ $url }}" aria-label="Last" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition"><span aria-hidden="true">&raquo;&raquo;</span></a>
                 </li>
         {{- end -}}
       {{ end }}

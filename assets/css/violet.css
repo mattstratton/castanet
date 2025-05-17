@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Violet scheme */
+@theme {
+  --color-neutral: 255, 255, 255;
+
+  /* Violet */
+  --color-castanet-primary-50: oklch(0.969 0.016 293.756);
+  --color-castanet-primary-100: oklch(0.943 0.029 294.588);
+  --color-castanet-primary-200: oklch(0.894 0.057 293.283);
+  --color-castanet-primary-300: oklch(0.811 0.111 293.571);
+  --color-castanet-primary-400: oklch(0.702 0.183 293.541);
+  --color-castanet-primary-500: oklch(0.606 0.25 292.717);
+  --color-castanet-primary-600: oklch(0.541 0.281 293.009);
+  --color-castanet-primary-700: oklch(0.491 0.27 292.581);
+  --color-castanet-primary-800: oklch(0.432 0.232 292.759);
+  --color-castanet-primary-900: oklch(0.38 0.189 293.745);
+  --color-castanet-primary-950: oklch(0.283 0.141 291.089);
+
+}
+
+@custom-variant dark (&:where(.dark, .dark *));

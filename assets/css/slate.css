@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+/* Slate scheme */
+@theme {
+  --color-neutral: 255, 255, 255;
+  /* Slate */
+  --color-castanet-primary-50: oklch(97.59% 0.00 264.54);
+  --color-castanet-primary-100: oklch(95.07% 0.01 247.88);
+  --color-castanet-primary-200: oklch(88.84% 0.01 251.57);
+  --color-castanet-primary-300: oklch(78.91% 0.03 250.01);
+  --color-castanet-primary-400: oklch(66.80% 0.04 250.82);
+  --color-castanet-primary-500: oklch(57.08% 0.05 251.68);
+  --color-castanet-primary-600: oklch(48.98% 0.05 254.26);
+  --color-castanet-primary-700: oklch(44.83% 0.04 256.08);
+  --color-castanet-primary-800: oklch(37.98% 0.03 258.35);
+  --color-castanet-primary-900: oklch(34.95% 0.03 257.52);
+  --color-castanet-primary-950: oklch(27.08% 0.02 258.36);
+}
+@custom-variant dark (&:where(.dark, .dark *));

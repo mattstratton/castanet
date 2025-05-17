@@ -12,6 +12,12 @@
   publish = "exampleSite/public/"
   command = "cd exampleSite && hugo mod get -u && hugo --gc --minify --buildDrafts --buildFuture --baseURL=$DEPLOY_PRIME_URL"
 
+# Branch deploy context: All Deploy Previews
+# will inherit these settings.
+[context.branch-deploy]
+  publish = "exampleSite/public/"
+  command = "cd exampleSite && hugo mod get -u && hugo --gc --minify --buildDrafts --buildFuture --baseURL=$DEPLOY_PRIME_URL"
+
   [context.production.environment]
      HUGO_VERSION = "0.147.3"
 
