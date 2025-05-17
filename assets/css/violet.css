@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@source "hugo_stats.json";
 /* Violet scheme */
 @theme {
   --color-neutral: 255, 255, 255;
