@@ -1,0 +1,20 @@
+
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ $theme := site.Params.colorScheme | default "slate" }}
+  {{ with resources.Get (printf "css/%s.css" $theme) }}
+  {{/* with resources.Get "css/test.css" */}}
+    {{ $opts := dict
+      "minify" (not hugo.IsDevelopment)
+      "inlineImports" true
+    }}
+    {{ with . | css.TailwindCSS $opts }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ else }}
+        {{ with . | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

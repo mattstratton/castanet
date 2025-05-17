@@ -5,12 +5,30 @@ title = "HugoCast"
 googleAnalytics = ""
 pagination.pagerSize = "9"
 buildFuture = true
+# theme = "castanet"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
 
 [module]
   [module.hugoVersion]
   [[module.imports]]
     # This is replaced in go.mod to point to the directory above.
     path = "github.com/mattstratton/castanet/v2"
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
 
 [taxonomies]
   category = "categories"
@@ -22,18 +40,18 @@ buildFuture = true
 	about = "/:contentbasename/"
 	episode = "/:contentbasename/"
 
-
 [params]
 googleAnalytics_UA = ""
 mainSections = ["episode"]
 episode_number_style  = "brackets"
 episode_number_prefix = "CWC"
 site_theme = "blue"
+colorScheme = "stone"
 # site_layout = "grid"
 site_layout = "row"
 show_next_upcoming = "true"
 # enable_jumbo = "true"
-enable_jumbo = "false"
+enable_jumbo = "true"
 disable_title_caps = "true"
 # truncate = "100"
 # about_logo = "/img/hugocast.png"

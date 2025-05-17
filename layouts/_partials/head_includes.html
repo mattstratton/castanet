@@ -38,17 +38,12 @@
 {{ else }}
 <link href={{"css/orange.css" | absURL }} rel="stylesheet">
 {{ end }} -->
-
+{{ partialCached "css.html" . }}
 <!-- Tailwind CSS -->
 {{/* Asset bundles */}}
 {{ $assets := newScratch }}
 {{ $algorithm := .Site.Params.fingerprintAlgorithm | default "sha256" }}
-<!-- {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (lower .Site.Params.colorScheme | default "slate")) }}
-{{ if not $cssScheme }}
-  {{ $cssScheme = resources.Get "css/schemes/slate.css" }}
-{{ end }}
-{{ $assets.Add "css" (slice $cssScheme) }} -->
-{{ $cssMain := resources.Get "css/compiled/main.css" }}
+{{ $cssMain := resources.Get "css/custom.css" }}
 {{ $assets.Add "css" (slice $cssMain) }}
 {{ $jssocials := resources.Get "lib/jssocials/css/jssocials.css" }}
 {{ $jssocials_theme := resources.Get "lib/jssocials/css/jssocials-theme-plain.css" }}
@@ -57,11 +52,20 @@
 {{ $mediaelementcustom := resources.Get "css/mediaelementplayer.custom.css" }}
 {{ $mediaelementspeed := resources.Get "lib/mediaelement/css/speed.min.css" }}
 {{ $assets.Add "css" (slice $jssocials $jssocials_theme $fontawesome $mediaelement $mediaelementcustom $mediaelementspeed) }}
-{{ $cssCustom := resources.Get "css/custom.css" }}
+<!-- {{ $cssCustom := resources.Get "css/custom.css" }}
 {{ if $cssCustom }}
   {{ $assets.Add "css" (slice $cssCustom) }}
-{{ end }}
+{{ end }} -->
 {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint $algorithm }}
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="{{ $bundleCSS.RelPermalink }}"
+  integrity="{{ $bundleCSS.Data.Integrity }}"
+/>
+
+
+
 <link
   type="text/css"
   rel="stylesheet"
@@ -71,9 +75,9 @@
 
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
 <!-- Custom CSS -->
-{{ range .Site.Params.custom_css }}
+<!-- {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ . | absURL }}">
-{{ end }}
+{{ end }} -->
 <!-- <link href={{"css/all.css" | absURL }} rel="stylesheet"> -->
 <!-- <link href={{"css/mediaelementplayer.min.css" | absURL }} rel="stylesheet"> -->
 <!-- <style>

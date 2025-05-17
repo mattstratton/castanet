@@ -1,6 +1,31 @@
 @import "tailwindcss";
 
-/* Custom styles can go here */ 
-@custom-variant dark (&:where(.dark, .dark *));
-
 /* Slate scheme */
+@theme {
+  --color-neutral: 255, 255, 255;
+  /* Slate */
+  --color-castanet-slate-50: oklch(97.59% 0.00 264.54);
+  --color-castanet-slate-100: oklch(95.07% 0.01 247.88);
+  --color-castanet-slate-200: oklch(88.84% 0.01 251.57);
+  --color-castanet-slate-300: oklch(78.91% 0.03 250.01);
+  --color-castanet-slate-400: oklch(66.80% 0.04 250.82);
+  --color-castanet-slate-500: oklch(57.08% 0.05 251.68);
+  --color-castanet-slate-600: oklch(48.98% 0.05 254.26);
+  --color-castanet-slate-700: oklch(44.83% 0.04 256.08);
+  --color-castanet-slate-800: oklch(37.98% 0.03 258.35);
+  --color-castanet-slate-900: oklch(34.95% 0.03 257.52);
+  --color-castanet-slate-950: oklch(27.08% 0.02 258.36);
+    /* Violet */
+    --color-castanet-violet-50: oklch(0.969 0.016 293.756);
+    --color-castanet-violet-100: oklch(0.943 0.029 294.588);
+    --color-castanet-violet-200: oklch(0.894 0.057 293.283);
+    --color-castanet-violet-300: oklch(0.811 0.111 293.571);
+    --color-castanet-violet-400: oklch(0.702 0.183 293.541);
+    --color-castanet-violet-500: oklch(0.606 0.25 292.717);
+    --color-castanet-violet-600: oklch(0.541 0.281 293.009);
+    --color-castanet-violet-700: oklch(0.491 0.27 292.581);
+    --color-castanet-violet-800: oklch(0.432 0.232 292.759);
+    --color-castanet-violet-900: oklch(0.38 0.189 293.745);
+    --color-castanet-violet-950: oklch(0.283 0.141 291.089);
+}
+@custom-variant dark (&:where(.dark, .dark *));
