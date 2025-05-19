@@ -138,6 +138,15 @@ Example:
     crossorigin="anonymous"
 ```
 
+### Fathom Analytics Parameters
+
+If you want to use Fathom Analytics for analytics, add this section to your `config.toml`.
+
+```toml
+[params.fathomAnalytics]
+  siteID = "ABCDE"
+```
+
 ### Host/Author Parameters
 
 We use the "authors" from the configuration to list hosts in the jumbotron or sidebar. All hosts should have an entry in here. These settings should be set under `[params.authors]` and then `[params.authors.USERNAME]` for each host, for example:
