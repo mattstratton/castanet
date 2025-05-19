@@ -93,7 +93,7 @@
       <div class="flex flex-col gap-2 guest_episode_list">
         {{ range $name := ($.Scratch.Get "guest-names") }}
         {{- $.Scratch.Set "guest-name" $name -}}
-          {{- range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
+        {{- range $page := (where ( where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
             {{- range $page.Params.guests -}}
               {{- if eq  . ($.Scratch.Get "guest-name") -}}
                 {{ if and (isset $.Site.Params "episode_number_style") ($page.Params.episode)}}
