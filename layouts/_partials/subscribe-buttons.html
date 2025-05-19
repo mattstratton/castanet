@@ -1,0 +1,53 @@
+    <!-- Subscription buttons -->
+
+    <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-x-3 gap-y-3 mt-6 w-full">
+      {{ if (isset .Site.Params "youtube_subscribe") }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.youtube_subscribe}}">
+          <i class="fab fa-youtube"></i> Youtube
+        </a>
+      {{ end }}
+      {{ if (isset .Site.Params "spotify_subscribe") }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.spotify_subscribe}}">
+          <i class="fab fa-spotify"></i> Spotify
+        </a>
+      {{ end }}
+      {{ if (isset .Site.Params "itunes_subscribe") }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-slate-800 text-white hover:bg-slate-900 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.itunes_subscribe}}">
+          <i class="fa fa-podcast"></i> Apple Podcasts
+        </a>
+      {{ end }}
+      {{ if (isset .Site.Params "android_subscribe") }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-green-700 text-white hover:bg-green-800 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.android_subscribe }}">
+          <i class="fab fa-android"></i> Android
+        </a>
+      {{ end }}
+      {{ with .Site.Params.stitcher_subscribe }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-purple-700 text-white hover:bg-purple-800 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ . }}">
+          <i class="fa fa-podcast"></i> Stitcher
+        </a>
+      {{ end }}
+      {{ if (isset .Site.Params "soundcloud_subscribe") }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-orange-500 text-white hover:bg-orange-600 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.soundcloud_subscribe }}">
+          <i class="fab fa-soundcloud"></i> Soundcloud
+        </a>
+      {{ end }}
+      {{ if (isset .Site.Params "pocketcasts_subscribe") }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-pink-600 text-white hover:bg-pink-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.pocketcasts_subscribe }}">
+          <i class="fa fa-podcast"></i> PocketCasts
+        </a>
+      {{ end }}
+      {{ if (isset .Site.Params "rss_subscribe" )}}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-yellow-500 text-white hover:bg-yellow-600 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.rss_subscribe }}">
+          <i class="fa fa-rss"></i> Podcast RSS
+        </a>
+      {{ else }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-yellow-500 text-white hover:bg-yellow-600 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{"episode/index.xml" | absURL }}">
+          <i class="fa fa-rss"></i> Podcast RSS
+        </a>
+      {{ end }}
+      {{ $blog := (where .Site.RegularPages "Section" "==" "blog") }}
+      {{ if ge (len $blog) 1 }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{"blog/index.xml" | absURL }}">
+          <i class="fa fa-rss"></i> Blog RSS
+        </a>
+      {{ end }}

@@ -14,46 +14,7 @@
       </div>
       {{ end }}
     </div>
-    <div class="flex flex-wrap -mx-4">
-      {{ if (isset .Site.Params "spotify_subscribe") }}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.spotify_subscribe}}"><i class="fab fa-spotify mr-2"></i>Spotify</a>
-        </div>
-      {{ end }}
-      {{ if (isset .Site.Params "itunes_subscribe") }}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.itunes_subscribe}}"><i class="fa fa-podcast mr-2"></i>Apple Podcasts</a>
-        </div>
-      {{ end }}
-      {{ if (isset .Site.Params "android_subscribe") }}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.android_subscribe }}"><i class="fab fa-android mr-2"></i>Android</a>
-        </div>
-      {{ end }}
-      {{ with .Site.Params.stitcher_subscribe }}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ . }}"><i class="fa fa-podcast mr-2"></i>Stitcher</a>
-        </div>
-      {{ end }}
-      {{ if (isset .Site.Params "soundcloud_subscribe") }}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.soundcloud_subscribe }}"><i class="fab fa-soundcloud mr-2"></i>Soundcloud</a>
-        </div>
-      {{ end }}
-      {{ if (isset .Site.Params "pocketcasts_subscribe") }}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.pocketcasts_subscribe }}"><i class="fa fa-podcast mr-2"></i>PocketCasts</a>
-        </div>
-      {{ end }}
-      {{ if (isset .Site.Params "rss_subscribe" )}}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{ .Site.Params.rss_subscribe }}"><i class="fa fa-rss mr-2"></i>RSS</a>
-        </div>
-      {{ else }}
-        <div class="w-full mb-2">
-          <a class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 transition" href="{{"episode/index.xml" | absURL }}"><i class="fa fa-rss mr-2"></i>Subscribe via RSS</a>
-        </div>
-      {{ end }}
+    {{ partial "subscribe-buttons.html" . }}
     </div>
   </div>
 </div><!-- subscribe end -->
