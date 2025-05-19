@@ -1,22 +1,22 @@
 {{ define "main" }}
 
   <div class="flex flex-wrap -mx-4 mb-6">
-    <div class="w-full px-4">      
+    <div class="w-full px-4">
       <h1 class="text-3xl font-bold mb-2">
         {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
           {{ if eq .Site.Params.episode_number_style "parens" }}
-          {{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})
-        {{ else if eq .Site.Params.episode_number_style "brackets" }}
-          {{ title .Title }} [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]
-        {{ else if eq .Site.Params.episode_number_style "dash" }}
-          {{ title .Title }} - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}
+            {{ title .Title }} ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})
+          {{ else if eq .Site.Params.episode_number_style "brackets" }}
+            {{ title .Title }} [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]
+          {{ else if eq .Site.Params.episode_number_style "dash" }}
+            {{ title .Title }} - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}
+          {{ else }}
+            {{ title .Title }}
+          {{ end }}
         {{ else }}
           {{ title .Title }}
         {{ end }}
-      {{ else }}
-        {{ title .Title }}
-      {{ end }}
-    </h1>
+      </h1>
       {{- if ne $.Params.upcoming true -}}
         <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
       {{- else -}}
@@ -38,7 +38,7 @@
         </div>
       </div>
     {{ end }}
-    {{ else }}
+  {{ else }}
     <!-- begin square row -->
     {{- if isset .Params "episode_image" -}}
       {{- if ne .Params.episode_image "" -}}
@@ -51,27 +51,28 @@
           </div>
         </div>
       {{- end -}}
-      {{- else -}}
+    {{- else -}}
       <div class="flex flex-wrap -mx-4 mb-6">
         <div class="w-full px-4">
           {{ .Description | markdownify }}
         </div>
       </div>
-      {{- end -}}
-
-    <!-- end square row -->
-    {{ end }}
-    {{- with .Params.podcast_file -}}
-      {{- if ne $.Params.upcoming true -}}
-        <div class="flex flex-wrap -mx-4 mb-6">
-          <div class="w-full">
-            <audio id="player2" class="w-full" controls preload="none" width="100%">
-              <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
-            </audio>
-          </div>
-        </div>
-      {{- end -}}
     {{- end -}}
+    <!-- end square row -->
+  {{ end }}
+
+  {{- with .Params.podcast_file -}}
+    {{- if ne $.Params.upcoming true -}}
+      <div class="flex flex-wrap -mx-4 mb-6">
+        <div class="w-full">
+          <audio id="player2" class="w-full" controls preload="none" width="100%">
+            <source src="{{ $.Site.Params.media_prefix }}{{ . }}" type="audio/mp3">
+          </audio>
+        </div>
+      </div>
+    {{- end -}}
+  {{- end -}}
+
   {{- with .Params.youtube -}}
     {{- if ne $.Params.upcoming true -}}
       <div class="flex flex-wrap -mx-4 mb-6">
@@ -84,25 +85,25 @@
     {{- end -}}
   {{- end -}}
 
-        <!-- transcript POC begin-->
-        {{- with .Params.transcript -}}
-        <div class="flex flex-wrap -mx-4 mb-6">
-          <div class="w-full px-4">
-            <p>
-              <!-- <a class="btn btn-default" href="/"><i class="fab fa-spotify"></i>&nbsp;Spotify</a> -->
-              <button class="hide_transcript inline-flex items-center px-4 py-2 bg-castanet-primary-200 text-castanet-primary-800 rounded hover:bg-castanet-primary-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Hide Transcript</button>
-              <button class="show_transcript inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Display Transcript</button>
-            </p> 
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-4 mb-6 transcript">
-          <div class="w-full px-4">
-            <h2 class="text-2xl font-bold mb-4">Transcript</h2>
-            {{ (readFile .) | markdownify}}
-          </div>
-        </div>
-        {{- end -}}
-        <!-- transcript POC end -->
+  <!-- transcript POC begin-->
+  {{- with .Params.transcript -}}
+    <div class="flex flex-wrap -mx-4 mb-6">
+      <div class="w-full px-4">
+        <p>
+          <!-- <a class="btn btn-default" href="/"><i class="fab fa-spotify"></i>&nbsp;Spotify</a> -->
+          <button class="hide_transcript inline-flex items-center px-4 py-2 bg-castanet-primary-200 text-castanet-primary-800 rounded hover:bg-castanet-primary-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Hide Transcript</button>
+          <button class="show_transcript inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Display Transcript</button>
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-wrap -mx-4 mb-6 transcript">
+      <div class="w-full px-4">
+        <h2 class="text-2xl font-bold mb-4">Transcript</h2>
+        {{ (readFile .) | markdownify}}
+      </div>
+    </div>
+  {{- end -}}
+  <!-- transcript POC end -->
 
   <div class="flex flex-wrap -mx-4 mb-6">
     <div class="w-full px-4">
@@ -110,325 +111,274 @@
       <div class="prose dark:prose-invert max-w-none mb-12 mx-auto px-4 py-5 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
         {{ .Content }}
       </div>
-      
     </div>
   </div>
 
-
-
   {{ with .Params.guests }}
-  <div class = "mx-auto px-4 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
-        <div class="flex flex-wrap -mx-4 mb-6 ">
-          <div class="w-full px-4">
-            <h2 class="text-3xl font-bold mb-4">Guests</h2>
-          </div>
+    <div class="mx-auto px-4 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
+      <div class="flex flex-wrap -mx-4 mb-6 ">
+        <div class="w-full px-4">
+          <h2 class="text-3xl font-bold mb-4">Guests</h2>
         </div>
-
-            {{ range $name := . }}
-              {{ $.Scratch.Set "person" $name }}
-              {{- range where $.Site.Pages "Type" "guest" -}}
-                {{- if eq .File.BaseFileName ($.Scratch.Get "person") -}}
-                {{- $.Scratch.Set "guest-exist" "true" -}}
-                <div class="flex flex-wrap mx-auto mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
-                  <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-                    {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
-                      {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
-                        <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow">
-                        {{- else -}}
-                        <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow">
-                      {{- end -}}
-                      {{- else -}}
-                      <img alt="{{ .Title }}" src="{{ "img/guest/default-guest.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/>
-                    {{- end -}}
-                  </div>
-                  <div class="w-full md:w-3/4 px-4">
-                    <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
-                    {{ .Content }}
-                    {{- with .Params.Website -}}
-                      <a href="{{ . }}" target="_blank">
-                        <i class="fas fa-home fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.Twitter -}}
-                      <a href="https://twitter.com/{{ . }}" target="_blank">
-                        <i class="fab fa-twitter-square fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.GitHub -}}
-                      <a href="https://github.com/{{ . }}" target="_blank">
-                        <i class="fab fa-github-square fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.LinkedIn -}}
-                      <a href="https://www.linkedin.com/in/{{ . }}/" target="_blank">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.Facebook -}}
-                      <a href="https://www.facebook.com/{{ . }}" target="_blank">
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.Pinterest -}}
-                      <a href="https://www.pinterest.com/{{ . }}" target="_blank">
-                        <i class="fab fa-pinterest-square fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.Instagram -}}
-                      <a href="https://www.instagram.com/{{ . }}" target="_blank">
-                        <i class="fab fa-instagram fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.YouTube -}}
-                      <a href="https://www.youtube.com/{{ . }}" target="_blank">
-                        <i class="fab fa-youtube-square fa-2x"></i>
-                      </a>
-                    {{- end -}}
-                    {{- with .Params.Twitch -}}
-                    <a href="https://twitch.tv/{{ . }}" target="_blank">
-                      <i class="fab fa-twitch fa-2x"></i>
-                    </a>
-                    {{- end -}}
-                    {{- with .Params.Mastodon -}}
-                    <a href="{{ . }}" target="_blank">
-                      <i class="fab fa-mastodon fa-2x"></i>
-                    </a>
-                    {{- end -}}
-                    {{- with .Params.Threads -}}
-                    <a href="https://threads.net/@{{ . }}" target="_blank">
-                      <i class="fab fa-square-threads fa-2x"></i>
-                    </a>
-                    {{- end -}}
-                    {{- with .Params.Bluesky -}}
-                    <a href="https://bsky.app/profile/{{ . }}" target="_blank">
-                      <i class="fab fa-square-bluesky fa-2x"></i>
-                    </a>
-                    {{- end -}}
-                  </div>
-                </div>
-                {{- $.Scratch.Set "guest-exist" "false" -}}
+      </div>
+      {{ range $name := . }}
+        {{ $.Scratch.Set "person" $name }}
+        {{- range where $.Site.Pages "Type" "guest" -}}
+          {{- if eq .File.BaseFileName ($.Scratch.Get "person") -}}
+            <div class="flex flex-wrap mx-auto mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
+              <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
+                {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
+                  {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
+                    <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow">
+                  {{- else -}}
+                    <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow">
+                  {{- end -}}
+                {{- else -}}
+                  <img alt="{{ .Title }}" src="{{ "img/guest/default-guest.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/>
                 {{- end -}}
-              {{- end -}}
-              {{- if ne ($.Scratch.Get "guest-exist") "true" -}}
-              {{- if (isset $.Site.Data.guests ($.Scratch.Get "person")) -}}
-                  {{- $p :=  (index $.Site.Data.guests ($.Scratch.Get "person")) -}}
-                    <div class="flex flex-wrap -mx-4 mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
-                      <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-                        {{- if and (isset $p "thumbnail") (ne $p.thumbnail "") -}}
-                          {{- if (eq (slicestr $p.thumbnail 0 4) "http") -}}
-                            <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail}}" class="w-full h-auto rounded-lg shadow">
-                          {{- else -}}
-                            <img alt = "{{ $p.full_name }}" src = "{{ $p.thumbnail | absURL }}" class="w-full h-auto rounded-lg shadow">
-                          {{- end -}}
-                        {{- else -}}
-                          <img alt = "{{ $p.full_name }}" src = "{{ "img/guest/default-guest.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px" />
-                        {{- end -}}
-                      </div>
-                      <div class="w-full md:w-3/4 px-4">
-                        <h2 class="text-3xl font-bold mb-4">{{ $p.full_name }}</h2>
-                        {{- if isset $p "bio" -}}
-                          <p>{{ $p.bio | markdownify }}</p>
-                        {{ end }}
-                        {{ if isset $p "homepage" }}
-                          <a href = "{{ $p.homepage}}" target="_blank"><i class="fas fa-home fa-2x"></i></a>
-                        {{ end }}
-                        {{ if isset $p "twitter" }}
-                          <a href = "https://twitter.com/{{ $p.Twitter }}" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a>
-                        {{ end }}
-                        {{ if isset $p "github"}}
-                          <a href = "https://github.com/{{ $p.GitHub}}" target="_blank"><i class="fab fa-github-square fa-2x"></i></a>
-                        {{ end }}
-                        {{ if isset $p "linkedin" }}
-                          <a href = "https://www.linkedin.com/in/{{ $p.LinkedIn}}/" target="_blank"><i class="fab fa-linkedin-square fa-2x"></i></a>
-                        {{ end }}
-                        {{ if isset $p "facebook" }}
-                          <a href = "{{ $p.Facebook}}" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
-                        {{ end }}
-                      </div>
-                    </div>
-                      {{ end }}
-
-                {{ end }}
-            {{ end }}
-
-          </div>
+              </div>
+              <div class="w-full md:w-3/4 px-4">
+                <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
+                {{ .Content }}
+                {{- with .Params.Website -}}
+                  <a href="{{ . }}" target="_blank">
+                    <i class="fas fa-home fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Twitter -}}
+                  <a href="https://twitter.com/{{ . }}" target="_blank">
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.GitHub -}}
+                  <a href="https://github.com/{{ . }}" target="_blank">
+                    <i class="fab fa-github-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.LinkedIn -}}
+                  <a href="https://www.linkedin.com/in/{{ . }}/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Facebook -}}
+                  <a href="https://www.facebook.com/{{ . }}" target="_blank">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Pinterest -}}
+                  <a href="https://www.pinterest.com/{{ . }}" target="_blank">
+                    <i class="fab fa-pinterest-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Instagram -}}
+                  <a href="https://www.instagram.com/{{ . }}" target="_blank">
+                    <i class="fab fa-instagram fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.YouTube -}}
+                  <a href="https://www.youtube.com/{{ . }}" target="_blank">
+                    <i class="fab fa-youtube-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Twitch -}}
+                  <a href="https://twitch.tv/{{ . }}" target="_blank">
+                    <i class="fab fa-twitch fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Mastodon -}}
+                  <a href="{{ . }}" target="_blank">
+                    <i class="fab fa-mastodon fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Threads -}}
+                  <a href="https://threads.net/@{{ . }}" target="_blank">
+                    <i class="fab fa-square-threads fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Bluesky -}}
+                  <a href="https://bsky.app/profile/{{ . }}" target="_blank">
+                    <i class="fab fa-square-bluesky fa-2x"></i>
+                  </a>
+                {{- end -}}
+              </div>
+            </div>
+          {{- end -}}
+        {{- end -}}
+      {{ end }}
+    </div>
   {{ end }}
 
   {{ with .Params.hosts }}
-  <div class = "mx-auto px-5 pb-5 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
-  <div class="flex flex-wrap -mx-4 mb-6">
-    <div class="w-full px-4">
-      <h2 class="text-3xl font-bold mb-4">Hosts</h2>
-    </div>
-  </div>
+    <div class="mx-auto px-5 pb-5 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
+      <div class="flex flex-wrap -mx-4 mb-6">
+        <div class="w-full px-4">
+          <h2 class="text-3xl font-bold mb-4">Hosts</h2>
+        </div>
+      </div>
       {{ range $name := . }}
         {{ $.Scratch.Set "person" $name }}
         {{- range where $.Site.Pages "Type" "host" -}}
           {{- if eq .File.BaseFileName ($.Scratch.Get "person") -}}
-          {{- $.Scratch.Set "host-exist" "true" -}}
-          <div class="flex flex-wrap mx-auto mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
-            <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-              {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
-                {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
-                  <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow">
+            <div class="flex flex-wrap mx-auto mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
+              <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
+                {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
+                  {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
+                    <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow">
                   {{- else -}}
-                  <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow">
-                {{- end -}}
+                    <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow">
+                  {{- end -}}
                 {{- else -}}
-                <img alt="{{ .Title }}" src="{{ "img/host/default-host.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/>
-              {{- end -}}
+                  <img alt="{{ .Title }}" src="{{ "img/host/default-host.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/>
+                {{- end -}}
+              </div>
+              <div class="w-full md:w-3/4 px-4">
+                <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
+                {{ .Content }}
+                {{- with .Params.Website -}}
+                  <a href="{{ . }}" target="_blank">
+                    <i class="fas fa-home fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Twitter -}}
+                  <a href="https://twitter.com/{{ . }}" target="_blank">
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.GitHub -}}
+                  <a href="https://github.com/{{ . }}" target="_blank">
+                    <i class="fab fa-github-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.LinkedIn -}}
+                  <a href="https://www.linkedin.com/in/{{ . }}/" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Facebook -}}
+                  <a href="https://www.facebook.com/{{ . }}" target="_blank">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Pinterest -}}
+                  <a href="https://www.pinterest.com/{{ . }}" target="_blank">
+                    <i class="fab fa-pinterest-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Instagram -}}
+                  <a href="https://www.instagram.com/{{ . }}" target="_blank">
+                    <i class="fab fa-instagram fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.YouTube -}}
+                  <a href="https://www.youtube.com/{{ . }}" target="_blank">
+                    <i class="fab fa-youtube-square fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Twitch -}}
+                  <a href="https://twitch.tv/{{ . }}" >
+                    <i class="fab fa-twitch fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Mastodon -}}
+                  <a href="{{ . }}" target="_blank">
+                    <i class="fab fa-mastodon fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Threads -}}
+                  <a href="https://threads.net/@{{ . }}" target="_blank">
+                    <i class="fab fa-square-threads fa-2x"></i>
+                  </a>
+                {{- end -}}
+                {{- with .Params.Bluesky -}}
+                  <a href="https://bsky.app/profile/{{ . }}" target="_blank">
+                    <i class="fab fa-square-bluesky fa-2x"></i>
+                  </a>
+                {{- end -}}
+              </div>
             </div>
-            <div class="w-full md:w-3/4 px-4">
-              <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
-              {{ .Content }}
-              {{- with .Params.Website -}}
-                <a href="{{ . }}" target="_blank">
-                  <i class="fas fa-home fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.Twitter -}}
-                <a href="https://twitter.com/{{ . }}" target="_blank">
-                  <i class="fab fa-twitter-square fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.GitHub -}}
-                <a href="https://github.com/{{ . }}" target="_blank">
-                  <i class="fab fa-github-square fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.LinkedIn -}}
-                <a href="https://www.linkedin.com/in/{{ . }}/" target="_blank">
-                  <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.Facebook -}}
-                <a href="https://www.facebook.com/{{ . }}" target="_blank">
-                  <i class="fab fa-facebook-square fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.Pinterest -}}
-                <a href="https://www.pinterest.com/{{ . }}" target="_blank">
-                  <i class="fab fa-pinterest-square fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.Instagram -}}
-                <a href="https://www.instagram.com/{{ . }}" target="_blank">
-                  <i class="fab fa-instagram fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.YouTube -}}
-                <a href="https://www.youtube.com/{{ . }}" target="_blank">
-                  <i class="fab fa-youtube-square fa-2x"></i>
-                </a>
-              {{- end -}}
-              {{- with .Params.Twitch -}}
-              <a href="https://twitch.tv/{{ . }}" >
-                <i class="fab fa-twitch fa-2x"></i>
-              </a>
-            {{- end -}}
-            {{- with .Params.Mastodon -}}
-              <a href="{{ . }}" target="_blank">
-                <i class="fab fa-mastodon fa-2x"></i>
-              </a>
-            {{- end -}}
-            {{- with .Params.Threads -}}
-              <a href="https://threads.net/@{{ . }}" target="_blank">
-                <i class="fab fa-square-threads fa-2x"></i>
-              </a>
-            {{- end -}}
-            {{- with .Params.Bluesky -}}
-            <a href="https://bsky.app/profile/{{ . }}" target="_blank">
-              <i class="fab fa-square-bluesky fa-2x"></i>
-            </a>
-            {{- end -}}
-            </div>
-          </div>
-          {{- $.Scratch.Set "host-exist" "false" -}}
           {{- end -}}
         {{- end -}}
       {{ end }}
-  </div>
-{{ end }}
+    </div>
+  {{ end }}
 
-<!-- begin sponsor section -->
-{{- with .Params.sponsors -}}
-  <hr />
-{{- end -}}
-{{ range $sponsor :=.Params.sponsors }}
-  {{ if isset $.Site.Data.sponsors $sponsor }}
-  {{ $s :=  (index $.Site.Data.sponsors $sponsor) }}
-  <div class="flex flex-wrap -mx-4 mb-4 mt-4">
-    <div class="w-full px-4">
-    <a href = "{{ $s.url | absURL }}" target="_blank"><img alt = "{{ $sponsor }}" src = "{{ $s.ad | absURL }}" class="img-fluid"></a>
-  </div>
-  </div>
-  {{end}}
-{{end}}
-
-{{- with .Params.sponsors -}}
-  <hr />
-{{- end -}}
-
-
-
-<!-- end sponsor section -->
-
-        <!-- sharing begins -->
-        <div class="flex justify-center my-8">
-          <div id="share"></div>
+  <!-- begin sponsor section -->
+  {{- with .Params.sponsors -}}
+    <hr />
+  {{- end -}}
+  {{ range $sponsor :=.Params.sponsors }}
+    {{ if isset $.Site.Data.sponsors $sponsor }}
+      {{ $s :=  (index $.Site.Data.sponsors $sponsor) }}
+      <div class="flex flex-wrap -mx-4 mb-4 mt-4">
+        <div class="w-full px-4">
+          <a href = "{{ $s.url | absURL }}" target="_blank"><img alt = "{{ $sponsor }}" src = "{{ $s.ad | absURL }}" class="img-fluid"></a>
         </div>
-
-      <!-- sharing ends -->
-      {{ with .Site.Params.disqusShortname }}
-      <!-- disqus begins -->
-      <div class="row">
-        <div class="col-md-12">
-          {{ partial "disqus.html" }}
-        </div>
-      </div>
-      <!-- disqus ends -->
-      {{ end }}
-      {{ with .Site.Params.giscus }}
-      <!-- giscus begins -->
-      <hr />
-      <div class="row">
-        <div class="col-md-12">
-          {{ partial "giscus.html" }}
-        </div>
-      </div>
-      {{ end }}
-      <!-- giscus ends -->
-
-      <div class="flex justify-center my-8">
-        <nav aria-label="Episode navigation">
-          <ul class="inline-flex items-center space-x-2">
-            <li>
-              {{ if .PrevInSection }}
-                <a href="{{.PrevInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">
-                  <span aria-hidden="true">&larr;</span>
-                  <span class="ml-2">Previous</span>
-                </a>
-              {{ else }}
-                <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 cursor-not-allowed dark:bg-castanet-primary-900 dark:border-castanet-primary-800">
-                  <span aria-hidden="true">&larr;</span>
-                  <span class="ml-2">Previous</span>
-                </span>
-              {{ end }}
-            </li>
-            <li>
-              {{ if .NextInSection }}
-                <a href="{{.NextInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">
-                  <span class="mr-2">Next</span>
-                  <span aria-hidden="true">&rarr;</span>
-                </a>
-              {{ else }}
-                <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 cursor-not-allowed dark:bg-castanet-primary-900 dark:border-castanet-primary-800">
-                  <span class="mr-2">Next</span>
-                  <span aria-hidden="true">&rarr;</span>
-                </span>
-              {{ end }}
-            </li>
-          </ul>
-        </nav>
       </div>
     {{ end }}
+  {{ end }}
+  {{- with .Params.sponsors -}}
+    <hr />
+  {{- end -}}
+  <!-- end sponsor section -->
+
+  <!-- sharing begins -->
+  <div class="flex justify-center my-8">
+    <div id="share"></div>
+  </div>
+  <!-- sharing ends -->
+
+  {{ with .Site.Params.disqusShortname }}
+    <!-- disqus begins -->
+    <div class="row">
+      <div class="col-md-12">
+        {{ partial "disqus.html" }}
+      </div>
+    </div>
+    <!-- disqus ends -->
+  {{ end }}
+
+  {{ with .Site.Params.giscus }}
+    <!-- giscus begins -->
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        {{ partial "giscus.html" }}
+      </div>
+    </div>
+    <!-- giscus ends -->
+  {{ end }}
+
+  <div class="flex justify-center my-8">
+    <nav aria-label="Episode navigation">
+      <ul class="inline-flex items-center space-x-2">
+        <li>
+          {{ if .PrevInSection }}
+            <a href="{{.PrevInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">
+              <span aria-hidden="true">&larr;</span>
+              <span class="ml-2">Previous</span>
+            </a>
+          {{ else }}
+            <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 cursor-not-allowed dark:bg-castanet-primary-900 dark:border-castanet-primary-800">
+              <span aria-hidden="true">&larr;</span>
+              <span class="ml-2">Previous</span>
+            </span>
+          {{ end }}
+        </li>
+        <li>
+          {{ if .NextInSection }}
+            <a href="{{.NextInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">
+              <span class="mr-2">Next</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          {{ else }}
+            <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 cursor-not-allowed dark:bg-castanet-primary-900 dark:border-castanet-primary-800">
+              <span class="mr-2">Next</span>
+              <span aria-hidden="true">&rarr;</span>
+            </span>
+          {{ end }}
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+{{ end }}
