@@ -1,6 +1,6 @@
 +++
-Title = "Matt Stratton"
-date = "2016-12-08T20:55:58-06:00"
+Title = "Matty Stratton"
+date = "2024-12-08T20:55:58-06:00"
 Twitter = "mattstratton"
 Website = "http://www.google.com/"
 Type = "host"
