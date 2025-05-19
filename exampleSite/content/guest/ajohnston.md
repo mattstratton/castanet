@@ -12,6 +12,6 @@ Thumbnail = "img/guest/ajohnston.jpg"
 Pinterest = ""
 Instagram = ""
 YouTube = ""
-guest_group = "ajohnston"
+group = "ajohnston"
 +++
 voluptate consequuntur est nihil aut.
