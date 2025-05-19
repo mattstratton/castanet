@@ -67,45 +67,46 @@
         </div>
       </div>
     </div>
-    <div class="w-full lg:w-1/3 px-4">
-      <div class="mb-4">
-        <h3 class="text-xl font-semibold mb-2">Episodes Hosted By {{ .Title }} {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
-        <div class="flex flex-col gap-2 guest_episode_list">
-          {{ $.Scratch.Set "host-name" .File.BaseFileName }}
-          {{ range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) }}
-            {{ range $page.Params.hosts }}
-              {{ if eq  . ($.Scratch.Get "host-name") }}
-                {{ if and (isset $.Site.Params "episode_number_style") ($page.Params.episode)}}
-                  {{ if eq $.Site.Params.episode_number_style "parens" }}
-                    <a href="{{ $page.Permalink }}" class="guest_page_episode_link block px-4 py-2 rounded bg-white border border-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 transition">{{ $page.Title }} ({{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }})</a>
-                  {{ else if eq $.Site.Params.episode_number_style "brackets" }}
-                    <a href="{{ $page.Permalink }}" class="guest_page_episode_link block px-4 py-2 rounded bg-white border border-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 transition">{{ $page.Title }} [{{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}]</a>
-                  {{ else if eq $.Site.Params.episode_number_style "dash" }}
-                    <a href="{{ $page.Permalink }}" class="guest_page_episode_link block px-4 py-2 rounded bg-white border border-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 transition">{{ $page.Title }} - {{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}</a>
-                  {{ else }}
-                    <a href="{{ $page.Permalink }}" class="guest_page_episode_link block px-4 py-2 rounded bg-white border border-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 transition">{{ $page.Title }}</a>
-                  {{ end }}
-                {{ else  }}
-                  <a href="{{ $page.Permalink }}" class="guest_page_episode_link block px-4 py-2 rounded bg-white border border-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 transition">{{ $page.Title }}</a>
+<!-- insert episode list here-->
+<div class="w-full lg:w-1/3 px-4">
+  <div class="mb-4">
+    <h3 class="text-xl font-semibold mb-2">Episodes Hosted By {{ .Title }} {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
+
+    {{- with .Params.host_group -}}
+      {{- range where $.Site.Pages "Params.host_group" . -}}
+        {{- $.Scratch.Add "host-names" (slice .File.BaseFileName) -}}
+      {{- end -}}
+    {{- else -}}
+      {{ $.Scratch.Set "host-names" (slice .File.BaseFileName) }}
+    {{- end -}}
+
+    <div class="flex flex-col gap-2 host_episode_list">
+      {{ range $name := ($.Scratch.Get "host-names") }}
+        {{- $.Scratch.Set "host-name" $name -}}
+        {{- range $page := (where ( where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
+          {{- range $page.Params.hosts -}}
+            {{- if eq . ($.Scratch.Get "host-name") -}}
+              {{ if and (isset $.Site.Params "episode_number_style") ($page.Params.episode) }}
+                {{ if eq $.Site.Params.episode_number_style "parens" }}
+                  <a href="{{ $page.Permalink }}" class="host_page_episode_link block px-4 py-2 rounded bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition">{{ $page.Title }} ({{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }})</a>
+                {{ else if eq $.Site.Params.episode_number_style "brackets" }}
+                  <a href="{{ $page.Permalink }}" class="host_page_episode_link block px-4 py-2 rounded bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition">{{ $page.Title }} [{{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}]</a>
+                {{ else if eq $.Site.Params.episode_number_style "dash" }}
+                  <a href="{{ $page.Permalink }}" class="host_page_episode_link block px-4 py-2 rounded bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition">{{ $page.Title }} - {{ with $.Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ $page.Params.episode }}</a>
+                {{ else }}
+                  <a href="{{ $page.Permalink }}" class="host_page_episode_link block px-4 py-2 rounded bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition">{{ $page.Title }}</a>
                 {{ end }}
+              {{ else }}
+                <a href="{{ $page.Permalink }}" class="host_page_episode_link block px-4 py-2 rounded bg-white border border-gray-200 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 transition">{{ $page.Title }}</a>
               {{ end }}
-            {{ end }}
-            {{- with .Params.Aka -}}
-              {{ range $name := . }}
-                {{- $.Scratch.Set "host-name" $name -}}
-                {{- range $page := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
-                  {{- range $page.Params.hosts -}}
-                    {{- if eq  . ($.Scratch.Get "host-name") -}}
-                        <a href = "{{$page.Permalink}}" class = "guest_page_episode_link block px-4 py-2 rounded bg-white border border-slate-200 hover:bg-slate-100 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 transition">{{$page.Title}}</a>
-                    {{- end -}}
-                  {{- end -}}
-                {{- end -}}
-              {{- end -}}
-            {{- end -}}
-          {{ end }}
-        </div>
-      </div>
+            {{- end -}} <!-- if eq guest name-->
+          {{- end -}} <!-- range params guests -->
+        {{- end -}} <!--range episodes -->
+      {{- end -}} <!-- range -->
     </div>
+  </div>
+</div>
+<!-- end episode list-->
   </div>
 </div>
 {{ end }}

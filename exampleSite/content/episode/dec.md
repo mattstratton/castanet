@@ -7,6 +7,7 @@ episode = "3"
 episode_image = "img/episode/dec.jpg"
 explicit = "yes"
 guests = ["chamilton", "jlong", "kdixon", "ccooper", "jsmith2"]
+hosts = ["mstratton","bkromhout"]
 images = ["img/episode/default-social.jpg"]
 news_keywords = []
 podcast_duration = "1:08:22"

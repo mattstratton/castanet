@@ -13,6 +13,5 @@ Pinterest = ""
 Instagram = ""
 YouTube = ""
 Twitch = ""
-#Aka = []
 #guest_group = ""
 +++

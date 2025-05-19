@@ -1,69 +1,18 @@
+{{ if ne .RelPermalink "/host/" }}
 <div class="max-w-5xl mx-auto py-8 px-4">
   <div class="flex flex-wrap -mx-4 mb-6">
     <div class="w-full px-4">
       <h2 class="text-3xl font-bold mb-4">Hosts</h2>
     </div>
   </div>
-  <div class="flex flex-wrap -mx-4">
-    <div class="w-full px-4">
-    {{ range where .Site.Pages.ByTitle "Type" "host" }}
+</div>
+{{ end }}
+
+{{ range where .Site.Pages.ByTitle "Type" "host" }}
     {{- if ne .Params.hide "true" -}}
       {{- if not (in .File.BaseFileName "_index") -}}
-        <div class="flex flex-wrap -mx-4 mb-8 items-center person_row border-b border-gray-200 dark:border-gray-700 pb-6">
-            <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-              {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
-                {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
-                  <a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow" width="250px"></a>
-                  {{- else -}}
-                  <a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow" width="250px"></a>
-                {{- end -}}
-                {{- else -}}
-                <a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ "img/host/default-host.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/></a>
-              {{- end -}}
-            </div>
-            <div class="w-full md:w-2/3 px-4">
-              <h3 class="text-xl font-semibold mb-2"><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a>  {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
-              <p class="mb-2">{{ .Content }}</p>
-              {{ with .Params.Website }}
-                <a href = "{{ . }}" target="_blank"><i class="fas fa-home fa-2x"></i></a>
-              {{ end }}
-              {{ with .Params.Twitter }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-twitter-square fa-2x" "prefix" "https://twitter.com/") }}
-              {{ end }}
-              {{ with .Params.GitHub}}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-github-square fa-2x" "prefix" "https://github.com/") }}
-              {{ end }}
-              {{ with .Params.LinkedIn }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-linkedin fa-2x" "prefix" "https://www.linkedin.com/in/") }}
-              {{ end }}
-              {{ with .Params.Facebook }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-facebook-square fa-2x" "prefix" "https://www.facebook.com/") }}
-              {{ end }}
-              {{ with .Params.Pinterest }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-pinterest-square fa-2x" "prefix" "https://www.pinterest.com/") }}
-              {{ end }}
-              {{ with .Params.Instagram }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-instagram fa-2x" "prefix" "https://www.instagram.com/") }}
-              {{ end }}
-              {{ with .Params.YouTube }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-youtube-square fa-2x" "prefix" "https://www.youtube.com/") }}
-              {{ end }}
-              {{ with .Params.Twitch }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-twitch fa-2x" "prefix" "https://twitch.tv/") }}
-              {{ end }}
-              {{ with .Params.Mastodon }}
-                {{ partial "social-link.html" (dict "context" . "aclass" "" "iclass" "fab fa-mastodon fa-2x" "prefix" "") }}
-              {{ end }}
-              {{ if .Params.Threads }}
-                {{ partial "social-link.html" (dict "context" .Params.Threads "iclass" "fa-brands fa-square-threads fa-2x" "prefix" "https://www.threads.net/@" "text" "") }}
-              {{ end }}
-              {{ if .Params.Bluesky }}
-                {{ partial "social-link.html" (dict "context" .Params.Bluesky "iclass" "fab fa-square-bluesky fa-2x" "prefix" "https://bsky.app/profile/" "text" "") }}
-              {{ end }}
-          </div>
-        </div>
-        {{- end -}}
+          {{ .Scratch.Set "people-type" "host" }}
+          {{ partial "list-people" . }}
       {{- end -}}
-    {{ end }}
-  </div>
-</div>
+    {{- end -}}
+{{ end }}
