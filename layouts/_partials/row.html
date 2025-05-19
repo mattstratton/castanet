@@ -17,7 +17,7 @@
 {{ end }}
 
 <div class="w-full max-w-5xl mx-auto px-4 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
-  <div class="mb-8">
+  <div class="mb-8 p-5">
     <h2 class="text-3xl font-bold text-castanet-primary-900 dark:text-white mb-4">
       Latest Episode
     </h2>
@@ -129,7 +129,7 @@
   </div>
 </div>
 
-<section class="w-full max-w-5xl mx-auto px-4">
+<section class="w-full max-w-5xl mx-auto">
   <!-- rest of episodes -->
   {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
   {{- $paginator := .Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) }}
