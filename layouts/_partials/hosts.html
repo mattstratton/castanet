@@ -7,10 +7,11 @@
   </div>
 </div>
 {{ end }}
-{{ .Scratch.Set "people-type" "host" }}
+
 {{ range where .Site.Pages.ByTitle "Type" "host" }}
     {{- if ne .Params.hide "true" -}}
       {{- if not (in .File.BaseFileName "_index") -}}
+          {{ .Scratch.Set "people-type" "host" }}
           {{ partial "list-people" . }}
       {{- end -}}
     {{- end -}}

@@ -15,12 +15,12 @@
 </div>
 {{- end -}}
 
-{{ .Scratch.Set "people-type" "guest" }}
 <div class="flex flex-wrap -mx-4">
   <div class="w-full px-4">
 
     {{ $paginator := .Paginate (where .Data.Pages.ByTitle "Type" (fmt.Printf "%s" "guest")) }}
     {{ range $paginator.Pages }}
+    {{ .Scratch.Set "people-type" "guest" }}
       {{ partial "list-people" . }}
     {{ end }}
       {{ if gt $paginator.TotalPages 1 }}

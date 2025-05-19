@@ -19,20 +19,21 @@
   {{- end -}}
 
       {{ if ne ($.Scratch.Get "hide_person") "true"}}
+      {{- $type := $.Scratch.Get "people-type" -}}
         <div class="flex flex-wrap -mx-4 mb-8 items-center person_row border-b border-gray-200 dark:border-gray-700 pb-6">
           <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
             {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
               {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
-                <a href = "{{(printf "%s/%s/" (fmt.Printf "%s" $type) .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow" width="250px"></a>
+                <a href = "{{ (printf "%s/%s/" $type .File.BaseFileName) | relURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow" width="250px"></a>
                 {{- else -}}
-                <a href = "{{(printf "%s/%s/" (fmt.Printf "%s" $type) .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow" width="250px"></a>
+                <a href = "{{ (printf "%s/%s/" $type .File.BaseFileName) | relURL }}"><img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow" width="250px"></a>
               {{- end -}}
               {{- else -}}
-              <a href = "{{(printf "%s/%s/" (fmt.Printf "%s" $type) .File.BaseFileName) | absURL }}"><img alt="{{ .Title }}" src="{{ printf "img/%s/default-%s.png" (fmt.Printf "%s" $type) (fmt.Printf "%s" $type) | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/></a>
+              <a href = "{{ (printf "%s/%s/" $type .File.BaseFileName) | relURL }}"><img alt="{{ .Title }}" src="{{ printf "img/%s/default-%s.png" (fmt.Printf "%s" $type) (fmt.Printf "%s" $type) | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/></a>
             {{- end -}}
           </div>
           <div class="w-full md:w-2/3 px-4">
-            <h3 class="text-xl font-semibold mb-2"><a href = "{{(printf "%s/%s/" (fmt.Printf "%s" $type) .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
+            <h3 class="text-xl font-semibold mb-2"><a href = "{{ (printf "%s/%s/" $type .File.BaseFileName) | relURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
             <p class="mb-2">{{ .Content }}</p>
             {{ with .Params.Website }}
               <a href = "{{ . }}" target="_blank"><i class="fas fa-home fa-2x"></i></a>

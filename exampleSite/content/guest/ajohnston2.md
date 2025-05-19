@@ -12,6 +12,6 @@ Thumbnail = "img/guest/ajohnston.jpg"
 Pinterest = ""
 Instagram = ""
 YouTube = ""
-group = "ajohnston"
+guest_group = "ajohnston"
 +++
 this is the newer version of Alan
