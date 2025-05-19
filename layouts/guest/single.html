@@ -77,16 +77,7 @@
               {{- $.Scratch.Add "guest-names" (slice .File.BaseFileName) -}}
             {{- end -}}
           {{- else -}}
-            {{- with .Params.Aka -}}
-              {{- $.Scratch.Add "guest-names" (slice $.File.BaseFileName) -}}
-              {{- range $names := . -}}
-                {{- if ne $names $.File.BaseFileName }}
-                  {{- $.Scratch.Add "guest-names" (slice $names) -}}
-                {{- end -}}
-              {{- end -}}
-            {{- else -}}
-              {{ $.Scratch.Set "guest-names" (slice .File.BaseFileName) }}
-            {{- end -}}
+            {{ $.Scratch.Set "guest-names" (slice .File.BaseFileName) }}
           {{- end -}}
 
           <div class="flex flex-col gap-2 guest_episode_list">
