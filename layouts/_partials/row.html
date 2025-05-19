@@ -5,7 +5,7 @@
 {{ end }}
 
 {{ if and (and (isset .Site.Params "show_next_upcoming") (eq .Site.Params.show_next_upcoming "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true )) 1) }}
-<div class="w-full bg-blue-50 p-4 mb-6 rounded-lg shadow">
+<div class="w-full bg-castanet-primary-50 p-4 mb-6 rounded-lg shadow">
   <div class="w-full max-w-5xl mx-auto px-4">
     {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections).ByDate ".Params.upcoming" "==" true ) }}
     <p class="text-blue-800">
@@ -16,9 +16,9 @@
 </div>
 {{ end }}
 
-<div class="w-full max-w-5xl mx-auto px-4 bg-blue-50 dark:bg-slate-900 rounded-lg shadow">
+<div class="w-full max-w-5xl mx-auto px-4 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
   <div class="mb-8">
-    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+    <h2 class="text-3xl font-bold text-castanet-primary-900 dark:text-white mb-4">
       Latest Episode
     </h2>
 
@@ -46,18 +46,18 @@
         <div class="mb-6">
           {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
             {{ else if eq .Site.Params.episode_number_style "dash" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
             {{ else }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ end }}
           {{ else }}
-            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
+            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
           {{ end }}        
-          <p class="text-sm text-slate-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <p class="text-sm text-castanet-primary-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         <div class="mb-6">
           <div class="aspect-w-16 aspect-h-9">
@@ -65,35 +65,35 @@
           </div>
         </div>
         <div class="mb-6">
-          <p class="text-slate-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
+          <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
         </div>
       {{- else if eq ($.Scratch.Get "episode_banner") "true" -}}
         <div class="mb-6">
           {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h2>
             {{ else if eq .Site.Params.episode_number_style "dash" }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h2>
             {{ else }}
-              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
+              <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h2>
             {{ end }}
           {{ else }}
-            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
+            <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
           {{ end }} 
-          <p class="text-sm text-slate-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <p class="text-sm text-castanet-primary-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         <div class="mb-6">
           <a href="{{ .Permalink }}"><img src="{{ .Params.episode_banner | absURL }}" class="w-full h-auto rounded-lg shadow-lg"/></a>
         </div>
         <div class="mb-6">
-          <p class="text-slate-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
+          <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
         </div>
       {{- else -}}
         <div class="mb-6">
-          <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
-          <p class="text-sm text-slate-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
+          <p class="text-sm text-castanet-primary-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         {{- if .Params.episode_image -}}
           <div class="flex flex-col md:flex-row gap-6 mb-6">
@@ -102,18 +102,18 @@
             </div>
             <div class="md:w-3/4">
               {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-                <p class="text-slate-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
+                <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
               {{- else -}}
-                <p class="text-slate-700 dark:text-white">{{ .Description | markdownify }}</p>
+                <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify }}</p>
               {{- end -}}
             </div>
           </div>
         {{- else -}}
           <div class="mb-6">
             {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-              <p class="text-slate-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
+              <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
             {{- else -}}
-              <p class="text-slate-700 dark:text-white">{{ .Description | markdownify }}</p>
+              <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify }}</p>
             {{- end -}}
           </div>
         {{- end -}}
@@ -135,10 +135,10 @@
   {{- $paginator := .Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) }}
   {{- $list := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
   {{- $len := (len $list) -}}
-  <div class="flex flex-col lg:flex-row gap-8 ">
+  <div class="flex flex-col lg:flex-row gap-8">
     {{- with .Site.Params.enable_jumbo -}}
       {{- if eq . "true" -}}
-        <div class="w-full rounded-lg shadow  dark:bg-slate-900 px-25">
+        <div class="w-full">
       {{- else -}}
         <div class="lg:w-2/3">
       {{- end -}}
@@ -156,21 +156,22 @@
           {{- $.Scratch.Set "truncate" 600 -}}
         {{- end -}}
       {{- end -}}
+      <div class="mb-8 mx-auto rounded-lg shadow bg-castanet-primary-100 dark:bg-castanet-primary-900 px-10 py-5">
         <div class="mb-8">
           {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
             {{ if eq .Site.Params.episode_number_style "parens" }}            
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
             {{ else if eq .Site.Params.episode_number_style "brackets" }}
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
             {{ else if eq .Site.Params.episode_number_style "dash" }}
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
             {{ else }}
-              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+              <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
             {{ end }}
           {{ else }}
-            <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-slate-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h3>
+            <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h3>
           {{ end }}
-          <p class="text-sm text-slate-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+          <p class="text-sm text-castanet-primary-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
         </div>
         {{- if .Params.episode_image -}}
           <div class="flex flex-col md:flex-row gap-6 mb-8">
@@ -179,24 +180,27 @@
             </div>
             <div class="md:w-3/4">
               {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-                <p class="text-slate-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm dark:text-white">Read More</a></p>
+                <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 text-sm dark:text-white">Read More</a></p>
               {{- else -}}
-                <p class="text-slate-700 dark:text-white">{{ .Description | markdownify }}</p>
+                <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify }}</p>
               {{- end -}}
             </div>
           </div>
         {{- else -}}
           <div class="mb-8">
             {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-              <p class="text-slate-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
+              <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
             {{- else -}}
-              <p class="text-slate-700 dark:text-white">{{ .Description | markdownify }}</p>
+              <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify }}</p>
             {{- end -}}
           </div>
         {{- end -}}
+      </div>
       {{- end -}}
+   
     {{- end -}}
     </div>
+
  
 
     {{- if isset .Site.Params "enable_jumbo" -}}
@@ -242,7 +246,7 @@
               {{- with $paginator.First -}}
                 {{- $url := trim (string .URL) "/" | absURL -}}
                 <li>
-                  <a href="{{ $url }}" aria-label="First" class="px-3 py-2 rounded-md bg-white text-slate-700 hover:bg-slate-50 border border-slate-300 dark:text-white">
+                  <a href="{{ $url }}" aria-label="First" class="px-3 py-2 rounded-md bg-white text-castanet-primary-700 hover:bg-castanet-primary-50 border border-castanet-primary-300 dark:text-white">
                     <span aria-hidden="true">&laquo;&laquo;</span>
                   </a>
                 </li>
@@ -253,7 +257,7 @@
           <!-- prev page button -->
           {{- with $paginator.HasPrev -}}
             <li>
-              <a href="{{ $paginator.Prev.URL }}" class="px-3 py-2 rounded-md bg-white text-slate-700 hover:bg-slate-50 border border-slate-300">
+              <a href="{{ $paginator.Prev.URL }}" class="px-3 py-2 rounded-md bg-white text-castanet-primary-700 hover:bg-castanet-primary-50 border border-castanet-primary-300">
                 &laquo;
               </a>
             </li>
@@ -265,13 +269,13 @@
             {{- $url := trim (string .URL) "/" | absURL -}}
             {{ if in ($.Scratch.Get "show") $cur }}
               <li>
-                <a href="{{ .URL }}" class="px-3 py-2 rounded-md {{ if eq . $pag }}bg-blue-600 text-white{{ else }}bg-white text-slate-700 hover:bg-slate-50{{ end }} border border-slate-300">
+                <a href="{{ .URL }}" class="px-3 py-2 rounded-md {{ if eq . $pag }}bg-blue-600 text-white{{ else }}bg-white text-castanet-primary-700 hover:bg-castanet-primary-50{{ end }} border border-castanet-primary-300">
                   {{ .PageNumber }}
                 </a>
               </li>
             {{ else if in (slice 2 (sub $total 1)) $cur }}
               <li>
-                <span class="px-3 py-2 text-slate-500">&hellip;</span>
+                <span class="px-3 py-2 text-castanet-primary-500">&hellip;</span>
               </li>
             {{ end }}
           {{ end }}
@@ -279,7 +283,7 @@
           <!-- next page button -->
           {{- with $paginator.HasNext -}}
             <li>
-              <a href="{{ $paginator.Next.URL }}" class="px-3 py-2 rounded-md bg-white text-slate-700 hover:bg-slate-50 border border-slate-300">
+              <a href="{{ $paginator.Next.URL }}" class="px-3 py-2 rounded-md bg-white text-castanet-primary-700 hover:bg-castanet-primary-50 border border-castanet-primary-300">
                 &raquo;
               </a>
             </li>
@@ -290,7 +294,7 @@
             {{- with $paginator.Last -}}
               {{- $url := trim (string .URL) "/" | absURL -}}
               <li>
-                <a href="{{ $url }}" aria-label="Last" class="px-3 py-2 rounded-md bg-white text-slate-700 hover:bg-slate-50 border border-slate-300">
+                <a href="{{ $url }}" aria-label="Last" class="px-3 py-2 rounded-md bg-white text-castanet-primary-700 hover:bg-castanet-primary-50 border border-castanet-primary-300">
                   <span aria-hidden="true">&raquo;&raquo;</span>
                 </a>
               </li>

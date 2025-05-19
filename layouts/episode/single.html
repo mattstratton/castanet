@@ -90,7 +90,7 @@
           <div class="w-full px-4">
             <p>
               <!-- <a class="btn btn-default" href="/"><i class="fab fa-spotify"></i>&nbsp;Spotify</a> -->
-              <button class="hide_transcript inline-flex items-center px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Hide Transcript</button>
+              <button class="hide_transcript inline-flex items-center px-4 py-2 bg-castanet-primary-200 text-castanet-primary-800 rounded hover:bg-castanet-primary-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Hide Transcript</button>
               <button class="show_transcript inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition">Display Transcript</button>
             </p> 
           </div>
@@ -107,7 +107,7 @@
   <div class="flex flex-wrap -mx-4 mb-6">
     <div class="w-full px-4">
       <h2 class="text-2xl font-bold mb-4">Show Notes</h2>
-      <div class="prose dark:prose-invert max-w-none mb-12">
+      <div class="prose dark:prose-invert max-w-none mb-12 mx-auto px-4 py-5 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
         {{ .Content }}
       </div>
       
@@ -117,17 +117,19 @@
 
 
   {{ with .Params.guests }}
-        <div class="flex flex-wrap -mx-4 mb-6">
+  <div class = "mx-auto px-4 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
+        <div class="flex flex-wrap -mx-4 mb-6 ">
           <div class="w-full px-4">
             <h2 class="text-3xl font-bold mb-4">Guests</h2>
           </div>
         </div>
+
             {{ range $name := . }}
               {{ $.Scratch.Set "person" $name }}
               {{- range where $.Site.Pages "Type" "guest" -}}
                 {{- if eq .File.BaseFileName ($.Scratch.Get "person") -}}
                 {{- $.Scratch.Set "guest-exist" "true" -}}
-                <div class="flex flex-wrap -mx-4 mb-6">
+                <div class="flex flex-wrap mx-auto mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
                   <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
                     {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
                       {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
@@ -210,7 +212,7 @@
               {{- if ne ($.Scratch.Get "guest-exist") "true" -}}
               {{- if (isset $.Site.Data.guests ($.Scratch.Get "person")) -}}
                   {{- $p :=  (index $.Site.Data.guests ($.Scratch.Get "person")) -}}
-                    <div class="flex flex-wrap -mx-4 mb-6">
+                    <div class="flex flex-wrap -mx-4 mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
                       <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
                         {{- if and (isset $p "thumbnail") (ne $p.thumbnail "") -}}
                           {{- if (eq (slicestr $p.thumbnail 0 4) "http") -}}
@@ -248,9 +250,12 @@
 
                 {{ end }}
             {{ end }}
+
+          </div>
   {{ end }}
 
   {{ with .Params.hosts }}
+  <div class = "mx-auto px-5 pb-5 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
   <div class="flex flex-wrap -mx-4 mb-6">
     <div class="w-full px-4">
       <h2 class="text-3xl font-bold mb-4">Hosts</h2>
@@ -261,7 +266,7 @@
         {{- range where $.Site.Pages "Type" "host" -}}
           {{- if eq .File.BaseFileName ($.Scratch.Get "person") -}}
           {{- $.Scratch.Set "host-exist" "true" -}}
-          <div class="flex flex-wrap -mx-4 mb-6">
+          <div class="flex flex-wrap mx-auto mb-6 py-5 bg-castanet-primary-100 dark:bg-castanet-primary-900 rounded-lg shadow">
             <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
               {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
                 {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
@@ -342,6 +347,7 @@
           {{- end -}}
         {{- end -}}
       {{ end }}
+  </div>
 {{ end }}
 
 <!-- begin sponsor section -->
@@ -398,12 +404,12 @@
           <ul class="inline-flex items-center space-x-2">
             <li>
               {{ if .PrevInSection }}
-                <a href="{{.PrevInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">
+                <a href="{{.PrevInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">
                   <span aria-hidden="true">&larr;</span>
                   <span class="ml-2">Previous</span>
                 </a>
               {{ else }}
-                <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-gray-100 border border-gray-200 text-gray-400 cursor-not-allowed dark:bg-gray-900 dark:border-gray-800">
+                <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 cursor-not-allowed dark:bg-castanet-primary-900 dark:border-castanet-primary-800">
                   <span aria-hidden="true">&larr;</span>
                   <span class="ml-2">Previous</span>
                 </span>
@@ -411,12 +417,12 @@
             </li>
             <li>
               {{ if .NextInSection }}
-                <a href="{{.NextInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition">
+                <a href="{{.NextInSection.Permalink}}" class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">
                   <span class="mr-2">Next</span>
                   <span aria-hidden="true">&rarr;</span>
                 </a>
               {{ else }}
-                <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-gray-100 border border-gray-200 text-gray-400 cursor-not-allowed dark:bg-gray-900 dark:border-gray-800">
+                <span class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 cursor-not-allowed dark:bg-castanet-primary-900 dark:border-castanet-primary-800">
                   <span class="mr-2">Next</span>
                   <span aria-hidden="true">&rarr;</span>
                 </span>
