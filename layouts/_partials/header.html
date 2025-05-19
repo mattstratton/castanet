@@ -1,8 +1,8 @@
-<nav class="fixed top-0 left-0 right-0 bg-castanet-primary-400 dark:bg-castanet-primary-700 shadow-md z-50">
+<nav class="fixed top-0 left-0 right-0 bg-castanet-primary-300 dark:bg-castanet-primary-700 shadow-md z-50">
   <div class="w-full max-w-5xl mx-auto px-4">
     <div class="flex justify-between items-center h-16">
       <!-- Site Title -->
-      <a class="text-xl font-bold text-castanet-primary-800 hover:text-castanet-primary-600 dark:text-castanet-primary-100 dark:hover:text-castanet-primary-300" href="{{ .Site.BaseURL }}">{{ .Site.Title }} - {{ $.Site.Params.colorScheme }}</a>
+      <a class="text-xl font-bold text-castanet-primary-900 hover:text-castanet-primary-700 dark:text-castanet-primary-100 dark:hover:text-castanet-primary-300" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
       <div class="flex items-center">
         <!-- Dark mode toggle button (mobile only) -->
         <button
@@ -48,7 +48,7 @@
                       {{ range sort .Children "Identifier" }}
                         <li>
                           <a href="{{ .URL | absURL }}"
-                             class="block px-4 py-2 text-sm text-castanet-primary-700 hover:bg-castanet-primary-100 dark:text-castanet-primary-200 dark:hover:bg-castanet-primary-900">
+                             class="block px-4 py-2 text-sm text-castanet-primary-700 hover:bg-castanet-primary-300 dark:text-castanet-primary-200 dark:hover:bg-castanet-primary-900">
                             {{ .Name }}
                           </a>
                         </li>
