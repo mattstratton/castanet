@@ -7,7 +7,7 @@
     "preinstall": "rimraf assets/lib && rimraf static/webfonts && rimraf static/img/lib",
     "postinstall": "vendor-copy",
     "assets": "rimraf assets/lib  && rimraf static/webfonts && rimraf static/img/lib && vendor-copy",
-    "build": "hugo -s exampleSite",
+    "build": "hugo -s exampleSite --themesDir=../..",
     "example": "hugo server --bind 0.0.0.0 -p 8008 --source exampleSite --themesDir ../.. --buildDrafts -b http://localhost/castanet/",
     "dev-hugo": "hugo server -s exampleSite --gc --themesDir=../..",
     "dev": "run-p dev-hugo",
