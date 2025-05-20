@@ -21,7 +21,8 @@
   "homepage": "https://github.com/mattstratton/castanet#readme",
   "devDependencies": {},
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.6"
+    "@tailwindcss/cli": "^4.1.6",
+    "@tailwindcss/typography": "^0.5.16"
   },
   "vendorCopy": [],
   "devVendorCopy": []
