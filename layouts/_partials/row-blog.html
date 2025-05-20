@@ -1,7 +1,7 @@
-<div class="flex flex-wrap -mx-4 mb-6 hero_container">
+<div class="w-full max-w-5xl mx-auto px-4 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow">
 
-  <div class="w-full px-4">
-    <h2 class="text-3xl font-bold mb-4">Latest Blog Post</h2>
+  <div class="mb-8 p-5">
+    <h2 class="text-3xl font-bold text-castanet-primary-900 dark:text-white mb-4">Latest Blog Post</h2>
 
   {{ range first 1 ((where .Pages.ByDate "Section" "blog").Reverse) }}
     {{- with .Params.truncate -}}
@@ -18,52 +18,44 @@
     {{- end -}}
 
     {{- if eq ($.Scratch.Get "blog_banner") "true" -}}
-      <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-        <div class="w-full px-4">
-          <a href="{{ .Permalink }}" class="row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" . }}</small>
-        </div>
+      <div class="mb-6">
+
+          <a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white"><h2 class="text-2xl font-bold mb-2">{{ .Title }}</h2></a>
+          <small class = "text-castanet-primary-600 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" . }}</small>
+
       </div>
-      <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-        <div class="w-full px-4">
-          <a href="{{ .Permalink }}"><img src="{{ .Params.blog_banner | absURL }}" class="img-fluid blog_image"/></a>
+        <div class="mb-6">
+          <a href="{{ .Permalink }}"><img src="{{ .Params.blog_banner | absURL }}" class="w-full h-auto rounded-lg shadow-lg"/></a>
         </div>
-      </div>
-      <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-        <div class="w-full px-4">
-          {{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small>
+        <div class="mb-6">
+          <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
         </div>
-      </div>
     {{- else -}}
     <!-- begin square row -->
-    <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-      <div class="w-full px-4">
-        <a href="{{ .Permalink }}" class="row_latest_episode_title"><h2>{{ .Title }}</h2></a>
-        <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h2>
+        <p class="text-sm text-castanet-primary-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
       </div>
-    </div>
     {{- if .Params.blog_image -}}
-      <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-        <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-          <a href="{{ .Permalink }}"><img class="w-full h-auto rounded-lg shadow" src="{{ .Params.blog_image | absURL }}" /></a>
+      <div class="flex flex-col md:flex-row gap-6 mb-6">
+        <div class="md:w-1/4">
+          <a href="{{ .Permalink }}"><img class="w-full h-auto rounded-lg shadow-md" src="{{ .Params.blog_image | absURL }}" /></a>
         </div>
-        <div class="w-full md:w-3/4 px-4">
+        <div class="md:w-3/4">
           {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-            <p class="hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+            <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
           {{- else -}}
-            <p class="hompage_episode_description">{{ .Description | markdownify }}</p>
+            <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify }}</p>
           {{- end -}}
         </div>
       </div><!-- end square row -->
     {{- else -}}
-      <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-        <div class="w-full px-4">
+      <div class="mb-6">
         {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-          <p class="hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
+          <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
         {{- else -}}
-          <p class="hompage_episode_description">{{ .Description | markdownify }}</p>
+          <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify }}</p>
         {{- end -}}
-        </div>
       </div>
     {{- end -}}
   {{- end -}}
@@ -72,68 +64,28 @@
   </div>
 </div>
 
-<section class="episode-list">
+<section class="w-full max-w-5xl mx-auto">
 <!-- rest of episodes -->
 {{- if (where .Pages.ByDate "Section" "blog") -}}
 {{- $paginator := .Paginate (after 1 ((where .Pages.ByDate "Section" "blog").Reverse)) }}
 {{- $list := (where .Pages.ByDate "Section" "blog") -}}
 {{- $len := (len $list) -}}
-<div class="flex flex-wrap -mx-4 main_container">
+<div class="flex flex-col lg:flex-row gap-8">
 
-  <div class="w-full md:w-2/3 px-4">
-{{- if gt $len 1 -}}
-    {{- range $paginator.Pages -}}
-    {{- with .Params.truncate -}}
-      {{- $.Scratch.Set "truncate" . }}
-    {{- else -}}
-      {{- with .Site.Params.truncate -}}
-        {{- $.Scratch.Set "truncate" . }}
-      {{- else -}}
-        {{- $.Scratch.Set "truncate" 600 -}}
-      {{- end -}}
+  <div class="w-full">
+    {{- if gt $len 1 -}}
+      {{- range $paginator.Pages -}}
+        {{ partial "row/blog-row.html" . }}
+      {{ end }}
     {{- end -}}
-      <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-        <div class="w-full px-4">
-          <a href="{{ .Permalink }}" class="grid_episode_title"><h3 class="grid_episode_title">{{ .Title }}</h3></a>
-          <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
-        </div>
-      </div>
-      <div class="flex flex-wrap -mx-4 mb-4 homepage_episode_row">
-      {{- if .Params.blog_image -}}
-          <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-            <a href="{{ .Permalink }}"><img class="w-full h-auto rounded-lg shadow" src="{{ .Params.blog_image | absURL }}" /></a>
-          </div>
-          <div class="w-full md:w-3/4 px-4">
-          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-            <p class="hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-          {{- else -}}
-            <p class="hompage_episode_description">{{ .Description | markdownify }}</p>
-          {{- end -}}
-          </div>
-        {{- else -}}
-          <div class="w-full px-4">
-          {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
-            <p class="hompage_episode_description">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<small><a href = "{{ .Permalink }}">Read More</a></small></p>
-          {{- else -}}
-            <p class="hompage_episode_description">{{ .Description | markdownify }}</p>
-          {{- end -}}
-          </div>
-        {{- end -}}
-      </div>
-    {{- end -}}
-  {{- end -}}
-</div>
+  </div>
 
 </div>
-<div class="flex flex-wrap -mx-4">
-<div class="w-full px-4">
+
 {{- if gt $paginator.TotalPages 1 -}}
-<div class="flex flex-wrap -mx-4">
-<div class="w-full px-4">
 
-
-<div class="flex justify-center my-8">
-  <nav aria-label="Blog pagination">
+<div class="mt-8">
+  <nav class="flex justify-center">
     {{ $pag := $.Paginator }}
     {{ $window := $.Site.Params.paginateWindow | default 1 }}
     {{ if gt $pag.TotalPages 1 }}
@@ -197,16 +149,13 @@
               {{- $url := trim (string .URL) "/" | absURL -}}
                   <li>
                       <a href="{{ $url }}" aria-label="Last" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-700 transition"><span aria-hidden="true">&raquo;&raquo;</span></a>
-                  </li>
+                    </li>
+                    {{- end -}}
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </nav>
+          </div>
           {{- end -}}
-        {{ end }}
-      </ul>
-    {{ end }}
-  </nav>
-</div>
-</div>
-{{- end -}}
-</div>
-{{- end -}}
-</div>
-</div> <!-- end section -->
+          {{- end -}}
+        </section><!-- end section -->

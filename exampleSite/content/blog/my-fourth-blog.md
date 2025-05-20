@@ -5,6 +5,7 @@ PublishDate = 2020-12-01T13:33:18-06:00 # this is the datetime for the when the 
 title = "My fourth blog"
 images = ["img/episode/default-social.jpg"]
 blog_image = "img/episode/default.jpg"
+blog_banner = "img/episode/default-banner.jpg"
 #Author = ""
 #categories = []
 #tags = []
