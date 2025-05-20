@@ -1,33 +1,13 @@
-<section class="episode-list max-w-6xl mx-auto">
+<section class="max-w-6xl mx-auto">
   <div class="w-full px-4 mb-6">
     <h2 class="text-3xl font-bold mb-4">Blog Posts</h2>
   </div>
-  <div class="flex flex-wrap -mx-4">
-
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {{ $paginator := .Paginate ((where .Pages.ByDate "Section" "blog").Reverse) }}
-
-        {{ range $paginator.Pages }}
-        {{ $.Scratch.Set "episode" .File.BaseFileName }}
-          <div class="w-full md:w-1/3 px-4 mb-8 grid_episode_col">
-            <div class="episode-image-homepage mb-4">
-              <a href="{{ .Permalink }}">
-                  <img src="{{ .Params.blog_image | absURL }}" class="w-full h-auto rounded-lg shadow" alt="{{ .Title }}" />
-
-
-
-              </a>
-            </div>
-            <div class="grid_episode_detail">
-              <a href="{{ .Permalink }}" class="grid_episode_title"><h3 class="text-lg font-semibold mb-2">{{ title .Title }}</h3></a>
-              <small class="block text-gray-500 dark:text-gray-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
-            </div>
-
-          </div>
-        {{ end }}
-
-
+    {{ range $paginator.Pages }}
+      {{ partial "grid/blog-grid.html" . }}
+    {{ end }}
   </div>
-
 </section>
 {{ if gt $paginator.TotalPages 1 }}
 <div class="flex justify-center my-8">

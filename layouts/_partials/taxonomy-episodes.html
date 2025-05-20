@@ -1,5 +1,6 @@
 {{ if isset $.Site.Params "site_layout" }}
   {{ if eq $.Site.Params.site_layout "grid" }}
+  <!-- this should be grid-taxonomy.html when it's working-->
     {{- partial "grid-taxonomy.html" . }}
   {{ else }}
     {{- partial "row-taxonomy.html" . }}
