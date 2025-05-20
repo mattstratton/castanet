@@ -1,6 +1,6 @@
 <section class="max-w-6xl mx-auto bg-castanet-primary-50 p-4 mb-6 rounded-lg shadow">
 
-  <div class="flex flex-wrap -mx-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
     {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
 

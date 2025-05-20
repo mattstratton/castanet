@@ -1,24 +1,25 @@
-<div class="w-full md:w-1/3 px-4 mb-8 grid_episode_col">
-  <div class="mb-4">
-    <a href="{{ .Permalink }}">
-        <img src="{{ .Params.episode_image | absURL }}" class="w-full h-auto rounded-lg shadow" alt="{{ .Title }}" />
-    </a>
-  </div>
-  <div class="grid_episode_detail">
-    {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
-      {{ if eq .Site.Params.episode_number_style "parens" }}            
-        <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
-      {{ else if eq .Site.Params.episode_number_style "brackets" }}
-        <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
-      {{ else if eq .Site.Params.episode_number_style "dash" }}
-        <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
+<div class="mb-8 grid_episode_col bg-castanet-primary-200 rounded-lg shadow">
+  <div class="p-4">
+    <div class="mb-4">
+      <a href="{{ .Permalink }}">
+          <img src="{{ .Params.episode_image | absURL }}" class="w-full h-auto rounded-lg shadow" alt="{{ .Title }}" />
+      </a>
+    </div>
+    <div class="grid_episode_detail">
+      {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
+        {{ if eq .Site.Params.episode_number_style "parens" }}            
+          <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+        {{ else if eq .Site.Params.episode_number_style "brackets" }}
+          <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
+        {{ else if eq .Site.Params.episode_number_style "dash" }}
+          <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
+        {{ else }}
+          <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+        {{ end }}
       {{ else }}
-        <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
+        <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a></h3>
       {{ end }}
-    {{ else }}
-      <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a></h3>
-    {{ end }}
-    <small class="block text-castanet-primary-500 dark:text-castanet-primary-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+      <small class="block text-castanet-primary-500 dark:text-castanet-primary-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+    </div>
   </div>
-
 </div>

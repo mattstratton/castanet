@@ -5,7 +5,7 @@
     {{- $paginator := .Paginator }}
     {{- $list := .Paginator.Pages  -}}
     {{- $len := (len $list) -}}
-    <div class="flex flex-wrap -mx-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {{- if gt $len 1 -}}
         {{- range $paginator.Pages -}}
           {{ partial "grid/episode-grid.html" . }}
