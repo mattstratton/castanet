@@ -1,6 +1,7 @@
 @import "tailwindcss";
-
-/* Violet scheme */
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+/* Stone scheme */
 @theme {
   --color-neutral: 255, 255, 255;
 
