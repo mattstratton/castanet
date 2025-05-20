@@ -29,6 +29,10 @@ buildFuture = true
     disableWatch = true
     source = 'hugo_stats.json'
     target = 'assets/notwatching/hugo_stats.json'
+    
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "RSS"]
 
 [taxonomies]
   category = "categories"

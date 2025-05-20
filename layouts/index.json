@@ -1,0 +1,15 @@
+{{- $.Scratch.Add "index" slice -}}
+
+{{- range (where $.Site.Pages "Type" "episode") -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "subtitle" .Params.subtitle "description" .Params.description "image" ( printf "/%s" .Params.episode_image ) "content" .Plain "permalink" .Permalink) -}}
+{{- end -}}
+
+{{- range (where $.Site.RegularPages "Section" "blog") -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "subtitle" .Params.subtitle "description" .Params.description "image" ( printf "/%s" .Params.blog_image ) "content" .Plain "permalink" .Permalink) -}}
+{{- end -}}
+
+{{- range (where $.Site.Pages "Type" "guest") -}}
+    {{- $.Scratch.Add "index" (dict "title" .Title "subtitle" .Params.subtitle "description" .Content "image" ( printf "/%s" .Params.Thumbnail ) "content" .Plain "permalink" .Permalink) -}}
+{{- end -}}
+
+{{- $.Scratch.Get "index" | jsonify -}}

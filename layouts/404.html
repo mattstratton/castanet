@@ -6,11 +6,11 @@
     <a href="/" class="inline-block mt-4 px-6 py-3 bg-castanet-primary-600 text-white font-semibold rounded-lg shadow hover:bg-castanet-primary-700 transition">Go Home</a>
     <div class="mt-8 text-sm text-castanet-primary-500 dark:text-castanet-primary-300">
       <p>If you think this is a mistake, please <a href="mailto:{{ .Site.Params.email }}" class="underline hover:text-castanet-primary-600">let us know</a>.</p>
-      <p class="mt-2">Or try searching for what you need:</p>
-      <form action="/search/" method="get" class="mt-2 flex justify-center">
-        <input type="text" name="q" placeholder="Search..." class="rounded-l px-3 py-2 border border-castanet-primary-300 focus:outline-none focus:ring-2 focus:ring-castanet-primary-400 dark:bg-castanet-primary-800 dark:border-castanet-primary-700" />
-        <button type="submit" class="rounded-r px-4 py-2 bg-castanet-primary-600 text-white font-semibold hover:bg-castanet-primary-700 transition">Search</button>
-      </form>
+      <p class="mt-2">Or try searching for what you need:</p><br/>
+      <p class="mt-2" id="loading">Loading search data...</p>
+        <input disabled placeholder="Enter search text" type="text" name="searchBox" id="searchBox" class="rounded-l px-3 py-2 border border-castanet-primary-300 focus:outline-none focus:ring-2 focus:ring-castanet-primary-400 dark:bg-castanet-primary-800 dark:border-castanet-primary-700"/>
+        <div id="results"></div>
+        {{ partial "search-script.html" . }}
     </div>
   </div>
 </div>

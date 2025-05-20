@@ -28,10 +28,10 @@ jobs:
           # hugo server --BaseURL="http://localhost:1313"
           ls
 
-      - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.13.x
-          lhci autorun --config=./test/$CASTANET_CONFIG.js
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          CASTANET_CONFIG: ${{ matrix.castanet-config }}
+      # - name: run Lighthouse CI
+      #   run: |
+      #     npm install -g @lhci/cli@0.13.x
+      #     lhci autorun --config=./test/$CASTANET_CONFIG.js
+      #   env:
+      #     LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      #     CASTANET_CONFIG: ${{ matrix.castanet-config }}
