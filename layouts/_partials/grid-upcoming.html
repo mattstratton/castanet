@@ -1,42 +1,12 @@
-<section class="episode-list">
+<section class="max-w-6xl mx-auto bg-castanet-primary-50 p-4 mb-6 rounded-lg shadow">
 
-  <div class = "col episode-list-header">
-    <h2 class = "episode-list-header">All Episodes</h2>
-  </div>
-
-  <div class = "row">
+  <div class="flex flex-wrap -mx-4">
 
     {{ $paginator := .Paginate (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true ) }}
 
-        {{ range $paginator.Pages.ByDate }}
-        {{ $.Scratch.Set "episode" .File.BaseFileName }}
-          <div class="col-md-4 grid_episode_col">
-            <div class="episode-image-homepage">
-              <a href="{{ .Permalink }}">
-                  <img src="{{ .Params.episode_image | absURL }}" class="img-fluid" alt="{{ .Title }}" />
-
-
-
-              </a>
-            </div>
-            <div class="grid_episode_detail">              
-              {{ if and (isset .Site.Params "episode_number_style") (.Params.episode) }}
-                {{ if eq .Site.Params.episode_number_style "parens" }}            
-                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
-                {{ else if eq .Site.Params.episode_number_style "brackets" }}
-                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> [{{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}]</h3>
-                {{ else if eq .Site.Params.episode_number_style "dash" }}
-                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> - {{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }}</h3>
-                {{ else }}
-                  <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a> ({{ with .Site.Params.episode_number_prefix }}{{ . }}{{ end }}{{ .Params.episode }})</h3>
-                {{ end }}
-              {{ else }}
-                <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a></h3>
-              {{ end }}
-              <small class = "grid_episode_title">Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
-            </div>
-
-          </div>
+        {{ range $paginator.Pages }}
+        
+          {{ partial "grid/episode-grid.html" . }}
         {{ end }}
 
 
@@ -44,13 +14,9 @@
 
 </section>
 {{ if gt $paginator.TotalPages 1 }}
-<div class = "row">
-<div class = "col">
-
-
-<nav class="pagination justify-content-center">
-
-{{ $pag := $.Paginator }}
+<div class="flex justify-center my-8">
+  <nav aria-label="Episode pagination">
+    {{ $pag := $.Paginator }}
 {{ $window := $.Site.Params.paginateWindow | default 1 }}
 {{ if gt $pag.TotalPages 1 }}
   {{ $total := $pag.TotalPages }}
@@ -69,61 +35,55 @@
   {{ else }}
     {{ $.Scratch.Set "show" (seq 1 $total) }}
   {{ end }}
-
-<ul class="pagination pagination-lg">
-	<!-- first page button -->
-  {{if $paginator.HasPrev }}
-    {{ if gt $paginator.PageNumber 2 }}
-        {{- with $paginator.First -}}
+    <ul class="inline-flex items-center space-x-2">
+      <!-- first page button -->
+      {{if $paginator.HasPrev }}
+        {{ if gt $paginator.PageNumber 2 }}
+            {{- with $paginator.First -}}
+            {{- $url := trim (string .URL) "/" | absURL -}}
+                <li>
+                <a href="{{ $url }}" aria-label="First" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition"><span aria-hidden="true">&laquo;&laquo;</span></a>
+                </li>
+            {{- end -}}
+        {{ end }}
+      {{ end }}
+      <!-- prev page button -->
+      {{- with $paginator.HasPrev -}}
+          <li>
+            <a href="{{ $paginator.Prev.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">&laquo;</a>
+          </li>
+      {{ end }}
+      <!-- page # buttons -->
+      {{ range $pag.Pagers }}
+        {{ $cur := .PageNumber }}
         {{- $url := trim (string .URL) "/" | absURL -}}
-            <li class="page-item">
-            <a href="{{ $url }}" aria-label="First" class="page-link"><span aria-hidden="true">&laquo;&laquo;</span></a>
-            </li>
+        {{ if in ($.Scratch.Get "show") $cur }}
+          <li>
+            <a href="{{ .URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md border border-castanet-primary-300 dark:border-castanet-primary-700 {{ if eq . $pag }}bg-blue-600 text-white dark:bg-blue-500{{ else }}bg-white text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:hover:bg-castanet-primary-700{{ end }} transition">{{ .PageNumber }}</a>
+          </li>
+        {{ else if in (slice 2 (sub $total 1)) $cur }}
+          <li>
+            <span class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-castanet-primary-100 border border-castanet-primary-200 text-castanet-primary-400 dark:bg-castanet-primary-900 dark:border-castanet-primary-800">&hellip;</span>
+          </li>
+        {{ end }}
+      {{ end }}
+      <!-- next page button -->
+      {{- with $paginator.HasNext -}}
+      <li>
+        <a href="{{ $paginator.Next.URL }}" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition">&raquo;</a>
+      </li>
+      {{ end }}
+      <!-- last page button -->
+      {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
+        {{- with $paginator.Last -}}
+            {{- $url := trim (string .URL) "/" | absURL -}}
+                <li>
+                    <a href="{{ $url }}" aria-label="Last" class="inline-flex items-center px-3 py-2 text-sm font-medium rounded-md bg-white border border-castanet-primary-300 text-castanet-primary-700 hover:bg-castanet-primary-100 dark:bg-castanet-primary-800 dark:text-castanet-primary-200 dark:border-castanet-primary-700 dark:hover:bg-castanet-primary-700 transition"><span aria-hidden="true">&raquo;&raquo;</span></a>
+                </li>
         {{- end -}}
+      {{ end }}
+    </ul>
     {{ end }}
-  {{ end }}
-
-
-  <!-- prev page button -->
-  {{- with $paginator.HasPrev -}}
-    	<li class="page-item">
-    		<a href="{{ $paginator.Prev.URL }}" class="page-link"> &laquo; </a>
-    	</li>
-  {{ end }}
-  
-  <!-- page # buttons -->
-  {{ range $pag.Pagers }}
-    {{ $cur := .PageNumber }}
-    {{- $url := trim (string $.URL) "/" | absURL -}}
-    {{ if in ($.Scratch.Get "show") $cur }}
-      <li class = "{{ if eq . $pag }}active{{ end }} page-item"><a href="{{ .URL }}" class="page-link hidden-md-down">{{ .PageNumber }}</a></li>
-    {{ else if in (slice 2 (sub $total 1)) $cur }}
-      <li class="disabled page-item"><a name="" class="page-link hidden-md-down">&hellip;</a></li>
-    {{ end }}
-  {{ end }}
-  
-  <!-- next page button -->
-  {{- with $paginator.HasNext -}}
-  <li class="page-item">
-    <a href="{{ $paginator.Next.URL }}" class="page-link"> &raquo; </a>
-  </li>
-  {{ end }}
-  
-  <!-- last page button -->
-  {{ if lt $paginator.PageNumber (sub $paginator.TotalPages 1) }}
-    {{- with $paginator.Last -}}
-        {{- $url := trim (string .URL) "/" | absURL -}}
-            <li class="page-item">
-                <a href="{{ $url }}" aria-label="Last" class="page-link"><span aria-hidden="true">&raquo;&raquo;</span></a>
-            </li>
-    {{- end -}}
-  {{ end }}
-  
-</ul>
-{{ end }}
-</nav>
-</div>
+  </nav>
 </div>
 {{ end }}
-</div>
-</div>
