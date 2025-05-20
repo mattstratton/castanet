@@ -7,11 +7,32 @@ disqusShortname = "arresteddevops"
 themesdir = "../.."
 pagination.pagerSize = "9"
 
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
 [module]
   [module.hugoVersion]
   [[module.imports]]
     # This is replaced in go.mod to point to the directory above.
     path = "github.com/mattstratton/castanet/v2"
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+    
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "RSS"]
 
 
 [permalinks]
