@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ if isset $.Site.Params "site_layout" }}
     {{ if eq $.Site.Params.site_layout "grid" }}
-      {{- partial "grid-blog.html" . }}
+      {{- partial "grid.html" . }}
     {{ else }}
       {{- partial "row-blog.html" . }}
     {{ end }}
