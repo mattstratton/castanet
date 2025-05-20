@@ -131,7 +131,7 @@
 
 <section class="w-full max-w-5xl mx-auto">
   <!-- rest of episodes -->
-  {{- if (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
+  {{- if gt (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) 1 -}}
   {{- $paginator := .Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) }}
   {{- $list := (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ) -}}
   {{- $len := (len $list) -}}
