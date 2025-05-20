@@ -21,15 +21,15 @@
     identifier = "guests"
     url = "/guest"
 
-#[[Main]]
-#    name = "Upcoming Episodes"
-#    identifier = "upcoming"
-#    url = "/upcoming"
+[[Main]]
+   name = "Upcoming Episodes"
+   identifier = "upcoming"
+   url = "/upcoming"
 
-#[[Main]]
-#    name = "Blog"
-#    identifier = "blog"
-#    url = "/blog"
+[[Main]]
+   name = "Blog"
+   identifier = "blog"
+   url = "/blog"
 
 [[Main]]
     name = "Resources"

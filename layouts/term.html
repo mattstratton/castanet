@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class = "row">
+  <div class = "col-md-12">
+    <h1 class="text-3xl font-bold text-castanet-primary-900 dark:text-white mb-4">{{ .Data.Singular | title}}: {{ .Title }}</h1>
+  </div>
+</div>
+{{ with .Content }}
+<div class = "row">
+  <div class = "col">
+    {{ . }}
+  </div>
+</div>
+{{- end -}}
+
+{{ partial "taxonomy-episodes.html" . }}
+
+{{ end }} 
