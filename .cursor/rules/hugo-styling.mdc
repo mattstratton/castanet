@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+When styling with CSS:
+
+- Always use Tailwind for styling
+
+- Prefer using the colors named in assets/css/slate.css (i.e., "--color-castanet-primary-50")
