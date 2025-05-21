@@ -1,9 +1,9 @@
 {{ if isset $.Site.Params "site_layout" }}
   {{ if eq $.Site.Params.site_layout "grid" }}
-    {{- partial "grid.html" . }}
+    {{- partial "grid/grid.html" . }}
   {{ else }}
-    {{- partial "row.html" . }}
+    {{- partial "row/row.html" . }}
   {{ end }}
 {{ else }}
-  {{- partial "row.html" . }}
+  {{- partial "row/row.html" . }}
 {{ end }}
