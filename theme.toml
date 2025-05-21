@@ -1,16 +1,15 @@
 # theme.toml template for a Hugo theme
-# See https://github.com/spf13/hugoThemes#themetoml for an example
+# See https://github.com/gohugoio/hugoThemesSiteBuilder for an example
 
 name = "Castanet"
 license = "MIT"
 licenselink = "https://github.com/mattstratton/castanet/blob/master/LICENSE.md"
 description = "A podcast-oriented theme for Hugo"
 homepage = "https://github.com/mattstratton/castanet"
+demosite = "https://sample-castanet.netlify.app/"
 tags = ["podcast", "responsive", "dark-mode", "tailwind"]
 features = ["podcast RSS", "subscribe buttons"]
-min_version = "0.147.3"
-theme_version = "2.0.0-beta.1"
 
 [author]
-  name = "Matt Stratton"
+  name = "Matty Stratton"
   homepage = "https://www.mattstratton.com"
