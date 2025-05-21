@@ -7,7 +7,7 @@
 {{- with .Site.Title -}}<meta property="og:site_name" content="{{ . }}" />{{- end -}}
 {{- with .Params.locale -}}<meta property="og:locale" content="{{ . }}" />{{- end -}}
 {{- if .IsHome -}}
-    {{ with .Site.Params.feed.itunes_summary -}}
+    {{ with .Site.Params.feed.apple_podcasts_summary -}}
         <meta property="og:description" content="{{ . }}" />
         <meta name="twitter:description" content="{{ . }}" />
         <meta itemprop="description" content="{{ . }}" />
