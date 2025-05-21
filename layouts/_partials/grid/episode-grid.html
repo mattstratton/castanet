@@ -19,7 +19,11 @@
       {{ else }}
         <h3><a href="{{ .Permalink }}" class= "grid_episode_title">{{ .Title }}</a></h3>
       {{ end }}
-      <small class="block text-castanet-primary-500 dark:text-castanet-primary-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+      {{ if isset .Params "upcoming" }}
+      <small class="block text-castanet-primary-500 dark:text-castanet-primary-400 mt-2">Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+    {{ else}}
+    <small class="block text-castanet-primary-500 dark:text-castanet-primary-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</small>
+    {{ end }}
     </div>
   </div>
 </div>
