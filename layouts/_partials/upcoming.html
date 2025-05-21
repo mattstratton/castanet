@@ -2,8 +2,8 @@
   {{ if eq $.Site.Params.site_layout "grid" }}
     {{- partial "grid.html" . }}
   {{ else }}
-    {{- partial "row-upcoming.html" . }}
+    {{- partial "row.html" . }}
   {{ end }}
 {{ else }}
-  {{- partial "row-upcoming.html" . }}
+  {{- partial "row.html" . }}
 {{ end }}

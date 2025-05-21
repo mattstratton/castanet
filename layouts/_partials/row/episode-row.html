@@ -22,7 +22,12 @@
     {{ else }}
       <h3 class="text-xl font-bold mb-2"><a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">{{ .Title }}</a></h3>
     {{ end }}
-    <p class="text-sm text-castanet-primary-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+    {{ if isset .Params "upcoming" }}
+      <p class="text-sm text-castanet-primary-600 mb-4 dark:text-white">Scheduled for {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+    {{ else}}
+      <p class="text-sm text-castanet-primary-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
+    {{ end }}
+
   </div>
   {{- if .Params.episode_image -}}
     <div class="flex flex-col md:flex-row gap-6 mb-8">
