@@ -33,11 +33,7 @@
 {{ if isset $.Site.Params.realfavicongenerator "theme_color" -}}
 <meta name="theme-color" content="{{ $.Site.Params.realfavicongenerator.theme_color}}">
 {{- end}}
-<!-- {{ if isset $.Site.Params "site_theme"}}
-<link href="{{ printf "css/%s.css" $.Site.Params.site_theme | absURL}}" rel="stylesheet">
-{{ else }}
-<link href={{"css/orange.css" | absURL }} rel="stylesheet">
-{{ end }} -->
+
 {{ partialCached "css.html" . }}
 <!-- Tailwind CSS -->
 {{/* Asset bundles */}}
@@ -52,10 +48,10 @@
 {{ $mediaelementcustom := resources.Get "css/mediaelementplayer.custom.css" }}
 {{ $mediaelementspeed := resources.Get "lib/mediaelement/css/speed.min.css" }}
 {{ $assets.Add "css" (slice $jssocials $jssocials_theme $fontawesome $mediaelement $mediaelementcustom $mediaelementspeed) }}
-<!-- {{ $cssCustom := resources.Get "css/custom.css" }}
+{{ $cssCustom := resources.Get "css/custom.css" }}
 {{ if $cssCustom }}
   {{ $assets.Add "css" (slice $cssCustom) }}
-{{ end }} -->
+{{ end }}
 {{ $bundleCSS := $assets.Get "css" | resources.Concat "css/main.bundle.css" | resources.Minify | resources.Fingerprint $algorithm }}
 <link
   type="text/css"
@@ -64,34 +60,8 @@
   integrity="{{ $bundleCSS.Data.Integrity }}"
 />
 
-
-
-<link
-  type="text/css"
-  rel="stylesheet"
-  href="{{ $bundleCSS.RelPermalink }}"
-  integrity="{{ $bundleCSS.Data.Integrity }}"
-/>
-
 <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
-<!-- Custom CSS -->
-<!-- {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="{{ . | absURL }}">
-{{ end }} -->
-<!-- <link href={{"css/all.css" | absURL }} rel="stylesheet"> -->
-<!-- <link href={{"css/mediaelementplayer.min.css" | absURL }} rel="stylesheet"> -->
-<!-- <style>
-    .mejs__overlay-button {
-        background-image: url("/img/lib/mediaelement/mejs-controls.svg");
-    }
-    .mejs__overlay-loading-bg-img {
-        background-image: url("/img/lib/mediaelement/mejs-controls.svg");
-    }
-    .mejs__button > button {
-        background-image: url("/img/lib/mediaelement/mejs-controls.svg");
-    }
-    </style>
-<link href={{"css/speed.min.css" | absURL }} rel="stylesheet"> -->
+
 {{ if eq .Section "blog" }}
     <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{"blog/index.xml" | absURL }}"/>
 {{ else }}
@@ -101,6 +71,7 @@
         <link rel="alternate" type="application/rss+xml" title="{{$.Site.Title}}" href="{{"episode/index.xml" | absURL }}"/>
     {{- end -}}
 {{ end }}
+<!-- combine javascript files-->
 {{ $jquery := resources.Get "lib/jquery/jquery.js" }}
 {{ $jssocials := resources.Get "lib/jssocials/jssocials.js" }}
 {{ $mediaelement := resources.Get "lib/mediaelement/mediaelement-and-player.js" }}
