@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+This rule standardizes the feature branch workflow for collaborative development in this project.
+
+- Always start new work by switching to the `v2` branch and running `git pull origin v2` to ensure it is up to date.
+- Create a new feature branch off of `v2` using a clear, descriptive name (e.g., `feature/short-description`).
+- If available, use the GitHub MCP (Multi-Channel Platform) for branch creation, PRs, and related workflow steps to streamline and standardize the process.
+- Develop and test your feature. Run `npm run build` and verify output in `exampleSite/public` before marking the feature as ready.
+- When the feature is ready, commit all changes with a descriptive commit message.
+- Push your feature branch to the remote repository.
+- Open a Pull Request targeting the `v2` branch (not `main`).
+- Ensure the PR description is comprehensive, including a summary, testing steps, and any relevant context.
+
+Following this workflow helps maintain code quality and project consistency.
+
