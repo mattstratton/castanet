@@ -2,7 +2,6 @@ baseurl = "https://example.com/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "HugoCast"
-googleAnalytics = ""
 pagination.pagerSize = "9"
 buildFuture = true
 # theme = "castanet"
@@ -20,7 +19,6 @@ buildFuture = true
 [module]
   [module.hugoVersion]
   [[module.imports]]
-    # This is replaced in go.mod to point to the directory above.
     path = "github.com/mattstratton/castanet/v2"
   [[module.mounts]]
     source = 'assets'
@@ -43,6 +41,10 @@ buildFuture = true
 	# page = "/:filename/"
 	about = "/:contentbasename/"
 	episode = "/:contentbasename/"
+
+[services]
+  [services.googleAnalytics]
+    id = ''
 
 [params]
 googleAnalytics_UA = ""
@@ -132,28 +134,17 @@ disqusShortname = ""
       name	= "Matt Stratton"
       thumbnail = "img/host/matt.png"
       bio = "Matt Stratton is a solutions architect at Chef, where he demonstrates how Chef's automation platform provides speed and flexibility to clients' infrastructure. He is devoted to concepts like Continuous Delivery and Infrastructure as Code, and his license plate actually says \"DevOps\". He lives in Chicago and has an unhealthy obsession with Doctor Who, Firefly, and Game of Thrones. And whiskey."
-      [params.authors.Matt.social]
-        github = "mattstratton"
-        facebook = "matt.stratton"
-        twitter = "mattstratton"
-        linkedin = "mattstratton"
-        homepage = "https://www.mattstratton.io"
-        pinterest = "mattstratton"
-        instagram = "instagram"
-        youtube = "mattstratton"
-        twitch = "mattstratton"
+
     [params.authors.Trevor]
 			name = "Trevor Hess"
 			thumbnail = "img/host/trevor.jpg"
 			bio = ""
-				[params.authors.Trevor.social]
-					twitter = "trevorghess"
+
     [params.authors.Bridget]
       name = "Bridget Kromhout"
       thumbnail = "img/host/bridget.jpg"
       bio = ""
-      [params.authors.Bridget.social]
-        twitter = "bridgetkromhout"
+
 
     [params.links]
       [params.links.ado]
