@@ -3,7 +3,7 @@
 [context.production]
 #  command = "bin/netlify.sh"
 # publish = "exampleSite/public"
-   command = "cd exampleSite &&hugo mod get -u && hugo --gc --minify --buildDrafts --buildFuture --baseURL=$URL"
+   command = "cd exampleSite && hugo mod get -u && hugo --gc --minify --buildDrafts --buildFuture --baseURL=$URL"
    publish = "exampleSite/public/"
 
 # Deploy Preview context: All Deploy Previews
