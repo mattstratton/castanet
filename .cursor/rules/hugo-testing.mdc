@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+This rule standardizes on how we test changes with Hugo in this project.
+
+When you want to test something in hugo, you should run `npm run build` from the root of the project. The files generated will be located in `exampleSite/public`

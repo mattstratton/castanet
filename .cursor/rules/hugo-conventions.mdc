@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+This rule standardizes how we work with Hugo in this project.
+
+- Always use the `Store` method for passing data inside and outside of loops or blocks, especially for pagination and sharing computed values.
+- Avoid using the older `Scratch` approach unless working with legacy code.
+- Use clear, descriptive keys when storing values in `Store` (e.g., `paginator`, `featuredPost`).
+- See [layouts/_partials/grid.html](mdc:layouts/_partials/grid.html) for an example of `Store` usage.
+
+
+Reference: https://gohugo.io/methods/page/store/
