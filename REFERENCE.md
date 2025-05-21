@@ -1,49 +1,85 @@
 # Reference for castanet
+<!-- vscode-markdown-toc -->
+* [The config file](#Theconfigfile)
+	* [Top-level items](#Top-levelitems)
+	* [Build, Module, and Output settings](#BuildModuleandOutputsettings)
+	* [General Parameters](#GeneralParameters)
+	* [Feed Parameters](#FeedParameters)
+	* [Favicon parameters](#Faviconparameters)
+	* [Social Parameters](#SocialParameters)
+	* [Giscus Parameters](#GiscusParameters)
+	* [Fathom Analytics Parameters](#FathomAnalyticsParameters)
+	* [Host/Author Parameters](#HostAuthorParameters)
+	* [Link Parameters](#LinkParameters)
+	* [A note about `BaseURL`](#AnoteaboutBaseURL)
+	* [Pagination setting with grid layout](#Paginationsettingwithgridlayout)
+	* [Permalinks](#Permalinks)
+	* [Taxonomies](#Taxonomies)
+	* [Menus](#Menus)
+	* [Podlove Subscribe Button](#PodloveSubscribeButton)
+* [Blogs](#Blogs)
+* [Episodes](#Episodes)
+	* [Upcoming Episodes](#UpcomingEpisodes)
+* [Guests](#Guests)
+	* [Guest Pages](#GuestPages)
+* [Hosts](#Hosts)
+	* [Host Pages](#HostPages)
+* [Sponsors](#Sponsors)
 
-# Table of contents
-<!-- TOC depthFrom:2 updateOnSave:false-->
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 
-- [The config file](#the-config-file)
-    - [Top-level items](#top-level-items)
-    - [General Parameters](#general-parameters)
-    - [Feed Parameters](#feed-parameters)
-    - [Favicon parameters](#favicon-parameters)
-    - [Social Parameters](#social-parameters)
-    - [Giscus Parameters](#giscus-parameters)
-    - [Host/Author Parameters](#hostauthor-parameters)
-        - [Host Social Parameters](#host-social-parameters)
-    - [Link Parameters](#link-parameters)
-    - [A note about `BaseURL`](#a-note-about-baseurl)
-    - [Pagination setting with grid layout](#pagination-setting-with-grid-layout)
-    - [Permalinks](#permalinks)
-    - [Taxonomies](#taxonomies)
-    - [Menus](#menus)
-    - [Podlove Subscribe Button](#podlove-subscribe-button)
-- [Blogs](#blogs)
-- [Episodes](#episodes)
-    - [Upcoming Episodes](#upcoming-episodes)
-- [Guests](#guests)
-    - [Guest Pages](#guest-pages)
-- [Hosts](#hosts)
-    - [Host Pages](#host-pages)
-- [Sponsors](#sponsors)
+## <a name='Theconfigfile'></a>The config file
 
-## The config file
+You will need to add a handful of configuration items to your `hugo.toml` file. You can take a look at the [example site](https://github.com/mattstratton/castanet/blob/master/exampleSite/config/_default/hugo.toml) to see them in action. They are described below:
 
-You will need to add a handful of configuration items to your `config.toml` file. You can take a look at the [example site](https://github.com/mattstratton/castanet/blob/master/exampleSite/config.toml) to see them in action. They are described below:
+### <a name='Top-levelitems'></a>Top-level items
 
-### Top-level items
+- `pagination.pagerSize` - The number of episodes to show per-page on the homepage (note, this also controls pagination for Guest and Host list pages). If this is not set, the default is 10.
 
-- `googleAnalytics` - the Google Analytics tracking ID. We use the async method. Example: `"UA-123-45"`
-- `paginate` - The number of episodes to show per-page on the homepage (note, this also controls pagination for Guest and Host list pages). If this is not set, the default is 10.
-### General Parameters
+### <a name='BuildModuleandOutputsettings'></a>Build, Module, and Output settings
+
+The following settings are used to configure the build, module, and output settings for the site.
+
+```
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+[module]
+  [module.hugoVersion]
+  [[module.imports]]
+    path = "github.com/mattstratton/castanet/v2"
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+    
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "RSS"]
+```
+
+### <a name='GeneralParameters'></a>General Parameters
 
 These should be set under the `[params]` section:
 
 | Field Name              | Required | Description                                                                                                                                                                                                                                                         | Example                                                                                                                                                                                                                                   |
 |-------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `mainSections`          | Yes      | Sets the page type for what shows up on the homepage. This must be set.                              | "episode"
-| `site_theme`            | No       | The color scheme for the overall site. Currently the options are `orange` (default), `grey`, and `blue`.                                                                                                                                                            | "blue"                                                                                                                                                                                                                                    |
+| `colorScheme`            | No       | The color scheme for the overall site. Currently the options are `slate` (default), `violet`, and `stone`.                                                                                                                                                            | "slate"                                                                                                                                                                                                                                    |
 | `episode_number_style`            | No       | The format used for episode numbers in the episode's RSS feed. The choices are either parens, dash or brackets. If not set, the episode title in the RSS feed will just default to the title of the episode, without any episode number included.                                                                                                                                                            | "brackets"                                                                                                                                                                                                                                    |
 | `episode_number_prefix`            | No       | A prefix used in the episode's RSS feed before the episode number. For example, if episode_number_prefix was set to CWC for episode 1, then the output might be Title of the Episode - CWC1.                                                                                                                                                            | "CWC"                                                                                                                                                                                                                                    |
 | `site_layout`           | No       | The layout for the home page. The options are `row` (default) or `grid`.                                                                                                                                                                                            | "grid"                                                                                                                                                                                                                                    |
@@ -68,7 +104,7 @@ These should be set under the `[params]` section:
 | `media_prefix`          | Yes      | The URL to pre-pend to your podcast files. Must end in a slash.                                                                                                                                                                                                     | "https://media.blubrry.com/arresteddevops/content.blubrry.com/arresteddevops/"                                                                                                                                                            |
 | `disqusShortname`       | No       | The shortname for use in Disqus comments. Example: `"arresteddevops"`. Note: The Disqus comments will not appear if you are running on `localhost`.                                                                                                                 | "arresteddevops"                                                                                                                                                                                                                          |
 
-### Feed Parameters
+### <a name='FeedParameters'></a>Feed Parameters
 
 These should be set under `[params.feed]`
 
@@ -86,7 +122,7 @@ These should be set under `[params.feed]`
 | `itunes_second_sub_category` | No       | The second sub-category for your podcast in Apple Podcasts. Do not set this if you didn't set the first one.                                                                                | "Tech News"                                                                                                                                                                                    |
 | `explicit`                   | No      | Whether or not the podcast itself contains explicit content (can also be set on a per-episode basis, see below). Default value from the archetype is "no". Valid values are "yes", "no", or "clean"                                                                                                                                    | "yes"                                                                                                                                                                                                                                 |
 
-### Favicon parameters
+### <a name='Faviconparameters'></a>Favicon parameters
 
 These are the favicon parameters for your overall site. They should be set under `[params.realfavicongenerator]`
 
@@ -99,7 +135,7 @@ Refer to https://realfavicongenerator.net/ for more details.
 | `theme_color`             | No       | https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color                | "#ffffff"            |
 
 
-### Social Parameters
+### <a name='SocialParameters'></a>Social Parameters
 
 These are the social network parameters for your overall site. They should be set under `[params.social]` and all of them allow either the short form (e.g. just your twitter handle) where the theme will construct the URL or the full URL beginning with https:// (with the exception of Mastodon, as that does not have a common url scheme)
 
@@ -119,8 +155,9 @@ These are the social network parameters for your overall site. They should be se
 | `twitch`         | No       | Twitch channel/profile for your site. This is the part that comes after `https://twitch.tv/`                     | "mattstratton"       |
 | `mastodon`         | No       | Mastodon account for your site. This needs to be the fully qualified URL including `https`                     | "https://hachyderm.io/@mattstratton"       |
 | `threads`         | No       | Threads account for your site. Account name without the `@`                     | "mattstratton"       |
+| `bluesky`         | No       | Bluesky account for your site. Account name without the `@`                     | "matty.wtf"       |
 
-### Giscus Parameters
+### <a name='GiscusParameters'></a>Giscus Parameters
 
 As an alternative to Disqus for comments, you can leverage GitHub discussions, right below the episodes, thanks to [Giscus](https://giscus.vercel.app/). Giscus is driven by parameters under the `[params.giscus]` section.
 
@@ -138,7 +175,7 @@ Example:
     crossorigin="anonymous"
 ```
 
-### Fathom Analytics Parameters
+### <a name='FathomAnalyticsParameters'></a>Fathom Analytics Parameters
 
 If you want to use Fathom Analytics for analytics, add this section to your `config.toml`.
 
@@ -147,7 +184,7 @@ If you want to use Fathom Analytics for analytics, add this section to your `con
   siteID = "ABCDE"
 ```
 
-### Host/Author Parameters
+### <a name='HostAuthorParameters'></a>Host/Author Parameters
 
 We use the "authors" from the configuration to list hosts in the jumbotron or sidebar. All hosts should have an entry in here. These settings should be set under `[params.authors]` and then `[params.authors.USERNAME]` for each host, for example:
 
@@ -164,27 +201,7 @@ We use the "authors" from the configuration to list hosts in the jumbotron or si
 | `thumbnail` | Yes      | The image for the user. This can either be a fully qualifed URL, or relative to the baseURL.  | "http://www.arresteddevops.com/matt.png" or "img/hosts/matt.png"                                                                                                                                                                                                                                                                                                                                              |
 | `bio`       | Yes      | The author/host bio. Supports Markdown.                                                       | "Matt Stratton is a solutions architect at Chef, where he demonstrates how Chef’s automation platform provides speed and flexibility to clients’ infrastructure. He is devoted to concepts like Continuous Delivery and Infrastructure as Code, and his license plate actually says “DevOps”. He lives in Chicago and has an unhealthy obsession with Doctor Who, Firefly, and Game of Thrones. And whiskey." |
 
-#### Host Social Parameters
-
-TODO: Remove these parameters from exampleSite, but also add one for the the shortname of the host for linking to host page (optional)
-
-You also will set the social parameters (all are optional) under `[params.authors.USERNAME.social]` and all of them allow either the short form (e.g. just your twitter handle) where the theme will construct the URL or the full URL beginning with https://
-
-| Field Name  | Required | Description                                                                                                      | Example                        |
-|-------------|----------|------------------------------------------------------------------------------------------------------------------|--------------------------------|
-| `github`    | No       | GitHub username only.                                                                                            | "mattstratton"                 |
-| `facebook`  | No       | Name of the user's Facebook page (not the URL).                                                                  | "matt.stratton"                |
-| `twitter`   | No       | Twitter name without the `@` sign.                                                                               | "mattstratton                  |
-| `pinterest` | No       | Pinterest username.                                                                                              | "nozzleio"                     |
-| `instagram` | No       | Instagram username.                                                                                              | "nozzleio"                     |
-| `youtube`   | No       | Name of the user's YouTube profile.                                                                              | mattstratton                   |
-| `twitch`    | No       | Name of the user's Twitch profile.                                                                               | mattstratton                   |
-| `linkedin`  | No       | LinkedIn profile name. This is the part that comes after the `https://www.linkedin.com/in/` in your profile URL. | "mattstratton"                 |
-| `homepage`  | No       | The user's website, including the `http` at the beginning.                                                       | "https://www.mattstratton.com" |
-| `mastodon`  | No       | The user's Mastodon URL, including the `https` at the beginning.                                                       | "https://hachyderm.io/@mattstratton" |
-| `threads`         | No       | Threads account the user. Account name without the `@`                     | "mattstratton"       |
-
-### Link Parameters
+### <a name='LinkParameters'></a>Link Parameters
 
 To generate the list of links in the sidebar, you will set them in the `config.toml` similar to this:
 
@@ -203,30 +220,30 @@ To generate the list of links in the sidebar, you will set them in the `config.t
 
 The identifier for the link simply needs to be unique; it's not used anywhere else.
 
-### A note about `BaseURL`
+### <a name='AnoteaboutBaseURL'></a>A note about `BaseURL`
 
 This theme is fairly dependent upon a proper `BaseURL` being set in the `config.toml`. This has to do with how the feed is generated as well as some of the social metadata (these things cannot be relative URL's). I'm fully aware that this can cause issues with some build systems, and I'm trying to work on a good solution for this. This must end in a slash. Example: `https://www.arresteddevops.com/`
 
-### Pagination setting with grid layout
+### <a name='Paginationsettingwithgridlayout'></a>Pagination setting with grid layout
 
 If you are using the grid layout, you need to ensure that your pagination is set to a multiple of 3. For example, in your config file:
 
 ```
-paginate = "9"
+pagination.pagerSize = "9"
 ```
 
-### Permalinks
+### <a name='Permalinks'></a>Permalinks
 
 I recommend the following permalink settings, although the theme will work just fine without them:
 
 ```
 [permalinks]
-	page = "/:filename/"
-	about = "/:filename/"
-	episode = "/:filename/"
+	page = "/:contentbasename/"
+	about = "/:contentbasename/"
+	episode = "/:contentbasename/"
 ```
 
-### Taxonomies
+### <a name='Taxonomies'></a>Taxonomies
 
 If you want to use the Categories, Series, or Tags features, you will need to set the appropriate taxonomies. Example:
 
@@ -236,7 +253,7 @@ If you want to use the Categories, Series, or Tags features, you will need to se
   series = "series"
   tag = "tags"
 ```
-### Menus
+### <a name='Menus'></a>Menus
 
 Castanet supports menus with up to one submenu per menu item. The menu name must be "Main", and the menus are sorted based upon their identifier. At this time, you must have at least one menu item, or the theme will error out.
 
@@ -280,10 +297,10 @@ Example:
 
 ```
 
-### Podlove Subscribe Button
+### <a name='PodloveSubscribeButton'></a>Podlove Subscribe Button
 
-[Podlove Subscribe Button](https://subscribe-button.podlove.org/) is a universal and easy-to-use button, to subscribe to podcasts with player clients or website players.
-To customize your button please add the following section to your `config.toml`, which covers all features which are provided by the generator on [subscribe-button.podlove.org](https://subscribe-button.podlove.org/).
+[Podlove Subscribe Button](https://podlove.org/podlove-subscribe-button) is a universal and easy-to-use button, to subscribe to podcasts with player clients or website players.
+To customize your button please add the following section to your `hugo.toml`, which covers all features which are provided by the generator on [https://podlove.org/podlove-subscribe-button](https://https://podlove.org/podlove-subscribe-button/).
 
 ```
 [params.podlove]
@@ -295,14 +312,14 @@ To customize your button please add the following section to your `config.toml`,
   subscribe_size = "medium"         # options: small, medium, big
   subscribe_format = "rectangle"    # options: rectangle, square, cover
   subscribe_style = "filled"        # options: filled, outline, frameless
-  subscribe_language = "de"         # options: nl (dutch), en (english), eo (esperanto), de (german), fi (finnish), fr (french), ja (french)
+  subscribe_language = "en"         # options: nl (dutch), en (english), eo (esperanto), de (german), fi (finnish), fr (french), ja (french)
   subscribe_feed_type = "audio"     # options: audio, video
   subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
 ```
 
-## Blogs
+## <a name='Blogs'></a>Blogs
 
-Every blogs requires a page in the `content/blog` on your site. The command `hugo new blog/myblog.md` should populate it properly.
+Every blog post requires a page in the `content/blog` on your site. The command `hugo new blog/myblog.md` should populate it properly.
 
 A blog file takes the following structure:
 
@@ -347,7 +364,7 @@ Dummy text? More like dummy thicc text, amirite?
 | tags[]       | No       | If you are using taxonomies, this is the array of tags for the                                                                                                                   | ["Ring Deployment", "Phased Rollout"] |
 | aliases      | No       | Other aliases for this blog.                                                                                                                                                     | ["/##"]                               |
 
-## Episodes
+## <a name='Episodes'></a>Episodes
 
 Every episode requires a page in the `content/episode` on your site. The command `hugo new episode/myepisode.md` should populate it properly.
 
@@ -405,7 +422,7 @@ Graphical user interface influencer value proposition startup hackathon iPad ana
 | `categories[]`       | No       | If you are using taxonomies, this is the array of categories for the episode.     | ["Virtual Reality"] |
 | `series[]`       | No       | If you are using taxonomies, this is the array of series for the episode.     | ["Modern Tech Trends"] |
 | `tags[]`       | No       | If you are using taxonomies, this is the array of tags for the episode.     | ["VR", "Technology"] |
-### Upcoming Episodes
+### <a name='UpcomingEpisodes'></a>Upcoming Episodes
 
 If you would like to display upcoming episodes, you need to do a couple things. First, you will need to create a page where the upcoming episodes will be listed. You can check out `exampleSite` for an example, but basically, you want to create `content/upcoming/_index.md`.
 
@@ -413,11 +430,11 @@ Any episodes that have `upcoming` in their frontmatter set to `true` will be lis
 
 Note: you will need to set `buildFuture = true` in your `config.toml` to allow Hugo to build upcoming episodes that are dated in the future.
 
-## Guests
+## <a name='Guests'></a>Guests
 
 If you don't have guests on your episodes, feel free to ignore this section.
 
-### Guest Pages
+### <a name='GuestPages'></a>Guest Pages
 
 Every guest on your show needs a corresponding page  in the `content/guest` directory of your site. Generally speaking, you should be able to name these however you like, but I have only tested it with the format `firstinitiallastname.md`, i.e., for "John Doe" the file would be `jdoe.md`.
 
@@ -436,7 +453,7 @@ GitHub = "johndoe"
 Thumbnail = "img/guest/jdoe.jpg"
 Twitch = "johndoe"
 YouTube = "johndoe"
-Aka = ["jsmith", "jsmith2"]
+guest_group = "jsmith"
 +++
 Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas.
 
@@ -458,13 +475,13 @@ Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Ch
 | `Twitch`   | No       | Twitch profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
 | `Mastodon`  | No       | The user's Mastodon URL, including the `https` at the beginning.                                                       | "https://hachyderm.io/@mattstratton" |
 | `Threads`         | No       | Threads account the user. Account name without the `@`                     | "mattstratton"       |
+| `Bluesky`         | No       | Bluesky account for your site. Account name without the `@`                     | "matty.wtf"       |
 | `guest_group`       | No       | Set to an identifier to mark guests as being different versions of the same person. Only the most recent file in a guest group will appear on the Guests page. Additionally, all members of a guest group will display the same "other episodes" on guest pages.                                                                                                                                                                                                               | "mattstratton"                   |
 
-## Hosts
+## <a name='Hosts'></a>Hosts
 
-Host information comes from host pages. You can use the shortcode TODO: add shortcode
 
-### Host Pages
+### <a name='HostPages'></a>Host Pages
 
 Every host  needs a corresponding page  in the `content/host` directory of your site. Generally speaking, you should be able to name these however you like, but I have only tested it with the format `firstinitiallastname.md`, i.e., for "John Doe" the file would be `jdoe.md`.
 
@@ -485,6 +502,7 @@ Pinterest = "johndoe"
 Instagram = "johndoe"
 YouTube = "johndoe"
 Twitch = "johndoe"
+host_group = "jdoe"
 +++
 Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Chinese food indie foods. Cream heating cheese food locally grown first class caramelize restaurant grocery shopping savory chick peas. Recommendations lovely starter soda herbes fridge chocolate eat better quinoa sausage java chef locally grown wholesome. Broil sweet sushi lasagna cream indian. Desert sour vegetarian sous-chef soda oven tasty eat better rice recommendations relish salt butter grape. Grocery shopping delicious Chinese food beets conserve ginger. Authentic blend drink sausage. Groceries sour desert. Take away lasagna consumer luncheon scent cookie beer groceries meals restaurants java cheese vegan chick peas.
 ```
@@ -502,10 +520,13 @@ Spoon fresh pie ingredients groceries oranges luncheon farm. Broth chick peas Ch
 | `Instagram` | No       | Instagram profile name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | "mattstratton"                 |
 | `YouTube`   | No       | YouTube profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                | "mattstratton"                 |
 | `Twitch`    | No       | Twitch profile/channel name                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | "mattstratton"                 |
+| `Mastodon`  | No       | The user's Mastodon URL, including the `https` at the beginning.                                                       | "https://hachyderm.io/@mattstratton" |
+| `Threads`         | No       | Threads account the user. Account name without the `@`                     | "mattstratton"       |
+| `Bluesky`         | No       | Bluesky account for your site. Account name without the `@`                     | "matty.wtf"       |
 | `Hide`      | No       | Optional flag to hide this host from the Hosts page. Must be set to "true" if you want the host to not show up. Case-sensitive.                                                                                                                                                                                                                                                                                                                                                             | "true"                         |
 | `host_group`       | No       | Set to an identifier to mark hosts as being different versions of the same person. Only the most recent file in a host group will appear on the Hosts page. Additionally, all members of a host group will display the same "other episodes" on host pages.                                                                                                                                                                                                               | "mattstratton"                   |
 
-## Sponsors
+## <a name='Sponsors'></a>Sponsors
 
 If your podcast doesn't have sponsors, feel free to disregard this section.
 
