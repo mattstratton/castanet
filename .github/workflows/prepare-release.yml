@@ -30,8 +30,6 @@ jobs:
         with:
           scheme: semver
           increment: "${{ env.TYPE }}"
-      - name: Update theme TOML
-        run: sed -i "s/${{ steps.version.outputs.current-version }}/${{ steps.version.outputs.version }}/g" ./theme.toml
       - name: Generate Changelog
         uses: heinrichreimer/action-github-changelog-generator@v2.4
         with:
