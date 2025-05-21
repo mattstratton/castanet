@@ -35,7 +35,7 @@
     "jssocials": "^1.5.0",
     "mediaelement": "^4.2.14",
     "mediaelement-plugins": "^2.5.0",
-    "netlify-cli": "^17.21.1",
+    "netlify-cli": "^17.34.3",
     "popper.js": "^1.15.0"
   }
 }
