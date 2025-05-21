@@ -11,8 +11,8 @@
           <i class="fab fa-spotify"></i> Spotify
         </a>
       {{ end }}
-      {{ if (isset .Site.Params "itunes_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-slate-800 text-white hover:bg-slate-900 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.itunes_subscribe}}">
+      {{ if (isset .Site.Params "apple_podcasts_subscribe") }}
+        <a class="flex items-center gap-2 px-4 py-2 rounded bg-slate-800 text-white hover:bg-slate-900 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.apple_podcasts_subscribe}}">
           <i class="fa fa-podcast"></i> Apple Podcasts
         </a>
       {{ end }}

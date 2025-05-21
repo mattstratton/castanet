@@ -13,35 +13,35 @@
     <title>{{ $.Site.Title }}</title>
     <atom:link href="{{ "episode/index.xml" | absURL }}" rel="self" type="application/rss+xml" />
     <link>{{ .Site.BaseURL }}</link>
-    <description>{{ .Site.Params.feed.itunes_summary | truncate 4000 ""}}</description>
+    <description>{{ .Site.Params.feed.apple_podcasts_summary | truncate 4000 ""}}</description>
     <lastBuildDate>{{ dateFormat "Mon, 2 Jan 2006 15:04:05 -0700" .Date }}</lastBuildDate>
     <sy:updatePeriod>hourly</sy:updatePeriod>
     <sy:updateFrequency>1</sy:updateFrequency>
     <language>{{ .Site.Params.feed.language | default .Site.LanguageCode }}</language>
     <copyright>{{ .Site.Params.feed.copyright }}</copyright>
-    {{ with .Site.Params.feed.itunes_subtitle }}<itunes:subtitle>{{ . }}</itunes:subtitle>{{ end }}
-    <itunes:author>{{ .Site.Params.feed.itunes_author }}</itunes:author>
+    {{ with .Site.Params.feed.apple_podcasts_subtitle }}<itunes:subtitle>{{ . }}</itunes:subtitle>{{ end }}
+    <itunes:author>{{ .Site.Params.feed.apple_podcasts_author }}</itunes:author>
     <itunes:type>episodic</itunes:type>
-    <googleplay:author>{{ .Site.Params.feed.itunes_author }}</googleplay:author>
-    <googleplay:email>{{ .Site.Params.feed.itunes_owner_email }}</googleplay:email>
-    <itunes:summary>{{ .Site.Params.feed.itunes_summary | truncate 4000 ""}}</itunes:summary>
-    <googleplay:description>{{ .Site.Params.feed.itunes_summary | truncate 4000 ""}}</googleplay:description>
+    <googleplay:author>{{ .Site.Params.feed.apple_podcasts_author }}</googleplay:author>
+    <googleplay:email>{{ .Site.Params.feed.apple_podcasts_owner_email }}</googleplay:email>
+    <itunes:summary>{{ .Site.Params.feed.apple_podcasts_summary | truncate 4000 ""}}</itunes:summary>
+    <googleplay:description>{{ .Site.Params.feed.apple_podcasts_summary | truncate 4000 ""}}</googleplay:description>
     <itunes:owner>
-      <itunes:name>{{ .Site.Params.feed.itunes_owner_name }}</itunes:name>
-      <itunes:email>{{ .Site.Params.feed.itunes_owner_email }}</itunes:email>
+      <itunes:name>{{ .Site.Params.feed.apple_podcasts_owner_name }}</itunes:name>
+      <itunes:email>{{ .Site.Params.feed.apple_podcasts_owner_email }}</itunes:email>
     </itunes:owner>
-    <itunes:image href="{{ .Site.Params.feed.itunes_image }}" />
-    <googleplay:image href="{{ .Site.Params.feed.itunes_image }}"></googleplay:image>
+    <itunes:image href="{{ .Site.Params.feed.apple_podcasts_image }}" />
+    <googleplay:image href="{{ .Site.Params.feed.apple_podcasts_image }}"></googleplay:image>
     <image>
-      <url>{{ .Site.Params.feed.itunes_image }}</url>
+      <url>{{ .Site.Params.feed.apple_podcasts_image }}</url>
       <title>{{ $.Site.Title }}</title>
       <link>{{ .Site.BaseURL }}</link>
     </image>
-    <itunes:category text="{{ .Site.Params.feed.itunes_top_category }}">
-      {{ with .Site.Params.feed.itunes_first_sub_category -}}
+    <itunes:category text="{{ .Site.Params.feed.apple_podcasts_top_category }}">
+      {{ with .Site.Params.feed.apple_podcasts_first_sub_category -}}
       <itunes:category text="{{ . }}" />
       {{- end -}}
-      {{- with .Site.Params.feed.itunes_second_sub_category -}}
+      {{- with .Site.Params.feed.apple_podcasts_second_sub_category -}}
       <itunes:category text="{{ . }}" />
       {{- end -}}
     </itunes:category>
@@ -70,7 +70,7 @@
           </title>
           <link>{{ .Permalink }}</link>
           <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }} </pubDate>
-          <dc:creator>{{ .Site.Params.itunes_author }}</dc:creator>
+          <dc:creator>{{ .Site.Params.apple_podcasts_author }}</dc:creator>
           <guid>{{- if isset .Params "guid" -}}{{ .Params.guid }}{{- else -}}{{ .Site.Params.media_prefix }}{{ .Params.podcast_file }}{{- end -}}</guid>
           <itunes:author>
           {{- if isset .Params "hosts" -}}
@@ -94,7 +94,7 @@
               {{ end }}
             {{- end -}}
           {{- else -}}
-            {{ .Site.Params.feed.itunes_author }}
+            {{ .Site.Params.feed.apple_podcasts_author }}
           {{- end -}}
           </itunes:author>
           {{ with .Params.episode }}
