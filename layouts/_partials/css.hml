@@ -2,7 +2,6 @@
 {{ with (templates.Defer (dict "key" "global")) }}
   {{ $theme := site.Params.colorScheme | default "slate" }}
   {{ with resources.Get (printf "css/%s.css" $theme) }}
-  {{/* with resources.Get "css/test.css" */}}
     {{ $opts := dict
       "minify" (not hugo.IsDevelopment)
       "inlineImports" true
