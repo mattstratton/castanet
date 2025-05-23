@@ -1,0 +1,109 @@
+googleAnalytics_UA = ""
+
+mainSections = ["episode"]
+episode_number_style  = "brackets"
+episode_number_prefix = "CWC"
+colorScheme = "slate"
+# site_layout = "grid"
+site_layout = "row"
+show_next_upcoming = "true"
+# enable_jumbo = "true"
+enable_jumbo = "false"
+disable_title_caps = "true"
+# truncate = "100"
+# about_logo = "/img/hugocast.png"
+copyright_notice = "Copyright 2016-2025 [Matt Stratton](https://www.mattstrattion.io)"
+youtube_subscribe = "https://www.youtube.com/arresteddevops?sub_confirmation=1"
+apple_podcasts_subscribe = "https://podcasts.apple.com/us/podcast/arrested-devops/id773888088?ign-mpt=uo%3D4&mt=2"
+android_subscribe = "http://subscribeonandroid.com/feeds.podtrac.com/VGAulpN7MY1U"
+spotify_subscribe = "https://open.spotify.com/show/..."
+stitcher_subscribe = "http://www.stitcher.com/podcast/arrested-devops-2/arrested-devops"
+soundcloud_subscribe = "http://feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
+pocketcasts_subscribe = "http://pcasts.in/feed/feeds.soundcloud.com/users/soundcloud:users:203144248/sounds.rss"
+mailchimp_subscribe = "//arresteddevops.us3.list-manage.com/subscribe/post?u=5e4cbcac996bb9df25f970a89&amp;id=154fa76bcc"
+# rss_subscribe = "http://feed.com/myfeed" #only set this if you don't want to use the built-in feed
+description = "The HugoCast is the best podcast you've ever seen. You will learn everything you ever needed to know about [podcasting](https://en.wikipedia.org/wiki/Podcast) from the most inspiring experts to ever show up on the whole internet."
+media_prefix = "https://media.blubrry.com/arresteddevops/content.blubrry.com/arresteddevops/"
+disqusShortname = ""
+# If you want to use fathom(https://usefathom.com) for analytics, add this section
+  [fathomAnalytics]
+    siteID = "ABCDE"
+    
+  [feed]
+    copyright = "Copyright 2020 Matt Stratton" #do not use markdown in this field; it is used in the feed
+    apple_podcasts_subtitle = "The best podcast ever" #no markdown or HTML
+    apple_podcasts_author = "Matt Stratton" #no markdown or HTML
+    apple_podcasts_summary = "The HugoCast is the best podcast you've ever seen. You will learn everything you ever needed to know about podcasting from the most inspiring experts to ever show up on the whole internet." # Limited to 4000 characters or less, plain text, no HTML
+    apple_podcasts_owner_name = "Matt Stratton"
+    apple_podcasts_owner_email = "matt.stratton@gmail.com" #contains the e-mail address that will be used to contact the owner of the Podcast for communication specifically about their Podcast on Apple Podcasts. It will not be publicly displayed on Apple Podcasts.
+    apple_podcasts_image = "https://www.arresteddevops.com/img/ado-podcast-logo.png" #fqdn to the image art for your podcast
+    apple_podcasts_top_category = "Technology"
+    apple_podcasts_first_sub_category = "Software How-To"
+    apple_podcasts_second_sub_category = "Tech News"
+    language = "en-us"
+
+  [realfavicongenerator] # https://realfavicongenerator.net/
+    mask_icon_color="#5bbad5"
+    msapplication_tilecolor="#2b5797"
+    theme_color="#ffffff"
+
+  # [podlove] # https://subscribe-button.podlove.org
+  #   subscribe_title = ""              # fallback: site title from above
+  #   subscribe_subtitle = ""           # fallback: ""
+  #   subscribe_description = ""        # fallback: ""
+  #   subscribe_cover = "img/logo.jpg"  # fallback: ""
+  #   subscribe_color = "#585e6c"       # fallback: ""
+  #   subscribe_size = "medium"         # options: small, medium, big
+  #   subscribe_format = "rectangle"    # options: rectangle, square, cover
+  #   subscribe_style = "filled"        # options: filled, outline, frameless
+  #   subscribe_language = "en"         # options: nl (dutch), en (english), eo (esperanto), de (german), fi (finnish), fr (french), ja (french)
+  #   subscribe_feed_type = "audio"     # options: audio, video
+  #   subscribe_feed_format = "mp3"     # options: mp3, aac, ogg, opus
+
+  # Social links can be given in full URL form or short form
+  # In the short form the theme will generate a relevant URL
+  [social]
+    github = "arresteddevops"
+    gitlab = "mattstratton"
+    facebook = "Arresteddevops"
+    facebook_admin = ["500557137","1234"] # This needs to be one or more page admins to get domain insights
+    twitter = "https://twitter.com/arresteddevops"
+    twitter_domain = "arresteddevops.com" # This domain shows in twitter cards as "View on `twitter_domain`"
+    pinterest = "nozzleio"
+    instagram = "nozzleio"
+    youtube = "arresteddevops"
+    # Short form in linkedin will link to a user's page so use long form for company pages
+    linkedin = "https://www.linkedin.com/company/linkedin/"
+    #linkedin = "mattstratton"
+    twitch = "mattstratton"
+    mastodon = "https://hachyderm.io/@mattstratton"
+    threads = "mattstratton"
+    bluesky = "matty.wtf"
+
+  [authors]
+    [authors.Matt]
+      name	= "Matt Stratton"
+      thumbnail = "img/host/matt.png"
+      bio = "Matt Stratton is a solutions architect at Chef, where he demonstrates how Chef's automation platform provides speed and flexibility to clients' infrastructure. He is devoted to concepts like Continuous Delivery and Infrastructure as Code, and his license plate actually says \"DevOps\". He lives in Chicago and has an unhealthy obsession with Doctor Who, Firefly, and Game of Thrones. And whiskey."
+
+    [authors.Trevor]
+			name = "Trevor Hess"
+			thumbnail = "img/host/trevor.jpg"
+			bio = ""
+
+    [authors.Bridget]
+      name = "Bridget Kromhout"
+      thumbnail = "img/host/bridget.jpg"
+      bio = ""
+
+
+    [links]
+      [links.ado]
+        name = "Arrested DevOps"
+        url = "https://www.arresteddevops.com"
+      [links.ffs]
+        name = "Food Fight Show"
+        url = "https://foodfightshow.org"
+      [links.sdt]
+        name = "Software Defined Talk"
+        url = "https://cote.io/podcasts/sdt/"

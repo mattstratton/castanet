@@ -15,10 +15,10 @@
               {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
                 <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow" width="250px">
               {{- else -}}
-                <img alt="{{ .Title }}" src="{{ .Params.thumbnail | absURL}}" class="w-full h-auto rounded-lg shadow" width="250px">
+                {{ partial "functions/image.html" (dict "path" .Params.thumbnail "class" "w-full h-auto rounded-lg shadow") }}
               {{- end -}}
             {{- else -}}
-              <img alt="{{ .Title }}" src="{{ "img/guest/default-guest.png" | absURL }}" class="w-full h-auto rounded-lg shadow" width="250px"/>
+              {{ partial "functions/image.html" (dict "path" "img/guest/default-guest.png" "class" "w-full h-auto rounded-lg shadow") }}
             {{- end -}}
           </div>
           <div class="w-full md:w-3/4 px-4">

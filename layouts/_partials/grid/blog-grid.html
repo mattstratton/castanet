@@ -2,7 +2,7 @@
   <div class="p-4">
     <div class="mb-4">
       <a href="{{ .Permalink }}">
-          <img src="{{ .Params.blog_image | absURL }}" class="w-full h-auto rounded-lg shadow" alt="{{ .Title }}" />
+          {{ partial "functions/image.html" (dict "path" .Params.blog_image "class" "w-full h-auto rounded-lg shadow") }}
       </a>
     </div>
     <div class="grid_episode_detail">

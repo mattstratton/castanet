@@ -1,0 +1,2 @@
+[services.googleAnalytics]
+  id = 'UA-123456789-0'

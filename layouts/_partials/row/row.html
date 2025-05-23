@@ -68,7 +68,7 @@
               <p class="text-sm text-castanet-primary-600 mb-4 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
             </div>
             <div class="mb-6">
-              <a href="{{ .Permalink }}"><img src="{{ .Params.episode_banner | absURL }}" class="w-full h-auto rounded-lg shadow-lg"/></a>
+              {{ partial "functions/image.html" (dict "path" .Params.episode_banner "class" "w-full h-auto rounded-lg shadow") }}
             </div>
             <div class="mb-6">
               <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
@@ -81,7 +81,7 @@
             {{- if .Params.episode_image -}}
               <div class="flex flex-col md:flex-row gap-6 mb-6">
                 <div class="md:w-1/4">
-                  <a href="{{ .Permalink }}"><img class="w-full h-auto rounded-lg shadow-md" src="{{ .Params.episode_image | absURL }}" /></a>
+                  {{ partial "functions/image.html" (dict "path" .Params.episode_image "class" "w-full h-auto rounded-lg shadow-md") }}
                 </div>
                 <div class="md:w-3/4">
                   {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
