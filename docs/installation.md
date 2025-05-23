@@ -3,12 +3,19 @@
 Castanet is a Hugo theme for podcast websites. To install and use Castanet, follow these steps:
 
 ## Prerequisites
-- [Hugo](https://gohugo.io/getting-started/installing/) (version 0.110.0 or later recommended)
+- [Hugo](https://gohugo.io/getting-started/installing/) (version 0.147.3 or later)
 - [Node.js](https://nodejs.org/) and npm (for building assets)
+- [Go](https://go.dev/doc/install) (for building the theme with Hugo Modules)
 
 ## 1. Add Castanet as a Hugo Module
 
-In your site root, add Castanet as a module:
+Initialize Hugo modules in your site root:
+
+```sh
+hugo mod init
+```
+
+Add Castanet as a module:
 
 ```toml
 # hugo.toml
@@ -22,6 +29,7 @@ In your site root, add Castanet as a module:
 From your site root, run:
 
 ```sh
+hugo mod npm pack
 npm install
 ```
 
