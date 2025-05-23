@@ -53,9 +53,17 @@ for the SEO tags
         <meta name="twitter:image" content="{{ . }}" />
         <meta itemprop="image" content="{{ . }}" />
     {{ else }}
-        <meta property="og:image" content="{{ $.Site.BaseURL}}/{{ . }}" />
-        <meta name="twitter:image" content="{{ $.Site.BaseURL}}/{{ . }}"/>
-        <meta itemprop="image" content="{{ $.Site.BaseURL}}/{{ . }}" />
+        {{ $image := resources.GetMatch . }}
+        {{ with $image }}
+            {{ $image := .Process "png" }}
+              <meta property="og:image" content="{{ $image.RelPermalink | absURL }}" />
+              <meta name="twitter:image" content="{{ $image.RelPermalink | absURL }}"/>
+              <meta itemprop="image" content="{{ $image.RelPermalink | absURL }}" />
+        {{ else }}
+            <meta property="og:image" content="{{ . | absURL }}" />
+            <meta name="twitter:image" content="{{ . | absURL }}" />
+            <meta itemprop="image" content="{{ . | absURL }}" />
+        {{ end }}
     {{ end }}
 {{ end }}{{ end }}
 <!-- Facebook Page Admin ID for Domain Insights -->

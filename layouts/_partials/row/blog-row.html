@@ -9,15 +9,15 @@
 {{- end -}}
 <div class="mb-8 mx-auto rounded-lg shadow bg-castanet-primary-100 dark:bg-castanet-primary-900 px-10 py-5">
   <div class="mb-8">
-    <a href="{{ .Permalink }}" class="grid_episode_title">
-      <h3 class="grid_episode_title">{{ .Title }}</h3>
+    <a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">
+      <h3 class="text-xl font-bold mb-2">{{ .Title }}</h3>
     </a>
     <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
   </div>
   {{- if .Params.blog_image -}}
     <div class="flex flex-col md:flex-row gap-6 mb-8">
       <div class="md:w-1/4">
-        <a href="{{ .Permalink }}"><img class="w-full h-auto rounded-lg shadow-md" src="{{ .Params.blog_image | absURL }}" /></a>
+        <a href="{{ .Permalink }}">{{ partial "functions/image.html" (dict "path" (.Params.blog_image | absURL) "class" "w-full h-auto rounded-lg shadow-md" "alt" .Title) }}</a>
       </div>
       <div class="md:w-3/4">
         {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
