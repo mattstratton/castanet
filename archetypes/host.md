@@ -14,4 +14,5 @@ Instagram = ""
 YouTube = ""
 Twitch = ""
 #host_group = ""
+images = ["img/host/default-social.jpg"]
 +++
