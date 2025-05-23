@@ -1,8 +1,17 @@
 <footer class="bg-white border-t border-gray-200 mt-auto">
   <div class="container mx-auto px-4 py-6">
-    <div class="flex justify-end items-center">
-      {{ if (isset .Site.Params "copyright_notice" ) }}
-        <p class="text-sm text-gray-600">{{ .Site.Params.copyright_notice | markdownify}}</p>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        {{ if (isset .Site.Params "copyright_notice" ) }}
+          <p class="text-sm text-gray-600">{{ .Site.Params.copyright_notice | markdownify}}</p>
+        {{ end }}
+      </div>
+      {{ with .Site.Params.footer_links.link }}
+        <div class="flex flex-wrap gap-4">
+          {{ range . }}
+            <a href="{{ .url }}" class="text-sm text-castanet-primary-700 hover:text-castanet-primary-900 underline transition-colors" target="_blank" rel="noopener">{{ .name }}</a>
+          {{ end }}
+        </div>
       {{ end }}
     </div>
   </div>
