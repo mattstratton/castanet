@@ -326,15 +326,15 @@
   </div>
   <!-- sharing ends -->
 
-  {{ with .Site.Params.disqusShortname }}
+
     <!-- disqus begins -->
     <div class="row">
       <div class="col-md-12">
-        {{ partial "disqus.html" }}
+        {{ partial "disqus.html" . }}
       </div>
     </div>
     <!-- disqus ends -->
-  {{ end }}
+
 
   {{ with .Site.Params.giscus }}
     <!-- giscus begins -->
