@@ -26,6 +26,7 @@
 * [Hosts](#Hosts)
 	* [Host Pages](#HostPages)
 * [Sponsors](#Sponsors)
+* [Shortcodes](#Shortcodes)
 
 <!-- vscode-markdown-toc-config
 	numbering=false
@@ -573,3 +574,9 @@ Example (TOML):
 ```
 
 These links will appear in the footer, styled consistently with the rest of the site.
+
+## <a name='Shortcodes'></a>Shortcodes
+
+Castanet includes shortcodes to add features to your content. See [docs/shortcodes.md](docs/shortcodes.md) for details and usage examples.
+
+- **Search:** Use `{{<staticsearch>}}` to add a search box to a page. See the documentation for more info.
