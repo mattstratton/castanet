@@ -136,7 +136,7 @@
                 <small class = "text-castanet-primary-600 dark:text-white">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" . }}</small>
             </div>
             <div class="mb-6">
-              <a href="{{ .Permalink }}"><img src="{{ .Params.blog_banner | absURL }}" class="w-full h-auto rounded-lg shadow-lg"/></a>
+              <a href="{{ .Permalink }}">{{ partial "functions/image.html" (dict "path" (.Params.blog_banner | absURL) "class" "w-full h-auto rounded-lg shadow-lg" "alt" .Title) }}</a>
             </div>
             <div class="mb-6">
               <p class="text-castanet-primary-700 dark:text-white">{{ .Description | markdownify | truncate ($.Scratch.Get "truncate") " "}}&nbsp;<a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 dark:text-white text-sm">Read More</a></p>
@@ -149,7 +149,7 @@
             {{- if .Params.blog_image -}}
               <div class="flex flex-col md:flex-row gap-6 mb-6">
                 <div class="md:w-1/4">
-                  <a href="{{ .Permalink }}"><img class="w-full h-auto rounded-lg shadow-md" src="{{ .Params.blog_image | absURL }}" /></a>
+                  <a href="{{ .Permalink }}">{{ partial "functions/image.html" (dict "path" (.Params.blog_image | absURL) "class" "w-full h-auto rounded-lg shadow-md" "alt" .Title) }}</a>
                 </div>
                 <div class="md:w-3/4">
                   {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}

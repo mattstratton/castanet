@@ -12,13 +12,9 @@
         <div class="flex flex-wrap -mx-4">
           <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
             {{- if and (isset .Params "thumbnail") (ne .Params.thumbnail "") -}}
-              {{- if (eq (slicestr .Params.thumbnail 0 4) "http") -}}
-                <img alt="{{ .Title }}" src="{{ .Params.thumbnail }}" class="w-full h-auto rounded-lg shadow" width="250px">
-              {{- else -}}
-                {{ partial "functions/image.html" (dict "path" .Params.thumbnail "class" "w-full h-auto rounded-lg shadow") }}
-              {{- end -}}
+              {{ partial "functions/image.html" (dict "path" .Params.thumbnail "class" "w-full h-auto rounded-lg shadow" "alt" .Title "width" "250px") }}
             {{- else -}}
-              {{ partial "functions/image.html" (dict "path" "img/guest/default-guest.png" "class" "w-full h-auto rounded-lg shadow") }}
+              {{ partial "functions/image.html" (dict "path" "img/guest/default-guest.png" "class" "w-full h-auto rounded-lg shadow" "alt" .Title "width" "250px") }}
             {{- end -}}
           </div>
           <div class="w-full md:w-3/4 px-4">

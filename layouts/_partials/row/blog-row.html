@@ -17,7 +17,7 @@
   {{- if .Params.blog_image -}}
     <div class="flex flex-col md:flex-row gap-6 mb-8">
       <div class="md:w-1/4">
-        <a href="{{ .Permalink }}"><img class="w-full h-auto rounded-lg shadow-md" src="{{ .Params.blog_image | absURL }}" /></a>
+        <a href="{{ .Permalink }}">{{ partial "functions/image.html" (dict "path" (.Params.blog_image | absURL) "class" "w-full h-auto rounded-lg shadow-md" "alt" .Title) }}</a>
       </div>
       <div class="md:w-3/4">
         {{- if ge (countrunes .Description ) ($.Scratch.Get "truncate") -}}
