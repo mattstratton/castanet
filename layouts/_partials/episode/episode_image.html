@@ -1,0 +1,8 @@
+
+  {{ $image := resources.GetMatch .Params.episode_image }}
+  {{ with $image }}
+    {{ $image := .Process "webp" }}
+    <img src="{{ $image.RelPermalink }}"  width="{{ .Width }}" height="{{ .Height }}" class="w-full h-auto rounded-lg shadow"/>  
+  {{ else }}
+    <img src="{{ .Params.episode_image | absURL }}" class="w-full h-auto rounded-lg shadow"/>
+  {{ end }}

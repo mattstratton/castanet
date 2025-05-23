@@ -1,0 +1,7 @@
+{{ $image := resources.GetMatch .path }}
+{{ with $image }}
+  {{ $image := .Process "webp" }}
+  <img src="{{ $image.RelPermalink }}"  width="{{ .Width }}" height="{{ .Height }}" class="{{ $.class }}"/>  
+{{ else }}
+  <img src="{{ .path | absURL }}" class="{{ .class }}"/>
+{{ end }}

@@ -1,0 +1,8 @@
+[buildStats]
+  enable = true
+[[cachebusters]]
+  source = 'assets/notwatching/hugo_stats\.json'
+  target = 'css'
+[[cachebusters]]
+  source = '(postcss|tailwind)\.config\.js'
+  target = 'css'

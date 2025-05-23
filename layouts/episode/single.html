@@ -1,5 +1,4 @@
 {{ define "main" }}
-
   <div class="flex flex-wrap -mx-4 mb-6">
     <div class="w-full px-4">
       <h1 class="text-3xl font-bold mb-2">
@@ -27,30 +26,30 @@
 
   {{ if isset .Params "episode_banner" }}
     {{ if ne .Params.episode_banner "" }}
-      <div class="flex flex-wrap -mx-4 mb-6">
-        <div class="w-full px-4">
-          <img src="{{ .Params.episode_banner | absURL }}" class="w-full h-auto rounded-lg shadow"/>
-        </div>
+    <div class="flex flex-wrap -mx-4 mb-6">
+      <div class="w-full px-4">
+        {{ partial "functions/image.html" (dict "path" .Params.episode_banner "class" "w-full h-auto rounded-lg shadow") }}
       </div>
-      <div class="flex flex-wrap -mx-4 mb-6">
-        <div class="w-full px-4">
-          {{ .Description | markdownify }}
+    </div>
+    <div class="flex flex-wrap -mx-4 mb-6">
+      <div class="w-full px-4">
+            {{ $.Description | markdownify }}
+          </div>
         </div>
-      </div>
     {{ end }}
   {{ else }}
     <!-- begin square row -->
-    {{- if isset .Params "episode_image" -}}
-      {{- if ne .Params.episode_image "" -}}
+    {{ if isset .Params "episode_image" }}
+    {{- if ne .Params.episode_image "" -}}
         <div class="flex flex-wrap -mx-4 mb-6">
           <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
-            <img src="{{ .Params.episode_image | absURL }}" class="w-full h-auto rounded-lg shadow"/>
-          </div>
+            {{ partial "functions/image.html" (dict "path" .Params.episode_image "class" "w-full h-auto rounded-lg shadow") }}
+         </div>
           <div class="w-full md:w-3/4 px-4">
-            {{ .Description | markdownify }}
+            {{ $.Description | markdownify }}
           </div>
         </div>
-      {{- end -}}
+        {{ end}}
     {{- else -}}
       <div class="flex flex-wrap -mx-4 mb-6">
         <div class="w-full px-4">
