@@ -3,6 +3,7 @@
 * [The config file](#Theconfigfile)
 	* [Top-level items](#Top-levelitems)
 	* [Build, Module, and Output settings](#BuildModuleandOutputsettings)
+	* [Services settings](#Servicessettings)
 	* [General Parameters](#GeneralParameters)
 	* [Feed Parameters](#FeedParameters)
 	* [Favicon parameters](#Faviconparameters)
@@ -70,6 +71,18 @@ The following settings are used to configure the build, module, and output setti
 [outputs]
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML", "RSS"]
+```
+
+### <a name='Servicessettings'></a>Services settings
+
+These should be set under the `[services]` section:
+
+```
+[services]
+  [services.googleAnalytics]
+    id = 'G-MEASUREMENT_ID'
+  [services.disqus]
+    shortname = 'DISQUS_SHORTNAME'
 ```
 
 ### <a name='GeneralParameters'></a>General Parameters
