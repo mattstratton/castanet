@@ -35,15 +35,21 @@ upcoming = false
 
 ## Hosts
 
-Hosts are defined in your config under `[params.authors]`:
+Hosts are stored in `content/host/`. To create a new host:
+
+```sh
+hugo new host/your-hostname.md
+```
+
+A typical host front matter:
 
 ```toml
-[params.authors]
-  [params.authors.Matt]
-    name = "Matt Stratton"
-    pronouns = "he/him"
-    thumbnail = "img/hosts/matt.png"
-    bio = "Matt Stratton is a solutions architect..."
++++
+name = "Matt Stratton"
+pronouns = "he/him"
+thumbnail = "img/hosts/matt.png"
+bio = "Matt Stratton is a solutions architect..."
++++
 ```
 
 ## Guests
