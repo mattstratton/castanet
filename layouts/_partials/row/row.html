@@ -45,7 +45,7 @@
               <p class="text-sm text-castanet-primary-600 dark:text-white mb-4">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "episode-metadata.html" .}}</p>
             </div>
             <div class="mb-6">
-              <div class="aspect-w-16 aspect-h-9">
+              <div class="w-full aspect-[16/9]">
                 <iframe class="w-full h-full rounded-lg shadow-lg" src="//www.youtube.com/embed/{{ .Params.youtube }}" allowfullscreen></iframe>
               </div>
             </div>
