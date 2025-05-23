@@ -2,7 +2,8 @@
   <div class="max-w-5xl mx-auto py-8 px-4">
     <div class="flex flex-wrap -mx-4 mb-6">
       <div class="w-full px-4">
-        <h1 class="text-3xl font-bold mb-4">{{ title .Title }} {{ with .Params.Pronouns }}({{ . }}){{ end }}</h1>
+        <h1 class="text-3xl font-bold mb-1">{{ title .Title }}</h1>
+        {{ with .Params.Pronouns }}<span class="inline-block px-2 py-0.5 rounded bg-castanet-primary-200 text-xs font-medium text-castanet-primary-800 mt-1">{{ . }}</span>{{ end }}
       </div>
     </div>
     {{ .Scratch.Delete "guest-names" }}
