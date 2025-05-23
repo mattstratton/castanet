@@ -1,7 +1,9 @@
 {{ $path := .Path }}
 {{ if eq $path "/" }}
     {{ .Store.Set "paginator" (.Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ))) }}
-    {{- partial "jumbotron.html" . }}
+    {{ if eq .Site.Params.enable_jumbo "true" }}
+      {{- partial "jumbotron.html" . }}
+    {{ end }}
     <div class="w-full max-w-5xl mx-auto px-4 bg-castanet-primary-50 dark:bg-castanet-primary-900 rounded-lg shadow mb-8">
       <div class="mb-8 p-5">
         <h2 class="text-3xl font-bold text-castanet-primary-900 dark:text-white mb-4">Latest Episode</h2>
@@ -204,16 +206,32 @@
       {{ end }}
     </div>
   {{ end }}
-  <div class="flex flex-col gap-8">
-    {{ $paginator := .Store.Get "paginator" }}
-    {{ range $paginator.Pages }}
-      {{ if eq $path "/blog" }}
-        {{ partial "row/blog-row.html" . }}
-      {{ else }}
-        {{ partial "row/episode-row.html" . }}
+  {{ if eq $path "/" }}
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="w-full md:w-2/3">
+        <div class="flex flex-col gap-8">
+          {{ $paginator := .Store.Get "paginator" }}
+          {{ range $paginator.Pages }}
+            {{ partial "row/episode-row.html" . }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="w-full md:w-1/3">
+        {{ partial "sidebar.html" . }}
+      </div>
+    </div>
+  {{ else }}
+    <div class="flex flex-col gap-8">
+      {{ $paginator := .Store.Get "paginator" }}
+      {{ range $paginator.Pages }}
+        {{ if eq $path "/blog" }}
+          {{ partial "row/blog-row.html" . }}
+        {{ else }}
+          {{ partial "row/episode-row.html" . }}
+        {{ end }}
       {{ end }}
-    {{ end }}
-  </div>
+    </div>
+  {{ end }}
 </section>
 {{ $paginator := .Store.Get "paginator" }}
 {{ if gt $paginator.TotalPages 1 }}

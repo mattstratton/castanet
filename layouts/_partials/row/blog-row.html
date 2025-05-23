@@ -9,8 +9,8 @@
 {{- end -}}
 <div class="mb-8 mx-auto rounded-lg shadow bg-castanet-primary-100 dark:bg-castanet-primary-900 px-10 py-5">
   <div class="mb-8">
-    <a href="{{ .Permalink }}" class="grid_episode_title">
-      <h3 class="grid_episode_title">{{ .Title }}</h3>
+    <a href="{{ .Permalink }}" class="text-castanet-primary-900 hover:text-blue-600 dark:text-white">
+      <h3 class="text-xl font-bold mb-2">{{ .Title }}</h3>
     </a>
     <small>Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
   </div>
