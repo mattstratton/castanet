@@ -44,6 +44,8 @@
       "-mx-4",
       "absolute",
       "aspect-[16/9]",
+      "aspect-h-9",
+      "aspect-w-16",
       "bg-blue-600",
       "bg-castanet-primary-100",
       "bg-castanet-primary-200",
