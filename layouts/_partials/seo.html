@@ -65,7 +65,14 @@ for the SEO tags
             <meta itemprop="image" content="{{ . | absURL }}" />
         {{ end }}
     {{ end }}
-{{ end }}{{ end }}
+{{ end }}{{ else }}
+  {{ with .Site.Params.social_image }}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    <meta itemprop="image" content="{{ . | absURL }}" />
+  {{ end }}
+{{ end }}
 <!-- Facebook Page Admin ID for Domain Insights -->
 {{ with .Site.Params.social.facebook_admin }}
   {{ range . }}

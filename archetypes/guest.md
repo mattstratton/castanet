@@ -14,4 +14,5 @@ Instagram = ""
 YouTube = ""
 Twitch = ""
 #guest_group = ""
+images = ["img/guest/default-social.jpg"]
 +++
