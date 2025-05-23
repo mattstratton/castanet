@@ -1,2 +1,5 @@
-[services.googleAnalytics]
+[googleAnalytics]
   id = 'UA-123456789-0'
+
+[disqus]
+  shortname = 'mattstratton'
