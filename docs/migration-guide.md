@@ -8,7 +8,9 @@ This guide helps you migrate your podcast site to Castanet.
 - Move any custom layouts or assets to the appropriate folders as per Hugo module conventions.
 - Update your episode, host, and guest content to match the latest front matter fields (see [Creating Episodes, Hosts, and Guests](./creating-episodes-hosts-guests.md)).
 - If you used custom taxonomies, menus, or permalinks, review the new recommended settings in [REFERENCE.md](../REFERENCE.md).
-
+- Guests must now be created at pages in the `content/guest/` folder. Support for datafiles for guests has been removed.
+- If you used a custom color template (i.e. `static/scss/COLOR-variables.scss`), this is no longer supported. Instead, copy [slate.scss](../assets/css/slate.scss) to `css/COLOR.css` in your site's `assets` folder and customize that.
+- For optimal performance, copy all images from `static/img` to your site's `assets/img` folder.
 ## From Other Podcast Themes
 
 - Copy your content (episodes, guests, hosts) into the appropriate `content/` folders.
