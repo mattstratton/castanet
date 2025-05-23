@@ -137,7 +137,7 @@
                 {{- end -}}
               </div>
               <div class="w-full md:w-3/4 px-4">
-                <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
+                <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "guest/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}<span class="inline-block px-2 py-0.5 rounded bg-castanet-primary-200 text-xs font-medium text-castanet-primary-800 mt-1">{{ . }}</span>{{ end }}</h2>
                 {{ .Content }}
                 {{- with .Params.Website -}}
                   <a href="{{ . }}" target="_blank">
@@ -231,7 +231,7 @@
                 {{- end -}}
               </div>
               <div class="w-full md:w-3/4 px-4">
-                <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h2>
+                <h2 class="text-3xl font-bold mb-4"><a href = "{{(printf "host/%s/" .File.BaseFileName) | absURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}<span class="inline-block px-2 py-0.5 rounded bg-castanet-primary-200 text-xs font-medium text-castanet-primary-800 mt-1">{{ . }}</span>{{ end }}</h2>
                 {{ .Content }}
                 {{- with .Params.Website -}}
                   <a href="{{ . }}" target="_blank">

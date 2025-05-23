@@ -29,7 +29,7 @@
             {{- end -}}
           </div>
           <div class="w-full md:w-2/3 px-4">
-            <h3 class="text-xl font-semibold mb-2"><a href = "{{ (printf "%s/%s/" $type .File.BaseFileName) | relURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}({{ . }}){{ end }}</h3>
+            <h3 class="text-xl font-semibold mb-2"><a href = "{{ (printf "%s/%s/" $type .File.BaseFileName) | relURL }}">{{ .Title }}</a> {{ with .Params.Pronouns }}<span class="inline-block px-2 py-0.5 rounded bg-castanet-primary-200 text-xs font-medium text-castanet-primary-800 mt-1">{{ . }}</span>{{ end }}</h3>
             <p class="mb-2">{{ .Content }}</p>
             {{ with .Params.Website }}
               <a href = "{{ . }}" target="_blank"><i class="fas fa-home fa-2x"></i></a>
