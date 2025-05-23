@@ -554,3 +554,21 @@ ad: "img/sponsors/bluthcompany.jpg"
 ```
 
 The ad can either be a fully qualified URL (such as `https://www.google.com/images/bluth.jpg`) or a path relative to your `static` directory.
+
+### Footer Links
+
+You can add custom links to your site's footer using the `[params.footer_links]` table in your config. Each link should have a `name` and a `url`.
+
+Example (TOML):
+
+```toml
+[params.footer_links]
+  [[params.footer_links.link]]
+    name = "GitHub"
+    url = "https://github.com/mattstratton/castanet"
+  [[params.footer_links.link]]
+    name = "Docs"
+    url = "https://castanet.mattstratton.com/docs/"
+```
+
+These links will appear in the footer, styled consistently with the rest of the site.
