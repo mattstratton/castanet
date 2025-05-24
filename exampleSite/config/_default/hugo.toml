@@ -2,7 +2,7 @@ baseurl = "https://example.com/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "HugoCast"
-pagination.pagerSize = "9"
+pagination.pagerSize = "6"
 buildFuture = true
 
 
