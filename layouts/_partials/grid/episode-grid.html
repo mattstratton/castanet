@@ -1,5 +1,6 @@
-<a href="{{ .Permalink }}" class="block group mb-8 grid_episode_col bg-castanet-primary-200 rounded-lg shadow transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-castanet-primary-400">
-  <div class="p-4">
+<div class="relative mb-8 grid_episode_col bg-castanet-primary-200 rounded-lg shadow transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl focus-within:ring-2 focus-within:ring-castanet-primary-400 h-full flex flex-col">
+  <a href="{{ .Permalink }}" class="absolute inset-0 z-10" aria-label="{{ .Title }}"></a>
+  <div class="p-4 flex-1 flex flex-col">
     <div class="mb-4">
       {{ partial "functions/image.html" (dict "path" .Params.episode_image "class" "w-full h-auto rounded-lg shadow") }}
     </div>
