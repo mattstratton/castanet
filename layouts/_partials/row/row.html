@@ -1,6 +1,6 @@
 {{ $path := .Path }}
 {{ if eq $path "/" }}
-    {{ $paginator := .Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true )) }}
+    {{ .Store.Set "rowPaginator" (.Paginate (after 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "!=" true ))) }}
     {{ if eq .Site.Params.enable_jumbo "true" }}
       {{- partial "jumbotron.html" . }}
     {{ end }}
@@ -211,6 +211,7 @@
       {{ if ne .Site.Params.enable_jumbo "true" }}
         <div class="w-full md:w-2/3">
           <div class="flex flex-col gap-8">
+            {{ $paginator := .Store.Get "rowPaginator" }}
             {{ range $paginator.Pages }}
               {{ partial "row/episode-row.html" . }}
             {{ end }}
@@ -222,6 +223,7 @@
       {{ else }}
         <div class="w-full">
           <div class="flex flex-col gap-8">
+            {{ $paginator := .Store.Get "rowPaginator" }}
             {{ range $paginator.Pages }}
               {{ partial "row/episode-row.html" . }}
             {{ end }}
@@ -229,6 +231,7 @@
         </div>
       {{ end }}
     </div>
+    {{ $paginator := .Store.Get "rowPaginator" }}
     {{ if gt $paginator.TotalPages 1 }}
     <div class="flex justify-center my-8">
       <nav aria-label="Episode pagination">
