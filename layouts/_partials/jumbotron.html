@@ -45,7 +45,7 @@
       <noscript><a href="{{ .Site.Params.rss_subscribe }}">Subscribe to feed</a></noscript>
     </div>
     {{ end }}
-    {{ partial "subscribe-buttons.html" . }}
+    {{ partial "subscribe-buttons.html" (dict "Site" .Site "Params" .Site.Params) }}
 
     </div>
   </div>
