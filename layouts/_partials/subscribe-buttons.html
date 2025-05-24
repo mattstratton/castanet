@@ -1,53 +1,61 @@
     <!-- Subscription buttons -->
 
-    <div class="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-x-3 gap-y-3 mt-6 w-full">
-      {{ if (isset .Site.Params "youtube_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.youtube_subscribe}}">
+    {{ $buttonStyle := .Params.button_style | default "single" }}
+    {{ $isSidebar := .sidebar | default false }}
+    {{ $widthClasses := cond $isSidebar "w-full" "w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" }}
+    {{ $singleBtn := printf "flex items-center gap-2 px-4 py-2 rounded bg-castanet-primary-600 text-white hover:bg-castanet-primary-700 focus:bg-castanet-primary-700 dark:bg-castanet-primary-400 dark:hover:bg-castanet-primary-300 dark:focus:bg-castanet-primary-300 transition %s hover:-translate-y-1 hover:shadow-xl focus:-translate-y-1 focus:shadow-xl transition-transform duration-200" $widthClasses }}
+    {{ $multiBtn := printf "flex items-center gap-2 px-4 py-2 rounded transition %s hover:-translate-y-1 hover:shadow-xl focus:-translate-y-1 focus:shadow-xl transition-transform duration-200" $widthClasses }}
+    {{ $containerClass := cond $isSidebar "flex flex-col gap-y-3 w-full" "flex flex-col sm:flex-row sm:flex-wrap justify-center gap-x-3 gap-y-3 mt-6 w-full" }}
+
+    <div class="{{ $containerClass }}">
+      {{ if (isset .Params "youtube_subscribe") }}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-red-600 text-white hover:bg-red-700{{ end }}" href="{{ .Params.youtube_subscribe}}">
           <i class="fab fa-youtube"></i> Youtube
         </a>
       {{ end }}
-      {{ if (isset .Site.Params "spotify_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.spotify_subscribe}}">
+      {{ if (isset .Params "spotify_subscribe") }}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-green-600 text-white hover:bg-green-700{{ end }}" href="{{ .Params.spotify_subscribe}}">
           <i class="fab fa-spotify"></i> Spotify
         </a>
       {{ end }}
-      {{ if (isset .Site.Params "apple_podcasts_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-slate-800 text-white hover:bg-slate-900 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.apple_podcasts_subscribe}}">
+      {{ if (isset .Params "apple_podcasts_subscribe") }}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-slate-800 text-white hover:bg-slate-900{{ end }}" href="{{ .Params.apple_podcasts_subscribe}}">
           <i class="fa fa-podcast"></i> Apple Podcasts
         </a>
       {{ end }}
-      {{ if (isset .Site.Params "android_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-green-700 text-white hover:bg-green-800 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.android_subscribe }}">
+      {{ if (isset .Params "android_subscribe") }}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-green-700 text-white hover:bg-green-800{{ end }}" href="{{ .Params.android_subscribe }}">
           <i class="fab fa-android"></i> Android
         </a>
       {{ end }}
-      {{ with .Site.Params.stitcher_subscribe }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-purple-700 text-white hover:bg-purple-800 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ . }}">
+      {{ with .Params.stitcher_subscribe }}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-purple-700 text-white hover:bg-purple-800{{ end }}" href="{{ . }}">
           <i class="fa fa-podcast"></i> Stitcher
         </a>
       {{ end }}
-      {{ if (isset .Site.Params "soundcloud_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-orange-500 text-white hover:bg-orange-600 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.soundcloud_subscribe }}">
+      {{ if (isset .Params "soundcloud_subscribe") }}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-orange-500 text-white hover:bg-orange-600{{ end }}" href="{{ .Params.soundcloud_subscribe }}">
           <i class="fab fa-soundcloud"></i> Soundcloud
         </a>
       {{ end }}
-      {{ if (isset .Site.Params "pocketcasts_subscribe") }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-pink-600 text-white hover:bg-pink-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.pocketcasts_subscribe }}">
+      {{ if (isset .Params "pocketcasts_subscribe") }}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-pink-600 text-white hover:bg-pink-700{{ end }}" href="{{ .Params.pocketcasts_subscribe }}">
           <i class="fa fa-podcast"></i> PocketCasts
         </a>
       {{ end }}
-      {{ if (isset .Site.Params "rss_subscribe" )}}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-yellow-500 text-white hover:bg-yellow-600 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{ .Site.Params.rss_subscribe }}">
+      {{ if (isset .Params "rss_subscribe" )}}
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-yellow-500 text-white hover:bg-yellow-600{{ end }}" href="{{ .Params.rss_subscribe }}">
           <i class="fa fa-rss"></i> Podcast RSS
         </a>
       {{ else }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-yellow-500 text-white hover:bg-yellow-600 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{"episode/index.xml" | absURL }}">
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-yellow-500 text-white hover:bg-yellow-600{{ end }}" href="{{"episode/index.xml" | absURL }}">
           <i class="fa fa-rss"></i> Podcast RSS
         </a>
       {{ end }}
       {{ $blog := (where .Site.RegularPages "Section" "==" "blog") }}
       {{ if ge (len $blog) 1 }}
-        <a class="flex items-center gap-2 px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition w-full sm:flex-1 justify-center min-w-[180px] sm:max-w-xs" href="{{"blog/index.xml" | absURL }}">
+        <a class="{{ if eq $buttonStyle "single" }}{{ $singleBtn }}{{ else }}{{ $multiBtn }} bg-blue-600 text-white hover:bg-blue-700{{ end }}" href="{{"blog/index.xml" | absURL }}">
           <i class="fa fa-rss"></i> Blog RSS
         </a>
       {{ end }}
+    </div>
