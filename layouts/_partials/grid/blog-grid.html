@@ -1,12 +1,11 @@
-<div class="mb-8 grid_episode_col bg-castanet-primary-200 rounded-lg shadow">
-  <div class="p-4">
+<div class="relative mb-8 grid_episode_col bg-castanet-primary-200 rounded-lg shadow transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl focus-within:ring-2 focus-within:ring-castanet-primary-400 h-full flex flex-col">
+  <a href="{{ .Permalink }}" class="absolute inset-0 z-10" aria-label="{{ .Title }}"></a>
+  <div class="p-4 flex-1 flex flex-col">
     <div class="mb-4">
-      <a href="{{ .Permalink }}">
-          {{ partial "functions/image.html" (dict "path" .Params.blog_image "class" "w-full h-auto rounded-lg shadow") }}
-      </a>
+      {{ partial "functions/image.html" (dict "path" .Params.blog_image "class" "w-full h-auto rounded-lg shadow") }}
     </div>
     <div class="grid_episode_detail">
-      <h3><a href="{{ .Permalink }}" class="grid_episode_title">{{ .Title }}</a></h3>
+      <h3 class="grid_episode_title">{{ .Title }}</h3>
       <small class="block text-gray-500 dark:text-gray-400 mt-2">Posted on {{ dateFormat "Monday, Jan 2, 2006" .Date }} {{ partial "blog-metadata.html" .}}</small>
     </div>
   </div>
