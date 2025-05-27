@@ -45,7 +45,7 @@ To build your site:
 npm run build
 ```
 
-The generated site will be in `exampleSite/public`.
+The generated site will be in `public`.
 
 ## 5. Run Locally
 
