@@ -32,7 +32,7 @@ If you encounter issues, check the [Castanet GitHub Issues](https://github.com/m
 
 If you have guest data in YAML files (in `data/guests/`), you can convert them to Markdown files (in `content/guest/`) using the provided script:
 
-**Script:** [`docs/utils/guest-yml-to-md.sh`](../utils/guest-yml-to-md.sh)
+**Script:** [`docs/utils/guest-yml-to-md.sh`](utils/guest-yml-to-md.sh)
 
 **Usage:**
 
