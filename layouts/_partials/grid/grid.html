@@ -14,8 +14,8 @@
 
 {{ if eq $path "/" }}
   {{ if and (and (isset .Site.Params "show_next_upcoming") (eq .Site.Params.show_next_upcoming "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true )) 1) }}
-  <div class="w-full bg-castanet-primary-50 p-4 mb-6 rounded-lg shadow">
-    <div class="w-full max-w-5xl mx-auto px-4">
+  <div class="w-full max-w-5xl mx-auto px-4 mt-6">
+    <div class="w-full bg-castanet-primary-50 p-4 mb-6 rounded-lg shadow">
       {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections).ByDate ".Params.upcoming" "==" true ) }}
       <p class="text-blue-800">
         Next Episode: <a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 font-medium">{{ .Title }}</a> - Scheduled for {{ dateFormat "Jan 2, 2006" .Date }}
