@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+
+@theme {
+  --color-neutral: 255, 255, 255;
+  /* PagerDuty Green */
+  --color-castanet-primary-50: #edfff5;
+  --color-castanet-primary-100: #d5ffe9;
+  --color-castanet-primary-200: #aeffd4;
+  --color-castanet-primary-300: #6fffb4;
+  --color-castanet-primary-400: #29ff8c;
+  --color-castanet-primary-500: #00e96b;
+  --color-castanet-primary-600: #00c255;
+  --color-castanet-primary-700: #009846;
+  --color-castanet-primary-800: #04773b;
+  --color-castanet-primary-900: #066133;
+  --color-castanet-primary-950: #003719;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+
+
+

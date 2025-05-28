@@ -15,10 +15,10 @@
 {{ if eq $path "/" }}
   {{ if and (and (isset .Site.Params "show_next_upcoming") (eq .Site.Params.show_next_upcoming "true")) (ge (len (where ( where site.RegularPages "Type" "in" site.Params.mainSections) ".Params.upcoming" "==" true )) 1) }}
   <div class="w-full max-w-5xl mx-auto px-4 mt-6">
-    <div class="w-full bg-castanet-primary-50 p-4 mb-6 rounded-lg shadow">
+    <div class="w-full bg-castanet-primary-50 dark:bg-castanet-primary-800 p-4 mb-6 rounded-lg shadow">
       {{ range first 1 (where ( where site.RegularPages "Type" "in" site.Params.mainSections).ByDate ".Params.upcoming" "==" true ) }}
-      <p class="text-blue-800">
-        Next Episode: <a href="{{ .Permalink }}" class="text-blue-600 hover:text-blue-800 font-medium">{{ .Title }}</a> - Scheduled for {{ dateFormat "Jan 2, 2006" .Date }}
+      <p class="text-castanet-primary-700 dark:text-castanet-primary-200">
+        Next Episode: <a href="{{ .Permalink }}" class="text-castanet-primary-800 dark:text-castanet-primary-300 hover:text-castanet-primary-800 font-medium">{{ .Title }}</a> - Scheduled for {{ dateFormat "Jan 2, 2006" .Date }}
       </p>
       {{ end }}
     </div>
@@ -29,11 +29,11 @@
 <div class="w-full max-w-5xl mx-auto px-4">
 <section class="mb-6">
   {{ if or (eq $path "/") (eq $path "/blog") }}
-    <div class="w-full px-4 mb-4 bg-castanet-primary-50 p-4 rounded-lg shadow">
+    <div class="w-full px-4 mb-4 bg-castanet-primary-50 dark:bg-castanet-primary-800 p-4 rounded-lg shadow">
       {{ if eq $path "/" }}
-        <h2 class="text-3xl font-bold">All Episodes</h2>
+        <h2 class="text-3xl font-bold text-castanet-primary-700 dark:text-castanet-primary-200">All Episodes</h2>
       {{ else }}
-        <h2 class="text-3xl font-bold">Blog Posts</h2>
+        <h2 class="text-3xl font-bold text-castanet-primary-700 dark:text-castanet-primary-200">Blog Posts</h2>
       {{ end }}
     </div>
   {{ end }}
