@@ -1,9 +1,9 @@
-<div class="w-full bg-slate-100 dark:bg-slate-800 py-8 px-4 rounded-lg shadow mb-8">
+<div class="w-full bg-castanet-primary-100 dark:bg-castanet-primary-800 py-8 px-4 rounded-lg shadow mb-8">
   <div class="max-w-5xl mx-auto">
     <!-- Top row: description and hosts -->
     <div class="flex flex-col md:flex-row items-center md:items-center justify-between gap-6 pb-14">
       <div class="flex-1 min-w-[200px] text-center md:text-left">
-        <p class="text-lg text-slate-700 dark:text-slate-200">
+        <p class="text-lg text-castanet-primary-700 dark:text-castanet-primary-200">
           {{ .Site.Params.description | markdownify }}
         </p>
       </div>
@@ -15,21 +15,21 @@
                 {{ $image := resources.GetMatch $p.thumbnail }}
                 {{ with $image }}
                   {{ $image := .Process "webp" }}
-                  <img alt="{{ $p.name }}" src="{{ $image.RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="rounded-full w-40 h-40 object-cover border-2 border-slate-300 dark:border-slate-600 group-hover:border-castanet-primary-700 transition">
+                  <img alt="{{ $p.name }}" src="{{ $image.RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="rounded-full w-40 h-40 object-cover border-2 border-castanet-primary-300 dark:border-castanet-primary-600 group-hover:border-castanet-primary-700 transition">
                 {{ else }}
-                  <img alt="{{ $p.name }}" src="{{ $p.thumbnail | absURL }}" class="rounded-full w-40 h-40 object-cover border-2 border-slate-300 dark:border-slate-600 group-hover:border-castanet-primary-700 transition">
+                  <img alt="{{ $p.name }}" src="{{ $p.thumbnail | absURL }}" class="rounded-full w-40 h-40 object-cover border-2 border-castanet-primary-300 dark:border-castanet-primary-600 group-hover:border-castanet-primary-700 transition">
                 {{ end }}
-                <span class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-40 text-center capitalize text-slate-800 dark:text-slate-100 text-sm group-hover:text-castanet-primary-700 transition">{{ $p.name }}</span>
+                <span class="absolute left-1/2 -trancastanet-primary-x-1/2 top-full mt-2 w-40 text-center capitalize text-castanet-primary-800 dark:text-castanet-primary-100 text-sm group-hover:text-castanet-primary-700 transition">{{ $p.name }}</span>
               </a>
             {{ else }}
               {{ $image := resources.GetMatch $p.thumbnail }}
               {{ with $image }}
                 {{ $image := .Process "webp" }}
-                <img alt="{{ $p.name }}" src="{{ $image.RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="rounded-full w-40 h-40 object-cover border-2 border-slate-300 dark:border-slate-600">
+                <img alt="{{ $p.name }}" src="{{ $image.RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="rounded-full w-40 h-40 object-cover border-2 border-castanet-primary-300 dark:border-castanet-primary-600">
               {{ else }}
-                <img alt="{{ $p.name }}" src="{{ $p.thumbnail | absURL }}" class="rounded-full w-40 h-40 object-cover border-2 border-slate-300 dark:border-slate-600">
+                <img alt="{{ $p.name }}" src="{{ $p.thumbnail | absURL }}" class="rounded-full w-40 h-40 object-cover border-2 border-castanet-primary-300 dark:border-castanet-primary-600">
               {{ end }}
-              <span class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-40 text-center capitalize text-slate-800 dark:text-slate-100 text-sm">{{ $p.name }}</span>
+              <span class="absolute left-1/2 -trancastanet-primary-x-1/2 top-full mt-2 w-40 text-center capitalize text-castanet-primary-800 dark:text-castanet-primary-100 text-sm">{{ $p.name }}</span>
             {{ end }}
           </div>
         {{ end }}
