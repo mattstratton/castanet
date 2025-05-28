@@ -12,7 +12,7 @@ Castanet is a Hugo theme for podcast websites. To install and use Castanet, foll
 Initialize Hugo modules in your site root:
 
 ```sh
-hugo mod init
+hugo mod init <YOUR_REPO_NAME>
 ```
 
 Add Castanet as a module:
@@ -20,8 +20,16 @@ Add Castanet as a module:
 ```toml
 # hugo.toml
 [module]
+  [module.hugoVersion]
   [[module.imports]]
     path = "github.com/mattstratton/castanet/v2"
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
 ```
 
 ## 2. Install Node.js Dependencies
@@ -35,6 +43,30 @@ npm install
 
 ## 3. Configure Your Site
 
+Set the build settings:
+
+```toml
+# hugo.toml
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind).config.js'
+    target = 'css'
+```
+
+Configure the output settings:
+
+```toml
+# hugo.toml
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "RSS"]
+```
+
 See the [Main Configuration](./main-configuration.md) for required and optional settings.
 
 ## 4. Build the Site
@@ -42,7 +74,7 @@ See the [Main Configuration](./main-configuration.md) for required and optional 
 To build your site:
 
 ```sh
-npm run build
+hugo --gc
 ```
 
 The generated site will be in `public`.
@@ -52,7 +84,7 @@ The generated site will be in `public`.
 To serve your site locally:
 
 ```sh
-hugo server -s exampleSite
+hugo server --gc
 ```
 
 ---
