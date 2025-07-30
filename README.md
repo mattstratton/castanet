@@ -53,16 +53,22 @@ In your `hugo.toml` file, add the following lines: (exampleSite uses `config/_de
     target = 'css'
 ```
 
-##### 3. Add required parameters
+##### 4. Add required parameters
 
 Also add the following lines to your `hugo.toml` file:
 
 ```
 [params]
   [params.authors]
+    [params.authors.johndoe]
+      name = "John Doe"
+    [params.authors.janesmith]
+      name = "Jane Smith"
 ```
 
-##### 4. Update your module
+See the example site for more information on supported parameters.
+
+##### 5. Update your module
 
 Now, run this command to load this theme as your module.
 
