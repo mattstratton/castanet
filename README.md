@@ -20,7 +20,7 @@ First, initialize [Hugo modules](https://gohugo.io/hugo-modules/) in your repo. 
 hugo mod init github.com/<your username>/<your repo name>
 ```
 
-##### 2. Add this theme as your module dependency
+##### 2. Add this theme as a module dependency
 
 In your `hugo.toml` file, add a `module` section. (exampleSite uses `config/_default/module.toml`)
 
@@ -37,7 +37,7 @@ In your `hugo.toml` file, add a `module` section. (exampleSite uses `config/_def
     target = 'assets/notwatching/hugo_stats.json'
 ```
 
-##### 3. Update config.toml
+##### 3. Add build step
 
 In your `hugo.toml` file, add the following lines: (exampleSite uses `config/_default/build.toml`)
 
@@ -53,10 +53,13 @@ In your `hugo.toml` file, add the following lines: (exampleSite uses `config/_de
     target = 'css'
 ```
 
-Also add the following line to your `hugo.toml` file:
+##### 3. Add required parameters
 
-```toml
-theme = "castanet"
+Also add the following lines to your `hugo.toml` file:
+
+```
+[params]
+  [params.authors]
 ```
 
 ##### 4. Update your module
@@ -82,6 +85,7 @@ hugo mod npm pack
 ##### 2. Install dependencies
 
 Install the node dependencies using following command:
+
 ```bash
 npm install
 ```
@@ -96,7 +100,6 @@ hugo server -w
 
 ## Development
 
-
 ## Theme Features
 
 Castanet is a Hugo theme for sites that are primarily podcasts. It is heavily influenced by [ado-hugo](//github.com/arresteddevops/ado-hugo) by [Matt Stratton](//github.com/mattstratton).
@@ -109,9 +112,7 @@ An example site can be found at https://sample-castanet.netlify.com/
 
 Download the latest version (zip file, not source code) from the [Releases](https://github.com/mattstratton/castanet/releases) page.
 
-
 For more information read the official [quick start](//gohugo.io/getting-started/quick-start/) of Hugo.
-
 
 ## Getting started
 
@@ -120,10 +121,13 @@ After installing Castanet successfully it requires a just a few more steps to ge
 See [REFERENCE.md](https://github.com/mattstratton/castanet/blob/main/REFERENCE.md) for all configuration file settings as well as instructions on episodes, guests, hosts, and sponsors
 
 ## Contributing to castanet
+
 If you would like to help make improvements or fixes to this theme, please see [CONTRIBUTING.md](https://github.com/mattstratton/castanet/blob/master/CONTRIBUTING.md) for detailed instructions.
 
 ## Sites using the Castanet theme
+
 This is a completely non-comprehensive list of podcasts that use this theme. Want to add your site? Submit a pull request against the README file!
+
 - [Arrested DevOps](https://www.arresteddevops.com)
 - [Page It to the Limit](https://www.pageittothelimit.com/)
 - [Quiche-Anon](https://quiche-anon.com)
@@ -132,6 +136,7 @@ This is a completely non-comprehensive list of podcasts that use this theme. Wan
 - [The R-Podcast](https://r-podcast.org)
 
 ## Sites inspired by / building upon the Castanet theme
+
 - [Cloud with Chris](https://www.cloudwithchris.com)
 
 test
