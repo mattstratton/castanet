@@ -13,9 +13,9 @@ buildFuture = true
   tag = "tags"
 
 [permalinks]
-	# page = "/:filename/"
-	about = "/:filename/"
-	episode = "/:filename/"
+	# page = "/:contentbasename/"
+	about = "/:contentbasename/"
+	episode = "/:contentbasename/"
 
 
 # The theme supports menus with up to one submenu per menu item
@@ -101,6 +101,10 @@ disqusShortname = ""
   # If you want to use fathom(https://usefathom.com) for analytics, add this section
   [params.fathomAnalytics]
     siteID = "ABCDE"
+
+  [params.author]
+    name = "Matt Stratton"
+    email = "matt.stratton@gmail.com"
 
   [params.feed]
     copyright = "Copyright 2020 Matt Stratton" #do not use markdown in this field; it is used in the feed
