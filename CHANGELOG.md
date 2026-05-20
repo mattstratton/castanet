@@ -1,6 +1,32 @@
 # Changelog
 
-## [1.22.15](https://github.com/mattstratton/castanet/tree/1.22.15) (2025-05-21)
+## [v2.0.0-beta.9](https://github.com/mattstratton/castanet/tree/v2.0.0-beta.9) (2025-05-28)
+
+## [v2.0.0-beta.8](https://github.com/mattstratton/castanet/tree/v2.0.0-beta.8) (2025-05-28)
+
+## [v2.0.0-beta.7](https://github.com/mattstratton/castanet/tree/v2.0.0-beta.7) (2025-05-27)
+
+**Fixed bugs:**
+
+- \[BUG\] - Youtube is cropped weird in row layout when "latest episode" has a video [\#490](https://github.com/mattstratton/castanet/issues/490)
+- Inline links in grey theme are really hard to distinguish [\#99](https://github.com/mattstratton/castanet/issues/99)
+
+**Closed issues:**
+
+- Document the search feature [\#476](https://github.com/mattstratton/castanet/issues/476)
+- \[EPIC\] Refactor comment system and other options [\#421](https://github.com/mattstratton/castanet/issues/421)
+
+## [v2.0.0-beta.6](https://github.com/mattstratton/castanet/tree/v2.0.0-beta.6) (2025-05-23)
+
+**Implemented enhancements:**
+
+- Ensure that all Open Graph tags are being used [\#170](https://github.com/mattstratton/castanet/issues/170)
+
+**Closed issues:**
+
+- Update references to iTunes to be Apple Podcasts instead [\#481](https://github.com/mattstratton/castanet/issues/481)
+
+## [v1.22.15](https://github.com/mattstratton/castanet/tree/v1.22.15) (2025-05-21)
 
 **Implemented enhancements:**
 
